@@ -1,0 +1,27 @@
+<div id="form-page-1" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger1">
+    <section class="container form-section">
+        <div class="card">
+            <div class="card-header">
+                <p class="card-header-title"> </p>
+                Applicant Type
+                </p>
+            </div>
+            <div class="card-body">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="applicantTypeInd" name="applicantType"
+                        value="Individual" required data-parsley-group="page1">
+                    <label class="custom-control-label" for="applicantTypeInd">Individual</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="applicantTypeOrg" name="applicantType"
+                        value="Organisation">
+                    <label class="custom-control-label" for="applicantTypeOrg">Organisation</label>
+                </div>
+            </div><br>
+            <div class="card-footer" align="center">
+                <button id="page1Button" class="btn btn-primary btn-next-form"
+                    onclick="stepperForm.next()">Next</button>
+            </div>
+        </div>
+    </section>
+</div>

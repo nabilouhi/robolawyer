@@ -1,0 +1,223 @@
+<div id="form-page-4" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger4">
+    <div class="container form-section" id="indRepresentative">
+        <div class="card">
+            <div class="card-header">
+                <p class="card-header-title lead">
+                    C. Representative(s) of the individual applicant
+                </p>
+                <p>An individual applicant does not have to be represented by a lawyer at this stage. If the applicant
+                    is not represented please go to
+                    section option "I represent myself at this stage".
+                    Where the application is lodged on behalf of an individual applicant by a non-lawyer (e.g. a
+                    relative, friend or guardian), the nonlawyer
+                    must fill in section C.1; if it is lodged by a lawyer, the lawyer must fill in section C.2. In both
+                    situations section C.3 must be
+                    completed.</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Representative Type</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="representativeNL" name="representativeType"
+                            value="non-lawyer">
+                        <label class="custom-control-label" for="representativeNL">Non-Lawyer</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input class="custom-control-input" id="representativeL" type="radio" name="representativeType"
+                            value="lawyer">
+                        <label class="custom-control-label" for="representativeL">Lawyer</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input class="custom-control-input" id="representativeNone" type="radio"
+                            name="representativeType" value="selfRepresented">
+                        <label class="custom-control-label" for="representativeL">I represent myself at this
+                            stage</label>
+                    </div>
+                </div>
+
+                <div class="section is-hidden" id="nonLawyerRep">
+                    <div class="form-group">
+                        <label>Capacity/relationship/function</label>
+                        <input class="form-control" type="text" name="nlCapacity"
+                            placeholder="Enter your relationship to the applicant" id="nlCapacity" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Surname</label>
+                        <input class="form-control" type="text" name="nlSurname" placeholder="Enter your surname"
+                            id="nlSurname" required>
+                    </div>
+                    <div class="form-group">
+                        <label>First Name(s)</label>
+                        <input class="form-control" type="text" name="nlFirstName"
+                            placeholder="Enter your First Name(s)" id="nlFirstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nationality</label>
+                        <select class="form-group" name="nlNationality" id="nlNationality"></select>
+                        <input type="hidden" id="phonenlNationality">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea class="form-control" rows=6 placeholder="Enter Address" name="nlAddress"
+                            id="nlAddress"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Telephone Number (select country code)</label> <br>
+                        <input class="form-control phoneInput" type="tel" style="width: 100%;" name="nlTel" id="nlTel">
+                    </div>
+                    <div class="form-group">
+                        <label>Fax</label>
+                        <input class="form-control" type="number" name="nlFax" placeholder="Enter Fax number"
+                            id="nlFax">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" type="email" name="nlEmail" placeholder="Email" id="nlEmail"
+                            required>
+                    </div>
+                </div>
+                <div class="section is-hidden" id="lawyerRep">
+                    <div class="form-group">
+                        <label>Surname</label>
+                        <input class="form-control" type="text" name="lSurname" placeholder="Enter your surname"
+                            id="lSurname" required>
+                    </div>
+                    <div class="form-group">
+                        <label>First Name(s)</label>
+                        <input class="form-control" type="text" name="lFirstName" placeholder="Enter your First Name(s)"
+                            id="lFirstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nationality</label>
+                        <select class="form-group" name="lNationality" id="lNationality"></select>
+                        <input type="hidden" id="phonelNationality">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea class="form-control" rows=6 placeholder="Enter Address" name="lAddress"
+                            id="lAddress"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Telephone Number (select country code)</label> <br>
+                        <input class="form-control phoneInput" type="tel" style="width: 100%;" name="lTel" id="lTel">
+                    </div>
+                    <div class="form-group">
+                        <label>Fax</label>
+                        <input class="form-control" type="number" name="lFax" placeholder="Enter Fax Number" id="lFax">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" type="email" name="lEmail" placeholder="Email" id="lEmail" required>
+                    </div>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                    <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container is-hidden" id="orgRepresentative">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title is-size-2">
+                    C. Representative(s) of the applicant organisation
+                </p>
+            </header>
+            <div class="card-body">
+                <div class="section">
+                    <div class="form-group">
+                        <label>Representative Type</label>
+                        <input class="is-checkradio has-background-color is-white" id="orgRepresentativeNL" type="radio"
+                            name="orgRepresentativeType" value="non-lawyer">
+                        <label for="orgRepresentativeNL">Non-Lawyer</label>
+                        <input class="is-checkradio has-background-color is-white" id="orgResentativeL" type="radio"
+                            name="orgRepresentativeType" value="lawyer">
+                        <label for="orgRepresentativeL">Lawyer</label>
+                    </div>
+                </div>
+                <div class="section is-hidden" id="orgNonLawyerRep">
+                    <div class="form-group">
+                        <label>Capacity/relationship/function</label>
+                        <input class="form-control" type="text" name="orgnlCapacity"
+                            placeholder="Enter your relationship to the applicant" id="orgnlCapacity" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Surname</label>
+                    <input class="form-control" type="text" name="orgnlSurname" placeholder="Enter your surname"
+                        id="orgnlSurname" required>
+
+                </div>
+                <div class="form-group">
+                    <label>First Name(s)</label>
+                    <input class="form-control" type="text" name="orgnlFirstName" placeholder="Enter your First Name(s)"
+                        id="orgnlFirstName" required>
+                </div>
+                <div class="form-group">
+                    <label>Nationality</label>
+                    <select class="form-control" name="orgnlNationality" id="orgnlNationality"></select>
+                    <input type="hidden" id="orgPhonenlNationality">
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <textarea class="form-control" rows=6 placeholder="Enter Address" name="orgnlAddress"
+                        id="orgnlAddress"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Telephone Number (select country code)</label> <br>
+                    <input class="form-control phoneInput" type="tel" name="orgnlTel" id="orgnlTel">
+                </div>
+                <div class="form-group">
+                    <label>Fax</label>
+                    <input class="form-control" type="number" name="orgnlFax" placeholder="Enter your First Name(s)"
+                        id="orgnlFirstName">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" type="email" name="orgnlEmail" placeholder="Email" id="orgnlEmail"
+                        required>
+                </div>
+            </div>
+            <div class="section is-hidden" id="orgLawyerRep">
+                <div class="form-group">
+                    <label>Surname</label>
+                    <input class="form-group" type="text" name="orglSurname" placeholder="Enter your surname"
+                        id="orglSurname" required>
+                </div>
+                <div class="form-group">
+                    <label>First Name(s)</label>
+                    <input class="form-control" type="text" name="orglFirstName" placeholder="Enter your First Name(s)"
+                        id="orglFirstName" required>
+                </div>
+                <div class="form-group">
+                    <label>Nationality</label>
+                    <select class="form-control" name="orglNationality" id="orglNationality"></select>
+                    <input type="hidden" id="orgPhonelNationality">
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <textarea class="form-group" rows=6 placeholder="Enter Address" name="orglAddress"
+                        id="orglAddress"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Telephone Number (select country code)</label> <br>
+                    <input class="form-control phoneInput" type="tel" name="orglTel" id="orglTel">
+                </div>
+                <div class="form-group">
+                    <label>Fax</label>
+                    <input class="form-group" type="number" name="orglFax" placeholder="Enter Fax" id="orglFax">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-group" type="email" name="orglEmail" placeholder="Email" id="orglEmail" required>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer" align="center">
+            <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+            <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+        </div>
+    </div>
+</div>

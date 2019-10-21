@@ -1,0 +1,67 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="jumbotron" align="center">
+    <div class="container">
+        <h1 class="display-4">Welcome to Robolawyer!
+        </h1>
+        <p class="lead"> Here you can get help with filling in the application form to the European Court of Human
+            Rights.
+            <p>Did you know that 82% of the applications are declared not admissible on formal grounds, like not filling
+                the application from correctly, not exhausting all national remedies or sending the application more
+                than 6 months after receiving a final decision from the national courts?
+                Before proceeding, please take the admissibility test to see whether your application can be admitted,
+                and then we will help you with filling in all required fields for your specific case!
+            </p>
+        </p> <br>
+        <div align="center">
+            <a class="btn btn-primary" data-toggle="modal" data-target="#admCriteria" role="button"
+                href="#">Admissibility
+                Checklist</a>
+            <a class="btn btn-primary" href="{% url 'form' %}" role="button">Go to Application Form</a>
+        </div>
+        <div class="modal fade" id="admCriteria" tabindex="-1" role="dialog" aria-labelledby="admCriteriaTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modal-prop">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="admCriteriaTitle">Admissibility Criteria</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="MyIFrame" runat="server" scrolling="auto" width="800px" height="500px"
+                            frameborder="0" src="https://app.echr.coe.int/CheckList/Step1.aspx"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white text-center">
+    <div class="container">
+        <h1>Founders</h1>
+        <p class="font-weight-light lead">The Robolawyer project is a collaboration between TechR - Technology for Human
+            Rights and the University of Oslo
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-md-center" align="center">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <img src="{% static 'home/images/techr-logo.png' %}" class="logo-images-home" alt="techR">
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <img src="{% static 'home/images/uio-logo.png' %}" class="logo-images-home" alt="uio">
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,119 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block headContent %}
+
+<link rel="stylesheet" href="{% static 'applicationForm/stepper/bs-stepper.min.css' %}">
+<link rel="stylesheet" href="{% static 'applicationForm/datepicker/bootstrap-datepicker.min.css' %}">
+<link rel="stylesheet" href="{% static 'applicationForm/css/formStyles.css' %}">
+<link rel="stylesheet" href="{% static 'applicationForm/parsley/parsley.css' %}">
+{% endblock headContent %}
+
+{% block content %}
+
+<div class="mb-5 p-4 bg-white shadow-sm">
+    <h3>Application Form</h3>
+    <div id="stepperForm" class="bs-stepper">
+        <div class="bs-stepper-header" role="tablist">
+            <div class="step" data-target="#form-page-1">
+                <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger1"
+                    aria-controls="form-page-1">
+                    <span class="bs-stepper-circle">1</span>
+                    <span class="bs-stepper-label">Applicant</span>
+                </button>
+            </div>
+            <div class="bs-stepper-line"></div>
+            <div class="step" data-target="#form-page-2">
+                <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger2"
+                    aria-controls="form-page-2">
+                    <span class="bs-stepper-circle">2</span>
+                    <span class="bs-stepper-label">Applicant Details</span>
+                </button>
+            </div>
+            <div class="bs-stepper-line"></div>
+            <div class="step" data-target="#form-page-3">
+                <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger3"
+                    aria-controls="form-page-3">
+                    <span class="bs-stepper-circle">3</span>
+                    <span class="bs-stepper-label">States Involved</span>
+                </button>
+            </div>
+            <div class="bs-stepper-line"></div>
+            <div class="step" data-target="#form-page-4">
+                <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger4"
+                    aria-controls="form-page-4">
+                    <span class="bs-stepper-circle">4</span>
+                    <span class="bs-stepper-label">Representative</span>
+                </button>
+            </div>
+            <div class="bs-stepper-line"></div>
+            <div class="step" data-target="#form-page-5">
+                <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger5"
+                    aria-controls="form-page-5">
+                    <span class="bs-stepper-circle">5</span>
+                    <span class="bs-stepper-label">Facts</span>
+                </button>
+            </div>
+            <div class="bs-stepper-line"></div>
+            <div class="step" data-target="#form-page-6">
+                <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger6"
+                    aria-controls="form-page-6">
+                    <span class="bs-stepper-circle">6</span>
+                    <span class="bs-stepper-label">Violation(s)</span>
+                </button>
+            </div>
+            <div class="bs-stepper-line"></div>
+            <div class="step" data-target="#form-page-7">
+                <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger7"
+                    aria-controls="form-page-7">
+                    <span class="bs-stepper-circle">7</span>
+                    <span class="bs-stepper-label">Compliance </span>
+                </button>
+            </div>
+            <div class="bs-stepper-line"></div>
+            <div class="step" data-target="#form-page-10">
+                <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger10"
+                    aria-controls="form-page-10">
+                    <span class="bs-stepper-circle">10</span>
+                    <span class="bs-stepper-label">Finish</span>
+                </button>
+            </div>
+        </div>
+        <div class="bs-stepper-content">
+            <form id="appForm" class="needs-validation" onSubmit="return false" method="POST"
+                action="{% url 'formSubmit' %}" novalidate>
+                {% csrf_token %}
+                {% include 'applicationForm/page1.html' %}
+                {% include 'applicationForm/page2.html' %}
+                {% include 'applicationForm/page3.html' %}
+                {% include 'applicationForm/page4.html' %}
+                {% include 'applicationForm/page5.html' %}
+                {% include 'applicationForm/page6.html' %}
+                {% include 'applicationForm/page7.html' %}
+
+                <div id="form-page-10" role="tabpanel" class="bs-stepper-pane fade text-center"
+                    aria-labelledby="stepperFormTrigger10">
+                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                    <button id="form-submit-btn" type="submit" class="btn btn-primary">Finish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scriptContent %}
+<script src="{% static 'home/js/jquery/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'applicationForm/parsley/parsley.min.js' %}"></script>
+<script src="{% static 'applicationForm/js/formScripts.js' %}"></script>
+<script src="{% static 'applicationForm/js/validationScripts.js' %}"></script>
+<script src="{% static 'applicationForm/stepper/bs-stepper.min.js' %}"></script>
+<script src="{% static 'applicationForm/intlTelInput/intlTelInput.min.js' %}"></script>
+<script src="{% static 'applicationForm/intlTelInput/utils.js' %}"></script>
+<script src="{% static 'applicationForm/js/countryScripts.js' %}"></script>
+<script src="{% static 'applicationForm/js/phoneScripts.js' %}"></script>
+<script src="{% static 'applicationForm/datepicker/bootstrap-datepicker.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'applicationForm/datepicker/datePicker.js' %}"></script>
+
+<!-- <script src="https://kit.fontawesome.com/3c0af0bfc3.js" crossorigin="anonymous"></script> -->
+{% endblock scriptContent %}
