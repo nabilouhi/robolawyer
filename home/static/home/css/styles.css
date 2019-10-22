@@ -40,3 +40,15 @@ h1 {
 .logo-images-home {
     width: 40%;
 }
+
+.modal-dialog {
+    /* width: 80% !important; */
+    max-width: 80% !important;
+    max-height: 80% !important;
+    height: 60%;
+}
+
+.modal-content {
+    height: 100% !important;
+    width: 100% !important;
+}

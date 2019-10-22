@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*pe%^$xlq+z9*$21x87_mg0s93hd3%1te+@q+a0!4($f!+)28e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['robo-lawyer.herokuapp.com']
+ALLOWED_HOSTS = ['robo-lawyer.herokuapp.com', 'localhost']
 
 
 # Application definition
