@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('valid');
       return true;
     } else {
-      console.log(this);
       console.log('invalid');
       return false;
     }
@@ -136,4 +135,22 @@ $("input[name='orgRepresentativeType']").change(function() {
   } else {
     console.log('check for bugs');
   }
+});
+
+//  stepper responsive
+
+jQuery(document).ready(function($) {
+  var alterClass = function() {
+    var ww = document.body.clientWidth;
+    if (ww < 1000) {
+      $('#stepperForm').addClass('vertical');
+    } else if (ww >= 1001) {
+      $('#stepperForm').removeClass('vertical');
+    }
+  };
+  $(window).resize(function() {
+    alterClass();
+  });
+  //Fire it when the page first loads:
+  alterClass();
 });

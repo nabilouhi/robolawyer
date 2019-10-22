@@ -23,7 +23,7 @@
                     <span class="bs-stepper-label">Applicant</span>
                 </button>
             </div>
-            <div class="bs-stepper-line"></div>
+            <!-- <div class="bs-stepper-line"></div> -->
             <div class="step" data-target="#form-page-2">
                 <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger2"
                     aria-controls="form-page-2">
@@ -31,7 +31,7 @@
                     <span class="bs-stepper-label">Applicant Details</span>
                 </button>
             </div>
-            <div class="bs-stepper-line"></div>
+            <!-- <div class="bs-stepper-line"></div> -->
             <div class="step" data-target="#form-page-3">
                 <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger3"
                     aria-controls="form-page-3">
@@ -39,7 +39,7 @@
                     <span class="bs-stepper-label">States Involved</span>
                 </button>
             </div>
-            <div class="bs-stepper-line"></div>
+            <!-- <div class="bs-stepper-line"></div> -->
             <div class="step" data-target="#form-page-4">
                 <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger4"
                     aria-controls="form-page-4">
@@ -47,7 +47,7 @@
                     <span class="bs-stepper-label">Representative</span>
                 </button>
             </div>
-            <div class="bs-stepper-line"></div>
+            <!-- <div class="bs-stepper-line"></div> -->
             <div class="step" data-target="#form-page-5">
                 <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger5"
                     aria-controls="form-page-5">
@@ -55,7 +55,7 @@
                     <span class="bs-stepper-label">Facts</span>
                 </button>
             </div>
-            <div class="bs-stepper-line"></div>
+            <!-- <div class="bs-stepper-line"></div> -->
             <div class="step" data-target="#form-page-6">
                 <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger6"
                     aria-controls="form-page-6">
@@ -63,7 +63,7 @@
                     <span class="bs-stepper-label">Violation(s)</span>
                 </button>
             </div>
-            <div class="bs-stepper-line"></div>
+            <!-- <div class="bs-stepper-line"></div> -->
             <div class="step" data-target="#form-page-7">
                 <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger7"
                     aria-controls="form-page-7">
@@ -71,7 +71,7 @@
                     <span class="bs-stepper-label">Compliance </span>
                 </button>
             </div>
-            <div class="bs-stepper-line"></div>
+            <!-- <div class="bs-stepper-line"></div> -->
             <div class="step" data-target="#form-page-10">
                 <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger10"
                     aria-controls="form-page-10">
@@ -91,12 +91,8 @@
                 {% include 'applicationForm/page5.html' %}
                 {% include 'applicationForm/page6.html' %}
                 {% include 'applicationForm/page7.html' %}
+                {% include 'applicationForm/page10.html' %}
 
-                <div id="form-page-10" role="tabpanel" class="bs-stepper-pane fade text-center"
-                    aria-labelledby="stepperFormTrigger10">
-                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-                    <button id="form-submit-btn" type="submit" class="btn btn-primary">Finish</button>
-                </div>
             </form>
         </div>
     </div>
@@ -114,6 +110,7 @@
 <script src="{% static 'applicationForm/countrySelect/countrySelect.min.js' %}"></script>
 <script src="{% static 'applicationForm/js/countryScripts.js' %}"></script>
 <script src="{% static 'applicationForm/js/phoneScripts.js' %}"></script>
+<script src="{% static 'applicationForm/js/summaryScripts.js' %}"></script>
 <script src="{% static 'applicationForm/datepicker/bootstrap-datepicker.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'applicationForm/datepicker/datePicker.js' %}"></script>
 
