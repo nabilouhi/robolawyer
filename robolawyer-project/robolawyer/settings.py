@@ -25,7 +25,7 @@ SECRET_KEY = '*pe%^$xlq+z9*$21x87_mg0s93hd3%1te+@q+a0!4($f!+)28e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['robo-lawyer.herokuapp.com']
 
 
 # Application definition
