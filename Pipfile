@@ -8,9 +8,8 @@ autopep8 = "*"
 
 [packages]
 django = "*"
-django-webpack-loader = "*"
 weasyprint = "*"
-cairocffi = "*"
+pycountry = "*"
 
 [requires]
 python_version = "3.7"

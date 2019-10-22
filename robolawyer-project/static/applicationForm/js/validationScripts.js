@@ -16,7 +16,6 @@ stepperFormEl.addEventListener('show.bs-stepper', function(event) {
   }
 
   var stepperPan = stepperPanList[currentStep];
-  console.log(stepperPan);
 
   // if (
   //   stepperPan.getAttribute('indSurname') === 'form-page-1' &&

@@ -44,7 +44,7 @@ var phoneInputScript = function(phoneDiv) {
 
 phoneInputScript('#indPhone');
 phoneInputScript('#orgPhone');
-// phoneInputScript("#nlTel");
-// phoneInputScript("#lTel");
-// phoneInputScript("#orgnlTel");
-// phoneInputScript("#orglTel");
+phoneInputScript('#nlTel');
+phoneInputScript('#lTel');
+phoneInputScript('#orgnlTel');
+phoneInputScript('#orglTel');

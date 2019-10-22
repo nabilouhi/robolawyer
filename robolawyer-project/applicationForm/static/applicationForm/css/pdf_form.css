@@ -1,0 +1,129 @@
+@page {
+    size: "A4";
+    margin: 2.5cm 1.5cm 3.5cm 1.5cm;
+
+    @bottom-center {
+        background-size: auto 1.5cm;
+        padding-top: 1.8cm;
+        font: 10pt "Playfair Display";
+        text-align: center;
+        vertical-align: top;
+    }
+
+    margin: 3cm 2cm;
+
+    @top-center {
+        content: "Documentation";
+    }
+
+    @bottom-right {
+        content: "Page "counter(page) " of "counter(pages);
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+}
+
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #F2F0F0;
+    border: 2px solid black;
+}
+
+.flex-inside-1 {
+    margin: 10px 0px 0px 0px;
+    border-bottom: 2px solid black;
+}
+
+.flex-inside-2 {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.flex-inside-internal {
+    padding: 0 20px 20px 20px;
+    border-right: 2px solid black;
+    flex: 1;
+}
+
+.flex-inside-internal:last-child {
+    border-right: 0;
+}
+
+h5 {
+    margin-left: 20px;
+}
+
+.form-content {
+    margin-top: 20px;
+}
+
+
+.dob-full-container {
+    display: flex;
+}
+
+.dob-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.dob-sample-text {
+    flex: 1;
+    margin: 10px auto auto 20px;
+}
+
+.dob-values {
+    display: flex;
+    flex-direction: row;
+}
+
+.dob-labels {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.date_input {
+    width: 30px;
+    /* margin-left: -4px; */
+    text-align: center;
+
+    flex-basis: 8%;
+    flex: 1;
+}
+
+.individual-address {
+    /* height: calc(35*6px); */
+    height: 210px;
+}
+
+.organisation-name {
+    /* height: calc(35*3px); */
+    height: 105px;
+}
+
+.organisation-address {
+    /* height: calc(35*9px); */
+    height: 315px;
+}
+
+.radio-container {
+    display: flex;
+}
+
+.radio-button {
+    margin: auto;
+}
+
+.internal-heading {
+    font-size: 15px;
+    font-weight: 600;
+}

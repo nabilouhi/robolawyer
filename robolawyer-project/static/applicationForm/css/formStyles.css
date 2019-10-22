@@ -10,3 +10,7 @@
 .is-hidden {
     display: none;
 }
+
+.phoneInput {
+    padding-left: 86px !important;
+}

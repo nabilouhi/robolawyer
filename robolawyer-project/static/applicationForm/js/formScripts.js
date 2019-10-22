@@ -1,24 +1,49 @@
-$('#appForm')
-  .parsley()
-  .on('field:validate', function() {
-    var elem = this.$element;
-
-    // If the field is not visible, do not apply Parsley validation!
-    if (
-      $(elem)
-        .closest('.form-page')
-        .hasClass('is-hidden')
-    ) {
-      this.constraints = [];
-    }
-  });
-
 document.addEventListener('DOMContentLoaded', function() {
   var stepperFormEl = document.querySelector('#stepperForm');
   stepperForm = new Stepper(stepperFormEl, {
     animation: true,
-    linear: false
+    linear: false,
+    excluded:
+      'input[type=button], input[type=submit], input[type=reset], input[type=hidden], :disabled'
   });
+
+  stepperFormEl.addEventListener('show.bs-stepper', function(event) {
+    if (event.detail.from === 0) {
+      if (onValidate('page1')) {
+        console.log('page1');
+      } else {
+        console.warn(event.detail);
+        event.preventDefault();
+      }
+    } else if (event.detail.from === 1) {
+      appVal = $("input[name='applicantType']").val();
+      if (appVal === 'Individual') {
+        if (onValidate('page2a')) {
+          console.log('page2a');
+        } else {
+          console.log(event);
+          event.preventDefault();
+        }
+      } else {
+        if (onValidate('page2b')) {
+          console.log('page2b');
+        } else {
+          console.log(event);
+          event.preventDefault();
+        }
+      }
+    } else if (event.detail.from === 2) {
+      if (onValidate('page3')) {
+        console.log('page3');
+      } else {
+        console.warn(event.detail);
+        event.preventDefault();
+      }
+    }
+  });
+  // stepperFormEl.addEventListener('shown.bs-stepper', function(event) {
+  //   console.warn(event.detail);
+  // });
 
   var btnNextList = [].slice.call(document.querySelectorAll('.btn-next-form'));
   var stepperPanList = [].slice.call(
@@ -31,35 +56,35 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  function onValidate() {
-    if (!$('appForm').parsley('isValid')) {
-      $('.parsley-error')
-        .closest('.tab-pane')
-        .show();
+  function onValidate(groupname) {
+    if (
+      $('#appForm')
+        .parsley()
+        .validate({
+          group: groupname,
+          force: true
+        })
+    ) {
+      console.log('valid');
+      return true;
+    } else {
+      console.log(this);
+      console.log('invalid');
       return false;
     }
-
-    return true;
   }
 
   submitBtn = document.getElementById('form-submit-btn');
   submitBtn.addEventListener('click', function() {
-    message = onValidate();
-    if (message === true) {
-      form.submit();
-    } else {
-      alert('Some of the required fields are empty. Please check the form.');
-      form.submit();
-    }
+    form.submit();
   });
 });
 
 var applicantTypeOption = function() {
   $("input[name='applicantType']").change(function() {
     result = this.value;
-    console.log(result);
     if (result === 'Individual') {
-      $('#page1Button').removeAttr('disabled');
+      // $('#page1Button').removeAttr('disabled');
       $('#indBeginner').removeClass('is-hidden');
       $('#orgBeginner').addClass('is-hidden');
       //   $('#indRepresentative').removeClass('is-hidden');
@@ -80,12 +105,13 @@ applicantTypeOption();
 
 $("input[name='representativeType']").change(function() {
   result = this.value;
+  console.log(result);
   if (result === 'lawyer') {
-    $('#nonLawyerRep').removeClass('is-hidden');
-    $('#lawyerRep').addClass('is-hidden');
-  } else if (result === 'non-lawyer') {
     $('#lawyerRep').removeClass('is-hidden');
     $('#nonLawyerRep').addClass('is-hidden');
+  } else if (result === 'non-lawyer') {
+    $('#lawyerRep').addClass('is-hidden');
+    $('#nonLawyerRep').removeClass('is-hidden');
   } else {
     console.log('check for bugs');
   }
@@ -94,57 +120,12 @@ $("input[name='representativeType']").change(function() {
 $("input[name='orgRepresentativeType']").change(function() {
   result = this.value;
   if (result === 'lawyer') {
-    $('#orgNonLawyerRep').removeClass('is-hidden');
-    $('#lawyerRep').addClass('is-hidden');
-  } else if (result === 'non-lawyer') {
-    $('#lawyerRep').removeClass('is-hidden');
     $('#orgNonLawyerRep').addClass('is-hidden');
+    $('#lawyerRep').removeAttr('is-hidden');
+  } else if (result === 'non-lawyer') {
+    $('#lawyerRep').addClass('is-hidden');
+    $('#orgNonLawyerRep').removeClass('is-hidden');
   } else {
     console.log('check for bugs');
   }
-});
-
-$(function() {
-  var $sections = $('.form-section');
-
-  function navigateTo(index) {
-    // Mark the current section with the class 'current'
-    $sections
-      .removeClass('current')
-      .eq(index)
-      .addClass('current');
-    // Show only the navigation buttons that make sense for the current section:
-    $('.form-navigation .previous').toggle(index > 0);
-    var atTheEnd = index >= $sections.length - 1;
-    $('.form-navigation .next').toggle(!atTheEnd);
-    $('.form-navigation [type=submit]').toggle(atTheEnd);
-  }
-
-  function curIndex() {
-    // Return the current index by looking at which section has the class 'current'
-    return $sections.index($sections.filter('.current'));
-  }
-
-  // Previous button is easy, just go back
-  $('.form-navigation .previous').click(function() {
-    navigateTo(curIndex() - 1);
-  });
-
-  // Next button goes forward iff current block validates
-  $('.form-navigation .next').click(function() {
-    if (
-      $('.demo-form')
-        .parsley()
-        .validate('block-' + curIndex())
-    )
-      navigateTo(curIndex() + 1);
-  });
-
-  // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
-  $sections.each(function(index, section) {
-    $(section)
-      .find(':input')
-      .attr('data-parsley-group', 'block-' + index);
-  });
-  navigateTo(0); // Start at the beginning
 });

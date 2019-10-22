@@ -10,33 +10,39 @@ document.addEventListener('DOMContentLoaded', function() {
   stepperFormEl.addEventListener('show.bs-stepper', function(event) {
     if (event.detail.from === 0) {
       if (onValidate('page1')) {
-        console.log('page1');
+        console.log('page1 passed');
       } else {
-        console.warn(event.detail);
+        alert('Please answer the mandatory fields first.');
         event.preventDefault();
       }
     } else if (event.detail.from === 1) {
-      appVal = $("input[name='applicantType']").val();
+      appVal = document.querySelector("input[name='applicantType']:checked")
+        .value;
+      console.log(appVal);
       if (appVal === 'Individual') {
         if (onValidate('page2a')) {
-          console.log('page2a');
+          console.log('page2a passed');
         } else {
-          console.log(event);
+          alert('Please answer the mandatory fields first.');
           event.preventDefault();
+          return;
+        }
+      } else if (appVal === 'Organisation') {
+        if (onValidate('page2b')) {
+          console.log('page2b passed');
+        } else {
+          alert('Please answer the mandatory fields first.');
+          event.preventDefault();
+          return;
         }
       } else {
-        if (onValidate('page2b')) {
-          console.log('page2b');
-        } else {
-          console.log(event);
-          event.preventDefault();
-        }
+        console.log('check for bug');
       }
     } else if (event.detail.from === 2) {
       if (onValidate('page3')) {
-        console.log('page3');
+        console.log('page3 passed');
       } else {
-        console.warn(event.detail);
+        alert('Please answer the mandatory fields first.');
         event.preventDefault();
       }
     }
@@ -84,13 +90,9 @@ var applicantTypeOption = function() {
   $("input[name='applicantType']").change(function() {
     result = this.value;
     if (result === 'Individual') {
-      // $('#page1Button').removeAttr('disabled');
       $('#indBeginner').removeClass('is-hidden');
       $('#orgBeginner').addClass('is-hidden');
-      //   $('#indRepresentative').removeClass('is-hidden');
-      //   $('#orgRepresentative').addClass('is-hidden');
     } else if (result === 'Organisation') {
-      $('#page1Button').removeAttr('disabled');
       $('#indBeginner').attr('style', 'display: none');
       $('#orgBeginner').attr('style', 'display: block');
     } else {
@@ -109,9 +111,15 @@ $("input[name='representativeType']").change(function() {
   if (result === 'lawyer') {
     $('#lawyerRep').removeClass('is-hidden');
     $('#nonLawyerRep').addClass('is-hidden');
+    $('#selfRep').addClass('is-hidden');
   } else if (result === 'non-lawyer') {
-    $('#lawyerRep').addClass('is-hidden');
     $('#nonLawyerRep').removeClass('is-hidden');
+    $('#lawyerRep').addClass('is-hidden');
+    $('#selfRep').addClass('is-hidden');
+  } else if (result === 'selfRepresented') {
+    $('#selfRep').removeClass('is-hidden');
+    $('#nonLawyerRep').addClass('is-hidden');
+    $('#lawyerRep').addClass('is-hidden');
   } else {
     console.log('check for bugs');
   }

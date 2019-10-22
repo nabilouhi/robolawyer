@@ -31,16 +31,14 @@
 
                 <div class="form-group">
                     <label>Place of Birth</label>
-                    <select class="form-control" name="indPob" id="indPob"></select>
-                    <input type="hidden" id="phonePob">
+                    <input class="form-control" name="indPob" id="indPob"></input>
                 </div>
                 <div class="form-group">
                     <label>Nationality</label>
-                    <select class="form-control" name="indNationality" id="indNationality"></select>
-                    <input type="hidden" id="phoneNationality">
+                    <input class="form-control" name="indNationality" id="indNationality"></input>
                 </div>
                 <fieldset class="form-group">
-                    <label>Address</label>
+                    <label class="lead">Address</label><br>
 
                     <label>Address Line 1</label>
                     <input class="form-control" name="indAddress1" id="indAddress1">
@@ -57,23 +55,24 @@
                 </fieldset>
                 <div class="form-group">
                     <label>Telephone Number (select country code)</label><br>
-                    <input type="tel" name="indPhone" id="indPhone" class="form-control phoneInput">
+                    <input type="tel" name="indPhone" id="indPhone" class="form-control phoneInput" required
+                        data-parsley-group="page2a">
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="email" name="indEmail" placeholder="Email" id="indEmail" required
+                    <input class="form-control" type="email" name="indEmail" placeholder="Email" id="indEmail"
                         data-parsley-type="email" data-parsley-group="page2a">
                 </div>
                 <div class="form-group">
                     <label>Sex</label>
                     <div class="custom-control custom-radio custom-control">
                         <input type="radio" class="custom-control-input" id="applicantSexMale" name="applicantSex"
-                            value="Male" required data-parsley-group="page2a">
+                            value="Male">
                         <label class="custom-control-label" for="applicantSexMale">Male</label>
                     </div>
                     <div class="custom-control custom-radio custom-control">
                         <input type="radio" class="custom-control-input" id="applicantSexFemale" name="applicantSex"
-                            value="Female" required data-parsley-group="page2a">
+                            value="Female">
                         <label class="custom-control-label" for="applicantSexFemale">Female</label>
                     </div>
                 </div>
@@ -139,7 +138,7 @@
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="email" name="orgEmail" id="orgEmail" placeholder="Email" required
+                    <input class="form-control" type="email" name="orgEmail" id="orgEmail" placeholder="Email"
                         data-parsley-type="email" data-parsley-group="page2b">
                 </div>
             </div>
@@ -149,5 +148,4 @@
             </div>
         </div>
     </section>
-
 </div>

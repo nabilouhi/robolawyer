@@ -29,7 +29,7 @@ var countrySelect = function(countryID, telID) {
 
 countrySelect('#indPob', '#phonePob');
 countrySelect('#indNationality', '#phoneNationality');
-// countrySelect("#nlNationality", "#phonenlNationality");
-// countrySelect("#lNationality", "#phonelNationality");
-// countrySelect("#orgnlNationality", "#orgPhonenlNationality");
-// countrySelect("#orglNationality", "#orgPhonelNationality");
+countrySelect('#nlNationality', '#phonenlNationality');
+countrySelect('#lNationality', '#phonelNationality');
+countrySelect('#orgnlNationality', '#orgPhonenlNationality');
+countrySelect('#orglNationality', '#orgPhonelNationality');

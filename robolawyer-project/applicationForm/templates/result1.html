@@ -1,0 +1,176 @@
+<html>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/pdf_form.css' %}">
+
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="flex-inside-1">
+            <div class="heading-text">
+                <h5 class="form-category-heading"><b>A.1. The applicant</b></h5>
+            </div>
+        </div>
+        <div class="flex-inside-2">
+            <div class="flex-inside-internal">
+                <div class="form-content">
+                    <h6 class="internal-heading">A.1. Individual </h6>
+                    <p>This section refers to applicants who are individual persons only. If the applicant is an
+                        organisation,
+                        please go to section A.2.</p>
+                    <div class="fields">
+                        <form class="form">
+                            <div class="form-group">
+                                <label>1. Surname</label>
+                                <div class="form-control" type="text">{{form_data.indSurname}}</div>
+                            </div>
+                            <div class="form-group">
+                                <label>2. First name(s)</label>
+                                <div class="form-control" type="text">{{form_data.indFirstName}}</div>
+                            </div>
+                            <div class="form-group ">
+                                <div>
+                                    <label>3. Date of Birth </label> <br>
+                                </div>
+                                {% if dob_data.length > 1 %}
+                                <div class="dob-full-container">
+                                    <div class="dob-container">
+                                        <div class="dob-values">
+                                            {% for val, label in dob_data  %}
+
+                                            <div class='date_input form-control'>{{val}} </div>
+
+
+                                            {% endfor %}
+                                        </div>
+                                        <div class="dob-labels">
+                                            {% for val, label in dob_data  %}
+
+
+                                            <div class='date_input'>{{label}}</div>
+
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    <div class="dob-sample-text">
+                                        e.g. 31/12/1960
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>4. Place of Birth </label>
+                                <div class="form-control" type="text">{{form_data.indPob}}</div>
+                            </div>
+                            <div class="form-group">
+                                <label>5. Nationality </label>
+                                <div class="form-control">{{form_data.indNationality}}</div>
+                            </div>
+                            <div class="form-group">
+                                <label>6. Address </label>
+
+                                <div class="form-control individual-address">{{form_data.indAddress}}</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>7. Telephone (including international dialling code) </label>
+
+                                <div class="form-control" type="text">{{form_data.indPhone}} </div>
+                            </div>
+                            <div class="form-group">
+                                <label>8. Email (if any) </label>
+
+                                <div class="form-control" type="text">{{form_data.indEmail}} </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="radio-container">
+                                    <div class="form-check form-check-inline">
+                                        <label>9. Sex</label>
+                                    </div>
+                                    <div class="form-check form-check-inline radio-button">
+                                        <img class="" name="male-radio" id="male-radio" {% if form_data.sex == 'male' %}
+                                            src="{% static 'icons/radio_button_on_24px.svg' %}" {% else %}
+                                            src="{% static 'icons/radio_button_off_24px.svg' %}" {% endif %}>
+                                        <label class="form-check-label" for="inlineRadio1">male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline radio-button">
+                                        <img class="" name="female-radio" id="female-radio"
+                                            {% if form_data.sex == 'female' %}
+                                            src="{% static 'icons/radio_button_on_24px.svg' %}" {% else %}
+                                            src="{% static 'icons/radio_button_off_24px.svg' %}" {% endif %}>
+                                        <label class="form-check-label" for="inlineRadio2">female</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="flex-inside-internal">
+                    <div class="form-content">
+                        <div class="heading-text">
+                            <h5> </h5>
+                        </div>
+                        <h6 class="internal-heading"> Organisation </h6>
+                        <p>This section should only be filled in where the applicant is a
+                            company, NGO, association or other legal entity. In this case,
+                            please also fill in section D.1.</p>
+                        <div class="fields">
+                            <form class="form">
+                                <div class="form-group">
+                                    <label>10. Name</label>
+                                    <div class="form-control organisation-name">{{form_data.orgName}}</div>
+                                </div>
+                                <div class="form-group">
+                                    <label>11. Identification number (if any) </label>
+                                    <input class="form-control" type="text" value={{form_data.orgID}} />
+                                </div>
+                                <div class="form-group">
+                                    <label>12. Date of registration or incorporation (if any) </label>
+                                    {% for key, value in reg_data.items %}
+
+                                    <input class='date_input' type="text" value={{ value }} />
+
+                                    {% endfor %}
+                                </div>
+                                <div class="form-group">
+                                    <label>13. Activity </label>
+                                    <input class="form-control" type="text" value={{form_data.orgActivity}} />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>14. Registered Address </label>
+
+                                    <div class="form-control organisation-address">{{form_data.orgAddress}}</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>15. Telephone (including international dialling code) </label>
+
+                                    <input class="form-control" type="text" value={{form_data.orgph_number}} />
+                                </div>
+                                <div class="form-group">
+                                    <label>16. Email (if any) </label>
+
+                                    <input class="form-control" type="text" value={{form_data.orgEmail}} />
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

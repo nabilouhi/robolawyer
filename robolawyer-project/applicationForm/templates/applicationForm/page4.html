@@ -30,7 +30,7 @@
                     <div class="custom-control custom-radio custom-control-inline">
                         <input class="custom-control-input" id="representativeNone" type="radio"
                             name="representativeType" value="selfRepresented">
-                        <label class="custom-control-label" for="representativeL">I represent myself at this
+                        <label class="custom-control-label" for="representativeNone">I represent myself at this
                             stage</label>
                     </div>
                 </div>
@@ -109,6 +109,9 @@
                         <label>Email</label>
                         <input class="form-control" type="email" name="lEmail" placeholder="Email" id="lEmail" required>
                     </div>
+                </div>
+                <div class="section is-hidden" id="selfRep">
+                    <p>You have chosen to represent yourself at this stage. Click on next to move to next step.</p>
                 </div>
                 <div class="card-footer" align="center">
                     <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
