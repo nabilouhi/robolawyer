@@ -27,18 +27,21 @@
                     <label>Date of Birth</label>
                     <input type="text" class="datepicker form-control" id="birthDate" data-date-format="dd/mm/yyyy"
                         placeholder="Enter Date of Birth">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label>Place of Birth</label>
-                    <input class="form-control" name="indPob" id="indPob"></input>
+                    <input class="form-control" name="indPob" id="indPob">
                 </div>
                 <div class="form-group">
                     <label>Nationality</label>
-                    <input class="form-control" name="indNationality" id="indNationality"></input>
+                    <input class="form-control" name="indNationality" id="indNationality">
                 </div>
                 <fieldset class="form-group">
-                    <label class="lead">Address</label><br>
+                    <label class="lead">Address</label>
 
                     <label>Address Line 1</label>
                     <input class="form-control" name="indAddress1" id="indAddress1">
@@ -54,7 +57,7 @@
                     <input class="form-control" name="indPostal" id="indPostal">
                 </fieldset>
                 <div class="form-group">
-                    <label>Telephone Number (select country code)</label><br>
+                    <label>Telephone Number (select country code)</label>
                     <input type="tel" name="indPhone" id="indPhone" class="form-control phoneInput" required
                         data-parsley-group="page2a">
                 </div>
@@ -131,7 +134,7 @@
                 </fieldset>
 
                 <div class="form-group">
-                    <label for="orgPhone">Telephone (select country code)</label> <br>
+                    <label for="orgPhone">Telephone (select country code)</label>
                     <input class="form-control phoneInput" type="tel" id="orgPhone" name="orgPhone" required
                         data-parsley-group="page2b">
                 </div>
