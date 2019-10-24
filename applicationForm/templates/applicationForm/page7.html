@@ -2,10 +2,10 @@
     <section class="container">
         <div class="card">
             <div class="card-header">
-                <p class="card-header-title lead">Compliance with admisibility criteria laid down in Article 35 § 1 of
-                    the Convention </p>
+                <h4 class="card-header-title">Compliance with admisibility criteria laid down in Article 35 § 1 of
+                    the Convention </h4>
 
-                <p>
+                <p class="lead">
                     For each complaint, please confirm that you have used the available effective remedies in the
                     country
                     concerned, including appeals,
@@ -17,7 +17,30 @@
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <textarea class="form-control" name="" id="" cols="30" rows="100"></textarea>
+                    <div class="complaints">
+                        <div class="complaint">
+                            <table width="100%">
+                                <tr>
+                                    <td width="30%">
+                                        <label for="complainSelect">Complaint</label>
+                                        <input name="complainSelect[]" id="complainSelect" class="form-control">
+                                    </td>
+                                    <td width="30%">
+                                        <label>Date of Final Decision</label>
+                                        <input class="form-control datepicker" type="text" color="Info"
+                                            name="complaintDate" placeholder="Select date of final Decision" />
+                                    </td>
+                                    <td width="30%">
+                                        <label> Remedies Used</label>
+                                        <textarea class="form-control" type="text"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="btn btn-light add-more-complaints"><span>Add More <i class="fas fa-plus"></i></span>
+                    </div>
                 </div>
                 <div class="card-footer" align="center">
                     <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>

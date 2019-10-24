@@ -1,11 +1,11 @@
 label {
-    display: block;
+  display: block;
 }
 
 .datepicker td,
 .datepicker th {
-    width: 1.5em;
-    height: 1.5em;
+  width: 1.5em;
+  height: 1.5em;
 }
 
 /* .datepicker {
@@ -14,13 +14,19 @@ label {
 } */
 
 .datepicker>span:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .is-hidden {
-    display: none;
+  display: none;
 }
 
 .phoneInput {
-    padding-left: 86px !important;
+  padding-left: 86px !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    background-color: lightblue;
+  }
 }

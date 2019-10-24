@@ -2,8 +2,9 @@
     <div class="container form-section" id="summary">
         <div class="card">
             <div class="card-header">
+                <h4 class="card-headet-title">Finish</h4>
                 <p class="card-header-title lead">
-                    Summary and Finish
+
                 </p>
             </div>
             <div class="card-body">
@@ -15,7 +16,8 @@
                             of
                             Human Rights.</p>
 
-                        <p>Before mailing the form, please make sure to: <span>
+                        <p>Before mailing the form, please make sure to:
+                            <span>
                                 <ol>
                                     <li>Add copies of domestic decisions in chronological order (add page numbers,
                                         including in section I.
@@ -25,22 +27,22 @@
                                         involved); </li>
                                     <li>Sign the application in the required fields; </li>
                                 </ol>
-
-                                <p>The completed and signed application form should be sent by post to:</p>
-                                <span>The Registrar</span><br>
-                                <span>European Court of Human Rights</span><br>
-                                <span>Council of Europe</span><br>
-                                <span>67075 STRASBOURG CEDEX</span><br>
-                                <span>FRANCE</span>
-
-
+                            </span>
+                        </p>
+                        <p>The completed and signed application form should be sent by post to:</p>
+                        <span>The Registrar</span><br>
+                        <span>European Court of Human Rights</span><br>
+                        <span>Council of Europe</span><br>
+                        <span>67075 STRASBOURG CEDEX</span><br>
+                        <span>FRANCE</span>
                     </div>
                 </div>
-                <p>Applicant Type: <span id="sumApplicantType"></span></p>
-                <p>Surname: <span id="sumIndSurname"></span></p>
-                <p>First Names(s): <span id="sumIndFirstName"></span></p>
             </div>
         </div>
         <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-        <button id="form-submit-btn" type="submit" class="btn btn-primary">Finish</button>
+        <button id="form-submit-btn" type="submit" class="btn btn-primary">Generate Printable PDF Form</button>
+        <button id="btn btn-primary" type="button" class="btn btn-primary" data-toggle="popover"
+            data-content="the email functionality is yet to be implemented." data-placement="bottom">Send the PDF form
+            to e-Mail</button>
     </div>
+</div>

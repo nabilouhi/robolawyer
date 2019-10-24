@@ -2,18 +2,47 @@
     <section class="container">
         <div class="card">
             <div class="card-header">
-                <p class="card-header-title lead">
+                <h4 class="card-header-title">
                     Statement of alleged violation(s) of the Convention and/or Protocols and relevant arguments
-                </p>
+                </h4>
+                <p class="lead"></p>
             </div>
             <div class="card-body">
-                <div class="form-group">
-                    <textarea class="form-control" name="" id="" cols="30" rows="100"></textarea>
+                <div class="form-group add-field">
+                    <div class="articles">
+                        <div class="article">
+                            <table width="100%">
+                                <tr>
+                                    <td width="30%" style="padding-right:10px;">
+                                        <label for="articleSelect"></label>
+                                        <select name="articleSelect[]" id="articleSelect" class="form-control">
+                                            <option disabled selected value> -- select an option -- </option>
+                                            <option value="Article1">Article1</option>
+                                            <option value="Article2">Article2</option>
+                                            <option value="Article3">Article3</option>
+                                        </select>
+                                    </td>
+                                    <td width="60%">
+                                        <label>Explanation</label>
+                                        <textarea class="form-control" type="text"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="btn btn-light add-more"><span>Add More <i class="fas fa-plus"></i></span></div>
                 </div>
-                <div class="card-footer" align="center">
-                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-                    <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
-                </div>
+
             </div>
+            <div class="card-footer" align="center">
+                <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+            </div>
+        </div>
     </section>
 </div>
+
+<script>
+
+</script>

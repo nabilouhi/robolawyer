@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     excluded:
       'input[type=button], input[type=submit], input[type=reset], input[type=hidden], :disabled'
   });
-
   stepperFormEl.addEventListener('show.bs-stepper', function(event) {
     if (event.detail.from === 0) {
       if (onValidate('page1')) {
@@ -38,18 +37,15 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         console.log('check for bug');
       }
-    } else if (event.detail.from === 2) {
-      if (onValidate('page3')) {
-        console.log('page3 passed');
+    } else if (event.detail.from === 3) {
+      if (onValidate('page4')) {
+        console.log('page4 passed');
       } else {
         alert('Please answer the mandatory fields first.');
         event.preventDefault();
       }
     }
   });
-  // stepperFormEl.addEventListener('shown.bs-stepper', function(event) {
-  //   console.warn(event.detail);
-  // });
 
   var btnNextList = [].slice.call(document.querySelectorAll('.btn-next-form'));
   var stepperPanList = [].slice.call(
@@ -78,6 +74,12 @@ document.addEventListener('DOMContentLoaded', function() {
       return false;
     }
   }
+
+  stepperFormEl.addEventListener('shown.bs-stepper', function(event) {
+    if (event.detail.indexStep === 7) {
+      generateSummary();
+    }
+  });
 
   submitBtn = document.getElementById('form-submit-btn');
   submitBtn.addEventListener('click', function() {
@@ -139,18 +141,57 @@ $("input[name='orgRepresentativeType']").change(function() {
 
 //  stepper responsive
 
-jQuery(document).ready(function($) {
-  var alterClass = function() {
-    var ww = document.body.clientWidth;
-    if (ww < 1000) {
-      $('#stepperForm').addClass('vertical');
-    } else if (ww >= 1001) {
-      $('#stepperForm').removeClass('vertical');
-    }
-  };
-  $(window).resize(function() {
-    alterClass();
+// jQuery(document).ready(function($) {
+//   var alterClass = function() {
+//     var ww = document.body.clientWidth;
+//     if (ww < 1000) {
+//       $('#stepperForm').addClass('vertical');
+//     } else if (ww >= 1001) {
+//       $('#stepperForm').removeClass('vertical');
+//     }
+//   };
+//   $(window).resize(function() {
+//     alterClass();
+//   });
+//   //Fire it when the page first loads:
+//   alterClass();
+// });
+
+// for page 6
+var addRemElements = function(partners, partner, addmore) {
+  $(document).ready(function() {
+    var data_fo = $(partners).html();
+    var sd = '<div class="btn btn-danger remove-add-more">Remove</div><hr>';
+    var max_fields = 5; //maximum input boxes allowed
+    var wrapper = $(partners); //Fields wrapper
+    var add_button = $(addmore); //Add button ID
+
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e) {
+      //on add input button click
+      e.preventDefault();
+      if (x < max_fields) {
+        //max input box allowed
+        x++; //text box increment
+        var partnerClone = $(partner)
+          .first()
+          .clone();
+        $(sd).appendTo(partnerClone);
+        $(wrapper).append(partnerClone);
+      }
+    });
+
+    $(wrapper).on('click', '.remove-add-more', function(e) {
+      //user click on remove text
+      e.preventDefault();
+      $(this)
+        .parent(partner)
+        .remove();
+      $(this).remove();
+      x--;
+    });
   });
-  //Fire it when the page first loads:
-  alterClass();
-});
+};
+
+addRemElements('.articles', '.article', '.add-more');
+addRemElements('.complaints', '.complaint', '.add-more-complaints');

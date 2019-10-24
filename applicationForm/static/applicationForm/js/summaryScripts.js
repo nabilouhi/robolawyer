@@ -1,7 +1,12 @@
-console.log('hello summary');
-console.log($('#indSurname'));
-console.log($("input[name='applicantType']").val());
+var generateSummary = function() {
+  document.getElementById('sumApplicantType').innerHTML = $(
+    "input[name='applicantType']"
+  ).val();
 
-$('#sumApplicantType').innerHTML = $("input[name='applicantType']").val();
-$('#sumIndSurname').innerHTML = $('#indSurname').val();
-$('#sumIndFirstName').innerHTML = $('#indFirstName').val();
+  document.getElementById('sumIndSurname').innerHTML = document.getElementById(
+    'indSurname'
+  ).value;
+  document.getElementById(
+    'sumIndFirstName'
+  ).innerHTML = document.getElementById('indFirstName').value;
+};
