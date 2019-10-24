@@ -94,8 +94,8 @@ var applicantTypeOption = function() {
       $('#indBeginner').removeClass('is-hidden');
       $('#orgBeginner').addClass('is-hidden');
     } else if (result === 'Organisation') {
-      $('#indBeginner').attr('style', 'display: none');
-      $('#orgBeginner').attr('style', 'display: block');
+      $('#orgBeginner').removeClass('is-hidden');
+      $('#indBeginner').addClass('is-hidden');
     } else {
       console.log('check for bug');
     }
@@ -141,21 +141,21 @@ $("input[name='orgRepresentativeType']").change(function() {
 
 //  stepper responsive
 
-// jQuery(document).ready(function($) {
-//   var alterClass = function() {
-//     var ww = document.body.clientWidth;
-//     if (ww < 1000) {
-//       $('#stepperForm').addClass('vertical');
-//     } else if (ww >= 1001) {
-//       $('#stepperForm').removeClass('vertical');
-//     }
-//   };
-//   $(window).resize(function() {
-//     alterClass();
-//   });
-//   //Fire it when the page first loads:
-//   alterClass();
-// });
+jQuery(document).ready(function($) {
+  var alterClass = function() {
+    var ww = document.body.clientWidth;
+    if (ww < 700) {
+      $('#stepperForm').addClass('vertical');
+    } else if (ww >= 701) {
+      $('#stepperForm').removeClass('vertical');
+    }
+  };
+  $(window).resize(function() {
+    alterClass();
+  });
+  //Fire it when the page first loads:
+  alterClass();
+});
 
 // for page 6
 var addRemElements = function(partners, partner, addmore) {
