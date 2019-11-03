@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return true;
     } else {
       console.log('invalid');
-      return false;
+      return true;
     }
   }
 
@@ -157,7 +157,7 @@ jQuery(document).ready(function($) {
   alterClass();
 });
 
-// for page 6
+// for add/remove input functionality
 var addRemElements = function(partners, partner, addmore) {
   $(document).ready(function() {
     var data_fo = $(partners).html();
@@ -195,3 +195,19 @@ var addRemElements = function(partners, partner, addmore) {
 
 addRemElements('.articles', '.article', '.add-more');
 addRemElements('.complaints', '.complaint', '.add-more-complaints');
+addRemElements('.docLists', '.docList', '.add-more-docs');
+
+// Add remove functionality end
+
+//  Custom file input name display
+$('.custom-file-input').on('change', function() {
+  var fileName = $(this)
+    .val()
+    .split('\\')
+    .pop();
+  $(this)
+    .siblings('.custom-file-label')
+    .addClass('selected')
+    .html(fileName);
+});
+//  custom file input end

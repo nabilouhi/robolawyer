@@ -3,26 +3,64 @@
         <div class="card">
             <div class="card-header">
                 <p class="card-header-title lead">
-                    Summary
+                    Documents
                 </p>
             </div>
             <div class="card-body">
-                <div class="section">
-                    <h4>Applicant Detail</h4>
-                    <div align="left">
+                <div class="section" style="text-align: left;">
+                    <h4>List of Accompanying Documents</h4>
+                    You should enclose full and legible copies of all documents. No documents will be
+                    returned to you. It is thus in your interests to submit copies, not originals. You MUST:
+                    <ul>
+                        <li> arrange the documents in order by date and by procedure;</li>
+                        <li> number the pages consecutively; and</li>
+                        <li> NOT staple, bind or tape the documents.</li>
+                    </ul>
+
+                    <div class="form-group">
+                        please list the documents in chronological order with a concise description. Indicate the page
+                        number at which
+                        each document may be found:
+
+                        <div class="form-group add-field">
+                            <div class="docLists">
+                                <div class="docList">
+                                    <table width="100%">
+                                        <tr>
+                                            <td width="70%" style="padding-right:10px;">
+                                                <label for="docSelect">Description</label>
+                                                <input name="docSelect[]" id="docSelect" class="form-control">
+                                            </td>
+                                            <td width="20%">
+                                                <label>Page Number</label>
+                                                <input class="form-control" type="number">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="btn btn-light add-more-docs"><span>Add More <i class="fas fa-plus"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div align="left">
                         <div><strong>Applicant Type: </strong><span id="sumApplicantType"></span>
                         </div>
                         <div><strong>Surname: </strong><span id="sumIndSurname"></span>
                         </div>
                         <div><strong>First Names(s): </strong><span id="sumIndFirstName"></span>
                         </div>
-                        <!-- <div><strong>First Names(s): </strong><span id="sumIndFirstName"></span>
-                        </div> -->
-                    </div>
+                         <div><strong>First Names(s): </strong><span id="sumIndFirstName"></span>
+                        </div> 
+                    </div> -->
+
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-        <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+        <div class="card-footer">
+            <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+            <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+        </div>
     </div>
 </div>

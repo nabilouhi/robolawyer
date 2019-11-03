@@ -1,0 +1,64 @@
+<div id="form-page-8" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger8">
+    <section class="container form-section">
+        <div class="card">
+            <div class="card-header">
+                <h4>InternationalProceedings</h4>
+
+
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Have you raised any of these complaints in another procedure of international investigation
+                        or
+                        settlement?</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="intInvestigationYes"
+                            name="intInvestigation" value="Yes" required data-parsley-group="">
+                        <label class="custom-control-label" for="intInvestigationYes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="intInvestigationNo" name="intInvestigation"
+                            value="No" required data-parsley-group="">
+                        <label class="custom-control-label" for="intInvestigationNo">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="appealDescribe">Please give a concise summary of the procedure (complaints submitted,
+                        name
+                        of the international body
+                        and date and nature of any decisions given)</label>
+                    <textarea class="form-control" name="intInvestigationDesc" id="intInvestigationDesc"
+                        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
+                        rows="10"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Do you (the applicant) currently have, or have you previously had, any other applications
+                        before the
+                        Court?</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="prevApplicationsYes"
+                            name="prevApplications" value="Yes" required data-parsley-group="">
+                        <label class="custom-control-label" for="prevApplicationsYes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="prevApplicationsNo" name="prevApplications"
+                            value="No" required data-parsley-group="">
+                        <label class="custom-control-label" for="prevApplicationsNo">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="appealDescribe">Please write the relevant application
+                        number(s) in the box below</label>
+                    <textarea class="form-control" name="intInvestigationDesc" id="intInvestigationDesc"
+                        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
+                        rows="10"></textarea>
+                </div>
+
+                <div class="card-footer" align="center">
+                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                    <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                </div>
+            </div>
+    </section>
+</div>
