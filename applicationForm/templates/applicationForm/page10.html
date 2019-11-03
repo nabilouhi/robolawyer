@@ -33,33 +33,52 @@
                         </label>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="signatureDeclarationApplicant"
-                                name="signatureDeclaration" value="Individual" required data-parsley-group="page1">
+                                name="signatureDeclaration" value="Applicant" required data-parsley-group="page1">
                             <label class="custom-control-label" for="signatureDeclarationApplicant">Applicant(s)</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="signatureDeclarationRepresentative"
-                                name="signatureDeclaration" value="Organisation" required data-parsley-group="page1">
+                                name="signatureDeclaration" value="Representative" required data-parsley-group="page1">
                             <label class="custom-control-label"
                                 for="signatureDeclarationRepresentative">Representative(s)</label>
                         </div>
                         <div class="custom-file">
                             <label class="custom-file-label" for="declareSignature">Choose file</label>
-                            <input class="custom-file-input" type="file" name="declareSignature" id="declareSignature">
+                            <input class="custom-file-input files" type="file" name="declareSignature[]"
+                                id="declareSignature">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="lead">Confirmation of correspondent</label>
-                        <p> If there is more than one applicant or more than one representative, please give the name
-                            and address of the one person with whom
-                            the Court will correspond. Where the applicant is represented, the Court will correspond
-                            only with the representative (lawyer or nonlawyer).</p>
-                        <label for="confirmationApplicantName">Name of applicant</label>
-                        <input class="form-control" type="text" name="confirmationApplicantName"
-                            id="confirmationApplicantName">
+                        <div class="is-hidden" id="correspondentOptionApplicant">
+                            <label class="lead">Confirmation of correspondent</label>
+                            <p> If there is more than one applicant or more than one representative, please give the
+                                name
+                                and address of the one person with whom
+                                the Court will correspond. Where the applicant is represented, the Court will correspond
+                                only with the representative (lawyer or nonlawyer).</p>
+                            <label for="confirmationApplicantName">Name of applicant</label>
+                            <input class="form-control" type="text" name="confirmationApplicantName"
+                                id="confirmationApplicantName">
 
-                        <label for="confirmationApplicantAddress">Address of applicant</label>
-                        <input class="form-control" type="text" name="confirmationApplicantAddress"
-                            id="confirmationApplicantAddress">
+                            <label for="confirmationApplicantAddress">Address of applicant</label>
+                            <input class="form-control" type="text" name="confirmationApplicantAddress"
+                                id="confirmationApplicantAddress">
+                        </div>
+                        <div class="is-hidden" id="correspondentOptionRepresentative">
+                            <label class="lead">Confirmation of correspondent</label>
+                            <p> If there is more than one applicant or more than one representative, please give the
+                                name
+                                and address of the one person with whom
+                                the Court will correspond. Where the applicant is represented, the Court will correspond
+                                only with the representative (lawyer or nonlawyer).</p>
+                            <label for="confirmationRepresentativeName">Name of Representative</label>
+                            <input class="form-control" type="text" name="confirmationRepresentativeName"
+                                id="confirmationRepresentativeName">
+
+                            <label for="confirmationRepresentativeAddress">Address of Representative</label>
+                            <input class="form-control" type="text" name="confirmationRepresentativeAddress"
+                                id="confirmationRepresentativeAddress">
+                        </div>
                     </div>
                 </div>
             </div>

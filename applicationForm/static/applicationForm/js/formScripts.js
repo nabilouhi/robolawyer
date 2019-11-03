@@ -211,3 +211,57 @@ $('.custom-file-input').on('change', function() {
     .html(fileName);
 });
 //  custom file input end
+
+// Correspondent details
+
+$("input[name='signatureDeclaration']").change(function() {
+  result = this.value;
+
+  if (result === 'Applicant') {
+    $('#correspondentOptionApplicant').removeClass('is-hidden');
+    $('#correspondentOptionRepresentative').addClass('is-hidden');
+  } else if (result === 'Representative') {
+    $('#correspondentOptionApplicant').addClass('is-hidden');
+    $('#correspondentOptionRepresentative').removeClass('is-hidden');
+  } else {
+    console.log('check for bugs');
+  }
+});
+
+// Correcpondant details end
+
+// File upload script
+$(document).ready(function() {
+  if (window.File && window.FileList && window.FileReader) {
+    $('.files').on('change', function(e) {
+      var files = e.target.files,
+        filesLength = files.length;
+      for (var i = 0; i < filesLength; i++) {
+        var f = files[i];
+        var fileReader = new FileReader();
+        fileReader.onload = function(e) {
+          var file = e.target;
+          $(
+            '<span class="pip">' +
+              '<img class="imageThumb" src="' +
+              e.target.result +
+              '" title="' +
+              file.name +
+              '"/>' +
+              '<br/><span class="remove">Remove image</span>' +
+              '</span>'
+          ).insertAfter('#files');
+          $('.remove').click(function() {
+            $(this)
+              .parent('.pip')
+              .remove();
+          });
+        };
+        fileReader.readAsDataURL(f);
+      }
+    });
+  } else {
+    alert("Your browser doesn't support to File API");
+  }
+});
+// File upload script end
