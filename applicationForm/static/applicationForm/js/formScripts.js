@@ -15,28 +15,34 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
       }
     } else if (event.detail.from === 1) {
-      appVal = document.querySelector("input[name='applicantType']:checked")
-        .value;
-      console.log(appVal);
-      if (appVal === 'Individual') {
-        if (onValidate('page2a')) {
-          console.log('page2a passed');
+      if (onValidate('page2')) {
+        appVal = document.querySelector("input[name='applicantType']:checked")
+          .value;
+        console.log(appVal);
+        if (appVal === 'Individual') {
+          if (onValidate('page2a')) {
+            console.log('page2a passed');
+          } else {
+            alert('Please answer the mandatory fields first.');
+            event.preventDefault();
+            return;
+          }
+        } else if (appVal === 'Organisation') {
+          if (onValidate('page2b')) {
+            console.log('page2b passed');
+          } else {
+            alert('Please answer the mandatory fields first.');
+            event.preventDefault();
+            return;
+          }
         } else {
-          alert('Please answer the mandatory fields first.');
-          event.preventDefault();
-          return;
-        }
-      } else if (appVal === 'Organisation') {
-        if (onValidate('page2b')) {
-          console.log('page2b passed');
-        } else {
-          alert('Please answer the mandatory fields first.');
-          event.preventDefault();
-          return;
+          console.log('check for bug');
         }
       } else {
-        console.log('check for bug');
+        alert('Please answer the mandatory fields first.');
+        event.preventDefault();
       }
+    } else if (event.detail.from === 1) {
     } else if (event.detail.from === 3) {
       if (onValidate('page4')) {
         console.log('page4 passed');

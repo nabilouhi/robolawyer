@@ -2,65 +2,91 @@
     <div class="container form-section" id="summary">
         <div class="card">
             <div class="card-header">
+                <h4 class="card-headet-title">Declaration and Signature</h4>
                 <p class="card-header-title lead">
-                    Documents
+
                 </p>
             </div>
             <div class="card-body">
-                <div class="section" style="text-align: left;">
-                    <h4>List of Accompanying Documents</h4>
-                    You should enclose full and legible copies of all documents. No documents will be
-                    returned to you. It is thus in your interests to submit copies, not originals. You MUST:
-                    <ul>
-                        <li> arrange the documents in order by date and by procedure;</li>
-                        <li> number the pages consecutively; and</li>
-                        <li> NOT staple, bind or tape the documents.</li>
-                    </ul>
+                <label for="#formComments" class="lead">Any Other Comments</label>
+                <div class="form-group" style="text-align: left;">
+                    <p>Do you have any other comments about your application?</p>
+                    <textarea class="form-control" name="formComments" id="formComments" cols="30" rows="5"></textarea>
+                </div>
 
+                <label class="lead">Declaration and Signature</label>
+                <div style="text-align: left;">
+                    <label>I hereby declare that, to the best of my knowledge and belief, the information I have given
+                        in the present application form is correct.</label>
                     <div class="form-group">
-                        please list the documents in chronological order with a concise description. Indicate the page
-                        number at which
-                        each document may be found:
-
-                        <div class="form-group add-field">
-                            <div class="docLists">
-                                <div class="docList">
-                                    <table width="100%">
-                                        <tr>
-                                            <td width="70%" style="padding-right:10px;">
-                                                <label for="docSelect">Description</label>
-                                                <input name="docSelect[]" id="docSelect" class="form-control">
-                                            </td>
-                                            <td width="20%">
-                                                <label>Page Number</label>
-                                                <input class="form-control" type="number">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="btn btn-light add-more-docs"><span>Add More <i class="fas fa-plus"></i></span>
-                            </div>
+                        <label>Date</label>
+                        <input type="text" class="datepicker form-control" id="declarationDate"
+                            data-date-format="dd/mm/yyyy" placeholder="Date">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
                         </div>
                     </div>
-                    <!-- <div align="left">
-                        <div><strong>Applicant Type: </strong><span id="sumApplicantType"></span>
+                    <div class="form-group">
+                        <label class="lead">
+                            The applicant(s) or the applicant’s representative(s) must sign in the box below. It can be
+                            uploaded or signed in person in the downloaded form.
+                        </label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="signatureDeclarationApplicant"
+                                name="signatureDeclaration" value="Applicant" required data-parsley-group="page1">
+                            <label class="custom-control-label" for="signatureDeclarationApplicant">Applicant(s)</label>
                         </div>
-                        <div><strong>Surname: </strong><span id="sumIndSurname"></span>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="signatureDeclarationRepresentative"
+                                name="signatureDeclaration" value="Representative" required data-parsley-group="page1">
+                            <label class="custom-control-label"
+                                for="signatureDeclarationRepresentative">Representative(s)</label>
                         </div>
-                        <div><strong>First Names(s): </strong><span id="sumIndFirstName"></span>
+                        <div class="custom-file">
+                            <label class="custom-file-label" for="declareSignature">Choose file</label>
+                            <input class="custom-file-input files" type="file" name="declareSignature[]"
+                                id="declareSignature">
                         </div>
-                         <div><strong>First Names(s): </strong><span id="sumIndFirstName"></span>
-                        </div> 
-                    </div> -->
+                    </div>
+                    <div class="form-group">
+                        <div class="is-hidden" id="correspondentOptionApplicant">
+                            <label class="lead">Confirmation of correspondent</label>
+                            <p> If there is more than one applicant or more than one representative, please give the
+                                name
+                                and address of the one person with whom
+                                the Court will correspond. Where the applicant is represented, the Court will correspond
+                                only with the representative (lawyer or nonlawyer).</p>
+                            <label for="confirmationApplicantName">Name of applicant</label>
+                            <input class="form-control" type="text" name="confirmationApplicantName"
+                                id="confirmationApplicantName">
 
+                            <label for="confirmationApplicantAddress">Address of applicant</label>
+                            <input class="form-control" type="text" name="confirmationApplicantAddress"
+                                id="confirmationApplicantAddress">
+                        </div>
+                        <div class="is-hidden" id="correspondentOptionRepresentative">
+                            <label class="lead">Confirmation of correspondent</label>
+                            <p> If there is more than one applicant or more than one representative, please give the
+                                name
+                                and address of the one person with whom
+                                the Court will correspond. Where the applicant is represented, the Court will correspond
+                                only with the representative (lawyer or nonlawyer).</p>
+                            <label for="confirmationRepresentativeName">Name of Representative</label>
+                            <input class="form-control" type="text" name="confirmationRepresentativeName"
+                                id="confirmationRepresentativeName">
+
+                            <label for="confirmationRepresentativeAddress">Address of Representative</label>
+                            <input class="form-control" type="text" name="confirmationRepresentativeAddress"
+                                id="confirmationRepresentativeAddress">
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
-        <div class="card-footer">
-            <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-            <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
-        </div>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+        <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
     </div>
 </div>
