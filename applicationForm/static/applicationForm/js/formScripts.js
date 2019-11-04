@@ -8,35 +8,41 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   stepperFormEl.addEventListener('show.bs-stepper', function(event) {
     if (event.detail.from === 0) {
-      if (onValidate('page1')) {
-        console.log('page1 passed');
+      // if (onValidate('page1')) {
+      console.log('page1 passed');
+      // } else {
+      //   alert('Please answer the mandatory fields first.');
+      //   event.preventDefault();
+      // }
+    } else if (event.detail.from === 1) {
+      if (onValidate('page2')) {
+        appVal = document.querySelector("input[name='applicantType']:checked")
+          .value;
+        console.log(appVal);
+        if (appVal === 'Individual') {
+          if (onValidate('page2a')) {
+            console.log('page2a passed');
+          } else {
+            alert('Please answer the mandatory fields first.');
+            event.preventDefault();
+            return;
+          }
+        } else if (appVal === 'Organisation') {
+          if (onValidate('page2b')) {
+            console.log('page2b passed');
+          } else {
+            alert('Please answer the mandatory fields first.');
+            event.preventDefault();
+            return;
+          }
+        } else {
+          console.log('check for bug');
+        }
       } else {
         alert('Please answer the mandatory fields first.');
         event.preventDefault();
       }
     } else if (event.detail.from === 1) {
-      appVal = document.querySelector("input[name='applicantType']:checked")
-        .value;
-      console.log(appVal);
-      if (appVal === 'Individual') {
-        if (onValidate('page2a')) {
-          console.log('page2a passed');
-        } else {
-          alert('Please answer the mandatory fields first.');
-          event.preventDefault();
-          return;
-        }
-      } else if (appVal === 'Organisation') {
-        if (onValidate('page2b')) {
-          console.log('page2b passed');
-        } else {
-          alert('Please answer the mandatory fields first.');
-          event.preventDefault();
-          return;
-        }
-      } else {
-        console.log('check for bug');
-      }
     } else if (event.detail.from === 3) {
       if (onValidate('page4')) {
         console.log('page4 passed');
@@ -104,6 +110,18 @@ var applicantTypeOption = function() {
 
 applicantTypeOption();
 
+// anonymity Description
+$("input[name='applicantAnon']").change(function() {
+  result = this.value;
+
+  if (result === 'Yes') {
+    $('.applicantAnonReq').removeClass('is-hidden');
+  } else {
+    $('.applicantAnonReq').addClass('is-hidden');
+  }
+});
+// anonymity Description End
+
 // ___________________Page4
 
 $("input[name='representativeType']").change(function() {
@@ -157,7 +175,7 @@ jQuery(document).ready(function($) {
   alterClass();
 });
 
-// for page 6
+// for add/remove input functionality
 var addRemElements = function(partners, partner, addmore) {
   $(document).ready(function() {
     var data_fo = $(partners).html();
@@ -195,3 +213,73 @@ var addRemElements = function(partners, partner, addmore) {
 
 addRemElements('.articles', '.article', '.add-more');
 addRemElements('.complaints', '.complaint', '.add-more-complaints');
+addRemElements('.docLists', '.docList', '.add-more-docs');
+
+// Add remove functionality end
+
+//  Custom file input name display
+$('.custom-file-input').on('change', function() {
+  var fileName = $(this)
+    .val()
+    .split('\\')
+    .pop();
+  $(this)
+    .siblings('.custom-file-label')
+    .addClass('selected')
+    .html(fileName);
+});
+//  custom file input end
+
+// Correspondent details
+
+$("input[name='signatureDeclaration']").change(function() {
+  result = this.value;
+
+  if (result === 'Applicant') {
+    $('#correspondentOptionApplicant').removeClass('is-hidden');
+    $('#correspondentOptionRepresentative').addClass('is-hidden');
+  } else if (result === 'Representative') {
+    $('#correspondentOptionApplicant').addClass('is-hidden');
+    $('#correspondentOptionRepresentative').removeClass('is-hidden');
+  } else {
+    console.log('check for bugs');
+  }
+});
+
+// Correcpondant details end
+
+// File upload script
+$(document).ready(function() {
+  if (window.File && window.FileList && window.FileReader) {
+    $('.files').on('change', function(e) {
+      var files = e.target.files,
+        filesLength = files.length;
+      for (var i = 0; i < filesLength; i++) {
+        var f = files[i];
+        var fileReader = new FileReader();
+        fileReader.onload = function(e) {
+          var file = e.target;
+          $(
+            '<span class="pip">' +
+              '<img class="imageThumb" src="' +
+              e.target.result +
+              '" title="' +
+              file.name +
+              '"/>' +
+              '<br/><span class="remove">Remove image</span>' +
+              '</span>'
+          ).insertAfter('#files');
+          $('.remove').click(function() {
+            $(this)
+              .parent('.pip')
+              .remove();
+          });
+        };
+        fileReader.readAsDataURL(f);
+      }
+    });
+  } else {
+    alert("Your browser doesn't support to File API");
+  }
+});
+// File upload script end

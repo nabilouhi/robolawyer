@@ -3,9 +3,10 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-header-title">
-                    Representative(s) of the individual applicant
+                    Representative(s) of the applicant
                 </h4>
-                <p class="lead">An individual applicant does not have to be represented by a lawyer at this stage. If
+                <p class="lead">Note: An individual applicant does not have to be represented by a lawyer at this stage.
+                    If
                     the applicant
                     is not represented please select option "I represent myself at this stage".
                 </p>
@@ -78,6 +79,52 @@
                         <input class="form-control" type="email" name="nlEmail" placeholder="Email" id="nlEmail"
                             required>
                     </div>
+                    <div class="authority">
+                        <label class="lead">Authority</label>
+                        <p>The applicant must authorise any representative to act on his or her behalf by signing the
+                            first box below; the designated
+                            representative must indicate his or her acceptance by signing the second box below</p>
+
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <label class="custom-file-label" for="authoritySignatureApplicant">Signature of
+                                    Applicant</label>
+                                <input class="custom-file-input" type="file" name="authoritySignatureApplicant"
+                                    id="authoritySignatureApplicant">
+
+                                <label>Date</label>
+                                <input type="text" class="datepicker form-control" id="authorityDateApplicant"
+                                    data-date-format="dd/mm/yyyy" placeholder="Date">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <label class="custom-file-label" for="authoritySignatureRepresentative">Signature of
+                                    Representative</label>
+                                <input class="custom-file-input" type="file" name="authoritySignatureRepresentative"
+                                    id="authoritySignatureRepresentative">
+
+                                <label>Date</label>
+                                <input type="text" class="datepicker form-control" id="authorityDateRepresentative"
+                                    data-date-format="dd/mm/yyyy" placeholder="Date">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="lead">Electronic communication between the representative and the
+                                Court</label>
+                            Email address for eComms account (if the representative already uses eComms, please provide
+                            the existing eComms account email
+                            address)
+                            <input type="email" name="indeComms" id="indeComms">
+                        </div>
+                    </div>
                 </div>
                 <div class="section is-hidden" id="lawyerRep">
                     <div class="form-group">
@@ -112,9 +159,55 @@
                         <label>Email</label>
                         <input class="form-control" type="email" name="lEmail" placeholder="Email" id="lEmail" required>
                     </div>
-                </div>
-                <div class="section is-hidden" id="selfRep">
-                    <p>Click on next to proceed to next step.</p>
+                    <div class="authority">
+                        <label class="lead">Authority</label>
+                        <p>The applicant must authorise any representative to act on his or her behalf by signing the
+                            first box below; the designated
+                            representative must indicate his or her acceptance by signing the second box below</p>
+
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <label class="custom-file-label" for="authoritySignatureApplicant">Signature of
+                                    Applicant</label>
+                                <input class="custom-file-input" type="file" name="authoritySignatureApplicant"
+                                    id="authoritySignatureApplicant">
+
+                                <label>Date</label>
+                                <input type="text" class="datepicker form-control" id="authorityDateApplicant"
+                                    data-date-format="dd/mm/yyyy" placeholder="Date">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <label class="custom-file-label" for="authoritySignatureRepresentative">Signature of
+                                    Representative</label>
+                                <input class="custom-file-input" type="file" name="authoritySignatureRepresentative"
+                                    id="authoritySignatureRepresentative">
+
+                                <label>Date</label>
+                                <input type="text" class="datepicker form-control" id="authorityDateRepresentative"
+                                    data-date-format="dd/mm/yyyy" placeholder="Date">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="lead">Electronic communication between the representative and the
+                                Court</label>
+                            Email address for eComms account (if the representative already uses eComms, please provide
+                            the existing eComms account email
+                            address)
+                            <input type="email" name="indeComms" id="indeComms">
+                        </div>
+                    </div>
+                    <div class="section is-hidden" id="selfRep">
+                        <p>Click on next to proceed to next step.</p>
+                    </div>
                 </div>
                 <div class="card-footer" align="center">
                     <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
@@ -185,6 +278,52 @@
                     <input class="form-control" type="email" name="orgnlEmail" placeholder="Email" id="orgnlEmail"
                         required>
                 </div>
+                <div class="authority">
+                    <label class="lead">Authority</label>
+                    <p>The applicant must authorise any representative to act on his or her behalf by signing the
+                        first box below; the designated
+                        representative must indicate his or her acceptance by signing the second box below</p>
+
+                    <div class="form-group">
+                        <div class="custom-file">
+                            <label class="custom-file-label" for="authoritySignatureApplicant">Signature of
+                                Applicant</label>
+                            <input class="custom-file-input" type="file" name="authoritySignatureApplicant"
+                                id="authoritySignatureApplicant">
+
+                            <label>Date</label>
+                            <input type="text" class="datepicker form-control" id="authorityDateApplicant"
+                                data-date-format="dd/mm/yyyy" placeholder="Date">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="custom-file">
+                            <label class="custom-file-label" for="authoritySignatureRepresentative">Signature of
+                                Representative</label>
+                            <input class="custom-file-input" type="file" name="authoritySignatureRepresentative"
+                                id="authoritySignatureRepresentative">
+
+                            <label>Date</label>
+                            <input type="text" class="datepicker form-control" id="authorityDateRepresentative"
+                                data-date-format="dd/mm/yyyy" placeholder="Date">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="lead">Electronic communication between the representative and the
+                            Court</label>
+                        Email address for eComms account (if the representative already uses eComms, please provide
+                        the existing eComms account email
+                        address)
+                        <input type="email" name="indeComms" id="indeComms">
+                    </div>
+                </div>
             </div>
             <div class="section is-hidden" id="orgLawyerRep">
                 <div class="form-group">
@@ -218,6 +357,52 @@
                 <div class="form-group">
                     <label>Email</label>
                     <input class="form-group" type="email" name="orglEmail" placeholder="Email" id="orglEmail" required>
+                </div>
+                <div class="authority">
+                    <label class="lead">Authority</label>
+                    <p>The applicant must authorise any representative to act on his or her behalf by signing the
+                        first box below; the designated
+                        representative must indicate his or her acceptance by signing the second box below</p>
+
+                    <div class="form-group">
+                        <div class="custom-file">
+                            <label class="custom-file-label" for="authoritySignatureApplicant">Signature of
+                                Applicant</label>
+                            <input class="custom-file-input" type="file" name="authoritySignatureApplicant"
+                                id="authoritySignatureApplicant">
+
+                            <label>Date</label>
+                            <input type="text" class="datepicker form-control" id="authorityDateApplicant"
+                                data-date-format="dd/mm/yyyy" placeholder="Date">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="custom-file">
+                            <label class="custom-file-label" for="authoritySignatureRepresentative">Signature of
+                                Representative</label>
+                            <input class="custom-file-input" type="file" name="authoritySignatureRepresentative"
+                                id="authoritySignatureRepresentative">
+
+                            <label>Date</label>
+                            <input type="text" class="datepicker form-control" id="authorityDateRepresentative"
+                                data-date-format="dd/mm/yyyy" placeholder="Date">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="lead">Electronic communication between the representative and the
+                            Court</label>
+                        Email address for eComms account (if the representative already uses eComms, please provide
+                        the existing eComms account email
+                        address)
+                        <input type="email" name="indeComms" id="indeComms">
+                    </div>
                 </div>
             </div>
         </div>

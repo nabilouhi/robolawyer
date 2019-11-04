@@ -2,28 +2,36 @@
     <section class="container">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header-title">
-                    Statement of alleged violation(s) of the Convention and/or Protocols and relevant arguments
-                </h4>
-                <p class="lead"></p>
+                <h4 class="card-header-title">Compliance with admisibility criteria laid down in Article 35 § 1 of
+                    the Convention </h4>
+
+                <p class="lead">
+                    For each complaint, please confirm that you have used the available effective remedies in the
+                    country
+                    concerned, including appeals,
+                    and also indicate the date when the final decision at domestic level was delivered and received, to
+                    show
+                    that you have complied with
+                    the six-month time-limit.
+                </p>
             </div>
             <div class="card-body">
-                <div class="form-group add-field">
-                    <div class="articles">
-                        <div class="article">
+                <div class="form-group">
+                    <div class="complaints">
+                        <div class="complaint">
                             <table width="100%">
                                 <tr>
-                                    <td width="30%" style="padding-right:10px;">
-                                        <label for="articleSelect"></label>
-                                        <select name="articleSelect[]" id="articleSelect" class="form-control">
-                                            <option disabled selected value> -- select an option -- </option>
-                                            <option value="Article1">Article1</option>
-                                            <option value="Article2">Article2</option>
-                                            <option value="Article3">Article3</option>
-                                        </select>
+                                    <td width="30%">
+                                        <label for="complainSelect">Complaint</label>
+                                        <input name="complainSelect[]" id="complainSelect" class="form-control">
                                     </td>
-                                    <td width="60%">
-                                        <label>Explanation</label>
+                                    <td width="30%">
+                                        <label>Date of Final Decision</label>
+                                        <input class="form-control datepicker" type="text" color="Info"
+                                            name="complaintDate" placeholder="Select date of final Decision" />
+                                    </td>
+                                    <td width="30%">
+                                        <label> Remedies Used</label>
                                         <textarea class="form-control" type="text"></textarea>
                                     </td>
                                 </tr>
@@ -31,18 +39,33 @@
                         </div>
                         <hr>
                     </div>
-                    <div class="btn btn-light add-more"><span>Add More <i class="fas fa-plus"></i></span></div>
+                    <div class="btn btn-light add-more-complaints"><span>Add More <i class="fas fa-plus"></i></span>
+                    </div>
                 </div>
-
+                <div class="form-group">
+                    Is or was there an appeal or remedy available to you which you have not used? <br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="appealAvailableYes" name="appealAvailable"
+                            value="Yes" required data-parsley-group="">
+                        <label class="custom-control-label" for="appealAvailableYes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="appealAvailableNo" name="appealAvailable"
+                            value="No" required data-parsley-group="">
+                        <label class="custom-control-label" for="appealAvailableNo">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="appealDescribe">Please state which appeal or remedy you have not used and explain why
+                        not</label>
+                    <textarea class="form-control" name="appealDescribe" id="appealDescribe"
+                        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
+                        rows="10"></textarea>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                    <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                </div>
             </div>
-            <div class="card-footer" align="center">
-                <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-                <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
-            </div>
-        </div>
     </section>
 </div>
-
-<script>
-
-</script>

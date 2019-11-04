@@ -1,47 +1,60 @@
 <div id="form-page-7" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger7">
-    <section class="container">
+    <section class="container form-section">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header-title">Compliance with admisibility criteria laid down in Article 35 § 1 of
-                    the Convention </h4>
+                <h4>International Proceedings</h4>
 
-                <p class="lead">
-                    For each complaint, please confirm that you have used the available effective remedies in the
-                    country
-                    concerned, including appeals,
-                    and also indicate the date when the final decision at domestic level was delivered and received, to
-                    show
-                    that you have complied with
-                    the six-month time-limit.
-                </p>
+
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <div class="complaints">
-                        <div class="complaint">
-                            <table width="100%">
-                                <tr>
-                                    <td width="30%">
-                                        <label for="complainSelect">Complaint</label>
-                                        <input name="complainSelect[]" id="complainSelect" class="form-control">
-                                    </td>
-                                    <td width="30%">
-                                        <label>Date of Final Decision</label>
-                                        <input class="form-control datepicker" type="text" color="Info"
-                                            name="complaintDate" placeholder="Select date of final Decision" />
-                                    </td>
-                                    <td width="30%">
-                                        <label> Remedies Used</label>
-                                        <textarea class="form-control" type="text"></textarea>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <hr>
+                    <label>Have you raised any of these complaints in another procedure of international investigation
+                        or
+                        settlement?</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="intInvestigationYes"
+                            name="intInvestigation" value="Yes" required data-parsley-group="">
+                        <label class="custom-control-label" for="intInvestigationYes">Yes</label>
                     </div>
-                    <div class="btn btn-light add-more-complaints"><span>Add More <i class="fas fa-plus"></i></span>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="intInvestigationNo" name="intInvestigation"
+                            value="No" required data-parsley-group="">
+                        <label class="custom-control-label" for="intInvestigationNo">No</label>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="appealDescribe">Please give a concise summary of the procedure (complaints submitted,
+                        name
+                        of the international body
+                        and date and nature of any decisions given)</label>
+                    <textarea class="form-control" name="intInvestigationDesc" id="intInvestigationDesc"
+                        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
+                        rows="10"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Do you (the applicant) currently have, or have you previously had, any other applications
+                        before the
+                        Court?</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="prevApplicationsYes"
+                            name="prevApplications" value="Yes" required data-parsley-group="">
+                        <label class="custom-control-label" for="prevApplicationsYes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" id="prevApplicationsNo" name="prevApplications"
+                            value="No" required data-parsley-group="">
+                        <label class="custom-control-label" for="prevApplicationsNo">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="appealDescribe">Please write the relevant application
+                        number(s) in the box below</label>
+                    <textarea class="form-control" name="intInvestigationDesc" id="intInvestigationDesc"
+                        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
+                        rows="10"></textarea>
+                </div>
+
                 <div class="card-footer" align="center">
                     <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
                     <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
