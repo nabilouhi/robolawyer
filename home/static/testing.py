@@ -13,7 +13,8 @@ file_extension = 'pdf'
 
 filled_out_file = filename + "-filled." + file_extension
 
-surname = sys.argv[1]
+# surname = 'sys.argv[1]'
+surname = 'aman'
 
 
 def main():
@@ -26,8 +27,10 @@ def main():
     packet.seek(0)
     new_pdf = PdfFileReader(packet)
 
+    # existing_pdf = PdfFileReader(
+    #     filename + '.' + file_extension, strict=False)
     existing_pdf = PdfFileReader(
-        filename + '.' + file_extension, strict=False)
+        './robolawyer-project/home/static/App_form.pdf')
     output = PdfFileWriter()
 
     totalPages = existing_pdf.numPages
@@ -42,4 +45,5 @@ def main():
 
 
 if __name__ == "__main__":
+    
     main()
