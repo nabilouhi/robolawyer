@@ -21,7 +21,7 @@
                                     directed. <emph>(Use CTRL+Click on the country name to select multipile
                                         countries)</label>
                                 <select multiple class="custom-select" size="15" name="involvedStates"
-                                    id="involvedStates" data-parsley-mincheck="1" data-parsley-group="page3" required>
+                                    id="involvedStates" data-parsley-mincheck="1" data-parsley-group="page1" required>
                                     <option value="ALB - Albania">ALB - Albania</option>
                                     <option value="AND - Andorra">AND - Andorra</option>
                                     <option value="ARM - Armenia">ARM - Armenia</option>
@@ -106,7 +106,11 @@
                                 <div class="form-group is-hidden concernOther">
                                     <br> <label class="">If not, does the act, decision or omission concern a close
                                         relative
-                                        who is unable to lodge an application himself or herself?</label>
+                                        who is unable to lodge an application himself or herself? <a href="#"
+                                            data-toggle="popover"
+                                            data-content="If your application does not concern you or a close relative, it may be declared inadmissible."
+                                            data-trigger="hover" data-placement="bottom"><span><i
+                                                    class="fas fa-question-circle"></i></span></a></label>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="concernOtherYes"
                                             name="concernOther" value="Yes">
@@ -148,7 +152,8 @@
                                 When did the act, decision or omission of which you complain take place?
                             </label>
                             <input type="text" class="datepicker form-control" id="decisionDate"
-                                data-date-format="dd/mm/yyyy" placeholder="Select Date">
+                                data-date-format="dd/mm/yyyy" placeholder="Select Date" required
+                                data-parsley-group="page1">
                         </li>
                     </ol><br>
                     <h5>
@@ -179,6 +184,9 @@
                             Does your application to the Court comply with the six-month rule?
                         </li>
                     </h5>
+                    <p>If there was no legal procedure capable of remedying your situation, is the date on which you
+                        lodged/intend to lodge your application with the Court no more than six months after the date on
+                        which the act or omission of which you complain occurred? </p>
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" class="custom-control-input" id="complySixYes" name="complySix" value="Yes">
                         <label class="custom-control-label" for="complySixYes">Yes</label>
@@ -188,6 +196,12 @@
                         <label class="custom-control-label" for="complySixNo">No</label>
                     </div>
                 </ol>
+                <div>
+                    <p>Thank you for completing the online questionnaire. You have given positive answers to all the
+                        questions. And You may proceed with filling in the Application Form </p>
+                    <p>We do advise you, where possible, to consult a competent legal adviser before submitting a formal
+                        application to the Court. </p>
+                </div>
             </div>
             <div class="card-footer" align="center">
                 <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>

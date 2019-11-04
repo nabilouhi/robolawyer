@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   stepperFormEl.addEventListener('show.bs-stepper', function(event) {
     if (event.detail.from === 0) {
-      if (onValidate('page1')) {
-        console.log('page1 passed');
-      } else {
-        alert('Please answer the mandatory fields first.');
-        event.preventDefault();
-      }
+      // if (onValidate('page1')) {
+      console.log('page1 passed');
+      // } else {
+      //   alert('Please answer the mandatory fields first.');
+      //   event.preventDefault();
+      // }
     } else if (event.detail.from === 1) {
       if (onValidate('page2')) {
         appVal = document.querySelector("input[name='applicantType']:checked")
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return true;
     } else {
       console.log('invalid');
-      return true;
+      return false;
     }
   }
 
@@ -109,6 +109,18 @@ var applicantTypeOption = function() {
 };
 
 applicantTypeOption();
+
+// anonymity Description
+$("input[name='applicantAnon']").change(function() {
+  result = this.value;
+
+  if (result === 'Yes') {
+    $('.applicantAnonReq').removeClass('is-hidden');
+  } else {
+    $('.applicantAnonReq').addClass('is-hidden');
+  }
+});
+// anonymity Description End
 
 // ___________________Page4
 
