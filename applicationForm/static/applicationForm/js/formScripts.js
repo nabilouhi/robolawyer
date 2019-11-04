@@ -283,3 +283,21 @@ $(document).ready(function() {
   }
 });
 // File upload script end
+
+// page 7 conditions for text area
+
+$("input[name='intInvestigation']").change(function() {
+  result = this.value;
+  if (result === 'Yes') $('.intInvestigation').removeClass('is-hidden');
+  else {
+    $('.intInvestigation').addClass('is-hidden');
+  }
+});
+
+$("input[name='prevApplications']").change(function() {
+  result = this.value;
+  if (result === 'Yes') $('.prevAppDesc').removeClass('is-hidden');
+  else {
+    $('.prevAppDesc').addClass('is-hidden');
+  }
+});
