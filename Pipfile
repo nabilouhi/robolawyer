@@ -16,7 +16,6 @@ dj-database-url = "*"
 whitenoise = "*"
 pdfrw = "*"
 reportlab = "*"
-stringio = "*"
 pypdf = "*"
 pypdf2 = "*"
 
