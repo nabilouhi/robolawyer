@@ -284,6 +284,24 @@ $(document).ready(function() {
 });
 // File upload script end
 
+// Page 6 condition for text area
+$("input[name='appealAvailable']").change(function() {
+  result = this.value;
+  if (result === 'Yes') $('.appealDescribe').removeClass('is-hidden');
+  else {
+    $('.appealDescribe').addClass('is-hidden');
+  }
+});
+
+// Page 6 condition for text area end
+$("input[name='intInvestigation']").change(function() {
+  result = this.value;
+  if (result === 'Yes') $('.intInvestigation').removeClass('is-hidden');
+  else {
+    $('.intInvestigation').addClass('is-hidden');
+  }
+});
+
 // page 7 conditions for text area
 
 $("input[name='intInvestigation']").change(function() {
