@@ -16,6 +16,19 @@ class FormPageView(TemplateView):
     template_name = "applicationForm/form.html"
 
 
+def formProcessing(request):
+    if request.method == 'POST':
+        form_dict = request.POST
+        pagesName = ['page1', 'page2', 'page3', 'page4', 'page5',
+                     'page6', 'page7', 'page8', 'page9', 'page10']
+        pages = []
+        for page in pagesName:
+            pages.append(dict((key, value) for (
+                key, value) in form_dict.items() if page in key.lower()))
+        print(pages)
+    return HttpResponse("it's working")
+
+
 def submittedForm(request):
     if request.method == 'POST':
         print("post value")
@@ -24,7 +37,6 @@ def submittedForm(request):
         response['Content-Disposition'] = "inline"
         filename = "generated.pdf"
         print(form_dict)
-
         html = render_to_string('result.html',  {
             'form_data': form_dict})
         font_config = FontConfiguration()

@@ -19,8 +19,8 @@
                                 application is
                                 directed. <emph>(Use CTRL+Click on the country name to select multipile
                                     countries)</label>
-                            <select multiple class="custom-select" size="15" name="involvedStates" id="involvedStates"
-                                data-parsley-mincheck="1" data-parsley-group="page1" required>
+                            <select multiple class="custom-select" size="15" name="page1[involvedStates]"
+                                id="involvedStates" data-parsley-mincheck="1" data-parsley-group="page1" required>
                                 <option value="ALB - Albania">ALB - Albania</option>
                                 <option value="AND - Andorra">AND - Andorra</option>
                                 <option value="ARM - Armenia">ARM - Armenia</option>
@@ -85,12 +85,12 @@
                                         </a></label>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="concernRightsYes"
-                                            name="concernRights" value="Yes">
+                                            name="page1[concernRights]" value="Yes">
                                         <label class="custom-control-label" for="concernRightsYes">Yes</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="concernRightsNo"
-                                            name="concernRights" value="No">
+                                            name="page1[concernRights]" value="No">
                                         <label class="custom-control-label" for="concernRightsNo">No</label>
                                     </div>
                                 </div>
@@ -170,7 +170,7 @@
                         <br>
                     </li>
                     <li>
-                       <h5> When was the final decision from the highest domestic court communicated to you?</h5>
+                        <h5> When was the final decision from the highest domestic court communicated to you?</h5>
                         <div class="form-group">
                             <input type="text" class="datepicker form-control" id="finalDecisionDate"
                                 data-date-format="dd/mm/yyyy" placeholder="Select Date" required

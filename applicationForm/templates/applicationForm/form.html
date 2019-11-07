@@ -103,7 +103,7 @@
         </div>
         <div class="bs-stepper-content">
             <form id="appForm" class="needs-validation" onSubmit="return false" method="POST"
-                action="{% url 'formSubmit' %}" novalidate>
+                action="{% url 'formProcessing' %}" novalidate>
                 {% csrf_token %}
                 {% include 'applicationForm/page1.html' %}
                 {% include 'applicationForm/page2.html' %}
