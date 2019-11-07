@@ -101,13 +101,13 @@
                                     </label>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="concernYouYes"
-                                            name="concernYou" value="Yes">
+                                            name="page1[concernYou]" value="Yes">
                                         <label class="custom-control-label" for="concernYouYes">
                                             You directly</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="concernYouNo"
-                                            name="concernYou" value="No">
+                                            name="page1[concernYou]" value="No">
                                         <label class="custom-control-label" for="concernYouNo">A close relative who is
                                             unable to lodge an application himself or herself <a href="#"
                                                 data-toggle="popover"
@@ -124,7 +124,7 @@
                         <label class="lead">
                             <h5> When did the act, decision or omission of which you complain take place?</h5>
                         </label>
-                        <input type="text" class="datepicker form-control" id="decisionDate"
+                        <input type="text" class="datepicker form-control" id="decisionDate" name="page1[decisionDate]"
                             data-date-format="dd/mm/yyyy" placeholder="Select Date" required data-parsley-group="page1">
                         <p><small>[COUNTRY NAME] ratified the European Convention on Human Rights and its Protocols
                                 on [RATIFICATION DATE]. If the act, decision or omission take place after
@@ -158,12 +158,12 @@
                             </tbody>
                         </table>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="courtCaseYes" name="courtCase"
+                            <input type="radio" class="custom-control-input" id="courtCaseYes" name="page1[courtCase]"
                                 value="Yes">
                             <label class="custom-control-label" for="courtCaseYes">Yes</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="courtCaseNo" name="courtCase"
+                            <input type="radio" class="custom-control-input" id="courtCaseNo" name="page1[courtCase]"
                                 value="No">
                             <label class="custom-control-label" for="courtCaseNo">No</label>
                         </div>
@@ -173,8 +173,8 @@
                         <h5> When was the final decision from the highest domestic court communicated to you?</h5>
                         <div class="form-group">
                             <input type="text" class="datepicker form-control" id="finalDecisionDate"
-                                data-date-format="dd/mm/yyyy" placeholder="Select Date" required
-                                data-parsley-group="page1">
+                                name="page1[finalDecisionDate]" data-date-format="dd/mm/yyyy" placeholder="Select Date"
+                                required data-parsley-group="page1">
                         </div>
                         <p>If there was no legal procedure capable of remedying your situation, is the date on which you
                             lodged/intend to lodge your application with the Court no more than six months after the
@@ -182,23 +182,17 @@
                             which the act or omission of which you complain occurred? </p>
 
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="complySixYes" name="complySix"
+                            <input type="radio" class="custom-control-input" id="complySixYes" name="page1[complySix]"
                                 value="Yes">
                             <label class="custom-control-label" for="complySixYes">Yes</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="complySixNo" name="complySix"
+                            <input type="radio" class="custom-control-input" id="complySixNo" name="page1[complySix]"
                                 value="No">
                             <label class="custom-control-label" for="complySixNo">No</label>
                         </div>
                     </li>
                 </ol>
-                <!-- <div>
-                    <p>Thank you for completing the online questionnaire. You have given positive answers to all the
-                        questions. And You may proceed with filling in the Application Form </p>
-                    <p>We do advise you, where possible, to consult a competent legal adviser before submitting a formal
-                        application to the Court. </p>
-                </div> -->
             </div>
             <div class="card-footer" align="center">
                 <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>

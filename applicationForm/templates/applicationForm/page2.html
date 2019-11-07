@@ -31,66 +31,66 @@
             <div class="card-body">
                 <div class="form-group">
                     <label>Surname</label>
-                    <input class="form-control" type="text" placeholder="Enter Surname" name="indSurname"
+                    <input class="form-control" type="text" placeholder="Enter Surname" name="page2[indSurname]"
                         data-parsley-maxlength="10" id="indSurname" required data-parsley-group="page2a">
                 </div>
                 <div class="form-group">
                     <label>First Name(s)</label>
-                    <input class="form-control" type="text" placeholder="Enter First Name" name="indFirstName"
+                    <input class="form-control" type="text" placeholder="Enter First Name" name="page2[indFirstName]"
                         id="indFirstName" required data-parsley-group="page2a">
                 </div>
                 <div class="form-group">
                     <label>Date of Birth</label>
                     <input type="text" class="datepicker form-control" id="birthDate" data-date-format="dd/mm/yyyy"
-                        placeholder="Enter Date of Birth">
+                        placeholder="Enter Date of Birth" name="page2[birthDate]">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Place of Birth</label>
-                    <input class="form-control" name="indPob" id="indPob">
+                    <input class="form-control" name="page2[indPob]" id="indPob">
                 </div>
                 <div class="form-group">
                     <label>Nationality</label>
-                    <input class="form-control" name="indNationality" id="indNationality">
+                    <input class="form-control" name="page2[indNationality]" id="indNationality">
                 </div>
                 <fieldset class="form-group">
                     <label class="lead">Address</label>
 
                     <label>Address Line 1</label>
-                    <input class="form-control" name="indAddress1" id="indAddress1">
+                    <input class="form-control" name="page2[indAddress1]" id="indAddress1">
                     <label>Address Line 2</label>
-                    <input class="form-control" name="indAddress2" id="indAddress2">
+                    <input class="form-control" name="page2[indAddress2]" id="indAddress2">
                     <label>City</label>
-                    <input class="form-control" name="indCity" id="indCity">
+                    <input class="form-control" name="page2[indCity]" id="indCity">
                     <label>State/Province</label>
-                    <input class="form-control" name="indState" id="indState">
+                    <input class="form-control" name="page2[indState]" id="indState">
                     <label>Country</label>
-                    <input class="form-control" name="indCountry" id="indCountry">
+                    <input class="form-control" name="page2[indCountry]" id="indCountry">
                     <label>Zip/Postal Code</label>
-                    <input class="form-control" name="indPostal" id="indPostal">
+                    <input class="form-control" name="page2[indPostal]" id="indPostal">
                 </fieldset>
                 <div class="form-group">
                     <label>Telephone Number (select country code)</label>
-                    <input type="tel" name="indPhone" id="indPhone" class="form-control phoneInput" required
+                    <input type="tel" name="page2[indPhone]" id="indPhone" class="form-control phoneInput" required
                         data-parsley-group="page2a">
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="email" name="indEmail" placeholder="Email" id="indEmail"
+                    <input class="form-control" type="email" name="page2[indEmail]" placeholder="Email" id="indEmail"
                         data-parsley-type="email" data-parsley-group="page2a">
                 </div>
                 <div class="form-group">
                     <label>Sex</label>
                     <div class="custom-control custom-radio custom-control">
-                        <input type="radio" class="custom-control-input" id="applicantSexMale" name="applicantSex"
-                            value="Male">
+                        <input type="radio" class="custom-control-input" id="applicantSexMale"
+                            name="page2[applicantSex]" value="Male">
                         <label class="custom-control-label" for="applicantSexMale">Male</label>
                     </div>
                     <div class="custom-control custom-radio custom-control">
-                        <input type="radio" class="custom-control-input" id="applicantSexFemale" name="applicantSex"
-                            value="Female">
+                        <input type="radio" class="custom-control-input" id="applicantSexFemale"
+                            name="page2[applicantSex]" value="Female">
                         <label class="custom-control-label" for="applicantSexFemale">Female</label>
                     </div>
                 </div>
@@ -109,19 +109,19 @@
                     <label for="">I want to keep my identity anonymous in public documents published by the
                         court</label>
                     <div class="custom-control custom-radio custom-control">
-                        <input type="radio" class="custom-control-input" id="applicantAnonYes" name="applicantAnon"
-                            value="Yes">
+                        <input type="radio" class="custom-control-input" id="applicantAnonYes"
+                            name="page2[applicantAnon]" value="Yes">
                         <label class="custom-control-label" for="applicantAnonYes">Yes</label>
                     </div>
                     <div class="custom-control custom-radio custom-control">
-                        <input type="radio" class="custom-control-input" id="applicantAnonNo" name="applicantAnon"
-                            value="No">
+                        <input type="radio" class="custom-control-input" id="applicantAnonNo"
+                            name="page2[applicantAnon]" value="No">
                         <label class="custom-control-label" for="applicantAnonNo">No</label>
                     </div>
                     <div class="form-group applicantAnonReq is-hidden">
                         <label for="">Please provide reasons for your appeal for this request</label>
                         <textarea class="form-control" type="text" rows=2 placeholder="Provide a detailed explanation"
-                            name="applicantAnonExp"></textarea>
+                            name="page2[applicantAnonExp]"></textarea>
                     </div>
                 </div>
             </div>
@@ -139,23 +139,25 @@
                 <div class="form-group">
                     <label>Name</label>
                     <textarea class="form-control" type="text" rows=2 placeholder="Enter the Organisation's Name"
-                        name="orgName" required data-parsley-group="page2b"></textarea>
+                        name="page2[orgName]" required data-parsley-group="page2b"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Identification number (if any)</label>
-                    <input class="form-control" type="text" placeholder="Enter Identification Number" name="orgID">
+                    <input class="form-control" type="text" placeholder="Enter Identification Number"
+                        name="page2[orgID]">
                 </div>
 
                 <div class="form-group">
                     <label>Date of registration or incorporation (if any)</label>
-                    <input class="form-control datepicker" type="text" id="orgDate" color="Info" name="orgDate"
+                    <input class="form-control datepicker" type="text" id="orgDate" color="Info" name="page2[orgDate]"
                         placeholder="Select date of registration" />
                 </div>
 
 
                 <div class="form-group">
                     <label>Activity</label>
-                    <input class="form-control" type="text" name="orgActivity" required data-parsley-group="page2b">
+                    <input class="form-control" type="text" name="page2[orgActivity]" required
+                        data-parsley-group="page2b">
                 </div>
 
 
@@ -163,28 +165,28 @@
                     <label>Registered address</label>
 
                     <label>Address Line 1</label>
-                    <input class="form-control" name="orgAddress1" id="orgAddress1">
+                    <input class="form-control" name="page2[orgAddress1]" id="orgAddress1">
                     <label>Address Line 2</label>
-                    <input class="form-control" name="orgAddress2" id="orgAddress2">
+                    <input class="form-control" name="page2[orgAddress2]" id="orgAddress2">
                     <label>City</label>
-                    <input class="form-control" name="orgCity" id="orgCity">
+                    <input class="form-control" name="page2[orgCity]" id="orgCity">
                     <label>State/Province</label>
-                    <input class="form-control" name="orgState" id="orgState">
+                    <input class="form-control" name="page2[orgState]" id="orgState">
                     <label>Country</label>
-                    <input class="form-control" name="orgCountry" id="orgCountry">
+                    <input class="form-control" name="page2[orgCountry]" id="orgCountry">
                     <label>Zip/Postal Code</label>
-                    <input class="form-control" name="orgPostal" id="orgPostal">
+                    <input class="form-control" name="page2[orgPostal]" id="orgPostal">
                 </fieldset>
 
                 <div class="form-group">
                     <label for="orgPhone">Telephone (select country code)</label>
-                    <input class="form-control phoneInput" type="tel" id="orgPhone" name="orgPhone" required
+                    <input class="form-control phoneInput" type="tel" id="orgPhone" name="page2[orgPhone]" required
                         data-parsley-group="page2b">
                 </div>
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="email" name="orgEmail" id="orgEmail" placeholder="Email"
+                    <input class="form-control" type="email" name="page2[orgEmail]" id="orgEmail" placeholder="Email"
                         data-parsley-type="email" data-parsley-group="page2b">
                 </div>
             </div>
