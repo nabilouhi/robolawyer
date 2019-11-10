@@ -33,19 +33,21 @@
                         </label>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="signatureDeclarationApplicant"
-                                name="signatureDeclaration" value="Applicant" required data-parsley-group="page1">
+                                name="page9[signatureDeclaration]" value="Applicant" required
+                                data-parsley-group="page1">
                             <label class="custom-control-label" for="signatureDeclarationApplicant">Applicant(s)</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="signatureDeclarationRepresentative"
-                                name="signatureDeclaration" value="Representative" required data-parsley-group="page1">
+                                name="page9[signatureDeclaration]" value="Representative" required
+                                data-parsley-group="page1">
                             <label class="custom-control-label"
                                 for="signatureDeclarationRepresentative">Representative(s)</label>
                         </div>
                         <div class="custom-file">
                             <label class="custom-file-label" for="declareSignature">Upload an image file of your
                                 signature</label>
-                            <input class="custom-file-input files" type="file" name="declareSignature[]"
+                            <input class="custom-file-input files" type="file" name="page9[declareSignature][]"
                                 id="declareSignature">
                         </div>
                     </div>
@@ -58,11 +60,11 @@
                                 the Court will correspond. Where the applicant is represented, the Court will correspond
                                 only with the representative (lawyer or nonlawyer).</p>
                             <label for="confirmationApplicantName">Name of applicant</label>
-                            <input class="form-control" type="text" name="confirmationApplicantName"
+                            <input class="form-control" type="text" name="page9[confirmationApplicantName]"
                                 id="confirmationApplicantName">
 
                             <label for="confirmationApplicantAddress">Address of applicant</label>
-                            <input class="form-control" type="text" name="confirmationApplicantAddress"
+                            <input class="form-control" type="text" name="page9[confirmationApplicantAddress]"
                                 id="confirmationApplicantAddress">
                         </div>
                         <div class="is-hidden" id="correspondentOptionRepresentative">
@@ -73,17 +75,16 @@
                                 the Court will correspond. Where the applicant is represented, the Court will correspond
                                 only with the representative (lawyer or nonlawyer).</p>
                             <label for="confirmationRepresentativeName">Name of Representative</label>
-                            <input class="form-control" type="text" name="confirmationRepresentativeName"
+                            <input class="form-control" type="text" name="page9[confirmationRepresentativeName]"
                                 id="confirmationRepresentativeName">
 
                             <label for="confirmationRepresentativeAddress">Address of Representative</label>
-                            <input class="form-control" type="text" name="confirmationRepresentativeAddress"
+                            <input class="form-control" type="text" name="page9[confirmationRepresentativeAddress]"
                                 id="confirmationRepresentativeAddress">
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <div class="card-footer">
