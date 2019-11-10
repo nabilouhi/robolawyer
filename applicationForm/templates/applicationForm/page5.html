@@ -17,7 +17,7 @@
                                 <tr>
                                     <td width="30%" style="padding-right:10px;">
                                         <label for="articleSelect"></label>
-                                        <select name="articleSelect[]" id="articleSelect" class="form-control">
+                                        <select name="page5[articleSelect][]" class="form-control articleSelect">
                                             <option disabled selected value> -- Select relevant article -- </option>
                                             <option value="1"> (Art. 1) Obligation to respect human rights </option>
                                             <option value="2"> (Art. 2) Right to life </option>
@@ -106,7 +106,8 @@
                                     </td>
                                     <td width="60%">
                                         <label>Explanation</label>
-                                        <textarea class="form-control" type="text"></textarea>
+                                        <textarea class="form-control articleExplanation" name=page5[articleExplanation]
+                                            type="text"></textarea>
                                     </td>
                                 </tr>
                             </table>

@@ -94,14 +94,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 var applicantTypeOption = function() {
-  $("input[name='applicantType']").change(function() {
+  $("input[name='page2[applicantType]']").change(function() {
     result = this.value;
+    console.log(result);
     if (result === 'Individual') {
       $('#indBeginner').removeClass('is-hidden');
       $('#orgBeginner').addClass('is-hidden');
+      $('#indRepresentative').removeClass('is-hidden');
+      $('#orgRepresentative').addClass('is-hidden');
     } else if (result === 'Organisation') {
       $('#orgBeginner').removeClass('is-hidden');
       $('#indBeginner').addClass('is-hidden');
+      $('#orgRepresentative').removeClass('is-hidden');
+      $('#indRepresentative').addClass('is-hidden');
     } else {
       console.log('check for bug');
     }
@@ -111,7 +116,7 @@ var applicantTypeOption = function() {
 applicantTypeOption();
 
 // anonymity Description
-$("input[name='applicantAnon']").change(function() {
+$("input[name='page2[applicantAnon]']").change(function() {
   result = this.value;
 
   if (result === 'Yes') {
@@ -124,7 +129,7 @@ $("input[name='applicantAnon']").change(function() {
 
 // ___________________Page4
 
-$("input[name='representativeType']").change(function() {
+$("input[name='page3[indRepresentativeType]']").change(function() {
   result = this.value;
   console.log(result);
   if (result === 'lawyer') {
@@ -139,19 +144,23 @@ $("input[name='representativeType']").change(function() {
     $('#selfRep').removeClass('is-hidden');
     $('#nonLawyerRep').addClass('is-hidden');
     $('#lawyerRep').addClass('is-hidden');
+    $('.authority').addClass('is-hidden');
   } else {
     console.log('check for bugs');
   }
 });
 
-$("input[name='orgRepresentativeType']").change(function() {
+$("input[name='page3[orgRepresentativeType]']").change(function() {
   result = this.value;
+  console.log(result);
   if (result === 'lawyer') {
+    $('#orgLawyerRep').removeClass('is-hidden');
     $('#orgNonLawyerRep').addClass('is-hidden');
-    $('#lawyerRep').removeAttr('is-hidden');
-  } else if (result === 'non-lawyer') {
-    $('#lawyerRep').addClass('is-hidden');
+    $('.orgAuthority').removeClass('is-hidden');
+  } else if (result === 'orgOfficial') {
     $('#orgNonLawyerRep').removeClass('is-hidden');
+    $('#orgLawyerRep').addClass('is-hidden');
+    $('.orgAuthority').removeClass('is-hidden');
   } else {
     console.log('check for bugs');
   }
