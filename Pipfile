@@ -18,6 +18,7 @@ pdfrw = "*"
 reportlab = "*"
 pypdf = "*"
 pypdf2 = "*"
+comtypes = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,5 +1,3 @@
-
-
 from django.shortcuts import render
 from django.shortcuts import render, render_to_response
 from django.views.generic import TemplateView
@@ -9,6 +7,7 @@ from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.http import HttpResponse
 from django.template.loader import render_to_string
+from .dataPreparation.prepareResult import PrepareResult
 # Create your views here.
 
 
@@ -25,7 +24,10 @@ def formProcessing(request):
         for page in pagesName:
             pages.append(dict((key, value) for (
                 key, value) in form_dict.items() if page in key.lower()))
-        print(pages)
+        for page in pages:
+            print(page)
+        prepareResult = PrepareResult(pages)
+        prepareResult.main()
     return HttpResponse("it's working")
 
 
