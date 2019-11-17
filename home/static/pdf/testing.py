@@ -1,10 +1,31 @@
 from pathlib import Path
 import requests
+from tableaudocumentapi import Workbook
+import os
+import sys
+
 filename = Path('metadata.pdf')
 url = 'https://www.echr.coe.int/Documents/Application_Form_ENG.pdf'
 response = requests.get(url)
 filename.write_bytes(response.content)
 
+
+sourceWB = Workbook(file_name)
+
+sourceWB.save_as(os.path.join(os.path.dirname(filename)))
+
+
+def file_save_as(self):
+    fout = asksaveasfilename(defaultextension='.pdf')
+    try:
+        with open(fout, 'w') as output:
+            for x in self.entries:
+                output.write(x.get())
+    except FileNotFoundError:
+        print("Cancelled save or error in filename")
+
+
+file_save_as()
 # import sys
 # import os
 # import pathlib

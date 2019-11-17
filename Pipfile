@@ -19,6 +19,8 @@ reportlab = "*"
 pypdf = "*"
 pypdf2 = "*"
 comtypes = "*"
+djangorestframework = "*"
+csvimporter = "*"
 
 [requires]
 python_version = "3.7"
