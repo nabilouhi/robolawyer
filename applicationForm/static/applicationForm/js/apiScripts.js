@@ -1,5 +1,18 @@
-var echrUrl = 'http://localhost:8000/api/echr/';
-var courtUrl = 'http://localhost:8000/api/court/';
+function UrlExists(url) {
+  var http = new XMLHttpRequest();
+  http.open('HEAD', url, false);
+  http.send();
+  if (http.status != 404) baseUrl = url;
+  else {
+    baseUrl = 'http://localhost:8000/';
+  }
+  return baseUrl;
+}
+
+baseUrl = 'https://robo2lawyer.herokuapp.com/';
+baseUrl = UrlExists(baseUrl);
+var echrUrl = baseUrl + 'api/echr/';
+var courtUrl = baseUrl + 'api/court/';
 
 var echrDiv = document.getElementById('echrDetails');
 var echrRat = function() {
