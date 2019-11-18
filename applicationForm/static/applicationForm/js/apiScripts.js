@@ -101,5 +101,5 @@ var courtCountry = function() {
   });
 };
 
-url = 'https://robo2lawyer.herokuapp.com/';
+url = 'https://robo2lawyer.herokuapp.com/api/';
 UrlExists(url);
