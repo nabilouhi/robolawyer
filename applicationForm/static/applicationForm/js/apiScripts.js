@@ -2,20 +2,24 @@ function UrlExists(url) {
   var http = new XMLHttpRequest();
   http.open('HEAD', url, false);
   http.send();
-  if (http.status != 404) baseUrl = url;
-  else {
-    baseUrl = 'http://localhost:8000/';
+  if (http.status != 404) {
+    baseUrl = url;
+    echrRat();
+    courtCountry();
+  } else {
+    baseUrl = 'http://localhost:8000/api/';
+    echrRat();
+    courtCountry();
   }
-  return baseUrl;
 }
 
-baseUrl = 'https://robo2lawyer.herokuapp.com/';
-baseUrl = UrlExists(baseUrl);
-var echrUrl = baseUrl + 'api/echr/';
-var courtUrl = baseUrl + 'api/court/';
-
-var echrDiv = document.getElementById('echrDetails');
 var echrRat = function() {
+  // baseUrl = UrlExists(baseUrl);
+  // console.log(baseUrl);
+  var echrUrl = baseUrl + 'api/echr/';
+  var courtUrl = baseUrl + 'api/court/';
+
+  var echrDiv = document.getElementById('echrDetails');
   $('#involvedStates').on('change', function() {
     currentSelected = $(this).val();
     while (echrDiv.hasChildNodes()) {
@@ -66,10 +70,7 @@ var courtCountry = function() {
       url: courtUrl
     }).then(function(response) {
       data = response.data;
-      console.log(data);
       courtElement = document.getElementById('courtData');
-      // proceedingElement = document.getElementById('proceedingType');
-      // courtElement = document.getElementById('courtName');
       currentSelected.forEach(country => {
         for (var i = 0; i < data.length; i++) {
           countryArray = country.split('-');
@@ -98,5 +99,5 @@ var courtCountry = function() {
   });
 };
 
-echrRat();
-courtCountry();
+url = 'https://robo2lawyer.herokuapp.com/';
+UrlExists(url);
