@@ -4,10 +4,12 @@ function UrlExists(url) {
   http.send();
   if (http.status != 404) {
     baseUrl = url;
+    console.log(url);
     echrRat();
     courtCountry();
   } else {
     baseUrl = 'http://localhost:8000/api/';
+    console.log(url);
     echrRat();
     courtCountry();
   }
