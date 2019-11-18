@@ -21,6 +21,7 @@ pypdf2 = "*"
 comtypes = "*"
 djangorestframework = "*"
 csvimporter = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.7"

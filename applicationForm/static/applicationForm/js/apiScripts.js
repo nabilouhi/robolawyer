@@ -1,25 +1,25 @@
 function UrlExists(url) {
   var http = new XMLHttpRequest();
   http.open('HEAD', url, false);
+  http.withCredentials = true;
+  http.setRequestHeader('Content-Type', 'application/json');
   http.send();
-  if (http.status != 404) {
+  console.log('it reached here');
+  if (http.status == 200) {
     baseUrl = url;
-    console.log(url);
-    echrRat();
-    courtCountry();
+    console.log(baseUrl);
+    echrRat(baseUrl);
+    courtCountry(baseUrl);
   } else {
-    baseUrl = 'http://localhost:8000/api/';
+    baseUrl = 'http://localhost:8000/';
     console.log(url);
-    echrRat();
-    courtCountry();
+    echrRat(url);
+    courtCountry(url);
   }
 }
 
-var echrRat = function() {
-  // baseUrl = UrlExists(baseUrl);
-  // console.log(baseUrl);
+var echrRat = function(baseUrl) {
   var echrUrl = baseUrl + 'api/echr/';
-  var courtUrl = baseUrl + 'api/court/';
 
   var echrDiv = document.getElementById('echrDetails');
   $('#involvedStates').on('change', function() {
@@ -61,7 +61,8 @@ var echrRat = function() {
   });
 };
 
-var courtCountry = function() {
+var courtCountry = function(baseUrl) {
+  var courtUrl = baseUrl + 'api/court/';
   $('#involvedStates').on('change', function() {
     currentSelected = $(this).val();
     while (courtData.hasChildNodes()) {
@@ -69,7 +70,8 @@ var courtCountry = function() {
     }
     axios({
       method: 'get',
-      url: courtUrl
+      url: courtUrl,
+      crossorigin: true
     }).then(function(response) {
       data = response.data;
       courtElement = document.getElementById('courtData');
@@ -101,5 +103,6 @@ var courtCountry = function() {
   });
 };
 
-url = 'https://robo2lawyer.herokuapp.com/api/';
+url = 'https://robo2lawyer.herokuapp.com/';
+// url = 'http://localhost:8000/';
 UrlExists(url);
