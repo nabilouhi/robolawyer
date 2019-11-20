@@ -136,33 +136,31 @@ $("input[name='page3[indRepresentativeType]']").change(function() {
     $('#lawyerRep').removeClass('is-hidden');
     $('#nonLawyerRep').addClass('is-hidden');
     $('#selfRep').addClass('is-hidden');
+    $('.indAuthority').removeClass('is-hidden');
   } else if (result === 'non-lawyer') {
     $('#nonLawyerRep').removeClass('is-hidden');
     $('#lawyerRep').addClass('is-hidden');
     $('#selfRep').addClass('is-hidden');
+    $('.indAuthority').removeClass('is-hidden');
   } else if (result === 'selfRepresented') {
     $('#selfRep').removeClass('is-hidden');
     $('#nonLawyerRep').addClass('is-hidden');
     $('#lawyerRep').addClass('is-hidden');
-    $('.authority').addClass('is-hidden');
+    $('.indAuthority').addClass('is-hidden');
   } else {
     console.log('check for bugs');
   }
 });
 
-$("input[name='page3[orgRepresentativeType]']").change(function() {
-  result = this.value;
+$("input[name='page3[orgRepresentativeType]']").click(function() {
+  result = $(this).is(':checked');
   console.log(result);
-  if (result === 'lawyer') {
+  if (result) {
     $('#orgLawyerRep').removeClass('is-hidden');
-    $('#orgNonLawyerRep').addClass('is-hidden');
-    $('.orgAuthority').removeClass('is-hidden');
-  } else if (result === 'orgOfficial') {
-    $('#orgNonLawyerRep').removeClass('is-hidden');
-    $('#orgLawyerRep').addClass('is-hidden');
     $('.orgAuthority').removeClass('is-hidden');
   } else {
-    console.log('check for bugs');
+    $('#orgLawyerRep').addClass('is-hidden');
+    $('.orgAuthority').addClass('is-hidden');
   }
 });
 
@@ -328,3 +326,15 @@ $("input[name='prevApplications']").change(function() {
     $('.prevAppDesc').addClass('is-hidden');
   }
 });
+
+
+function textCounter(field,field2,maxlimit)
+{
+ var countfield = document.getElementById(field2);
+ if ( field.value.length > maxlimit ) {
+  field.value = field.value.substring( 0, maxlimit );
+  return false;
+ } else {
+  countfield.value = maxlimit - field.value.length;
+ }
+}

@@ -18,16 +18,19 @@
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" class="custom-control-input" id="representativeNL"
                             name="page3[indRepresentativeType]" value="non-lawyer">
-                        <label class="custom-control-label" for="representativeNL">Non-Lawyer <a href="#"
-                                data-toggle="popover" data-content="Some applicants may choose not to, or may not be able to, take part in the proceedings themselves for reasons such as health or incapacity. They may be represented by a person without legal training, for example a parent representing a child, or a guardian or family member or partner representing someone whose practical or medical circumstances make it difficult to take part in the proceedings (e.g. an applicant who is in hospital or prison). The representative must indicate in what capacity he or she is representing the applicant or his or her relationship with the applicant, together with his or her identity and contact details. data-trigger="hover" data-placement="bottom"><span><i
+                        <label class="custom-control-label" for="representativeNL">Non-Lawyer <a href="javascript://"
+                                data-toggle="popover"
+                                data-content="Some applicants may choose not to, or may not be able to, take part in the proceedings themselves for reasons such as health or incapacity. They may be represented by a person without legal training, for example a parent representing a child, or a guardian or family member or partner representing someone whose practical or medical circumstances make it difficult to take part in the proceedings (e.g. an applicant who is in hospital or prison). The representative must indicate in what capacity he or she is representing the applicant or his or her relationship with the applicant, together with his or her identity and contact details."
+                                data-trigger="click" data-placement="bottom"><span><i
                                         class="fas fa-question-circle"></i></span></a></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
                         <input class="custom-control-input" id="representativeL" type="radio"
                             name="page3[indRepresentativeType]" value="lawyer">
-                        <label class="custom-control-label" for="representativeL">Lawyer <a href="#"
-                                data-toggle="popover" data-content="If the application is lodged by a lawyer. An applicant does not have to instruct a lawyer at the stage of lodging the application, although it may be advisable to do so. The applicant is informed if the case reaches a stage of the proceedings where representation by a lawyer is required. At this point – after a decision by the Court to give notice of the application to the Government concerned for written observations – the applicant may be eligible for free legal aid if he or she has insufficient means to pay a lawyer’s fees and if the grant of such aid is considered necessary for the proper conduct of the case. Information is sent to applicants about this at the relevant time."
-                                data-trigger="hover" data-placement="bottom"><span><i
+                        <label class="custom-control-label" for="representativeL">Lawyer <a href="javascript://"
+                                data-toggle="popover"
+                                data-content="If the application is lodged by a lawyer. An applicant does not have to instruct a lawyer at the stage of lodging the application, although it may be advisable to do so. The applicant is informed if the case reaches a stage of the proceedings where representation by a lawyer is required. At this point – after a decision by the Court to give notice of the application to the Government concerned for written observations – the applicant may be eligible for free legal aid if he or she has insufficient means to pay a lawyer’s fees and if the grant of such aid is considered necessary for the proper conduct of the case. Information is sent to applicants about this at the relevant time."
+                                data-trigger="click" data-placement="bottom"><span><i
                                         class="fas fa-question-circle"></i></span></a></label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
@@ -118,7 +121,28 @@
                     </div>
                 </div>
                 <div class="indAuthority is-hidden">
-                    <label class="lead">Authority</label>
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Authority <a href="javascript://" data-toggle="popover"
+                                data-content="If an applicant is represented by a lawyer or other person, both the applicant and the designated representative – whose identifying details must be indicated on the application form - must sign the authority section on the application form. The applicant’s signature provides the necessary proof that the representative has been authorised by the applicant to act on the latter’s behalf; the representative’s signature, which is a new requirement, provides confirmation that this person has in fact accepted to act for the applicant. Where the applicant is an organisation, it is the official or officer of that organisation and the lawyer who sign.  In the absence of such signature, the Registry may continue to correspond only with the applicant due to lack of proof that the representative is in fact involved in the case."
+                                data-trigger="click" data-placement="bottom"><span><i
+                                        class="fas fa-question-circle"></i></span></a></h4>
+                        <p class="form-text">An applicant must sign the authority empowering the representative to act
+                            on his
+                            or her behalf, unless, for example, the applicant is a child or lacks legal capacity and is
+                            unable to sign. If a representative who is not a lawyer has instructed a lawyer on behalf of
+                            an applicant who is unable to sign, the representative should sign the authority on the
+                            applicant’s behalf.
+                            A separate authority form will not be accepted unless adequate explanations are provided as
+                            to the existence of insurmountable practical obstacles in signing the authority section on
+                            the form or it is used at a later stage to appoint a lawyer/representative after the
+                            application has been lodged with the Court.
+                        </p>
+                        <p class="alert alert-danger" role="alert">Please Note: This section must contain original
+                            signatures added
+                            after the form
+                            has been
+                            printed out</p>
+                    </div>
                     <p>The applicant must authorise any representative to act on his or her behalf by signing
                         the
                         first box below; the designated
@@ -130,7 +154,10 @@
                             <input class="custom-file-input" type="file" name="page3[indAuthoritySignatureApplicant]"
                                 id="indAuthoritySignatureApplicant">
 
-                            <label>Date</label>
+                            <label>Date <a href="javascript://" data-toggle="popover"
+                                    data-content="The date required is the date of signature by the individual applicant and his or her representative."
+                                    data-trigger="click" data-placement="bottom"><span><i
+                                            class="fas fa-question-circle"></i></span></a></label>
                             <input type="text" class="datepicker form-control" id="indAuthorityDateApplicant"
                                 name="page3[indAuthorityDateApplicant]" data-date-format="dd/mm/yyyy"
                                 placeholder="Date">
@@ -164,7 +191,7 @@
                         provide
                         the existing eComms account email
                         address)
-                        <input type="email" name="page3[indIndeComms]" id="indIndeComms">
+                        <input class="form-control" type="email" name="page3[indIndeComms]" id="indIndeComms">
                     </div>
                 </div>
                 <div class="section is-hidden" id="selfRep">
@@ -183,7 +210,10 @@
         <div class="card">
             <div class="card-header">
                 <h4>
-                    C. Representative(s) of the applicant organisatio
+                    C. Representative(s) of the applicant organisation <a href="javascript://" data-toggle="popover"
+                        data-content="A legal person (which includes a company, non-governmental organisation or association) that applies to the Court must do so through a representative of that legal person and who provides contact details and explains his or her capacity or relationship with the legal person. This official representative might be the person specifically designated by the board, or council of administration for that purpose, or the person who is authorised generally under domestic law or the organisation’s articles to act on its behalf. It may be that a legal person’s representative is also a lawyer or legal officer and has the capacity to act additionally as legal representative. Both parts of the application form concerning representation must still be filled in, and requisite documentary proof provided of authority to represent the legal person must be attached."
+                        data-trigger="click" data-placement="bottom"><span><i
+                                class="fas fa-question-circle"></i></span></a>
                 </h4>
                 <p class="lead">Where the applicant is an organisation, it must be represented before the Court by a
                     person entitled
@@ -191,20 +221,20 @@
                     name (e.g. a duly authorised director or official).</p>
             </div>
             <div class="card-body">
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Representative Type</label>
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" class="custom-control-input" id="orgNLRepresentative"
                             name="page3[orgRepresentativeType]" value="orgOfficial">
                         <label class="custom-control-label" for="orgNLRepresentative">Organisation Official </label>
+                        <small>Proof must be supplied with the application form that the representative has authority to
+                            act on behalf of the legal person, for example an extract from the Chamber of Commerce
+                            register or minutes of the governing body.</small>
                     </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input class="custom-control-input" id="orgLRepresentative" type="radio"
-                            name="page3[orgRepresentativeType]" value="lawyer">
-                        <label class="custom-control-label" for="orgLRepresentative">Lawyer</label>
-                    </div>
-                </div>
-                <div class="section is-hidden" id="orgNonLawyerRep">
+                    
+                </div> -->
+                <div class="section" id="orgNonLawyerRep">
+                    <label class="lead">Organisation Official</label>
                     <div class="form-group">
                         <label>Capacity/relationship/function (please provide proof)</label>
                         <input class="form-control" type="text" name="page3[orgnlCapacity]"
@@ -245,7 +275,15 @@
                         <input class="form-control" type="email" name="page3[orgnlEmail]" placeholder="Email"
                             id="orgnlEmail" required>
                     </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input class="custom-control-input" id="orgLRepresentative" type="checkbox"
+                                name="page3[orgRepresentativeType]" value="lawyer">
+                            <label class="custom-control-label" for="orgLRepresentative">Lawyer</label>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="section is-hidden" id="orgLawyerRep">
                     <div class="form-group">
                         <label>Surname</label>
@@ -283,12 +321,15 @@
                     </div>
                 </div>
                 <div class="orgAuthority is-hidden">
-                    <label class="lead">Authority</label>
-                    <p>The representative of the applicant organisation must authorise any lawyer to act on its
-                        behalf
-                        by
-                        signing the first box below; the
-                        lawyer must indicate his or her acceptance by signing the second box below.</p>
+                    <div class="alert alert-success">
+                        <h4 class="alert-heading">Authority </h4>
+
+                        <p>The representative of the applicant organisation must authorise any lawyer to act on its
+                            behalf
+                            by
+                            signing the first box below; the
+                            lawyer must indicate his or her acceptance by signing the second box below.</p>
+                    </div>
                     <p>
                         I hereby authorise the person indicated in section D.2 above to represent the organisation
                         in
@@ -304,7 +345,10 @@
                             <input class="custom-file-input" type="file" name="page3[orgAuthoritySignatureApplicant]"
                                 id="orgAuthoritySignatureApplicant">
 
-                            <label>Date</label>
+                            <label>Date <a href="javascript://" data-toggle="popover"
+                                    data-content="The date required is the date of signature by the individual applicant and his or her representative."
+                                    data-trigger="click" data-placement="bottom"><span><i
+                                            class="fas fa-question-circle"></i></span></a></label>
                             <input type="text" class="datepicker form-control" id="orgAuthorityDateApplicant"
                                 data-date-format="dd/mm/yyyy" placeholder="Date"
                                 name="page3[orgAuthorityDateApplicant]">
@@ -346,7 +390,7 @@
                         Email address for eComms account (if the representative already uses eComms, please provide
                         the existing eComms account email
                         address)
-                        <input type="email" name="page3[orgIndeComms]" id="orgIndeComms">
+                        <input class="form-control" type="email" name="page3[orgIndeComms]" id="orgIndeComms">
                     </div>
                 </div>
                 <div class="card-footer" align="center">
