@@ -152,15 +152,17 @@ $("input[name='page3[indRepresentativeType]']").change(function() {
   }
 });
 
-$("input[name='page3[orgRepresentativeType]']").click(function() {
-  result = $(this).is(':checked');
+$("input[name='page3[orgRepresentativeType]']").change(function() {
+  result = this.value;
   console.log(result);
-  if (result) {
+  if (result === 'orgYesLawyer') {
     $('#orgLawyerRep').removeClass('is-hidden');
     $('.orgAuthority').removeClass('is-hidden');
-  } else {
+  } else if (result === 'orgNoLawyer') {
     $('#orgLawyerRep').addClass('is-hidden');
     $('.orgAuthority').addClass('is-hidden');
+  } else {
+    console.log('check for bugs');
   }
 });
 
@@ -327,14 +329,12 @@ $("input[name='prevApplications']").change(function() {
   }
 });
 
-
-function textCounter(field,field2,maxlimit)
-{
- var countfield = document.getElementById(field2);
- if ( field.value.length > maxlimit ) {
-  field.value = field.value.substring( 0, maxlimit );
-  return false;
- } else {
-  countfield.value = maxlimit - field.value.length;
- }
+function textCounter(field, field2, maxlimit) {
+  var countfield = document.getElementById(field2);
+  if (field.value.length > maxlimit) {
+    field.value = field.value.substring(0, maxlimit);
+    return false;
+  } else {
+    countfield.value = maxlimit - field.value.length;
+  }
 }

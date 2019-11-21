@@ -275,11 +275,18 @@
                         <input class="form-control" type="email" name="page3[orgnlEmail]" placeholder="Email"
                             id="orgnlEmail" required>
                     </div>
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox custom-control-inline">
-                            <input class="custom-control-input" id="orgLRepresentative" type="checkbox"
-                                name="page3[orgRepresentativeType]" value="lawyer">
-                            <label class="custom-control-label" for="orgLRepresentative">Lawyer</label>
+                    <div class="form-group alert alert-secondary">
+                        <h4 class="alert-heading">Is the organisation going to be represented by a lawyer?</h4>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="orgLRepresentative"
+                                name="page3[orgRepresentativeType]" value="orgYesLawyer">
+                            <label class="custom-control-label" for="orgLRepresentative">Yes </label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="orgNLRepresentative"
+                                name="page3[orgRepresentativeType]" value="orgNoLawyer" required
+                                data-parsley-group="page2">
+                            <label class="custom-control-label" for="orgNLRepresentative">No </label>
                         </div>
                     </div>
                 </div>
