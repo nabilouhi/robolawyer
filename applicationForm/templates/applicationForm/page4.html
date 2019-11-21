@@ -2,13 +2,18 @@
     <section class="container">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header-title">
+                <h4 class="card-header-title" align="center">
                     Statement of the facts <a href="javascript://" data-toggle="popover"
                         data-content="Filling in this information on the application form is to assist the Court in speedily assessing and allocating incoming cases. Additional explanations may be appended, if necessary, in a separate document up to a maximum of 20 pages: these only develop and cannot replace the statement of facts, complaints and compliance with the admissibility criteria that must be on the application form itself."
                         data-trigger="click" data-placement="bottom"><span><i
                                 class="fas fa-question-circle"></i></span></a>
                 </h4>
                 <div class="form-text alert alert-info">
+                    <p>The facts of your case should be set out in the space provided in the application form so as to
+                        enable the Court to determine the nature and scope of the application. This information
+                        concerning your case is essential for the proper and prompt sifting of your application and it
+                        must be included on the pages provided in the application form, not on accompanying enclosures.
+                    </p>
                     <ol>
                         <li>Be clear and concise.</li>
                         <li>Give exact dates. </li>
@@ -37,7 +42,7 @@
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <input disabled maxlength="3" size="3" id="counter" class="alert alert-success">
+                    <input disabled maxlength="3" size="3" value="1000" id="counter" class="alert alert-success">
                     <textarea class="form-control" name="page5[stOfFacts]" id="stofFacts"
                         oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
                         rows="10" onkeyup="textCounter(this,'counter', 1000);"></textarea>
@@ -50,7 +55,7 @@
                         should not add new complaints or violations but only develop what is set out on the
                         form.
                         If you want to add more statement of facts, then please use the area below for this.</label>
-                    <input disabled maxlength="3" size="3" id="counter2" class="alert alert-success">
+                    <input disabled maxlength="3" size="3" id="counter2" value="5000" class="alert alert-success">
                     <textarea class="form-control" name="page5[stOfFactsExtra]" id="stofFactsExtra"
                         oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
                         rows="10" onkeyup="textCounter(this,'counter2', 5000);"></textarea>

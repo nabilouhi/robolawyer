@@ -2,7 +2,7 @@
     <div class="container form-section">
         <div class="card">
             <div class="card-header">
-                <h4>Applicant </h4>
+                <h4 class="card-header-title" align="center">Applicant </h4>
             </div>
             <div class="card-body">
                 <div class="custom-control custom-radio custom-control-inline">
@@ -30,10 +30,10 @@
     <div class="container is-hidden" id="indBeginner">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header-title">Individual</h4>
+                <h4 class="card-header-title" align="center">Individual</h4>
                 <p class="lead">
                     This section refers to applicants who are individual persons only.
-                    If the applicant is an organisation, please go back to step1 and choose Organisation.
+                    If the applicant is an organisation, please select Organisation above.
                 </p>
             </div>
             <div class="card-body">
@@ -63,25 +63,15 @@
                     <label>Nationality</label>
                     <input class="form-control" name="page2[indNationality]" id="indNationality">
                 </div>
-                <fieldset class="form-group">
+                <div class="form-group">
                     <label class="lead">Address <a href="javascript://" data-toggle="popover"
                             data-content="An applicant must provide a postal address separate from that of a lawyer or representative so that the Court can make contact if necessary. An applicant who is homeless or has no fixed residence may have to give a box number or friend’s details but should provide an explanation."
                             data-trigger="click" data-placement="bottom"><span><i
                                     class="fas fa-question-circle"></i></span></a></label>
 
-                    <label>Address Line 1</label>
-                    <input class="form-control" name="page2[indAddress1]" id="indAddress1">
-                    <label>Address Line 2</label>
-                    <input class="form-control" name="page2[indAddress2]" id="indAddress2">
-                    <label>City</label>
-                    <input class="form-control" name="page2[indCity]" id="indCity">
-                    <label>State/Province</label>
-                    <input class="form-control" name="page2[indState]" id="indState">
-                    <label>Country</label>
-                    <input class="form-control" name="page2[indCountry]" id="indCountry">
-                    <label>Zip/Postal Code</label>
-                    <input class="form-control" name="page2[indPostal]" id="indPostal">
-                </fieldset>
+                    <textarea class="form-control" name="page2[indAddress]" id="indAddress" cols="30"
+                        rows="3"></textarea>
+                </div>
                 <div class="form-group">
                     <label>Telephone Number (select country code)</label>
                     <input type="tel" name="page2[indPhone]" id="indPhone" class="form-control phoneInput" required
@@ -108,14 +98,16 @@
                 <div class="form-group">
                     <label for="">Request anonymity for public documents</label>
                     <p><small>If your application is declared admissible by the Court, your name will appear on the
-                            documents related to your case that are published by the court and are publicly available.
+                            documents related to your case that are published by the court and are publicly
+                            available.
                             You
                             can request not to disclose your identity to the public. The request has to be sent as
                             an
                             attachment to the Court and has to present reasons why making your identity public will
                             affect/cause harm to the applicant (or to others?). The court decides whether you are
                             granted
-                            anonymity or not. You should state in the request whether, in the event of anonymity being
+                            anonymity or not. You should state in the request whether, in the event of anonymity
+                            being
                             authorised by the President of the Chamber, you wish to be designated by your initials
                             or by a single letter (e.g. “X”, “Y” or “Z”).</small></p>
                     <label for="">I want to keep my identity anonymous in public documents published by the
@@ -143,8 +135,8 @@
     <div class="container is-hidden" id="orgBeginner">
         <div class="card">
             <header class="card-header">
-                <h4>Organisation</h4>
-                <p>This section should only be filled in where the applicant is a
+                <h4 class="card-header-title" align="center">Organisation</h4>
+                <p class="lead">This section should only be filled in where the applicant is a
                     company, NGO, association or other legal entity. </p>
             </header>
             <div class="card-body">
@@ -173,22 +165,12 @@
                 </div>
 
 
-                <fieldset class="form-group">
+                <div class="form-group">
                     <label>Registered address</label>
 
-                    <label>Address Line 1</label>
-                    <input class="form-control" name="page2[orgAddress1]" id="orgAddress1">
-                    <label>Address Line 2</label>
-                    <input class="form-control" name="page2[orgAddress2]" id="orgAddress2">
-                    <label>City</label>
-                    <input class="form-control" name="page2[orgCity]" id="orgCity">
-                    <label>State/Province</label>
-                    <input class="form-control" name="page2[orgState]" id="orgState">
-                    <label>Country</label>
-                    <input class="form-control" name="page2[orgCountry]" id="orgCountry">
-                    <label>Zip/Postal Code</label>
-                    <input class="form-control" name="page2[orgPostal]" id="orgPostal">
-                </fieldset>
+                    <textarea class="form-control" name="page2[orgAddress]" id="orgAddress" cols="30"
+                        rows="3"></textarea>
+                </div>
 
                 <div class="form-group">
                     <label for="orgPhone">Telephone (select country code)</label>

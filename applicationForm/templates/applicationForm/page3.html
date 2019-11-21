@@ -2,8 +2,8 @@
     <div class="container is-hidden" id="indRepresentative">
         <div class="card">
             <div class="card-header">
-                <h4>
-                    Representative(s) of the applicant
+                <h4 class="card-header-title" align="center">
+                    Representative(s) of the Individual Applicant
                 </h4>
                 <p class="lead">Note: An individual applicant does not have to be represented by a lawyer at this stage.
                     If
@@ -185,8 +185,14 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="" class="lead">Electronic communication between the representative and the
-                            Court</label>
+                        <label for="indIndeComms" class="lead">Electronic communication between the representative and
+                            the
+                            Court <a href="javascript://" data-toggle="popover" data-content="eComms is a service initiated by the Court for communicating electronically with an applicant’s representative. The service is only activated if and when the case reaches a stage of the proceedings where the Government concerned are requested to submit written observations. 
+                            The email address provided will be used to create an eComms account. It is recommended that representatives working in a law firm provide a generic email address so that the account can be used by multiple users within the firm. 
+                           You should inform the Court of any change to your eComms account email address. 
+                           For more information, please refer to the terms and conditions available on the eComms website (https://ecomms.echr.coe.int), as well as the Practice Direction on electronic filing by applicants (www.echr.coe.int/practicedirections) (available in English and French only). 
+                           " data-trigger="click" data-placement="bottom"><span><i
+                                        class="fas fa-question-circle"></i></span></a></label>
                         Email address for eComms account (if the representative already uses eComms, please
                         provide
                         the existing eComms account email
@@ -195,7 +201,7 @@
                     </div>
                 </div>
                 <div class="section is-hidden" id="selfRep">
-                    <p class="lead">No action needed. Click on Next to proceed to next step.</p>
+                    <p class="lead">No action needed. Click on the Next button to proceed to next step.</p>
                 </div>
             </div>
             <div class="card-footer" align="center">
@@ -209,8 +215,8 @@
     <div class="container is-hidden" id="orgRepresentative">
         <div class="card">
             <div class="card-header">
-                <h4>
-                    C. Representative(s) of the applicant organisation <a href="javascript://" data-toggle="popover"
+                <h4 class="card-header-title" align="center">
+                    Representative(s) of the Applicant Organisation <a href="javascript://" data-toggle="popover"
                         data-content="A legal person (which includes a company, non-governmental organisation or association) that applies to the Court must do so through a representative of that legal person and who provides contact details and explains his or her capacity or relationship with the legal person. This official representative might be the person specifically designated by the board, or council of administration for that purpose, or the person who is authorised generally under domestic law or the organisation’s articles to act on its behalf. It may be that a legal person’s representative is also a lawyer or legal officer and has the capacity to act additionally as legal representative. Both parts of the application form concerning representation must still be filled in, and requisite documentary proof provided of authority to represent the legal person must be attached."
                         data-trigger="click" data-placement="bottom"><span><i
                                 class="fas fa-question-circle"></i></span></a>
@@ -221,18 +227,6 @@
                     name (e.g. a duly authorised director or official).</p>
             </div>
             <div class="card-body">
-                <!-- <div class="form-group">
-                    <label>Representative Type</label>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="orgNLRepresentative"
-                            name="page3[orgRepresentativeType]" value="orgOfficial">
-                        <label class="custom-control-label" for="orgNLRepresentative">Organisation Official </label>
-                        <small>Proof must be supplied with the application form that the representative has authority to
-                            act on behalf of the legal person, for example an extract from the Chamber of Commerce
-                            register or minutes of the governing body.</small>
-                    </div>
-                    
-                </div> -->
                 <div class="section" id="orgNonLawyerRep">
                     <label class="lead">Organisation Official</label>
                     <div class="form-group">
@@ -276,17 +270,17 @@
                             id="orgnlEmail" required>
                     </div>
                     <div class="form-group alert alert-secondary">
-                        <h4 class="alert-heading">Is the organisation going to be represented by a lawyer?</h4>
+                        <h4 class="alert-heading">Is the organisation going to be represented by a Lawyer?</h4>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="orgLRepresentative"
                                 name="page3[orgRepresentativeType]" value="orgYesLawyer">
-                            <label class="custom-control-label" for="orgLRepresentative">Yes </label>
+                            <label class="custom-control-label" for="orgLRepresentative">Yes</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="orgNLRepresentative"
                                 name="page3[orgRepresentativeType]" value="orgNoLawyer" required
                                 data-parsley-group="page2">
-                            <label class="custom-control-label" for="orgNLRepresentative">No </label>
+                            <label class="custom-control-label" for="orgNLRepresentative">No</label>
                         </div>
                     </div>
                 </div>
@@ -362,13 +356,13 @@
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-th"></span>
                             </div>
-                            <p>
+                            <div>
                                 <p>I hereby agree to represent the organisation in the proceedings before the
                                     European
                                     Court
                                     of Human Rights concerning the application
                                     lodged under Article 34 of the Convention.</p>
-                            </p>
+                            </div>
                         </div>
                     </div>
 
@@ -392,13 +386,23 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="" class="lead">Electronic communication between the representative and the
-                            Court</label>
+                        <label for="orgIndeComms" class="lead">Electronic communication between the representative and
+                            the
+                            Court <a href="javascript://" data-toggle="popover"
+                            data-content="eComms is a service initiated by the Court for communicating electronically with an applicant’s representative. The service is only activated if and when the case reaches a stage of the proceedings where the Government concerned are requested to submit written observations. 
+                            The email address provided will be used to create an eComms account. It is recommended that representatives working in a law firm provide a generic email address so that the account can be used by multiple users within the firm. 
+                           You should inform the Court of any change to your eComms account email address. 
+                           For more information, please refer to the terms and conditions available on the eComms website (https://ecomms.echr.coe.int), as well as the Practice Direction on electronic filing by applicants (www.echr.coe.int/practicedirections) (available in English and French only). 
+                           " data-trigger="click" data-placement="bottom"><span><i
+                                    class="fas fa-question-circle"></i></span></a></label>
                         Email address for eComms account (if the representative already uses eComms, please provide
                         the existing eComms account email
                         address)
                         <input class="form-control" type="email" name="page3[orgIndeComms]" id="orgIndeComms">
                     </div>
+                </div>
+                <div class="section is-hidden" id="orgLawyerRep">
+                    <p class="lead">No action needed. Please click on the Next button to proceed to next step.</p>
                 </div>
                 <div class="card-footer" align="center">
                     <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>

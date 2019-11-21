@@ -294,7 +294,7 @@ $(document).ready(function() {
 // File upload script end
 
 // Page 6 condition for text area
-$("input[name='appealAvailable']").change(function() {
+$("input[name='page6[appealAvailable]']").change(function() {
   result = this.value;
   if (result === 'Yes') $('.appealDescribe').removeClass('is-hidden');
   else {
@@ -303,26 +303,42 @@ $("input[name='appealAvailable']").change(function() {
 });
 
 // Page 6 condition for text area end
-$("input[name='intInvestigation']").change(function() {
-  result = this.value;
-  if (result === 'Yes') $('.intInvestigation').removeClass('is-hidden');
-  else {
-    $('.intInvestigation').addClass('is-hidden');
-  }
-});
+// $("input[name='page7[intInvestigation']").change(function() {
+//   result = this.value;
+//   if (result === 'Yes') $('.intInvestigation').removeClass('is-hidden');
+//   else {
+//     $('.intInvestigation').addClass('is-hidden');
+//   }
+// });
 
 // page 7 conditions for text area
 
-$("input[name='intInvestigation']").change(function() {
+// $("input[name='page3[orgRepresentativeType]']").change(function() {
+//   result = this.value;
+//   console.log(result);
+//   if (result === 'orgYesLawyer') {
+//     $('#orgLawyerRep').removeClass('is-hidden');
+//     $('.orgAuthority').removeClass('is-hidden');
+//   } else if (result === 'orgNoLawyer') {
+//     $('#orgLawyerRep').addClass('is-hidden');
+//     $('.orgAuthority').addClass('is-hidden');
+//   } else {
+//     console.log('check for bugs');
+//   }
+// });
+
+$("input[name='page7[intInvestigation]']").change(function() {
   result = this.value;
+  console.log(result);
   if (result === 'Yes') $('.intInvestigation').removeClass('is-hidden');
   else {
     $('.intInvestigation').addClass('is-hidden');
   }
 });
 
-$("input[name='prevApplications']").change(function() {
+$("input[name='page7[prevApplications]']").change(function() {
   result = this.value;
+  console.log(result);
   if (result === 'Yes') $('.prevAppDesc').removeClass('is-hidden');
   else {
     $('.prevAppDesc').addClass('is-hidden');
