@@ -62,3 +62,7 @@ input[type="file"] {
   background: white;
   color: black;
 }
+
+#map {
+  height: 100%;
+}

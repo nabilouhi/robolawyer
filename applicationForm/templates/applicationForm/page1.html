@@ -19,6 +19,7 @@
                                         class="fas fa-question-circle"></i></span></a>
 
                         </h5>
+                        <div id="map"></div>
                         <div class="form-group">
                             <label for="involvedStates" class="lead"> Select the name(s) of the State(s) against
                                 which
@@ -214,3 +215,18 @@
         </div>
     </div>
 </div>
+<script>
+    var map;
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: -34.397,
+                lng: 150.644
+            },
+            zoom: 8
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm9JZ53JeqtMjDKi1uk7yoF9Ga7bohctE&callback=initMap" async
+    defer></script>
