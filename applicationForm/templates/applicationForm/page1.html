@@ -129,14 +129,17 @@
                         </ol>
                     </li>
                     <li>
-                        <label class="lead">
-                            <h5> When did the act, decision or omission of which you complain take place?</h5>
-                        </label>
-                        <input type="text" class="datepicker form-control" id="decisionDate" name="page1[decisionDate]"
-                            data-date-format="dd/mm/yyyy" placeholder="Select Date" required data-parsley-group="page1">
-                        <div id='echrDetails'>
+                        <div class="form-group">
+                            <label class="lead">
+                                <h5> When did the act, decision or omission of which you complain take place?</h5>
+                            </label>
+                            <input type="text" class="date" name="page1[decisionDate]" id="decisionDate"
+                                data-template='DD MMM YYYY' required data-parsley-group="page1">
+                            <div id='echrDetails'>
 
+                            </div>
                         </div>
+
                     </li>
                     <br>
                     <li>
@@ -186,9 +189,8 @@
                         re-submit a second and complete application form." data-trigger="click"
                                 data-placement="bottom"><span><i class="fas fa-question-circle"></i></span></a></h5>
                         <div class="form-group">
-                            <input type="text" class="datepicker form-control" id="finalDecisionDate"
-                                name="page1[finalDecisionDate]" data-date-format="dd/mm/yyyy" placeholder="Select Date"
-                                required data-parsley-group="page1">
+                            <input type="text" class="date" name="page1[finalDecisionDate]" id="finalDecisionDate"
+                                data-template='DD MMM YYYY' required data-parsley-group="page1">
                         </div>
                         <p>If there was no legal procedure capable of remedying your situation, is the date on which you
                             lodged/intend to lodge your application with the Court no more than six months after the
