@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import render, render_to_response
 from django.views.generic import TemplateView
 from weasyprint import HTML, CSS
 from weasyprint.fonts import FontConfiguration
