@@ -25,5 +25,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('form/', include('applicationForm.urls')),
+
+    # Rest APIs
+    path('api/echr/', include('echrAPI.urls', 'echr_api')),
+    path('api/court/', include('courtAPI.urls', 'court_api')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        path('__debug__/', include(debug_toolbar.urls))]

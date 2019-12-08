@@ -2,18 +2,26 @@
     <div class="container form-section">
         <div class="card">
             <div class="card-header">
-                <h4>Applicant</h4>
+                <h4 class="card-header-title" align="center">Applicant </h4>
             </div>
             <div class="card-body">
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" id="applicantTypeInd" name="applicantType"
+                    <input type="radio" class="custom-control-input" id="applicantTypeInd" name="page2[applicantType]"
                         value="Individual" required data-parsley-group="page2">
-                    <label class="custom-control-label" for="applicantTypeInd">Individual</label>
+                    <label class="custom-control-label" for="applicantTypeInd">Individual <a href="javascript://"
+                            data-toggle="popover"
+                            data-content="This section applies to an applicant who is an individual person, as opposed to a legal entity such as a company or association. If there is more than one individual applicant, this information must be provided for each additional applicant, on a separate application form."
+                            data-trigger="click" data-placement="bottom"><span><i
+                                    class="fas fa-question-circle"></i></span></a></label>
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" id="applicantTypeOrg" name="applicantType"
+                    <input type="radio" class="custom-control-input" id="applicantTypeOrg" name="page2[applicantType]"
                         value="Organisation" required data-parsley-group="page2">
-                    <label class="custom-control-label" for="applicantTypeOrg">Organisation</label>
+                    <label class="custom-control-label" for="applicantTypeOrg">Organisation <a href="javascript://"
+                            data-toggle="popover"
+                            data-content="This section concerns applicants that are legal entities such as a company, non-governmental organisation or association, etc. The identity and contact details of the applicant organisation must be filled in. If there is more than one such applicant, this information must be provided for each additional applicant, on a separate application form."
+                            data-trigger="click" data-placement="bottom"><span><i
+                                    class="fas fa-question-circle"></i></span></a></label>
                 </div>
             </div>
         </div>
@@ -22,106 +30,101 @@
     <div class="container is-hidden" id="indBeginner">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header-title">Individual</h4>
+                <h4 class="card-header-title" align="center">Individual</h4>
                 <p class="lead">
                     This section refers to applicants who are individual persons only.
-                    If the applicant is an organisation, please go back to step1 and choose Organisation.
+                    If the applicant is an organisation, please select Organisation above.
                 </p>
             </div>
             <div class="card-body">
                 <div class="form-group">
                     <label>Surname</label>
-                    <input class="form-control" type="text" placeholder="Enter Surname" name="indSurname"
+                    <input class="form-control" type="text" placeholder="Enter Surname" name="page2[indSurname]"
                         data-parsley-maxlength="10" id="indSurname" required data-parsley-group="page2a">
                 </div>
                 <div class="form-group">
                     <label>First Name(s)</label>
-                    <input class="form-control" type="text" placeholder="Enter First Name" name="indFirstName"
+                    <input class="form-control" type="text" placeholder="Enter First Name" name="page2[indFirstName]"
                         id="indFirstName" required data-parsley-group="page2a">
                 </div>
                 <div class="form-group">
                     <label>Date of Birth</label>
-                    <input type="text" class="datepicker form-control" id="birthDate" data-date-format="dd/mm/yyyy"
-                        placeholder="Enter Date of Birth">
+                    <input type="text" class="date" name="page2[birthDate]" id="birthDate" data-template='DD MMM YYYY'>
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Place of Birth</label>
-                    <input class="form-control" name="indPob" id="indPob">
+                    <input class="form-control" name="page2[indPob]" id="indPob">
                 </div>
                 <div class="form-group">
                     <label>Nationality</label>
-                    <input class="form-control" name="indNationality" id="indNationality">
+                    <input class="form-control" name="page2[indNationality]" id="indNationality">
                 </div>
-                <fieldset class="form-group">
-                    <label class="lead">Address</label>
+                <div class="form-group">
+                    <label class="lead">Address <a href="javascript://" data-toggle="popover"
+                            data-content="An applicant must provide a postal address separate from that of a lawyer or representative so that the Court can make contact if necessary. An applicant who is homeless or has no fixed residence may have to give a box number or friend’s details but should provide an explanation."
+                            data-trigger="click" data-placement="bottom"><span><i
+                                    class="fas fa-question-circle"></i></span></a></label>
 
-                    <label>Address Line 1</label>
-                    <input class="form-control" name="indAddress1" id="indAddress1">
-                    <label>Address Line 2</label>
-                    <input class="form-control" name="indAddress2" id="indAddress2">
-                    <label>City</label>
-                    <input class="form-control" name="indCity" id="indCity">
-                    <label>State/Province</label>
-                    <input class="form-control" name="indState" id="indState">
-                    <label>Country</label>
-                    <input class="form-control" name="indCountry" id="indCountry">
-                    <label>Zip/Postal Code</label>
-                    <input class="form-control" name="indPostal" id="indPostal">
-                </fieldset>
+                    <textarea class="form-control" name="page2[indAddress]" id="indAddress" cols="30"
+                        rows="3"></textarea>
+                </div>
                 <div class="form-group">
                     <label>Telephone Number (select country code)</label>
-                    <input type="tel" name="indPhone" id="indPhone" class="form-control phoneInput" required
+                    <input type="tel" name="page2[indPhone]" id="indPhone" class="form-control phoneInput" required
                         data-parsley-group="page2a">
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="email" name="indEmail" placeholder="Email" id="indEmail"
+                    <input class="form-control" type="email" name="page2[indEmail]" placeholder="Email" id="indEmail"
                         data-parsley-type="email" data-parsley-group="page2a">
                 </div>
                 <div class="form-group">
                     <label>Sex</label>
                     <div class="custom-control custom-radio custom-control">
-                        <input type="radio" class="custom-control-input" id="applicantSexMale" name="applicantSex"
-                            value="Male">
+                        <input type="radio" class="custom-control-input" id="applicantSexMale"
+                            name="page2[applicantSex]" value="Male">
                         <label class="custom-control-label" for="applicantSexMale">Male</label>
                     </div>
                     <div class="custom-control custom-radio custom-control">
-                        <input type="radio" class="custom-control-input" id="applicantSexFemale" name="applicantSex"
-                            value="Female">
+                        <input type="radio" class="custom-control-input" id="applicantSexFemale"
+                            name="page2[applicantSex]" value="Female">
                         <label class="custom-control-label" for="applicantSexFemale">Female</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="">Request anonymity for public documents</label>
                     <p><small>If your application is declared admissible by the Court, your name will appear on the
-                            documents related to your case that are published by the court and are publicly available.
+                            documents related to your case that are published by the court and are publicly
+                            available.
                             You
                             can request not to disclose your identity to the public. The request has to be sent as
                             an
                             attachment to the Court and has to present reasons why making your identity public will
                             affect/cause harm to the applicant (or to others?). The court decides whether you are
                             granted
-                            anonymity or not; if you are granted anonymity, you will be referred to only by
-                            initials.</small></p>
+                            anonymity or not. You should state in the request whether, in the event of anonymity
+                            being
+                            authorised by the President of the Chamber, you wish to be designated by your initials
+                            or by a single letter (e.g. “X”, “Y” or “Z”).</small></p>
                     <label for="">I want to keep my identity anonymous in public documents published by the
                         court</label>
                     <div class="custom-control custom-radio custom-control">
-                        <input type="radio" class="custom-control-input" id="applicantAnonYes" name="applicantAnon"
-                            value="Yes">
+                        <input type="radio" class="custom-control-input" id="applicantAnonYes"
+                            name="page2[applicantAnon]" value="Yes">
                         <label class="custom-control-label" for="applicantAnonYes">Yes</label>
                     </div>
                     <div class="custom-control custom-radio custom-control">
-                        <input type="radio" class="custom-control-input" id="applicantAnonNo" name="applicantAnon"
-                            value="No">
+                        <input type="radio" class="custom-control-input" id="applicantAnonNo"
+                            name="page2[applicantAnon]" value="No">
                         <label class="custom-control-label" for="applicantAnonNo">No</label>
                     </div>
                     <div class="form-group applicantAnonReq is-hidden">
                         <label for="">Please provide reasons for your appeal for this request</label>
                         <textarea class="form-control" type="text" rows=2 placeholder="Provide a detailed explanation"
-                            name="applicantAnonExp"></textarea>
+                            name="page2[applicantAnonExp]"></textarea>
                     </div>
                 </div>
             </div>
@@ -131,60 +134,51 @@
     <div class="container is-hidden" id="orgBeginner">
         <div class="card">
             <header class="card-header">
-                <h4>Organisation</h4>
-                <p>This section should only be filled in where the applicant is a
+                <h4 class="card-header-title" align="center">Organisation</h4>
+                <p class="lead">This section should only be filled in where the applicant is a
                     company, NGO, association or other legal entity. </p>
             </header>
             <div class="card-body">
                 <div class="form-group">
                     <label>Name</label>
                     <textarea class="form-control" type="text" rows=2 placeholder="Enter the Organisation's Name"
-                        name="orgName" required data-parsley-group="page2b"></textarea>
+                        name="page2[orgName]" required data-parsley-group="page2b"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Identification number (if any)</label>
-                    <input class="form-control" type="text" placeholder="Enter Identification Number" name="orgID">
+                    <input class="form-control" type="text" placeholder="Enter Identification Number"
+                        name="page2[orgID]">
                 </div>
 
                 <div class="form-group">
                     <label>Date of registration or incorporation (if any)</label>
-                    <input class="form-control datepicker" type="text" id="orgDate" color="Info" name="orgDate"
-                        placeholder="Select date of registration" />
+                    <input type="text" class="date" name="page2[orgDate]" id="orgDate">
                 </div>
 
 
                 <div class="form-group">
                     <label>Activity</label>
-                    <input class="form-control" type="text" name="orgActivity" required data-parsley-group="page2b">
+                    <input class="form-control" type="text" name="page2[orgActivity]" required
+                        data-parsley-group="page2b">
                 </div>
 
 
-                <fieldset class="form-group">
+                <div class="form-group">
                     <label>Registered address</label>
 
-                    <label>Address Line 1</label>
-                    <input class="form-control" name="orgAddress1" id="orgAddress1">
-                    <label>Address Line 2</label>
-                    <input class="form-control" name="orgAddress2" id="orgAddress2">
-                    <label>City</label>
-                    <input class="form-control" name="orgCity" id="orgCity">
-                    <label>State/Province</label>
-                    <input class="form-control" name="orgState" id="orgState">
-                    <label>Country</label>
-                    <input class="form-control" name="orgCountry" id="orgCountry">
-                    <label>Zip/Postal Code</label>
-                    <input class="form-control" name="orgPostal" id="orgPostal">
-                </fieldset>
+                    <textarea class="form-control" name="page2[orgAddress]" id="orgAddress" cols="30"
+                        rows="3"></textarea>
+                </div>
 
                 <div class="form-group">
                     <label for="orgPhone">Telephone (select country code)</label>
-                    <input class="form-control phoneInput" type="tel" id="orgPhone" name="orgPhone" required
+                    <input class="form-control phoneInput" type="tel" id="orgPhone" name="page2[orgPhone]" required
                         data-parsley-group="page2b">
                 </div>
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="email" name="orgEmail" id="orgEmail" placeholder="Email"
+                    <input class="form-control" type="email" name="page2[orgEmail]" id="orgEmail" placeholder="Email"
                         data-parsley-type="email" data-parsley-group="page2b">
                 </div>
             </div>

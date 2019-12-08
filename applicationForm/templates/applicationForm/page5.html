@@ -2,22 +2,47 @@
     <section class="container">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header-title">
+                <h4 class="card-header-title" align="center">
                     Statement of alleged violation(s) of the <a
                         href="https://www.echr.coe.int/Documents/Convention_ENG.pdf" _target="#"> Convention and/or
                         Protocols </a>and relevant arguments
                 </h4>
-                <p class="lead"></p>
+                <p>You should be able to show that the matters about which you complain have interfered
+                    unjustifiably with a fundamental right. The European Court of Human Rights is not a court of appeal
+                    from national courts and cannot annul or alter their decisions, therefore you cannot just complain
+                    that a court’s decision was unfair or wrong. <br><br>
+                    An applicant must put down the gist of what he or she is complaining about. The Court cannot infer
+                    from the facts or domestic court documents what the applicant considers to be in breach of his or
+                    her rights. An applicant should try and identify those Articles of the European Convention on Human
+                    Rights which covers what he or she complains about – the Articles are framed in very plain and
+                    general terms that are easily understandable, such as ill-treatment, right to liberty, fair trial
+                    rights, family life rights, freedom of expression, etc. It is crucial to write down both the Article
+                    of the Convention and in a few brief sentences how it has been infringed – the Court cannot guess
+                    what an applicant objects to or make up the complaints for him or her.
+                </p>
+            </div>
+            <div class="alert alert-success">Examples: <br>
+                <ul>
+                    <li><b>Article 6</b> - The criminal proceedings against me lasted 9 years and 8 months for two
+                        levels of jurisdiction. Also, I was not allowed to cross-examine the witness who gave the sole
+                        evidence against me. </li>
+                    <li><b>Article 5</b> - I was detained wrongfully at the border police station for three days without
+                        being told why or being allowed to phone a lawyer or my family.
+                    </li>
+                    <li><b>Article 3</b> - The police kept me handcuffed in a cell without heating and gave me no food
+                        for three days. I became ill and needed treatment from the doctor for bronchitis. </li>
+                </ul>
             </div>
             <div class="card-body">
                 <div class="form-group add-field">
+                    <h5>Articles</h5>
                     <div class="articles">
                         <div class="article">
                             <table width="100%">
                                 <tr>
                                     <td width="30%" style="padding-right:10px;">
                                         <label for="articleSelect"></label>
-                                        <select name="articleSelect[]" id="articleSelect" class="form-control">
+                                        <select name="page5[articleSelect][]" class="form-control articleSelect">
                                             <option disabled selected value> -- Select relevant article -- </option>
                                             <option value="1"> (Art. 1) Obligation to respect human rights </option>
                                             <option value="2"> (Art. 2) Right to life </option>
@@ -106,7 +131,8 @@
                                     </td>
                                     <td width="60%">
                                         <label>Explanation</label>
-                                        <textarea class="form-control" type="text"></textarea>
+                                        <textarea class="form-control articleExplanation" name=page5[articleExplanation]
+                                            type="text"></textarea>
                                     </td>
                                 </tr>
                             </table>

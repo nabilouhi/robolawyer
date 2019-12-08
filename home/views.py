@@ -6,7 +6,6 @@ from pdfrw import PdfReader
 
 
 def home(request):
-    print("for testing")
     return render(request, 'home/home.html')
 
 

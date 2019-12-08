@@ -2,16 +2,24 @@
     <div class="container form-section">
         <div class="card">
             <div class="card-header">
-                <h5>Prerequisites</h5>
+                <h4 align="center">Prerequisites</h4>
             </div>
             <div class="card-body">
                 <ol>
                     <li>
                         <h5>
 
-                            Which state is concerned by your application?
+                            Which state is concerned by your application? <a href="javascript://" data-toggle="popover"
+                                data-content="An applicant has to specify the Contracting State (a European country which has signed up to
+                            the European Convention on Human Rights) which is alleged to be responsible for the breach
+                            of his or her rights. The Court’s competence depends on this. It is not for the Court to “guess”
+                            from reading the application form and attached documents.
+                            You must tick the box of at least one of the Contracting States listed in the application form for
+                            it to be complete." data-trigger="click" data-placement="bottom"><span><i
+                                        class="fas fa-question-circle"></i></span></a>
 
                         </h5>
+                        <div id="map"></div>
                         <div class="form-group">
                             <label for="involvedStates" class="lead"> Select the name(s) of the State(s) against
                                 which
@@ -19,8 +27,8 @@
                                 application is
                                 directed. <emph>(Use CTRL+Click on the country name to select multipile
                                     countries)</label>
-                            <select multiple class="custom-select" size="15" name="involvedStates" id="involvedStates"
-                                data-parsley-mincheck="1" data-parsley-group="page1" required>
+                            <select multiple class="custom-select" size="15" name="page1[involvedStates]"
+                                id="involvedStates" data-parsley-mincheck="1" data-parsley-group="page1" required>
                                 <option value="ALB - Albania">ALB - Albania</option>
                                 <option value="AND - Andorra">AND - Andorra</option>
                                 <option value="ARM - Armenia">ARM - Armenia</option>
@@ -70,6 +78,7 @@
                                 <option value="TUR - Turkey">TUR - Turkey</option>
                                 <option value="UKR - Ukraine">UKR - Ukraine</option>
                             </select>
+                            <input class="form-control" name="tags" id="tags" />
                         </div>
                     </li>
                     <li>
@@ -85,12 +94,12 @@
                                         </a></label>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="concernRightsYes"
-                                            name="concernRights" value="Yes">
+                                            name="page1[concernRights]" value="Yes">
                                         <label class="custom-control-label" for="concernRightsYes">Yes</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="concernRightsNo"
-                                            name="concernRights" value="No">
+                                            name="page1[concernRights]" value="No">
                                         <label class="custom-control-label" for="concernRightsNo">No</label>
                                     </div>
                                 </div>
@@ -101,18 +110,18 @@
                                     </label>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="concernYouYes"
-                                            name="concernYou" value="Yes">
+                                            name="page1[concernYou]" value="Yes">
                                         <label class="custom-control-label" for="concernYouYes">
                                             You directly</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="concernYouNo"
-                                            name="concernYou" value="No">
+                                            name="page1[concernYou]" value="No">
                                         <label class="custom-control-label" for="concernYouNo">A close relative who is
-                                            unable to lodge an application himself or herself <a href="#"
+                                            unable to lodge an application himself or herself <a href="javascript://"
                                                 data-toggle="popover"
                                                 data-content="Grounds for not being able to lodge the application: death, disappearance. In this case the next of kind becomes the “victim”. Show legitimate interest in pursuing the application before the court as heir/next of kin."
-                                                data-trigger="hover" data-placement="bottom"><span><i
+                                                data-trigger="click" data-placement="bottom"><span><i
                                                         class="fas fa-question-circle"></i></span></a>
                                         </label>
                                     </div>
@@ -121,60 +130,69 @@
                         </ol>
                     </li>
                     <li>
-                        <label class="lead">
-                            <h5> When did the act, decision or omission of which you complain take place?</h5>
-                        </label>
-                        <input type="text" class="datepicker form-control" id="decisionDate"
-                            data-date-format="dd/mm/yyyy" placeholder="Select Date" required data-parsley-group="page1">
-                        <p><small>[COUNTRY NAME] ratified the European Convention on Human Rights and its Protocols
-                                on [RATIFICATION DATE]. If the act, decision or omission take place after
-                                [RATIFICATION DATE], but the effects of the act, decision or omission still continue
-                                to the present day (eg: the act of a disappearance, where the person has not been
-                                found, even if the person can be presumed dead), please continue to the next
-                                field."</small></p>
+                        <div class="form-group">
+                            <label class="lead">
+                                <h5> When did the act, decision or omission of which you complain take place?</h5>
+                            </label>
+                            <input type="text" class="date" name="page1[decisionDate]" id="decisionDate"
+                                data-template='DD MMM YYYY' required data-parsley-group="page1">
+                            <div id='echrDetails'>
+
+                            </div>
+                        </div>
+
                     </li>
                     <br>
                     <li>
                         <h5>
                             Have you brought your case in the final instance before the highest court competent to deal
-                            with the subject matter of your dispute? The competent national courts in [Country] are
+                            with the subject matter of your dispute? The competent national courts in the selected
+                            state(s) are
                             in principle:</h5>
-                        <table class="table">
-                            <thread>
+                        <table class="table" id="courtTable" cellspacing="0">
+                            <thead>
                                 <tr>
+                                    <th scope="col">Country</th>
                                     <th scope="col">Type of proceeding</th>
                                     <th scope="col">National court(s)</th>
                                 </tr>
-                            </thread>
-                            <tbody>
-                                <tr>
-                                    <td>For civil and administrative proceedings</td>
+                            </thead>
+                            <tbody id="courtData">
+
+                                <!-- <tr id="proceedingType">
+                                     <td>For civil and administrative proceedings</td>
                                     <td>Respective Civil Court</td>
                                 </tr>
-                                <tr>
-                                    <td>For criminal proceedings</td>
-                                    <td>Respective Criminal Court</td>
-                                </tr>
+                                <tr id="courtName">
+                                     <td>For criminal proceedings</td>
+                                    <td>Respective Criminal Court</td> 
+                                </tr> -->
                             </tbody>
-                        </table>
+                        </table> <br><br>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="courtCaseYes" name="courtCase"
+                            <input type="radio" class="custom-control-input" id="courtCaseYes" name="page1[courtCase]"
                                 value="Yes">
                             <label class="custom-control-label" for="courtCaseYes">Yes</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="courtCaseNo" name="courtCase"
+                            <input type="radio" class="custom-control-input" id="courtCaseNo" name="page1[courtCase]"
                                 value="No">
                             <label class="custom-control-label" for="courtCaseNo">No</label>
                         </div>
                         <br>
-                    </li>
+                    </li> <br><br>
                     <li>
-                       <h5> When was the final decision from the highest domestic court communicated to you?</h5>
+                        <h5> When was the final decision from the highest domestic court communicated to you? <a
+                                href="javascript://" data-toggle="popover" data-content="You are strongly advised to send your application form as soon as practicable after the last
+                        remedy in the national system has been exhausted or where there are no remedies as soon as
+                        possible after the events being complained about. If an applicant misses something out in the
+                        application form or omits a relevant document, the application form is likely to be rejected as
+                        incomplete. If the form has been sent at the last moment, this will give the applicant no time to
+                        re-submit a second and complete application form." data-trigger="click"
+                                data-placement="bottom"><span><i class="fas fa-question-circle"></i></span></a></h5>
                         <div class="form-group">
-                            <input type="text" class="datepicker form-control" id="finalDecisionDate"
-                                data-date-format="dd/mm/yyyy" placeholder="Select Date" required
-                                data-parsley-group="page1">
+                            <input type="text" class="date" name="page1[finalDecisionDate]" id="finalDecisionDate"
+                                data-template='DD MMM YYYY' required data-parsley-group="page1">
                         </div>
                         <p>If there was no legal procedure capable of remedying your situation, is the date on which you
                             lodged/intend to lodge your application with the Court no more than six months after the
@@ -182,23 +200,17 @@
                             which the act or omission of which you complain occurred? </p>
 
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="complySixYes" name="complySix"
+                            <input type="radio" class="custom-control-input" id="complySixYes" name="page1[complySix]"
                                 value="Yes">
                             <label class="custom-control-label" for="complySixYes">Yes</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="complySixNo" name="complySix"
+                            <input type="radio" class="custom-control-input" id="complySixNo" name="page1[complySix]"
                                 value="No">
                             <label class="custom-control-label" for="complySixNo">No</label>
                         </div>
                     </li>
                 </ol>
-                <!-- <div>
-                    <p>Thank you for completing the online questionnaire. You have given positive answers to all the
-                        questions. And You may proceed with filling in the Application Form </p>
-                    <p>We do advise you, where possible, to consult a competent legal adviser before submitting a formal
-                        application to the Court. </p>
-                </div> -->
             </div>
             <div class="card-footer" align="center">
                 <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
@@ -207,3 +219,18 @@
         </div>
     </div>
 </div>
+<script>
+    var map;
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: -34.397,
+                lng: 150.644
+            },
+            zoom: 8
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm9JZ53JeqtMjDKi1uk7yoF9Ga7bohctE&callback=initMap" async
+    defer></script>

@@ -1,0 +1,68 @@
+label {
+  display: block;
+}
+
+.datepicker td,
+.datepicker th {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* .datepicker {
+    width: 280px;
+    margin: 0 20px 20px 20px;
+} */
+
+.datepicker>span:hover {
+  cursor: pointer;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.phoneInput {
+  padding-left: 86px !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+
+
+input[type="file"] {
+  display: block;
+}
+
+.imageThumb {
+  max-height: 75px;
+  border: 2px solid;
+  padding: 1px;
+  cursor: pointer;
+}
+
+.pip {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+}
+
+.remove {
+  display: block;
+  background: #444;
+  border: 1px solid black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.remove:hover {
+  background: white;
+  color: black;
+}
+
+#map {
+  height: 100%;
+}
