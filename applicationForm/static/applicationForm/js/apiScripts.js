@@ -1,22 +1,21 @@
 function UrlExists(url) {
-  rootUrl = window.location.href.split('form/')[0];
-  console.log(rootUrl);
   var http = new XMLHttpRequest();
   http.open('HEAD', url, false);
   http.withCredentials = true;
   http.setRequestHeader('Content-Type', 'application/json');
   http.send();
   console.log('it reached here');
-  if (http.status == 200) {
+  try {
     baseUrl = url;
     console.log('baseURL ' + baseUrl);
     echrRat(baseUrl);
     courtCountry(baseUrl);
-  } else {
-    baseUrl = 'http://localhost:8000/';
-    console.log('url ' + url);
-    echrRat(url);
-    courtCountry(url);
+  } catch (error) {
+    console.error(error);
+    // baseUrl = 'http://localhost:8000/';
+    // console.log('url ' + url);
+    // echrRat(baseUrl);
+    // courtCountry(baseUrl);
   }
 }
 
@@ -76,7 +75,6 @@ var courtCountry = function(baseUrl) {
       crossorigin: true
     }).then(function(response) {
       data = response.data;
-      console.log(data);
       courtData = document.getElementById('courtData');
       currentSelected.forEach(country => {
         for (var i = 0; i < data.length; i++) {
@@ -134,6 +132,7 @@ var courtCountry = function(baseUrl) {
 };
 
 // url = 'https://robo2lawyer.herokuapp.com/';
-url = 'http://localhost:8000/';
-
-UrlExists(url);
+// url = 'http://localhost:8000/';
+rootUrl = window.location.href.split('form/')[0];
+console.log(rootUrl);
+UrlExists(rootUrl);
