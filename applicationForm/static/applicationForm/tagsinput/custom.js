@@ -1,3 +1,5 @@
+// https://github.com/xoxco/jQuery-Tags-Input
+
 $('#tags').tagsInput({
   width: '100%',
   height: '5%',

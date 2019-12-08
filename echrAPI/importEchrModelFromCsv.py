@@ -19,4 +19,3 @@ with open(filename) as csvFile:
 
 if __name__ == "__main__":
     print("data updated")
-    pass

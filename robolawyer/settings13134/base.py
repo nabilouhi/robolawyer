@@ -10,18 +10,20 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import dj_database_url
+
 import os
-from decouple import config, Csv
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = '*pe%^$xlq+z9*$21x87_mg0s93hd3%1te+@q+a0!4($f!+)28e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -29,11 +31,6 @@ TEMPLATE_DEBUG = DEBUG
 
 # Application definition
 SECRET_KEY = config('SECRET_KEY')
-
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -85,42 +82,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'robolawyer.wsgi.application'
 
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'robolawyerdb',
-        'USER': 'postgres',
-        'PASSWORD': 'amanstan',
-        'HOST': 'localhost',
-        'PORT': '5433',
-    }
-}
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': dj_database_url.config()
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
 
 
 # Internationalization
