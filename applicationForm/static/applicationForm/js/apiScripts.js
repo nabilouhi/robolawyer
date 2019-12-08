@@ -134,5 +134,4 @@ var courtCountry = function(baseUrl) {
 // url = 'https://robo2lawyer.herokuapp.com/';
 // url = 'http://localhost:8000/';
 rootUrl = window.location.href.split('form/')[0];
-console.log(rootUrl);
 UrlExists(rootUrl);
