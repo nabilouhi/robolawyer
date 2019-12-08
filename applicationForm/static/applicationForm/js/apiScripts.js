@@ -76,28 +76,56 @@ var courtCountry = function(baseUrl) {
       crossorigin: true
     }).then(function(response) {
       data = response.data;
-      courtElement = document.getElementById('courtData');
+      console.log(data);
+      courtData = document.getElementById('courtData');
       currentSelected.forEach(country => {
         for (var i = 0; i < data.length; i++) {
           countryArray = country.split('-');
           countryName = countryArray[1].trim();
 
           if (data[i].country == countryName) {
-            courtDetail = document.createElement('tr');
+            courtDetail1 = document.createElement('tr');
 
             countryRow = document.createElement('td');
-            countryRow.innerHTML = data[i].country;
-            courtDetail.appendChild(countryRow);
+            countryRow.innerHTML = '<strong>' + data[i].country + '</strong>';
+            courtDetail1.appendChild(countryRow);
 
-            proceedingRow = document.createElement('td');
-            proceedingRow.innerHTML = data[i].proceedingType;
-            courtDetail.appendChild(proceedingRow);
+            proceedingRow1 = document.createElement('td');
+            proceedingRow1.innerHTML =
+              '<em>' + data[i].proceedingType1 + '</em>';
+            courtDetail1.appendChild(proceedingRow1);
 
-            courtRow = document.createElement('td');
-            courtRow.innerHTML = data[i].court;
-            courtDetail.appendChild(courtRow);
+            courtRow1 = document.createElement('td');
+            courtRow1.innerHTML = '<em>' + data[i].court1 + '</em>';
+            courtDetail1.appendChild(courtRow1);
+            courtData.appendChild(courtDetail1);
 
-            courtElement.appendChild(courtDetail);
+            if (data[i].proceedingType2) {
+              countryRow.setAttribute('rowspan', 2);
+              countryRow.setAttribute('style', 'vertical-align:middle');
+              courtDetail2 = document.createElement('tr');
+              proceedingRow2 = document.createElement('td');
+              proceedingRow2.innerHTML =
+                '<em>' + data[i].proceedingType2 + '</em>';
+              courtDetail2.appendChild(proceedingRow2);
+              courtRow2 = document.createElement('td');
+              courtRow2.innerHTML = '<em>' + data[i].court2 + '</em>';
+              courtDetail2.appendChild(courtRow2);
+              courtData.appendChild(courtDetail2);
+            }
+
+            if (data[i].proceedingType3) {
+              countryRow.setAttribute('rowspan', 3);
+              countryRow.setAttribute('style', 'vertical-align:middle');
+              courtDetail3 = document.createElement('tr');
+              proceedingRow3 = document.createElement('td');
+              proceedingRow3.innerHTML = data[i].proceedingType3;
+              courtDetail3.appendChild(proceedingRow3);
+              courtRow3 = document.createElement('td');
+              courtRow3.innerHTML = data[i].court3;
+              courtDetail3.appendChild(courtRow3);
+              courtData.appendChild(courtDetail3);
+            }
           }
         }
       });
