@@ -7,6 +7,10 @@ def firstPageInputs(self, can, inputObj):
         baseY = 340
         can.drawString(baseX, baseY, i)
         baseX = baseX+17
+
+    can.drawString(30, 300, inputObj["page2[indPob]"])
+    can.drawString(30, 260, inputObj["page2[indNationality]"])
+    can.drawString(30, 260, inputObj["page2[indNationality]"])
     can.showPage()
     return can
 
