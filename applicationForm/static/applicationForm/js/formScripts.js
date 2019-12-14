@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   stepperFormEl.addEventListener('shown.bs-stepper', function(event) {
     if (event.detail.indexStep === 7) {
-      generateSummary();
+      // generateSummary();
     }
   });
 
@@ -241,9 +241,8 @@ $('.custom-file-input').on('change', function() {
 
 // Correspondent details
 
-$("input[name='signatureDeclaration']").change(function() {
+$("input[name='page9[signatureDeclaration]']").change(function() {
   result = this.value;
-
   if (result === 'Applicant') {
     $('#correspondentOptionApplicant').removeClass('is-hidden');
     $('#correspondentOptionRepresentative').addClass('is-hidden');
@@ -354,3 +353,11 @@ function textCounter(field, field2, maxlimit) {
     countfield.value = maxlimit - field.value.length;
   }
 }
+
+$(document).ready(function() {
+  var select = '';
+  for (i = 1; i <= 100; i++) {
+    select += '<option val=' + i + '>' + i + '</option>';
+  }
+  $('#noOfPage').html(select);
+});

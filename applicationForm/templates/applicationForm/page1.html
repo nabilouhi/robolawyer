@@ -25,10 +25,11 @@
                                 which
                                 the
                                 application is
-                                directed. <emph>(Use CTRL+Click on the country name to select multipile
+                                directed. <emph>(Use CTRL+Click on the country name to select multiple
                                     countries)</label>
-                            <select multiple class="custom-select" size="15" name="page1[involvedStates]"
-                                id="involvedStates" data-parsley-mincheck="1" data-parsley-group="page1" required>
+                            <select multiple class="countrySelect show-menu-arrow form-control dropup" size="15"
+                                name="page1[involvedStates]" id="involvedStates" data-parsley-mincheck="1"
+                                data-parsley-group="page1" required>
                                 <option value="ALB - Albania">ALB - Albania</option>
                                 <option value="AND - Andorra">AND - Andorra</option>
                                 <option value="ARM - Armenia">ARM - Armenia</option>
@@ -78,7 +79,7 @@
                                 <option value="TUR - Turkey">TUR - Turkey</option>
                                 <option value="UKR - Ukraine">UKR - Ukraine</option>
                             </select>
-                            <input class="form-control" name="tags" id="tags" />
+                            <!-- <input class="form-control" name="tags" id="tags" /> -->
                         </div>
                     </li>
                     <li>
@@ -158,15 +159,6 @@
                                 </tr>
                             </thead>
                             <tbody id="courtData">
-
-                                <!-- <tr id="proceedingType">
-                                     <td>For civil and administrative proceedings</td>
-                                    <td>Respective Civil Court</td>
-                                </tr>
-                                <tr id="courtName">
-                                     <td>For criminal proceedings</td>
-                                    <td>Respective Criminal Court</td> 
-                                </tr> -->
                             </tbody>
                         </table> <br><br>
                         <div class="custom-control custom-radio custom-control-inline">
@@ -219,18 +211,3 @@
         </div>
     </div>
 </div>
-<script>
-    var map;
-
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {
-                lat: -34.397,
-                lng: 150.644
-            },
-            zoom: 8
-        });
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm9JZ53JeqtMjDKi1uk7yoF9Ga7bohctE&callback=initMap" async
-    defer></script>

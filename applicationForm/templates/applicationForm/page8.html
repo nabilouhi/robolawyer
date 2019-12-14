@@ -57,21 +57,25 @@
                                 <div class="docList">
                                     <table width="100%">
                                         <tr>
-                                            <td width="20%">
-                                                <label>Date</label>
-                                                <input class="form-control datepicker" type="text" color="Info"
-                                                    name="page8[finalDecisionDate][]" placeholder="Date" />
+                                            <td width="40%">
+                                                <label><b>Date</b></label>
+                                                <input type="text" class="date" name="page8[finalDecisionDate][]"
+                                                    data-template='DD MMM YYYY'>
                                             </td>
                                             <td width="50%" style="padding-right:10px;">
-                                                <label for="docSelect">Description</label>
-                                                <input name="page8[docSelect][]" id="docSelect" class="form-control">
+                                                <label for="docSelect"><b>Description</b></label>
+                                                <textarea class="form-control" name="page8[docSelect][]" id="docSelect"
+                                                    oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'
+                                                    cols="30" rows="1"></textarea>
                                             </td>
-                                            <td width="20%">
-                                                <label>Page Number <a href="javascript://" data-toggle="popover"
-                                                        data-content="In the printed application form you have to indicate the page number at which each document may be found in the bundle so that the Court may easily find them. If the space on the application form is not sufficient, you may add a continuation sheet. "
+                                            <td width="10%">
+                                                <label><b>Number of Pages</b> <a href="javascript://"
+                                                        data-toggle="popover"
+                                                        data-content="Indicate the total number of pages in each document"
                                                         data-trigger="click" data-placement="bottom"><span><i
                                                                 class="fas fa-question-circle"></i></span></a></label>
-                                                <input name="page8[pageNumber]" class="form-control" type="number">
+                                                <select name="page8[pageNumber]" id="noOfPage"
+                                                    class="form-control"></select>
                                             </td>
                                         </tr>
                                     </table>

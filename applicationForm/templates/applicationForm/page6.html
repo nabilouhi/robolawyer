@@ -24,16 +24,16 @@
 
                 </p>
             </div>
-            <div class=" alert alert-info">
+            <div class=" alert alert-success example-box">
                 <h5 class="alert-heading">Examples</h5>
                 <table class="table">
-                    <thread>
+                    <thead>
                         <tr>
                             <th scope="col">Complaint</th>
                             <th scope="col">Date of Final Decision by highest court</th>
                             <th scope="col">Remedies Used</th>
                         </tr>
-                    </thread>
+                    </thead>
                     <tbody>
 
                         <tr>
@@ -53,27 +53,28 @@
                     </tbody>
                 </table>
             </div>
-            <div class="card-body">
+            <div class="card-body alert-info">
                 <div class="form-group">
                     <div class="complaints">
                         <div class="complaint">
                             <table width="100%">
                                 <tr>
                                     <td width="30%">
-                                        <label for="complainSelect">Complaint</label>
+                                        <label for="complainSelect"><b>Complaint</b></label>
                                         <input name="page6[complainSelect][]" class="form-control complainSelect">
                                     </td>
-                                    <td width="30%">
-                                        <label>Date of Final Decision from the highest court </label>
+                                    <td width="40%">
+                                        <label><b>Date of Final Decision from the highest court</b> </label>
                                         <!-- <input class="form-control datepicker" type="text" color="Info"
                                             name="page6[complaintDate][]" placeholder="Select date of final Decision" /> -->
                                         <input type="text" class="date" name="page6[complaintDate][]"
                                             data-template='DD MMM YYYY'>
                                     </td>
                                     <td width="30%">
-                                        <label> Remedies Used</label>
-                                        <textarea name="page6[remedies][]" class="form-control remedies"
-                                            type="text"></textarea>
+                                        <label><b> Remedies Used</b></label>
+                                        <textarea class="form-control remedies" name="page6[remedies][]"
+                                            oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'
+                                            cols="30" rows="3"></textarea>
                                     </td>
                                 </tr>
                             </table>

@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="{% static 'applicationForm/parsley/parsley.css' %}">
 <link rel="stylesheet" href="{% static 'applicationForm/countrySelect/countrySelect.min.css' %}">
 <link rel="stylesheet" href="{% static 'applicationForm/tagsinput/tagsinput.css' %}">
+<link rel="stylesheet" href="{% static 'applicationForm/bootstrap-select/bootstrap-select.min.css' %}">
 {% endblock headContent %}
 
 {% block content %}
@@ -118,6 +119,14 @@
 
 
             </form>
+            <!-- <div class="card">
+                <div class="card-title">
+                    Tell us how to make this page better..
+                </div>
+                <div class="card-body">
+                    <textarea name="makeBetter" id="makeBetter" cols="30" rows="10"></textarea>
+                </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -132,6 +141,8 @@
 <script src="{% static 'applicationForm/momentjs/moment.min.js' %}"></script>
 <script src="{% static 'applicationForm/axios/axios.min.js' %}"></script>
 <script src="{% static 'applicationForm/js/apiScripts.js' %}"></script>
+<script src="{% static 'applicationForm/bootstrap-select/bootstrap-select.min.js' %}"></script>
+<script src="{% static 'applicationForm/bootstrap-select/bootstrap-select-custom.js' %}"></script>
 <script src="{% static 'applicationForm/js/prereqFormScripts.js' %}"></script>
 <script src="{% static 'applicationForm/js/formScripts.js' %}"></script>
 <script src="{% static 'applicationForm/js/validationScripts.js' %}"></script>

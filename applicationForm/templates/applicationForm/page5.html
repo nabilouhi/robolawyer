@@ -21,19 +21,37 @@
                     what an applicant objects to or make up the complaints for him or her.
                 </p>
             </div>
-            <div class="alert alert-success">Examples: <br>
-                <ul>
-                    <li><b>Article 6</b> - The criminal proceedings against me lasted 9 years and 8 months for two
-                        levels of jurisdiction. Also, I was not allowed to cross-examine the witness who gave the sole
-                        evidence against me. </li>
-                    <li><b>Article 5</b> - I was detained wrongfully at the border police station for three days without
-                        being told why or being allowed to phone a lawyer or my family.
-                    </li>
-                    <li><b>Article 3</b> - The police kept me handcuffed in a cell without heating and gave me no food
-                        for three days. I became ill and needed treatment from the doctor for bronchitis. </li>
-                </ul>
+            <div class=" alert alert-success example-box">
+                <h5 class="alert-heading">Examples</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Article</th>
+                            <th scope="col">Explanation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>Article 6</td>
+                            <td>The criminal proceedings against me lasted 9 years and 8 months for two levels of
+                                jurisdiction. Also, I was not allowed to cross-examine the witness who gave the sole
+                                evidence against me.</td>
+                        </tr>
+                        <tr>
+                            <td>Article 5</td>
+                            <td>I was detained wrongfully at the border police station for three days without being told
+                                why or being allowed to phone a lawyer or my family.</td>
+                        </tr>
+                        <tr>
+                            <td>Article 3</td>
+                            <td>The police kept me handcuffed in a cell without heating and gave me no food for three
+                                days. I became ill and needed treatment from the doctor for bronchitis.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="card-body">
+            <div class="card-body alert-info">
                 <div class="form-group add-field">
                     <h5>Articles</h5>
                     <div class="articles">
@@ -41,7 +59,7 @@
                             <table width="100%">
                                 <tr>
                                     <td width="30%" style="padding-right:10px;">
-                                        <label for="articleSelect"></label>
+                                        <label for="articleSelect">Article Name</label>
                                         <select name="page5[articleSelect][]" class="form-control articleSelect">
                                             <option disabled selected value> -- Select relevant article -- </option>
                                             <option value="1"> (Art. 1) Obligation to respect human rights </option>
@@ -131,8 +149,10 @@
                                     </td>
                                     <td width="60%">
                                         <label>Explanation</label>
-                                        <textarea class="form-control articleExplanation" name=page5[articleExplanation]
-                                            type="text"></textarea>
+                                        <textarea class="form-control articleExplanation"
+                                            name="page5[articleExplanation]"
+                                            oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'
+                                            cols="30" rows="1"></textarea>
                                     </td>
                                 </tr>
                             </table>
