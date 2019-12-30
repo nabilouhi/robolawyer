@@ -12,12 +12,16 @@
 {% endblock headContent %}
 
 {% block content %}
-
-<div class=" mb-5 p-4 bg-white shadow-sm">
-    <h3>Application Form</h3>
-    <div id="stepperForm" class="bs-stepper">
+<div class="jumbotron" style="background: linear-gradient(to bottom,  #1f549e 0%,#2989d8 100%)">
+		<br>        
+        <h1 class="display-5" id="form-title">
+        APPLICATION FORM
+        </h1>
+       
+<div class=" mb-5 p-4" style="background-color:transparent;">
+    <div id="stepperForm" class="bs-stepper ">
         <div class="bs-stepper-header" role="tablist">
-            <div class="step" data-target="#form-page-1">
+            <div class="step " data-target="#form-page-1">
                 <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger1"
                     aria-controls="form-page-1">
                     <span class="bs-stepper-circle">1</span>
@@ -102,7 +106,7 @@
                 </button>
             </div> -->
         </div>
-        <div class="bs-stepper-content">
+        <div class="bs-stepper-content ">
             <form id="appForm" class="needs-validation" onSubmit="return false" method="POST"
                 action="{% url 'formProcessing' %}" novalidate>
                 {% csrf_token %}
@@ -129,6 +133,11 @@
             </div> -->
         </div>
     </div>
+</div>
+
+
+
+
 </div>
 {% endblock content %}
 

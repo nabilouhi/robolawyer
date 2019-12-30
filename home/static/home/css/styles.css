@@ -1,12 +1,9 @@
-html,
+/* html,
 body {
     display: flex;
     flex-direction: column;
 }
 
-body {
-    min-height: 100vh;
-}
 
 .Header,
 .Footer {
@@ -15,7 +12,7 @@ body {
 
 .Content {
     flex-grow: 1;
-}
+}*/
 
 /* Other Classes for Page Styling */
 
@@ -24,7 +21,7 @@ body {
     background: linear-gradient(to right, #0062E6, #33AEFF);
 } */
 
-h1 {
+/* h1 {
     color: black;
 }
 
@@ -33,13 +30,15 @@ h1 {
     background-color: black;
 }
 
-/* .contrib-logo {
+.contrib-logo {
     margin: 0 60px;
 } */
 
 .logo-images-home {
     width: 40%;
 }
+.lead b { font-weight: 800;
+	}
 
 .modal-dialog {
     /* width: 80% !important; */

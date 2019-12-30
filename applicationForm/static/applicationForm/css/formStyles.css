@@ -1,7 +1,102 @@
 label {
   display: block;
 }
+.info-header{
+border-left: 5px #fbcd33 solid
+}
+#form-title {
+text-align:center; 
+color: white;
+-webkit-background-clip: text;
+-moz-background-clip: text;
+background-clip: text;
+text-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+}
 
+.card-master {
+background-color:  transparent;
+border: none;
+}
+.bs-stepper-circle{
+background-color: #ffffff;
+color: #1e57a2;}
+
+.active .bs-stepper-circle {
+    background-color: #fbcd33;
+    box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+    color:#ffffff;
+}
+
+.card-master-header {
+    padding: 0rem 1.25rem;
+    background-color: transparent;
+    border-bottom: 0px;
+    z-index: 1000;
+    width: auto;
+    display: inherit;
+    text-align: center;
+    margin-bottom: -15px;
+}
+
+#appForm .card-master-header h4{
+    /* width: 350px; */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fbcd33;
+    padding: 20px;
+    display: inline-block;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    border-radius: 5px;
+        margin-bottom: -30px;
+}
+
+.card-body {
+    padding-top: 60px;
+    background-color: #fff;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 0px 33px -13px rgba(0,0,0,0.75);
+}
+
+.card-footer{
+background-color: #fff;}
+
+.bs-stepper-header .active{
+    border-bottom: 4px solid #fbcd33;
+}
+
+.bs-stepper-header{
+background-color: #44444430;
+border-radius: 3px;
+margin-bottom: 40px;
+}
+
+.bs-stepper-label{
+font-size: 13px;
+font-weight: 300;
+width: 100%;
+white-space: normal;
+color:#ffffff;
+text-transform: uppercase;
+}
+
+.bs-stepper-content{
+padding: 0px;}
+
+.bs-trigger{
+margin: 15px !important;
+}
+.step{
+height: 132px;
+cursor: pointer;
+}
+.step:hover{
+background-color: rgba(0, 0, 0, .06);}
+
+.bs-stepper .step-trigger:hover {
+    text-decoration: none;
+    background-color: transparent;
+}
 .is-hidden {
   display: none;
 }
@@ -12,7 +107,7 @@ label {
 
 @media only screen and (max-width: 1000px) {
   body {
-    background-color: lightblue;
+    /*background-color: lightblue;*/
   }
 }
 
