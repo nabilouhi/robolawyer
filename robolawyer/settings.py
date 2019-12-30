@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'home',
     'applicationForm',
     'about',
+    'extResources',
     'echrAPI',
     'courtAPI',
 
