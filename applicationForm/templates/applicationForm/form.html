@@ -143,7 +143,6 @@
 <script src="{% static 'applicationForm/js/apiScripts.js' %}"></script>
 <script src="{% static 'applicationForm/bootstrap-select/bootstrap-select.min.js' %}"></script>
 <script src="{% static 'applicationForm/bootstrap-select/bootstrap-select-custom.js' %}"></script>
-<script src="{% static 'applicationForm/js/prereqFormScripts.js' %}"></script>
 <script src="{% static 'applicationForm/js/formScripts.js' %}"></script>
 <script src="{% static 'applicationForm/js/validationScripts.js' %}"></script>
 <script src="{% static 'applicationForm/stepper/bs-stepper.min.js' %}"></script>
@@ -152,7 +151,7 @@
 <script src="{% static 'applicationForm/countrySelect/countrySelect.min.js' %}"></script>
 <script src="{% static 'applicationForm/js/countryScripts.js' %}"></script>
 <script src="{% static 'applicationForm/js/phoneScripts.js' %}"></script>
-
+<script src="{% static 'applicationForm/js/prereqFormScripts.js' %}"></script>
 <script>
     $(function () {
         $('.date').combodate({
@@ -168,6 +167,10 @@
     $(function () {
         $('[data-toggle="popover"]').popover();
     });
+</script>
+
+<script>
+
 </script>
 
 {% endblock scriptContent %}

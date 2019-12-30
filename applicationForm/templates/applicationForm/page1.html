@@ -1,212 +1,300 @@
 <div id="form-page-1" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger1">
-    <div class="container form-section">
-        <div class="card">
-            <div class="card-header">
-                <h4 align="center">Prerequisites</h4>
-            </div>
-            <div class="card-body">
-                <ol>
-                    <li>
-                        <h5>
-
-                            Which state is concerned by your application? <a href="javascript://" data-toggle="popover"
-                                data-content="An applicant has to specify the Contracting State (a European country which has signed up to
+    <div class="col-md-11 mx-auto form-section">
+        {% load static  %}
+        <div class="row">
+            <div class="card col-sm-10">
+                <div class="card-header">
+                    <h4 align="center">Prerequisites</h4>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li>
+                            <h5>
+                                Which state is concerned by your application? <a href="javascript://"
+                                    data-toggle="popover" data-content="An applicant has to specify the Contracting State (a European country which has signed up to
                             the European Convention on Human Rights) which is alleged to be responsible for the breach
                             of his or her rights. The Court’s competence depends on this. It is not for the Court to “guess”
                             from reading the application form and attached documents.
                             You must tick the box of at least one of the Contracting States listed in the application form for
                             it to be complete." data-trigger="click" data-placement="bottom"><span><i
-                                        class="fas fa-question-circle"></i></span></a>
+                                            class="fas fa-question-circle"></i></span></a>
 
-                        </h5>
-                        <div id="map"></div>
-                        <div class="form-group">
-                            <label for="involvedStates" class="lead"> Select the name(s) of the State(s) against
-                                which
-                                the
-                                application is
-                                directed. <emph>(Use CTRL+Click on the country name to select multiple
-                                    countries)</label>
-                            <select multiple class="countrySelect show-menu-arrow form-control dropup" size="15"
-                                name="page1[involvedStates]" id="involvedStates" data-parsley-mincheck="1"
-                                data-parsley-group="page1" required>
-                                <option value="ALB - Albania">ALB - Albania</option>
-                                <option value="AND - Andorra">AND - Andorra</option>
-                                <option value="ARM - Armenia">ARM - Armenia</option>
-                                <option value="AUT - Austria">AUT - Austria</option>
-                                <option value="AZE - Azerbaijan">AZE - Azerbaijan</option>
-                                <option value="BEL - Belgium">BEL - Belgium</option>
-                                <option value="BGR - Bulgaria">BGR - Bulgaria</option>
-                                <option value="BIH - Bosnia and Herzegovina">BIH - Bosnia and Herzegovina
-                                </option>
-                                <option value="CHE - Switzerland">CHE - Switzerland</option>
-                                <option value="CYP - Cyprus">CYP - Cyprus</option>
-                                <option value="CZE - Czech Republic">CZE - Czech Republic</option>
-                                <option value="DEU - Germany">DEU - Germany</option>
-                                <option value="DNK - Denmark">DNK - Denmark</option>
-                                <option value="ESP - Spain">ESP - Spain</option>
-                                <option value="EST - Estonia">EST - Estonia</option>
-                                <option value="FIN - Finland">FIN - Finland</option>
-                                <option value="FRA - France">FRA - France</option>
-                                <option value="GBR - United Kingdom">GBR - United Kingdom</option>
-                                <option value="GEO - Georgia">GEO - Georgia</option>
-                                <option value="GRC - Greece">GRC - Greece</option>
-                                <option value="HRV - Croatia">HRV - Croatia</option>
-                                <option value="HUN - Hungary">HUN - Hungary</option>
-                                <option value="IRL - Ireland">IRL - Ireland</option>
-                                <option value="ISL - Iceland">ISL - Iceland</option>
-                                <option value="ITA - Italy">ITA - Italy</option>
-                                <option value="LIE - Liechtenstein">LIE - Liechtenstein</option>
-                                <option value="LTU - Lithuania">LTU - Lithuania</option>
-                                <option value="LUX - Luxembourg">LUX - Luxembourg</option>
-                                <option value="LVA - Latvia">LVA - Latvia</option>
-                                <option value="MCO - Monaco">MCO - Monaco</option>
-                                <option value="MDA - Republic of Moldova">MDA - Republic of Moldova</option>
-                                <option value="MKD - North Macedonia">MKD - North Macedonia</option>
-                                <option value="MLT - Malta">MLT - Malta</option>
-                                <option value="MNE - Montenegro">MNE - Montenegro</option>
-                                <option value="NLD - Netherlands">NLD - Netherlands</option>
-                                <option value="NOR - Norway">NOR - Norway</option>
-                                <option value="POL - Poland">POL - Poland</option>
-                                <option value="PRT - Portugal">PRT - Portugal</option>
-                                <option value="ROU - Romania">ROU - Romania</option>
-                                <option value="RUS - Russian Federation">RUS - Russian Federation</option>
-                                <option value="SMR - San Marino">SMR - San Marino</option>
-                                <option value="SRB - Serbia">SRB - Serbia</option>
-                                <option value="SVK - Slovak Republic">SVK - Slovak Republic</option>
-                                <option value="SVN - Slovenia">SVN - Slovenia</option>
-                                <option value="SWE - Sweden">SWE - Sweden</option>
-                                <option value="TUR - Turkey">TUR - Turkey</option>
-                                <option value="UKR - Ukraine">UKR - Ukraine</option>
-                            </select>
-                            <!-- <input class="form-control" name="tags" id="tags" /> -->
-                        </div>
-                    </li>
-                    <li>
-                        <h5>What is the subject of your application?</h5>
-
-                        <ol type="a">
-                            <li>
-                                <div class="form-group">
-                                    <label class="lead">Does your application concern one of the rights guaranteed by
-                                        the <a href="https://www.echr.coe.int/Documents/Convention_ENG.pdf"
-                                            target="_blank">
-                                            Convention?
-                                        </a></label>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="concernRightsYes"
-                                            name="page1[concernRights]" value="Yes">
-                                        <label class="custom-control-label" for="concernRightsYes">Yes</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="concernRightsNo"
-                                            name="page1[concernRights]" value="No">
-                                        <label class="custom-control-label" for="concernRightsNo">No</label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-group">
-                                    <label class="lead">Do the facts concern:
-                                    </label>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="concernYouYes"
-                                            name="page1[concernYou]" value="Yes">
-                                        <label class="custom-control-label" for="concernYouYes">
-                                            You directly</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="concernYouNo"
-                                            name="page1[concernYou]" value="No">
-                                        <label class="custom-control-label" for="concernYouNo">A close relative who is
-                                            unable to lodge an application himself or herself <a href="javascript://"
-                                                data-toggle="popover"
-                                                data-content="Grounds for not being able to lodge the application: death, disappearance. In this case the next of kind becomes the “victim”. Show legitimate interest in pursuing the application before the court as heir/next of kin."
-                                                data-trigger="click" data-placement="bottom"><span><i
-                                                        class="fas fa-question-circle"></i></span></a>
-                                        </label>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </li>
-                    <li>
-                        <div class="form-group">
-                            <label class="lead">
-                                <h5> When did the act, decision or omission of which you complain take place?</h5>
-                            </label>
-                            <input type="text" class="date" name="page1[decisionDate]" id="decisionDate"
-                                data-template='DD MMM YYYY' required data-parsley-group="page1">
-                            <div id='echrDetails'>
-
+                            </h5>
+                            <div id="map"></div>
+                            <div class="form-group">
+                                <label for="involvedStates" class="lead"> Select the name(s) of the State(s) against
+                                    which
+                                    the
+                                    application is
+                                    directed. <emph>(Use CTRL+Click on the country name to select multiple
+                                        countries)</label>
+                                <select multiple class="countrySelect show-menu-arrow form-control dropup" size="15"
+                                    name="page1[involvedStates]" id="involvedStates" data-parsley-mincheck="1"
+                                    data-parsley-group="page1" required>
+                                    <option value="ALB - Albania">ALB - Albania</option>
+                                    <option value="AND - Andorra">AND - Andorra</option>
+                                    <option value="ARM - Armenia">ARM - Armenia</option>
+                                    <option value="AUT - Austria">AUT - Austria</option>
+                                    <option value="AZE - Azerbaijan">AZE - Azerbaijan</option>
+                                    <option value="BEL - Belgium">BEL - Belgium</option>
+                                    <option value="BGR - Bulgaria">BGR - Bulgaria</option>
+                                    <option value="BIH - Bosnia and Herzegovina">BIH - Bosnia and Herzegovina
+                                    </option>
+                                    <option value="CHE - Switzerland">CHE - Switzerland</option>
+                                    <option value="CYP - Cyprus">CYP - Cyprus</option>
+                                    <option value="CZE - Czech Republic">CZE - Czech Republic</option>
+                                    <option value="DEU - Germany">DEU - Germany</option>
+                                    <option value="DNK - Denmark">DNK - Denmark</option>
+                                    <option value="ESP - Spain">ESP - Spain</option>
+                                    <option value="EST - Estonia">EST - Estonia</option>
+                                    <option value="FIN - Finland">FIN - Finland</option>
+                                    <option value="FRA - France">FRA - France</option>
+                                    <option value="GBR - United Kingdom">GBR - United Kingdom</option>
+                                    <option value="GEO - Georgia">GEO - Georgia</option>
+                                    <option value="GRC - Greece">GRC - Greece</option>
+                                    <option value="HRV - Croatia">HRV - Croatia</option>
+                                    <option value="HUN - Hungary">HUN - Hungary</option>
+                                    <option value="IRL - Ireland">IRL - Ireland</option>
+                                    <option value="ISL - Iceland">ISL - Iceland</option>
+                                    <option value="ITA - Italy">ITA - Italy</option>
+                                    <option value="LIE - Liechtenstein">LIE - Liechtenstein</option>
+                                    <option value="LTU - Lithuania">LTU - Lithuania</option>
+                                    <option value="LUX - Luxembourg">LUX - Luxembourg</option>
+                                    <option value="LVA - Latvia">LVA - Latvia</option>
+                                    <option value="MCO - Monaco">MCO - Monaco</option>
+                                    <option value="MDA - Republic of Moldova">MDA - Republic of Moldova</option>
+                                    <option value="MKD - North Macedonia">MKD - North Macedonia</option>
+                                    <option value="MLT - Malta">MLT - Malta</option>
+                                    <option value="MNE - Montenegro">MNE - Montenegro</option>
+                                    <option value="NLD - Netherlands">NLD - Netherlands</option>
+                                    <option value="NOR - Norway">NOR - Norway</option>
+                                    <option value="POL - Poland">POL - Poland</option>
+                                    <option value="PRT - Portugal">PRT - Portugal</option>
+                                    <option value="ROU - Romania">ROU - Romania</option>
+                                    <option value="RUS - Russian Federation">RUS - Russian Federation</option>
+                                    <option value="SMR - San Marino">SMR - San Marino</option>
+                                    <option value="SRB - Serbia">SRB - Serbia</option>
+                                    <option value="SVK - Slovak Republic">SVK - Slovak Republic</option>
+                                    <option value="SVN - Slovenia">SVN - Slovenia</option>
+                                    <option value="SWE - Sweden">SWE - Sweden</option>
+                                    <option value="TUR - Turkey">TUR - Turkey</option>
+                                    <option value="UKR - Ukraine">UKR - Ukraine</option>
+                                </select>
+                                <!-- <input class="form-control" name="tags" id="tags" /> -->
                             </div>
-                        </div>
+                        </li>
+                        <li>
+                            <h5>What is the subject of your application?</h5>
 
-                    </li>
-                    <br>
-                    <li>
-                        <h5>
-                            Have you brought your case in the final instance before the highest court competent to deal
-                            with the subject matter of your dispute? The competent national courts in the selected
-                            state(s) are
-                            in principle:</h5>
-                        <table class="table" id="courtTable" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Country</th>
-                                    <th scope="col">Type of proceeding</th>
-                                    <th scope="col">National court(s)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="courtData">
-                            </tbody>
-                        </table> <br><br>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="courtCaseYes" name="page1[courtCase]"
-                                value="Yes">
-                            <label class="custom-control-label" for="courtCaseYes">Yes</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="courtCaseNo" name="page1[courtCase]"
-                                value="No">
-                            <label class="custom-control-label" for="courtCaseNo">No</label>
-                        </div>
+                            <ol type="a">
+                                <li>
+                                    <div class="form-group">
+                                        <label class="lead">Does your application concern one of the rights guaranteed
+                                            by
+                                            the <a href="https://www.echr.coe.int/Documents/Convention_ENG.pdf"
+                                                target="_blank">
+                                                Convention?
+                                            </a></label>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="concernRightsYes"
+                                                name="page1[concernRights]" value="Yes">
+                                            <label class="custom-control-label" for="concernRightsYes">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="concernRightsNo"
+                                                name="page1[concernRights]" value="No">
+                                            <label class="custom-control-label" for="concernRightsNo">No</label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group">
+                                        <label class="lead">Do the facts concern:
+                                        </label>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="concernYouYes"
+                                                name="page1[concernYou]" value="Yes">
+                                            <label class="custom-control-label" for="concernYouYes">
+                                                You directly</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="concernYouNo"
+                                                name="page1[concernYou]" value="No">
+                                            <label class="custom-control-label" for="concernYouNo">A close relative who
+                                                is
+                                                unable to lodge an application himself or herself <a
+                                                    href="javascript://" data-toggle="popover"
+                                                    data-content="Grounds for not being able to lodge the application: death, disappearance. In this case the next of kind becomes the “victim”. Show legitimate interest in pursuing the application before the court as heir/next of kin."
+                                                    data-trigger="click" data-placement="bottom"><span><i
+                                                            class="fas fa-question-circle"></i></span></a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <div class="form-group">
+                                <label class="lead">
+                                    <h5> When did the act, decision or omission of which you complain take place?</h5>
+                                </label>
+                                <input type="text" class="date" name="page1[decisionDate]" id="decisionDate"
+                                    data-template='DD MMM YYYY' required data-parsley-group="page1">
+                                <div id='echrDetails'>
+
+                                </div>
+                            </div>
+
+                        </li>
                         <br>
-                    </li> <br><br>
-                    <li>
-                        <h5> When was the final decision from the highest domestic court communicated to you? <a
-                                href="javascript://" data-toggle="popover" data-content="You are strongly advised to send your application form as soon as practicable after the last
+                        <li>
+                            <h5>
+                                Have you brought your case in the final instance before the highest court competent to
+                                deal
+                                with the subject matter of your dispute? The competent national courts in the selected
+                                state(s) are
+                                in principle:</h5>
+                            <table class="table" id="courtTable" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Country</th>
+                                        <th scope="col">Type of proceeding</th>
+                                        <th scope="col">National court(s)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="courtData">
+                                </tbody>
+                            </table> <br><br>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="courtCaseYes"
+                                    name="page1[courtCase]" value="Yes">
+                                <label class="custom-control-label" for="courtCaseYes">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="courtCaseNo"
+                                    name="page1[courtCase]" value="No">
+                                <label class="custom-control-label" for="courtCaseNo">No</label>
+                            </div>
+                            <br>
+                        </li> <br><br>
+                        <li>
+                            <h5> When was the final decision from the highest domestic court communicated to you? <a
+                                    href="javascript://" data-toggle="popover" data-content="You are strongly advised to send your application form as soon as practicable after the last
                         remedy in the national system has been exhausted or where there are no remedies as soon as
                         possible after the events being complained about. If an applicant misses something out in the
                         application form or omits a relevant document, the application form is likely to be rejected as
                         incomplete. If the form has been sent at the last moment, this will give the applicant no time to
                         re-submit a second and complete application form." data-trigger="click"
-                                data-placement="bottom"><span><i class="fas fa-question-circle"></i></span></a></h5>
-                        <div class="form-group">
-                            <input type="text" class="date" name="page1[finalDecisionDate]" id="finalDecisionDate"
-                                data-template='DD MMM YYYY' required data-parsley-group="page1">
-                        </div>
-                        <p>If there was no legal procedure capable of remedying your situation, is the date on which you
-                            lodged/intend to lodge your application with the Court no more than six months after the
-                            date on
-                            which the act or omission of which you complain occurred? </p>
+                                    data-placement="bottom"><span><i class="fas fa-question-circle"></i></span></a></h5>
+                            <div class="form-group">
+                                <input type="text" class="date" name="page1[finalDecisionDate]" id="finalDecisionDate"
+                                    data-template='DD MMM YYYY' required data-parsley-group="page1">
+                            </div>
+                            <p>If there was no legal procedure capable of remedying your situation, is the date on which
+                                you
+                                lodged/intend to lodge your application with the Court no more than six months after the
+                                date on
+                                which the act or omission of which you complain occurred? </p>
 
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="complySixYes" name="page1[complySix]"
-                                value="Yes">
-                            <label class="custom-control-label" for="complySixYes">Yes</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="complySixNo" name="page1[complySix]"
-                                value="No">
-                            <label class="custom-control-label" for="complySixNo">No</label>
-                        </div>
-                    </li>
-                </ol>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="complySixYes"
+                                    name="page1[complySix]" value="Yes">
+                                <label class="custom-control-label" for="complySixYes">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="complySixNo"
+                                    name="page1[complySix]" value="No">
+                                <label class="custom-control-label" for="complySixNo">No</label>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                    <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                </div>
             </div>
-            <div class="card-footer" align="center">
-                <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-                <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+            <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
+                <div class="suggestion-form stuck">
+                    <div class="card">
+                        <form action="{% url 'feedback' %}" method="POST" id="feedback_form">
+                            {% csrf_token %}
+                            <div class="card-header">
+                                <h5 align="center" id="feedbackModalTitle">Help us to
+                                    Improve</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for=""> Are you a legally trained person?</label>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainYes"
+                                            name="legalTrained" value="Yes">
+                                        <label class="custom-control-label" for="legalTrainYes">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainNo"
+                                            name="legalTrained" value="No">
+                                        <label class="custom-control-label" for="legalTrainNo">No</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="suggestionArea">How can we improve this page?</label>
+                                    <textarea class="form-control" id="suggestionArea" type="text" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-primary" id="feedback_submit">Submit Form</button>
+                            </div>
+                        </form>
+                        <!-- <button type="button" data-toggle="modal" data-target="#feedbackModal" data-backdrop=""><img
+                                class="feedback_banner"
+                                src="{% static 'applicationForm/img/WeWantYourFeedback_CharlkBoard.jpg' %}"
+                                alt=""></button> -->
+
+                        <!-- <button type="button" name="feedback_btn"><img class="feedback"
+                                src="{% static 'applicationForm/img/WeWantYourFeedback_CharlkBoard.jpg' %}"
+                                alt=""></button> -->
+
+                        <!-- <div class="modal fade" tabindex="-1" role="dialog" id="feedbackModal"
+                            aria-labelledby="feedbackModalTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    {% include 'applicationForm/feedback.html' %}
+                                </div>
+                            </div>
+                        </div> -->
+
+
+
+                        <!-- <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog"
+                            aria-labelledby="feedbackModalTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                    {% include 'applicationForm/feedback.html' %}
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="form-group">
+                                <label for=""> Please select your legal experience category:</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="suggestionLawyer"
+                                        name="suggestionLawyer" value="Yes">
+                                    <label class="custom-control-label" for="suggestionLawyer">Legally
+                                        Experienced</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="suggestionNonLawyer"
+                                        name="suggestionNonLawyer" value="No">
+                                    <label class="custom-control-label" for="suggestionNonLawyer">No Significant Legal
+                                        Experience</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="suggestionArea">Enter your suggestion</label>
+                                <textarea class="form-control" id="suggestionArea" type="text"></textarea>
+                            </div> -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>

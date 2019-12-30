@@ -7,6 +7,8 @@ from django.template import RequestContext
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from .dataPreparation.prepareResult import PrepareResult
+import json
+# from .forms import FeedbackForm
 # Create your views here.
 
 
@@ -46,3 +48,32 @@ def submittedForm(request):
             response, font_config=font_config, stylesheets=[css, "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"])
 
         return response
+
+
+# def feedbackForm(request):
+#     form = FeedbackForm()
+#     return render(request, 'applicationForm/feedback.html', {'form': form})
+
+
+# def feedback(request):
+#     if request.method=="post":
+#         form = FeedbackForm(request.POST)
+#         if form.is_valid():
+#             legalExp = form.cleaned_data['legalTraining']
+#             suggestion = form.cleaned_data['suggestion']
+#             return render(request, '')
+
+def feedback(request):
+    print(request)
+    if request.method == 'POST':
+        legalExp = request.POST['legalExp']
+        suggestion = request.POST['suggestion']
+
+    return HttpResponse('We have received your feedback.')
+
+
+# class FeedbackView(BSModalCreateView):
+#     template_name = 'applicationForm/feedback.html'
+#     form_class = BookForm
+#     success_message = 'Success: feedback was created.'
+#     success_url = reverse_lazy('')
