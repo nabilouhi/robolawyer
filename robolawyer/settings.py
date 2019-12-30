@@ -44,9 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'bootstrap_modal_forms',
     'home',
     'applicationForm',
+    'about',
     'echrAPI',
     'courtAPI',
 

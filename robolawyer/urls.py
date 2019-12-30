@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('form/', include('applicationForm.urls')),
+    path('aboutUs/', include('about.urls')),
 
     # Rest APIs
     path('api/echr/', include('echrAPI.urls', 'echr_api')),
