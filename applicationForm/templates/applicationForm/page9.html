@@ -1,94 +1,142 @@
 <div id="form-page-9" role="tabpanel" class="bs-stepper-pane fade text-center" aria-labelledby="stepperFormTrigger9">
-    <div class="container form-section" id="summary">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-headet-title">Declaration and Signature</h4>
-                <p class="card-header-title lead">
+    <div class="col-md-11 mx-auto form-section">
+        {% load static  %}
+        <div class="row">
+            <div class="card col-sm-10">
+                <div class="card-header">
+                    <h4 class="card-headet-title">Declaration and Signature</h4>
+                    <p class="card-header-title lead">
 
-                </p>
-            </div>
-            <div class="card-body">
-                <label for="#formComments" class="lead">Any Other Comments</label>
-                <div class="form-group" style="text-align: left;">
-                    <p>Do you have any other comments about your application?</p>
-                    <textarea class="form-control" name="formComments" id="formComments" cols="30" rows="5"></textarea>
+                    </p>
                 </div>
+                <div class="card-body">
+                    <label for="#formComments" class="lead">Any Other Comments</label>
+                    <div class="form-group" style="text-align: left;">
+                        <p>Do you have any other comments about your application?</p>
+                        <textarea class="form-control" name="formComments" id="formComments" cols="30"
+                            rows="5"></textarea>
+                    </div>
 
-                <label class="lead">Declaration and Signature</label>
-                <div style="text-align: left;">
-                    <label>I hereby declare that, to the best of my knowledge and belief, the information I have given
-                        in the present application form is correct.</label>
-                    <div class="form-group">
-                        <label>Date</label>
-                        <input type="text" class="datepicker form-control" id="declarationDate"
-                            data-date-format="dd/mm/yyyy" placeholder="Date">
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
+                    <label class="lead">Declaration and Signature</label>
+                    <div style="text-align: left;">
+                        <label>I hereby declare that, to the best of my knowledge and belief, the information I have
+                            given
+                            in the present application form is correct.</label>
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="text" class="datepicker form-control" id="declarationDate"
+                                data-date-format="dd/mm/yyyy" placeholder="Date">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="lead">
+                                The applicant(s) or the applicant’s representative(s) must sign in the box below. It can
+                                be
+                                uploaded or signed in person in the downloaded form.
+                            </label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="signatureDeclarationApplicant"
+                                    name="page9[signatureDeclaration]" value="Applicant" required
+                                    data-parsley-group="page9">
+                                <label class="custom-control-label"
+                                    for="signatureDeclarationApplicant">Applicant(s)</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="signatureDeclarationRepresentative"
+                                    name="page9[signatureDeclaration]" value="Representative" required
+                                    data-parsley-group="page9">
+                                <label class="custom-control-label"
+                                    for="signatureDeclarationRepresentative">Representative(s)</label>
+                            </div>
+                            <div class="custom-file">
+                                <label class="custom-file-label" for="declareSignature">Upload an image file of your
+                                    signature</label>
+                                <input class="custom-file-input files" type="file" name="page9[declareSignature][]"
+                                    id="declareSignature">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="is-hidden" id="correspondentOptionApplicant">
+                                <label class="lead">Confirmation of correspondent</label>
+                                <p> If there is more than one applicant, please give the
+                                    name
+                                    and address of the one person with whom
+                                    the Court will correspond. Where the applicant is represented, the Court will
+                                    correspond
+                                    only with the representative (lawyer or nonlawyer).</p>
+                                <label for="confirmationApplicantName">Name of applicant</label>
+                                <input class="form-control" type="text" name="page9[confirmationApplicantName]"
+                                    id="confirmationApplicantName">
+
+                                <label for="confirmationApplicantAddress">Address of applicant</label>
+                                <input class="form-control" type="text" name="page9[confirmationApplicantAddress]"
+                                    id="confirmationApplicantAddress">
+                            </div>
+                            <div class="is-hidden" id="correspondentOptionRepresentative">
+                                <label class="lead">Confirmation of correspondent</label>
+                                <p> If there is more than one representative, please give the
+                                    name
+                                    and address of the one person with whom
+                                    the Court will correspond. Where the applicant is represented, the Court will
+                                    correspond
+                                    only with the representative (lawyer or nonlawyer).</p>
+                                <label for="confirmationRepresentativeName">Name of Representative</label>
+                                <input class="form-control" type="text" name="page9[confirmationRepresentativeName]"
+                                    id="confirmationRepresentativeName">
+
+                                <label for="confirmationRepresentativeAddress">Address of Representative</label>
+                                <input class="form-control" type="text" name="page9[confirmationRepresentativeAddress]"
+                                    id="confirmationRepresentativeAddress">
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="lead">
-                            The applicant(s) or the applicant’s representative(s) must sign in the box below. It can be
-                            uploaded or signed in person in the downloaded form.
-                        </label>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="signatureDeclarationApplicant"
-                                name="page9[signatureDeclaration]" value="Applicant" required
-                                data-parsley-group="page9">
-                            <label class="custom-control-label" for="signatureDeclarationApplicant">Applicant(s)</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="signatureDeclarationRepresentative"
-                                name="page9[signatureDeclaration]" value="Representative" required
-                                data-parsley-group="page9">
-                            <label class="custom-control-label"
-                                for="signatureDeclarationRepresentative">Representative(s)</label>
-                        </div>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="declareSignature">Upload an image file of your
-                                signature</label>
-                            <input class="custom-file-input files" type="file" name="page9[declareSignature][]"
-                                id="declareSignature">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="is-hidden" id="correspondentOptionApplicant">
-                            <label class="lead">Confirmation of correspondent</label>
-                            <p> If there is more than one applicant, please give the
-                                name
-                                and address of the one person with whom
-                                the Court will correspond. Where the applicant is represented, the Court will correspond
-                                only with the representative (lawyer or nonlawyer).</p>
-                            <label for="confirmationApplicantName">Name of applicant</label>
-                            <input class="form-control" type="text" name="page9[confirmationApplicantName]"
-                                id="confirmationApplicantName">
-
-                            <label for="confirmationApplicantAddress">Address of applicant</label>
-                            <input class="form-control" type="text" name="page9[confirmationApplicantAddress]"
-                                id="confirmationApplicantAddress">
-                        </div>
-                        <div class="is-hidden" id="correspondentOptionRepresentative">
-                            <label class="lead">Confirmation of correspondent</label>
-                            <p> If there is more than one representative, please give the
-                                name
-                                and address of the one person with whom
-                                the Court will correspond. Where the applicant is represented, the Court will correspond
-                                only with the representative (lawyer or nonlawyer).</p>
-                            <label for="confirmationRepresentativeName">Name of Representative</label>
-                            <input class="form-control" type="text" name="page9[confirmationRepresentativeName]"
-                                id="confirmationRepresentativeName">
-
-                            <label for="confirmationRepresentativeAddress">Address of Representative</label>
-                            <input class="form-control" type="text" name="page9[confirmationRepresentativeAddress]"
-                                id="confirmationRepresentativeAddress">
-                        </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                    <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                </div>
+            </div>
+            <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
+                <div class="suggestion-form-9 stuck">
+                    <div class="card">
+                        <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
+                            {% csrf_token %}
+                            <div class="card-header">
+                                <h5 align="center">Help us to
+                                    Improve</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for=""> Are you a legally trained person?</label>
+                                    <input type="text" class="is-hidden" name="sugPageNo" value="9">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainYesNinth"
+                                            name="legalTrained" value="Yes">
+                                        <label class="custom-control-label" for="legalTrainYesNinth">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainNoNinth"
+                                            name="legalTrained" value="No">
+                                        <label class="custom-control-label" for="legalTrainNoNinth">No</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="suggestionArea">How can we improve this page?</label>
+                                    <textarea class="form-control" name="suggestionArea" type="text"
+                                        rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-primary feedback_submit-9"
+                                    onclick="feedbackSubmit(9)">Submit Form</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="card-footer">
-        <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-        <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+
     </div>
 </div>

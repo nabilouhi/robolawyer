@@ -6,31 +6,23 @@ html {
 
 
 body {
-    margin: 0 0 100px;
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 100px;
+    margin-bottom: 10vw;
     /* bottom = footer height */
     padding: 25px;
 }
 
 footer {
-    background-color: orange;
+    background-color: black;
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 100px;
+    height: 10vw;
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
-
-/* body {
-    min-height: 100vh;
-} */
-
-/* .Header,
-.Footer {
-    flex-shrink: 0;
-} */
-
-
 
 .Content {
     flex-grow: 1;
@@ -52,10 +44,6 @@ h1 {
     background-color: black;
 }
 
-/* .contrib-logo {
-    margin: 0 60px;
-} */
-
 .logo-images-home {
     width: 40%;
 }
@@ -74,4 +62,8 @@ h1 {
 
 .modal-footer {
     justify-content: center !important;
+}
+
+.space-divider {
+    height: 10vw;
 }

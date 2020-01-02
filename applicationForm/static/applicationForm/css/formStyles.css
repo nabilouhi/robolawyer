@@ -1,11 +1,5 @@
 .stuck {
   position: fixed;
-  /* top: 10px;
-  left: 10px;
-  bottom: 10px;
-  /* width: 180px; */
-  /* overflow-y: scroll; */
-
 }
 
 label {
@@ -56,10 +50,6 @@ input[type="file"] {
 .remove:hover {
   background: white;
   color: black;
-}
-
-#map {
-  height: 100%;
 }
 
 table {

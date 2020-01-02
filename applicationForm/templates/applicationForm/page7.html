@@ -1,67 +1,113 @@
 <div id="form-page-7" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger7">
-    <section class="container form-section">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-header-title" align="center">International Proceedings</h4>
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <label>Have you raised any of these complaints in another procedure of international investigation
-                        or
-                        settlement? <a href="javascript://" data-toggle="popover"
-                            data-content="You must indicate whether you have submitted the complaints in your application to any other procedure of international investigation or settlement, for example a United Nations body such as the ILO or the UN Human Rights Committee, or an international arbitration panel. If you have, you should give details, including the name of the body to which you submitted your complaints, the dates and details of any proceedings which took place and details of any decisions that were taken. You should also submit copies of relevant decisions and other documents. "
-                            data-trigger="click" data-placement="bottom"><span><i
-                                    class="fas fa-question-circle"></i></span></a></label>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="intInvestigationYes"
-                            name="page7[intInvestigation]" value="Yes" required data-parsley-group="">
-                        <label class="custom-control-label" for="intInvestigationYes">Yes</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="intInvestigationNo"
-                            name="page7[intInvestigation]" value="No" required data-parsley-group="">
-                        <label class="custom-control-label" for="intInvestigationNo">No</label>
-                    </div>
+    <div class="col-md-11 mx-auto form-section">
+        {% load static  %}
+        <div class="row">
+            <div class="card col-sm-10">
+                <div class="card-header">
+                    <h4 class="card-header-title" align="center">International Proceedings</h4>
                 </div>
-                <div class="form-group is-hidden intInvestigation">
-                    <label for="appealDescribe">Please give a concise summary of the procedure (complaints submitted,
-                        name
-                        of the international body
-                        and date and nature of any decisions given) </label>
-                    <textarea class="form-control" name="page7[intInvestigationDesc]" id="intInvestigationDesc"
-                        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
-                        rows="10"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Do you (the applicant) currently have, or have you previously had, any other applications
-                        before the
-                        Court? <a href="javascript://" data-toggle="popover"
-                            data-content="If you have, or have had, any other applications before the Court and, give the application number(s). This is vital to assist the Court in filing, retrieving and processing the different applications under your name. 
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Have you raised any of these complaints in another procedure of international
+                            investigation
+                            or
+                            settlement? <a href="javascript://" data-toggle="popover"
+                                data-content="You must indicate whether you have submitted the complaints in your application to any other procedure of international investigation or settlement, for example a United Nations body such as the ILO or the UN Human Rights Committee, or an international arbitration panel. If you have, you should give details, including the name of the body to which you submitted your complaints, the dates and details of any proceedings which took place and details of any decisions that were taken. You should also submit copies of relevant decisions and other documents. "
+                                data-trigger="click" data-placement="bottom"><span><i
+                                        class="fas fa-question-circle"></i></span></a></label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="intInvestigationYes"
+                                name="page7[intInvestigation]" value="Yes" required data-parsley-group="">
+                            <label class="custom-control-label" for="intInvestigationYes">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="intInvestigationNo"
+                                name="page7[intInvestigation]" value="No" required data-parsley-group="">
+                            <label class="custom-control-label" for="intInvestigationNo">No</label>
+                        </div>
+                    </div>
+                    <div class="form-group is-hidden intInvestigation">
+                        <label for="appealDescribe">Please give a concise summary of the procedure (complaints
+                            submitted,
+                            name
+                            of the international body
+                            and date and nature of any decisions given) </label>
+                        <textarea class="form-control" name="page7[intInvestigationDesc]" id="intInvestigationDesc"
+                            oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
+                            rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Do you (the applicant) currently have, or have you previously had, any other
+                            applications
+                            before the
+                            Court? <a href="javascript://" data-toggle="popover"
+                                data-content="If you have, or have had, any other applications before the Court and, give the application number(s). This is vital to assist the Court in filing, retrieving and processing the different applications under your name. 
                     If the applicant’s first application form was rejected as incomplete, no file is kept, neither the form nor any of the attached documents. So, merely sending the missing document or a letter with the missing information will not count: you must download a fresh application form, fill it in fully and append to that form copies of all the relevant documents, even if you have sent the documents in previous correspondence addressed to the Court."
-                            data-trigger="click" data-placement="bottom"><span><i
-                                    class="fas fa-question-circle"></i></span></a></label>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="prevApplicationsYes"
-                            name="page7[prevApplications]" value="Yes" required data-parsley-group="">
-                        <label class="custom-control-label" for="prevApplicationsYes">Yes</label>
+                                data-trigger="click" data-placement="bottom"><span><i
+                                        class="fas fa-question-circle"></i></span></a></label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="prevApplicationsYes"
+                                name="page7[prevApplications]" value="Yes" required data-parsley-group="">
+                            <label class="custom-control-label" for="prevApplicationsYes">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="prevApplicationsNo"
+                                name="page7[prevApplications]" value="No" required data-parsley-group="">
+                            <label class="custom-control-label" for="prevApplicationsNo">No</label>
+                        </div>
                     </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="prevApplicationsNo"
-                            name="page7[prevApplications]" value="No" required data-parsley-group="">
-                        <label class="custom-control-label" for="prevApplicationsNo">No</label>
+                    <div class="form-group prevAppDesc is-hidden">
+                        <label for="appealDescribe">Please write the relevant application
+                            number(s) in the box below</label>
+                        <textarea class="form-control" name="page7[prevAppDesc]" id="prevAppDesc"
+                            oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
+                            rows="10"></textarea>
+                    </div>
+                    <div class="card-footer" align="center">
+                        <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                        <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
                     </div>
                 </div>
-                <div class="form-group prevAppDesc is-hidden">
-                    <label for="appealDescribe">Please write the relevant application
-                        number(s) in the box below</label>
-                    <textarea class="form-control" name="page7[prevAppDesc]" id="prevAppDesc"
-                        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
-                        rows="10"></textarea>
-                </div>
-                <div class="card-footer" align="center">
-                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-                    <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                </section>
+            </div>
+            <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
+                <div class="suggestion-form-7 stuck">
+                    <div class="card">
+                        <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
+                            {% csrf_token %}
+                            <div class="card-header">
+                                <h5 align="center">Help us to
+                                    Improve</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for=""> Are you a legally trained person?</label>
+                                    <input type="text" class="is-hidden" name="sugPageNo" value="7">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainYesSeventh"
+                                            name="legalTrained" value="Yes">
+                                        <label class="custom-control-label" for="legalTrainYesSeventh">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainNoSeventh"
+                                            name="legalTrained" value="No">
+                                        <label class="custom-control-label" for="legalTrainNoSeventh">No</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="suggestionArea">How can we improve this page?</label>
+                                    <textarea class="form-control" name="suggestionArea" type="text"
+                                        rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-primary feedback_submit-7"
+                                    onclick="feedbackSubmit(7)">Submit Form</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-    </section>
+        </div>
+    </div>
 </div>

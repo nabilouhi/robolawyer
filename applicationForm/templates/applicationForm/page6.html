@@ -1,117 +1,172 @@
 <div id="form-page-6" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger6">
-    <section class="container">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-header-title" align="center">Domestic Proceedings </h4>
+    <div class="col-md-11 mx-auto form-section">
+        {% load static  %}
+        <div class="row">
+            <div class="card col-sm-10">
+                <div class="card-header">
+                    <h4 class="card-header-title" align="center">Domestic Proceedings </h4>
 
-                <p>
-                    The ECtHR, as an international court, cannot examine complaints by anyone if they have not first
-                    given the competent national authorities, the courts in particular, the opportunity to put the
-                    matter right. This means that an applicant must bring all the matters which she or he wants to
-                    complain about before the national courts and use all the available appeals up to the highest level.
-                    Applicants must show that they have exhausted the available national legal remedies and provide
-                    dates for each decision, so that the Court can quickly see that they have complied with the
-                    six-month time-limit. <br> <br>
-                    Only a summary of the remedies need be given, with the name of the court, the date and a concise
-                    description of the decision taken. Extra details about the court proceedings or how the courts dealt
-                    with complaints can be added in supplementary annexes if necessary.
-                    Remember to append copies of all the decisions taken by courts or other decision-making bodies, from
-                    the lowest to the highest; you must also provide copies of your claims or applications to the courts
-                    and your statements of appeal so that you can show that you raised the substance of your Convention
-                    complaints at each level. <br> <br>
-                    If an applicant thinks that there were no remedies to exhaust as they were non-existent or
-                    ineffective or inaccessible in some way, the applicant should put down this reasoning briefly.
+                    <p>
+                        The ECtHR, as an international court, cannot examine complaints by anyone if they have not
+                        first
+                        given the competent national authorities, the courts in particular, the opportunity to put
+                        the
+                        matter right. This means that an applicant must bring all the matters which she or he wants
+                        to
+                        complain about before the national courts and use all the available appeals up to the
+                        highest level.
+                        Applicants must show that they have exhausted the available national legal remedies and
+                        provide
+                        dates for each decision, so that the Court can quickly see that they have complied with the
+                        six-month time-limit. <br> <br>
+                        Only a summary of the remedies need be given, with the name of the court, the date and a
+                        concise
+                        description of the decision taken. Extra details about the court proceedings or how the
+                        courts dealt
+                        with complaints can be added in supplementary annexes if necessary.
+                        Remember to append copies of all the decisions taken by courts or other decision-making
+                        bodies, from
+                        the lowest to the highest; you must also provide copies of your claims or applications to
+                        the courts
+                        and your statements of appeal so that you can show that you raised the substance of your
+                        Convention
+                        complaints at each level. <br> <br>
+                        If an applicant thinks that there were no remedies to exhaust as they were non-existent or
+                        ineffective or inaccessible in some way, the applicant should put down this reasoning
+                        briefly.
 
-                </p>
-            </div>
-            <div class=" alert alert-success example-box">
-                <h5 class="alert-heading">Examples</h5>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Complaint</th>
-                            <th scope="col">Date of Final Decision by highest court</th>
-                            <th scope="col">Remedies Used</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                    </p>
+                </div>
+                <div class=" alert alert-success example-box">
+                    <h5 class="alert-heading">Examples</h5>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Complaint</th>
+                                <th scope="col">Date of Final Decision by highest court</th>
+                                <th scope="col">Remedies Used</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                        <tr>
-                            <td>Art. 5 complaint about arrest by police</td>
-                            <td>14/01/15</td>
-                            <td>High Court rejected claim on 05/12/13; leave to appeal refused by Court of Appeal on
-                                14/01/15
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Art. 6 complaint about neighbour dispute</td>
-                            <td>04/12/14</td>
-                            <td>County Court rejected claim on 03/04/12; Court of Appeal dismissed appeal on
-                                04/12/14
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="card-body alert-info">
-                <div class="form-group">
-                    <div class="complaints">
-                        <div class="complaint">
-                            <table width="100%">
-                                <tr>
-                                    <td width="30%">
-                                        <label for="complainSelect"><b>Complaint</b></label>
-                                        <input name="page6[complainSelect][]" class="form-control complainSelect">
-                                    </td>
-                                    <td width="40%">
-                                        <label><b>Date of Final Decision from the highest court</b> </label>
-                                        <!-- <input class="form-control datepicker" type="text" color="Info"
+                            <tr>
+                                <td>Art. 5 complaint about arrest by police</td>
+                                <td>14/01/15</td>
+                                <td>High Court rejected claim on 05/12/13; leave to appeal refused by Court of
+                                    Appeal on
+                                    14/01/15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Art. 6 complaint about neighbour dispute</td>
+                                <td>04/12/14</td>
+                                <td>County Court rejected claim on 03/04/12; Court of Appeal dismissed appeal on
+                                    04/12/14
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-body alert-info">
+                    <div class="form-group">
+                        <div class="complaints">
+                            <div class="complaint">
+                                <table width="100%">
+                                    <tr>
+                                        <td width="30%">
+                                            <label for="complainSelect"><b>Complaint</b></label>
+                                            <input name="page6[complainSelect][]" class="form-control complainSelect">
+                                        </td>
+                                        <td width="40%">
+                                            <label><b>Date of Final Decision from the highest court</b> </label>
+                                            <!-- <input class="form-control datepicker" type="text" color="Info"
                                             name="page6[complaintDate][]" placeholder="Select date of final Decision" /> -->
-                                        <input type="text" class="date" name="page6[complaintDate][]"
-                                            data-template='DD MMM YYYY'>
-                                    </td>
-                                    <td width="30%">
-                                        <label><b> Remedies Used</b></label>
-                                        <textarea class="form-control remedies" name="page6[remedies][]"
-                                            oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'
-                                            cols="30" rows="3"></textarea>
-                                    </td>
-                                </tr>
-                            </table>
+                                            <input type="text" class="date" name="page6[complaintDate][]"
+                                                data-template='DD MMM YYYY'>
+                                        </td>
+                                        <td width="30%">
+                                            <label><b> Remedies Used</b></label>
+                                            <textarea class="form-control remedies" name="page6[remedies][]"
+                                                oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'
+                                                cols="30" rows="3"></textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <hr>
                         </div>
-                        <hr>
+                        <div class="btn btn-light add-more-complaints"><span>Add More <i class="fas fa-plus"></i></span>
+                        </div>
                     </div>
-                    <div class="btn btn-light add-more-complaints"><span>Add More <i class="fas fa-plus"></i></span>
+                    <div class="form-group">
+                        Is or was there an appeal or remedy available to you which you have not used? <br>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="appealAvailableYes"
+                                name="page6[appealAvailable]" value="Yes" required data-parsley-group="">
+                            <label class="custom-control-label" for="appealAvailableYes">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="appealAvailableNo"
+                                name="page6[appealAvailable]" value="No" required data-parsley-group="">
+                            <label class="custom-control-label" for="appealAvailableNo">No</label>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    Is or was there an appeal or remedy available to you which you have not used? <br>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="appealAvailableYes"
-                            name="page6[appealAvailable]" value="Yes" required data-parsley-group="">
-                        <label class="custom-control-label" for="appealAvailableYes">Yes</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" id="appealAvailableNo"
-                            name="page6[appealAvailable]" value="No" required data-parsley-group="">
-                        <label class="custom-control-label" for="appealAvailableNo">No</label>
-                    </div>
-                </div>
-                <div class="form-group is-hidden appealDescribe">
-                    <label for="appealDescribe">Please state which appeal or remedy you have not used and explain why
-                        not <a href="javascript://" data-toggle="popover"
-                            data-content="You should state if there was an available remedy which you did not use. If so, you should give the reasons why you did not make use of it. 
+                    <div class="form-group is-hidden appealDescribe">
+                        <label for="appealDescribe">Please state which appeal or remedy you have not used and
+                            explain why
+                            not <a href="javascript://" data-toggle="popover"
+                                data-content="You should state if there was an available remedy which you did not use. If so, you should give the reasons why you did not make use of it. 
                         Further useful information about exhaustion of domestic remedies and compliance with the six-month time-limit may be found in the Practical Guide on admissibility criteria (www.echr.coe.int/applicants)"
-                            data-trigger="click" data-placement="bottom"><span><i
-                                    class="fas fa-question-circle"></i></span></a></label>
-                    <textarea class="form-control" name="page6[appealDescribe]" id="appealDescribe"
-                        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
-                        rows="10"></textarea>
-                </div>
-                <div class="card-footer" align="center">
-                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-                    <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                                data-trigger="click" data-placement="bottom"><span><i
+                                        class="fas fa-question-circle"></i></span></a></label>
+                        <textarea class="form-control" name="page6[appealDescribe]" id="appealDescribe"
+                            oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
+                            rows="10"></textarea>
+                    </div>
+                    <div class="card-footer" align="center">
+                        <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                        <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                    </div>
                 </div>
             </div>
-    </section>
+            <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
+                <div class="suggestion-form-6 stuck">
+                    <div class="card">
+                        <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
+                            {% csrf_token %}
+                            <div class="card-header">
+                                <h5 align="center">Help us to
+                                    Improve</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for=""> Are you a legally trained person?</label>
+                                    <input type="text" class="is-hidden" name="sugPageNo" value="1">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainYesSixth"
+                                            name="legalTrained" value="Yes">
+                                        <label class="custom-control-label" for="legalTrainYesSixth">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainNoSixth"
+                                            name="legalTrained" value="No">
+                                        <label class="custom-control-label" for="legalTrainNoSixth">No</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="suggestionArea">How can we improve this page?</label>
+                                    <textarea class="form-control" name="suggestionArea" type="text"
+                                        rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-primary feedback_submit-6"
+                                    onclick="feedbackSubmit(6)">Submit Form</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

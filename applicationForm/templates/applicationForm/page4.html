@@ -1,69 +1,126 @@
 <div id="form-page-4" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger4">
-    <section class="container">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-header-title" align="center">
-                    Statement of the facts <a href="javascript://" data-toggle="popover"
-                        data-content="Filling in this information on the application form is to assist the Court in speedily assessing and allocating incoming cases. Additional explanations may be appended, if necessary, in a separate document up to a maximum of 20 pages: these only develop and cannot replace the statement of facts, complaints and compliance with the admissibility criteria that must be on the application form itself."
-                        data-trigger="click" data-placement="bottom"><span><i
-                                class="fas fa-question-circle"></i></span></a>
-                </h4>
-                <div class="form-text alert alert-info">
-                    <p>The facts of your case should be set out in the space provided in the application form so as to
-                        enable the Court to determine the nature and scope of the application. This information
-                        concerning your case is essential for the proper and prompt sifting of your application and it
-                        must be included on the pages provided in the application form, not on accompanying enclosures.
-                    </p>
-                    <ol>
-                        <li>Be clear and concise.</li>
-                        <li>Give exact dates. </li>
-                        <li>Be chronological and set out events in the order in which they occurred. If your complaints
-                            relate to a number of different matters (for example different sets of court proceedings),
-                            please deal with each factual matter separately.</li>
-                        <li>Put down the essential information concerning your case: the key facts and decisions, and
-                            how your rights have been violated, without irrelevant background or side issues. Do not
-                            include lengthy quotations: you can always give a reference to an accompanying document.
-                        </li>
-                        <li>You must provide documents to support your case, in particular copies of relevant decisions
-                            or documentary records of any measures about which you complain, such as medical reports,
-                            witness statements, transcripts, documents of title to property, or records of periods spent
-                            in custody, a notice of eviction or a deportation order.
-                        </li>
-                        <li>All relevant documents you refer to should be listed in the document list (step 8 in this
-                            form) and you have to attach copies to the application form. If you cannot obtain copies of
-                            particular documents you should explain why not.
-                        </li>
-                        <li>Where the matter complained of does not cause an applicant any real harm or significant
-                            disadvantage, raises no new human rights issues that need to be addressed at international
-                            level and has already been looked at by a domestic court, the case may also be rejected.
-                        </li>
-                    </ol>
+    <div class="col-md-11 mx-auto form-section">
+        {% load static  %}
+        <div class="row">
+            <div class="card col-sm-10">
+                <div class="card-header">
+                    <h4 class="card-header-title" align="center">
+                        Statement of the facts <a href="javascript://" data-toggle="popover"
+                            data-content="Filling in this information on the application form is to assist the Court in speedily assessing and allocating incoming cases. Additional explanations may be appended, if necessary, in a separate document up to a maximum of 20 pages: these only develop and cannot replace the statement of facts, complaints and compliance with the admissibility criteria that must be on the application form itself."
+                            data-trigger="click" data-placement="bottom"><span><i
+                                    class="fas fa-question-circle"></i></span></a>
+                    </h4>
+                    <div class="form-text alert alert-info">
+                        <p>The facts of your case should be set out in the space provided in the application form so as
+                            to
+                            enable the Court to determine the nature and scope of the application. This information
+                            concerning your case is essential for the proper and prompt sifting of your application and
+                            it
+                            must be included on the pages provided in the application form, not on accompanying
+                            enclosures.
+                        </p>
+                        <ol>
+                            <li>Be clear and concise.</li>
+                            <li>Give exact dates. </li>
+                            <li>Be chronological and set out events in the order in which they occurred. If your
+                                complaints
+                                relate to a number of different matters (for example different sets of court
+                                proceedings),
+                                please deal with each factual matter separately.</li>
+                            <li>Put down the essential information concerning your case: the key facts and decisions,
+                                and
+                                how your rights have been violated, without irrelevant background or side issues. Do not
+                                include lengthy quotations: you can always give a reference to an accompanying document.
+                            </li>
+                            <li>You must provide documents to support your case, in particular copies of relevant
+                                decisions
+                                or documentary records of any measures about which you complain, such as medical
+                                reports,
+                                witness statements, transcripts, documents of title to property, or records of periods
+                                spent
+                                in custody, a notice of eviction or a deportation order.
+                            </li>
+                            <li>All relevant documents you refer to should be listed in the document list (step 8 in
+                                this
+                                form) and you have to attach copies to the application form. If you cannot obtain copies
+                                of
+                                particular documents you should explain why not.
+                            </li>
+                            <li>Where the matter complained of does not cause an applicant any real harm or significant
+                                disadvantage, raises no new human rights issues that need to be addressed at
+                                international
+                                level and has already been looked at by a domestic court, the case may also be rejected.
+                            </li>
+                        </ol>
+                    </div>
                 </div>
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <input disabled maxlength="3" size="3" value="1000" id="counter" class="alert alert-success">
-                    <textarea class="form-control" name="page5[stOfFacts]" id="stofFacts"
-                        oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
-                        rows="10" onkeyup="textCounter(this,'counter', 1000);"></textarea>
-                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <input disabled maxlength="3" size="3" value="1000" id="counter" class="alert alert-success">
+                        <textarea class="form-control" name="page5[stOfFacts]" id="stofFacts"
+                            oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
+                            rows="10" onkeyup="textCounter(this,'counter', 1000);"></textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label for="stofFactsExtra" class="lead">You have reached the character limit imposed by the Court.
-                        It is possible, but not required, for applicants to add an additional statement expanding on the
-                        facts, complaints or remedies used. This extra statement should be not more than 20 pages. It
-                        should not add new complaints or violations but only develop what is set out on the
-                        form.
-                        If you want to add more statement of facts, then please use the area below for this.</label>
-                    <input disabled maxlength="3" size="3" id="counter2" value="5000" class="alert alert-success">
-                    <textarea class="form-control" name="page5[stOfFactsExtra]" id="stofFactsExtra"
-                        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
-                        rows="10" onkeyup="textCounter(this,'counter2', 5000);"></textarea>
-                </div>
-                <div class="card-footer" align="center">
-                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-                    <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                    <div class="form-group">
+                        <label for="stofFactsExtra" class="lead">You have reached the character limit imposed by the
+                            Court.
+                            It is possible, but not required, for applicants to add an additional statement expanding on
+                            the
+                            facts, complaints or remedies used. This extra statement should be not more than 20 pages.
+                            It
+                            should not add new complaints or violations but only develop what is set out on the
+                            form.
+                            If you want to add more statement of facts, then please use the area below for this.</label>
+                        <input disabled maxlength="3" size="3" id="counter2" value="5000" class="alert alert-success">
+                        <textarea class="form-control" name="page5[stOfFactsExtra]" id="stofFactsExtra"
+                            oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
+                            rows="10" onkeyup="textCounter(this,'counter2', 5000);"></textarea>
+                    </div>
+                    <div class="card-footer" align="center">
+                        <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                        <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                    </div>
                 </div>
             </div>
-    </section>
+            <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
+                <div class="suggestion-form-4 stuck">
+                    <div class="card">
+                        <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
+                            {% csrf_token %}
+                            <div class="card-header">
+                                <h5 align="center">Help us to
+                                    Improve</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for=""> Are you a legally trained person?</label>
+                                    <input type="text" class="is-hidden" name="sugPageNo" value="4">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainYesFourth"
+                                            name="legalTrained" value="Yes">
+                                        <label class="custom-control-label" for="legalTrainYesFourth">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainNoFourth"
+                                            name="legalTrained" value="No">
+                                        <label class="custom-control-label" for="legalTrainNoFourth">No</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="suggestionArea">How can we improve this page?</label>
+                                    <textarea class="form-control" name="suggestionArea" type="text"
+                                        rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-primary feedback_submit-4"
+                                    onclick="feedbackSubmit(4)">Submit Form</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

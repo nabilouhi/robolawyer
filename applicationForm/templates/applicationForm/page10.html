@@ -1,75 +1,127 @@
 <div id="form-page-10" role="tabpanel" class="bs-stepper-pane fade text-center" aria-labelledby="stepperFormTrigger10">
-    <div class="container form-section" id="summary">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-headet-title">Finish</h4>
-                <p class="card-header-title lead">
+    <div class="col-md-11 mx-auto form-section">
+        {% load static  %}
+        <div class="row">
+            <div class="card col-sm-10">
+                <div class="card-header">
+                    <h4 class="card-headet-title">Finish</h4>
+                    <p class="card-header-title lead">
 
-                </p>
-            </div>
-            <div class="card-body">
-                <div>
-                    <h3>VERY IMPORTANT </h3>
-                    <div style="text-align:justify">
-                        <p>The application form has to be printed out and sent by mail to the registrar of the European
-                            Court of Human Rights.
-                        </p>
-
-                        <span>Before mailing the form, please make sure to:
-                            <span>
-                                <ol>
-                                    <li>Add the original signatures of the applicant(s) and/or the authorised
-                                        representative(s) in all the relevant fields (page 3 if you are an individual
-                                        that is represented by someone else, page 4 if you are an organisation that is
-                                        represented by a lawyer, and page 13 of the printed application form). The
-                                        receipt of a faxed application is not counted as a complete application as the
-                                        Court needs to receive the original signed application form.
-                                    </li>
-                                    <li>Sign the application in the required fields; </li>
-                                    <li>Add full and legible copies of all documents mentioned in your application. No
-                                        documents will be returned to you. It is thus in your interests to submit
-                                        copies, not originals. You MUST:
-
-                                        <ul>
-                                            <li>arrange the documents in order by date and by procedure; </li>
-                                            <li>number the pages consecutively; and </li>
-                                            <li>NOT staple, bind or tape the documents.</li>
-                                        </ul>
-                                        <p>Please indicate at page 12 of the printed application (the page titled “List
-                                            of Accompanying Documents”) the page number at which each document annexed
-                                            may be found.
-                                        </p>
-                                    </li>
-                                    <li>Applicants must dispatch the signed original by post within the six-month
-                                        time-limit from the date when the final decision from the highest national court
-                                        was communicated.
-                                    </li>
-                                    <li>
-                                        <span> The completed and signed application form should be sent by post
-                                            to:</span> <br>
-                                        <div style="margin-left:100px">
-                                            <span>The Registrar</span><br>
-                                            <span>European Court of Human Rights</span><br>
-                                            <span>Council of Europe</span><br>
-                                            <span>67075 STRASBOURG CEDEX</span><br>
-                                            <span>FRANCE</span>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </span>
+                    </p>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h3>VERY IMPORTANT </h3>
+                        <div style="text-align:justify">
+                            <p>The application form has to be printed out and sent by mail to the registrar of the
+                                European
+                                Court of Human Rights.
                             </p>
 
+                            <span>Before mailing the form, please make sure to:
+                                <span>
+                                    <ol>
+                                        <li>Add the original signatures of the applicant(s) and/or the authorised
+                                            representative(s) in all the relevant fields (page 3 if you are an
+                                            individual
+                                            that is represented by someone else, page 4 if you are an organisation that
+                                            is
+                                            represented by a lawyer, and page 13 of the printed application form). The
+                                            receipt of a faxed application is not counted as a complete application as
+                                            the
+                                            Court needs to receive the original signed application form.
+                                        </li>
+                                        <li>Sign the application in the required fields; </li>
+                                        <li>Add full and legible copies of all documents mentioned in your application.
+                                            No
+                                            documents will be returned to you. It is thus in your interests to submit
+                                            copies, not originals. You MUST:
+
+                                            <ul>
+                                                <li>arrange the documents in order by date and by procedure; </li>
+                                                <li>number the pages consecutively; and </li>
+                                                <li>NOT staple, bind or tape the documents.</li>
+                                            </ul>
+                                            <p>Please indicate at page 12 of the printed application (the page titled
+                                                “List
+                                                of Accompanying Documents”) the page number at which each document
+                                                annexed
+                                                may be found.
+                                            </p>
+                                        </li>
+                                        <li>Applicants must dispatch the signed original by post within the six-month
+                                            time-limit from the date when the final decision from the highest national
+                                            court
+                                            was communicated.
+                                        </li>
+                                        <li>
+                                            <span> The completed and signed application form should be sent by post
+                                                to:</span> <br>
+                                            <div style="margin-left:100px">
+                                                <span>The Registrar</span><br>
+                                                <span>European Court of Human Rights</span><br>
+                                                <span>Council of Europe</span><br>
+                                                <span>67075 STRASBOURG CEDEX</span><br>
+                                                <span>FRANCE</span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </span>
+                                </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                    <button id="form-submit-btn" type="submit" class="btn btn-primary">Generate Printable PDF
+                        Form</button>
+                    <button id="btn btn-primary" type="button" class="btn btn-primary" data-toggle="popover"
+                        data-content="the email functionality is yet to be implemented." data-placement="bottom">Send
+                        the
+                        PDF
+                        form
+                        to e-Mail</button>
+                </div>
+            </div>
+            <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
+                <div class="suggestion-form-10 stuck">
+                    <div class="card">
+                        <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
+                            {% csrf_token %}
+                            <div class="card-header">
+                                <h5 align="center">Help us to
+                                    Improve</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for=""> Are you a legally trained person?</label>
+                                    <input type="text" class="is-hidden" name="sugPageNo" value="10">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainYesTenth"
+                                            name="legalTrained" value="Yes">
+                                        <label class="custom-control-label" for="legalTrainYesTenth">Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="legalTrainNoTenth"
+                                            name="legalTrained" value="No">
+                                        <label class="custom-control-label" for="legalTrainNoTenth">No</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="suggestionArea">How can we improve this page?</label>
+                                    <textarea class="form-control" name="suggestionArea" type="text"
+                                        rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-primary feedback_submit-10"
+                                    onclick="feedbackSubmit(10)">Submit Form</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card-footer">
-            <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-            <button id="form-submit-btn" type="submit" class="btn btn-primary">Generate Printable PDF Form</button>
-            <button id="btn btn-primary" type="button" class="btn btn-primary" data-toggle="popover"
-                data-content="the email functionality is yet to be implemented." data-placement="bottom">Send the PDF
-                form
-                to e-Mail</button>
         </div>
     </div>
 </div>

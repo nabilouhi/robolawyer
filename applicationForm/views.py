@@ -8,6 +8,8 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from .dataPreparation.prepareResult import PrepareResult
 import json
+from django.conf import settings
+from django.core.mail import send_mail
 # from .forms import FeedbackForm
 # Create your views here.
 
@@ -50,30 +52,16 @@ def submittedForm(request):
         return response
 
 
-# def feedbackForm(request):
-#     form = FeedbackForm()
-#     return render(request, 'applicationForm/feedback.html', {'form': form})
-
-
-# def feedback(request):
-#     if request.method=="post":
-#         form = FeedbackForm(request.POST)
-#         if form.is_valid():
-#             legalExp = form.cleaned_data['legalTraining']
-#             suggestion = form.cleaned_data['suggestion']
-#             return render(request, '')
-
 def feedback(request):
-    print(request)
     if request.method == 'POST':
-        legalExp = request.POST['legalExp']
-        suggestion = request.POST['suggestion']
+        pageNo = request.POST.get('pageNo')
+        legalTrained = request.POST.get('legalExp')
+        suggestion = request.POST.get('suggestion')
+        subject = "suggestionEmail"
+        message = "1. Page No. - " + str(pageNo) + "\n2. Legal Trained - " + \
+            str(legalTrained) + "\n3. Suggestion - " + str(suggestion)
+        from_user = settings.EMAIL_HOST_USER
+        to = ["contact@justbot.org"]
+        send_mail(subject, message, from_user, to, fail_silently=False)
 
     return HttpResponse('We have received your feedback.')
-
-
-# class FeedbackView(BSModalCreateView):
-#     template_name = 'applicationForm/feedback.html'
-#     form_class = BookForm
-#     success_message = 'Success: feedback was created.'
-#     success_url = reverse_lazy('')
