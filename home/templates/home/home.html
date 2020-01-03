@@ -2,18 +2,33 @@
 {% load static %}
 {% block content %}
 
-<div class="jumbotron" align="center">
+<header class="masthead"
+    style='background: linear-gradient(to bottom, rgba(212, 199, 199, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("{% static 'home/images/bg2.jpg' %}");'>
+
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <br>
+            <br>
+            <h1 class="mx-auto my-0 text-uppercase"> JUSTBOT!</h1>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5"> Here you can get help with filling in the application form to
+                the European Court of Human
+                Rights.</h2>
+            <a href="{% url 'form' %}" class="btn btn-primary js-scroll-trigger">Get Started</a>
+        </div>
+    </div>
+</header>
+
+<div class="jumbotron home-jumbo" align="center">
     <div class="container">
-        <h1 class="display-4">Welcome to Just Bot
+        <h1 class="display-5">Did you know ?
         </h1>
-        <p class="lead"> Here you can get help with filling in the application form to the European Court of Human
-            Rights.
-            <p>Did you know that only about 5% of all the applications submitted to the ECtHR reach the
-                stage of getting a judgement? The large majority gets declared inadmissible on formal
-                grounds, like not filling the application form correctly, not exhausting all national remedies
-                or sending the application more than 6 months after receiving a final decision from the
-                national courts. The Just-Bot digital form will help you with filling in all required fields for
-                your specific case and avoid the most common mistakes!
+        <p class="lead"> that only about <b>5%</b> of all the applications submitted to the ECtHR reach the stage of
+            getting
+            a judgement?
+            <p> The large majority gets declared inadmissible on formal grounds, like not filling the
+                application form correctly, not exhausting all national remedies or sending the application more than 6
+                months after receiving a final decision from the national courts. The Robolawyer's digital form will
+                help you with filling in all required fields for your specific case and avoid the most common mistakes!
             </p>
             <p>This project is a collaboration between Tech-R. Technology for Human Rights and the Law
                 Faculty at the University of Oslo.</p>
@@ -49,7 +64,7 @@
 <div class="bg-white text-center">
     <div class="container">
         <h1>Founders</h1>
-        <p class="font-weight-light lead">The Robolawyer project is a collaboration between TechR - Technology for Human
+        <p class="font-weight-light lead">The Justbot project is a collaboration between TechR - Technology for Human
             Rights and the University of Oslo
         </p>
     </div>

@@ -2,14 +2,21 @@
     <div class="col-md-11 mx-auto form-section">
         {% load static  %}
         <div class="row">
-            <div class="card col-sm-10">
-                <div class="card-header">
+            <div class="card-master col-sm-10">
+                <div class="card-master-header">
                     <h4 class="card-header-title" align="center">
-                        Statement of alleged violation(s) of the <a
-                            href="https://www.echr.coe.int/Documents/Convention_ENG.pdf" _target="#"> Convention and/or
-                            Protocols </a>and relevant arguments
+                        Article violation(s)
                     </h4>
-                    <p>You should be able to show that the matters about which you complain have interfered
+                </div>
+
+
+                <div class="card-body alert-info">
+                    <p>
+                        <h4>Statement of alleged violation(s) of the <a
+                                href="https://www.echr.coe.int/Documents/Convention_ENG.pdf" _target="#"> Convention
+                                and/or
+                                Protocols </a>and relevant arguments </h4>
+                        You should be able to show that the matters about which you complain have interfered
                         unjustifiably with a fundamental right. The European Court of Human Rights is not a court of
                         appeal
                         from national courts and cannot annul or alter their decisions, therefore you cannot just
@@ -30,40 +37,42 @@
                         guess
                         what an applicant objects to or make up the complaints for him or her.
                     </p>
-                </div>
-                <div class=" alert alert-success example-box">
-                    <h5 class="alert-heading">Examples</h5>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Article</th>
-                                <th scope="col">Explanation</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div class=" alert example-box">
+                        <h5 class="alert-heading">Examples</h5>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Article</th>
+                                    <th scope="col">Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                            <tr>
-                                <td>Article 6</td>
-                                <td>The criminal proceedings against me lasted 9 years and 8 months for two levels of
-                                    jurisdiction. Also, I was not allowed to cross-examine the witness who gave the sole
-                                    evidence against me.</td>
-                            </tr>
-                            <tr>
-                                <td>Article 5</td>
-                                <td>I was detained wrongfully at the border police station for three days without being
-                                    told
-                                    why or being allowed to phone a lawyer or my family.</td>
-                            </tr>
-                            <tr>
-                                <td>Article 3</td>
-                                <td>The police kept me handcuffed in a cell without heating and gave me no food for
-                                    three
-                                    days. I became ill and needed treatment from the doctor for bronchitis.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="card-body alert-info">
+                                <tr>
+                                    <td>Article 6</td>
+                                    <td>The criminal proceedings against me lasted 9 years and 8 months for two levels
+                                        of
+                                        jurisdiction. Also, I was not allowed to cross-examine the witness who gave the
+                                        sole
+                                        evidence against me.</td>
+                                </tr>
+                                <tr>
+                                    <td>Article 5</td>
+                                    <td>I was detained wrongfully at the border police station for three days without
+                                        being
+                                        told
+                                        why or being allowed to phone a lawyer or my family.</td>
+                                </tr>
+                                <tr>
+                                    <td>Article 3</td>
+                                    <td>The police kept me handcuffed in a cell without heating and gave me no food for
+                                        three
+                                        days. I became ill and needed treatment from the doctor for bronchitis.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                     <div class="form-group add-field">
                         <h5>Articles</h5>
                         <div class="articles">
@@ -179,19 +188,56 @@
                                     </tr>
                                 </table>
                             </div>
-                            <hr>
+                            <div class="btn btn-light add-more"><span>Add More <i class="fas fa-plus"></i></span></div>
                         </div>
-                        <div class="btn btn-light add-more"><span>Add More <i class="fas fa-plus"></i></span></div>
-                    </div>
 
+                    </div>
+                    <div class="card-footer" align="center">
+                        <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                        <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                    </div>
                 </div>
-                <div class="card-footer" align="center">
-                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-                    <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
+                    <div class="suggestion-form-5 stuck">
+                        <div class="card">
+                            <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
+                                {% csrf_token %}
+                                <div class="card-header">
+                                    <h5 align="center">Help us to
+                                        Improve</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for=""> Are you a legally trained person?</label>
+                                        <input type="text" class="is-hidden" name="sugPageNo" value="5">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="legalTrainYesFifth"
+                                                name="legalTrained" value="Yes">
+                                            <label class="custom-control-label" for="legalTrainYesFifth">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="legalTrainNoFifth"
+                                                name="legalTrained" value="No">
+                                            <label class="custom-control-label" for="legalTrainNoFifth">No</label>
+                                        </div>
+                                        <input type="text" class="is-hidden" name="legalTrainedInput">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="suggestionArea">How can we improve this page?</label>
+                                        <textarea class="form-control" name="suggestionArea" type="text"
+                                            rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button type="submit" class="btn btn-primary feedback_submit-5">Submit Form</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
-                <div class="suggestion-form-5 stuck">
+                <div class="suggestion-form-1 stuck">
                     <div class="card">
                         <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                             {% csrf_token %}
@@ -202,27 +248,27 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for=""> Are you a legally trained person?</label>
-                                    <input type="text" class="is-hidden" name="sugPageNo" value="5">
+                                    <input type="text" class="is-hidden" name="sugPageNo" value="1">
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="legalTrainYesFifth"
+                                        <input type="radio" class="custom-control-input" id="legalTrainYesFirst"
                                             name="legalTrained" value="Yes">
-                                        <label class="custom-control-label" for="legalTrainYesFifth">Yes</label>
+                                        <label class="custom-control-label" for="legalTrainYesFirst">Yes</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="legalTrainNoFifth"
+                                        <input type="radio" class="custom-control-input" id="legalTrainNoFirst"
                                             name="legalTrained" value="No">
-                                        <label class="custom-control-label" for="legalTrainNoFifth">No</label>
+                                        <label class="custom-control-label" for="legalTrainNoFirst">No</label>
                                     </div>
                                     <input type="text" class="is-hidden" name="legalTrainedInput">
                                 </div>
                                 <div class="form-group">
                                     <label for="suggestionArea">How can we improve this page?</label>
-                                    <textarea class="form-control" name="suggestionArea" type="text"
+                                    <textarea class="form-control sugArea1" name="suggestionArea" type="text"
                                         rows="5"></textarea>
                                 </div>
                             </div>
                             <div class="card-footer text-center">
-                                <button type="submit" class="btn btn-primary feedback_submit-5">Submit Form</button>
+                                <button type="submit" class="btn btn-primary feedback_submit-1">Submit Form </button>
                             </div>
                         </form>
                     </div>
