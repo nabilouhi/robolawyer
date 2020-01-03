@@ -40,9 +40,33 @@ footer {
 } */
 
 
+
+/* footer {
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10vw;
+    width: 100%;
+    overflow: hidden;
+} */
 html {
-    zoom: 100%
+    zoom: 75%;
+    margin: 0;
 }
+
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    height: 8vw;
+    margin-top: 5vw;
+}
+
 
 .lead b {
     font-weight: 800;
@@ -68,6 +92,6 @@ html {
     justify-content: center !important;
 }
 
-HEAD .space-divider {
+/* .space-divider {
     height: 10vw;
-}
+} */

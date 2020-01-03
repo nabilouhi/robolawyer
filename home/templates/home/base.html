@@ -47,13 +47,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{% url 'home' %}">About</a>
+            <a class="nav-link js-scroll-trigger" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link navbar-links" href="{% url 'form' %}">Application Form</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
+            <a class="nav-link navbar-links" href="{% url 'about' %}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navbar-links" href="{% url 'extResPage' %}">External Resources</a>
           </li>
         </ul>
       </div>

@@ -4,13 +4,7 @@ var phoneInputScript = function(phoneDiv) {
     utilsScript: 'static/intlTelInput/utils.js',
     allowDropdown: true,
     separateDialCode: true,
-    initialCountry: 'auto',
-    geoIpLookup: function(success, failure) {
-      $.get('http://ipinfo.io', function() {}, 'jsonp').always(function(resp) {
-        var countryCode = resp && resp.country ? resp.country : '';
-        success(countryCode);
-      });
-    }
+    initialCountry: 'auto'
   });
 
   $(phoneDiv).change(function() {
@@ -48,3 +42,9 @@ phoneInputScript('#nlTel');
 phoneInputScript('#lTel');
 phoneInputScript('#orgnlTel');
 phoneInputScript('#orglTel');
+
+// geoIpLookup: function(success, failure) {
+//   $.get('http://ipinfo.io', function() {}, 'jsonp').always(function(resp) {
+//     var countryCode = resp && resp.country ? resp.country : '';
+//     success(countryCode);
+//   });

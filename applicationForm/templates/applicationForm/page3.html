@@ -3,6 +3,7 @@
         {% load static  %}
         <div class="row">
             <div class="col-sm-10">
+
                 <div class="is-hidden" id="indRepresentative">
                     <div class="card-master">
                         <div class="card-master-header">
@@ -234,13 +235,15 @@
                             </div>
                             <div class="is-hidden" id="selfRep">
                                 <p class="lead">No action needed. Click on the Next button to proceed to next step.</p>
+                                <label class="fas fa-question-circle"></i></span></a></label>
+                                Email address for eComms account (if the representative already uses eComms, please
+                                provide
+                                the existing eComms account email
+                                address)
+                                <input class="form-control" type="email" name="page3[indIndeCommsSelf]"
+                                    id="indIndeCommsSelf">
                             </div>
-                            <label class="fas fa-question-circle"></i></span></a></label>
-                            Email address for eComms account (if the representative already uses eComms, please
-                            provide
-                            the existing eComms account email
-                            address)
-                            <input class="form-control" type="email" name="page3[indIndeComms]" id="indIndeComms">
+
                         </div>
                     </div>
                     <div class="is-hidden" id="selfRep">
@@ -253,8 +256,8 @@
                 </div>
 
                 <div class="is-hidden" id="orgRepresentative">
-                    <div class="card-master">
-                        <div class="card-master-header">
+                    <div class="card">
+                        <div class="card-header">
                             <h4 class="card-header-title" align="center">
                                 Representative
                                 <a href="javascript://" data-toggle="popover"
@@ -319,271 +322,178 @@
                                     <h4 class="alert-heading">Is the organisation going to be represented by a Lawyer?
                                     </h4>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="orgLRepresentative"
+                                        <input type="radio" class="custom-control-input" id="orgLYesRepresentative"
                                             name="page3[orgRepresentativeType]" value="orgYesLawyer">
-                                        <label class="custom-control-label" for="orgLRepresentative">Yes</label>
+                                        <label class="custom-control-label" for="orgLYesRepresentative">Yes</label>
                                     </div>
-                                    <div class="col-sm-10 card-footer" align="center">
-                                        <button class="btn btn-primary"
-                                            onclick="stepperForm.previous()">Previous</button>
-                                        <button class="btn btn-primary btn-next-form"
-                                            onclick="stepperForm.next()">Next</button>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="orgLNoRepresentative"
+                                            name="page3[orgRepresentativeType]" value="orgNoLawyer">
+                                        <label class="custom-control-label" for="orgLNoRepresentative">No</label>
                                     </div>
                                 </div>
                             </div>
 
 
-                            <div class="is-hidden" id="orgRepresentative">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-header-title" align="center">
-                                            Representative(s) of the Applicant Organisation <a href="javascript://"
-                                                data-toggle="popover"
-                                                data-content="A legal person (which includes a company, non-governmental organisation or association) that applies to the Court must do so through a representative of that legal person and who provides contact details and explains his or her capacity or relationship with the legal person. This official representative might be the person specifically designated by the board, or council of administration for that purpose, or the person who is authorised generally under domestic law or the organisation’s articles to act on its behalf. It may be that a legal person’s representative is also a lawyer or legal officer and has the capacity to act additionally as legal representative. Both parts of the application form concerning representation must still be filled in, and requisite documentary proof provided of authority to represent the legal person must be attached."
+
+
+                            <div class="is-hidden" id="orgLawyerRep">
+                                <div class="form-group">
+                                    <label>Surname</label>
+                                    <input class="form-control" type="text" name="page3[orglSurname]"
+                                        placeholder="Enter your surname" id="orglSurname" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>First Name(s)</label>
+                                    <input class="form-control" type="text" name="page3[orglFirstName]"
+                                        placeholder="Enter your First Name(s)" id="orglFirstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Nationality</label>
+                                    <select class="form-control" name="page3[orglNationality]"
+                                        id="orglNationality"></select>
+                                    <input type="hidden" id="orgPhonelNationality">
+                                </div>
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <textarea class="form-control" rows=6 placeholder="Enter Address"
+                                        name="page3[orglAddress]" id="orglAddress"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Telephone Number (select country code)</label> <br>
+                                    <input class="form-control phoneInput" type="tel" name="page3[orglTel]"
+                                        id="orglTel">
+                                </div>
+                                <div class="form-group">
+                                    <label>Fax</label>
+                                    <input class="form-control" type="number" name="page3[orglFax]"
+                                        placeholder="Enter Fax" id="orglFax">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control" type="email" name="page3[orglEmail]" placeholder="Email"
+                                        id="orglEmail" required>
+                                </div>
+                            </div>
+                            <div class="orgAuthority is-hidden col-sm-10">
+                                <div class="alert alert-success">
+                                    <h4 class="alert-heading">Authority </h4>
+
+                                    <p>The representative of the applicant organisation must authorise any
+                                        lawyer to
+                                        act
+                                        on
+                                        its
+                                        behalf
+                                        by
+                                        signing the first box below; the
+                                        lawyer must indicate his or her acceptance by signing the second box
+                                        below.
+                                    </p>
+                                </div>
+                                <p>
+                                    I hereby authorise the person indicated in section D.2 above to
+                                    represent
+                                    the
+                                    organisation
+                                    in
+                                    the
+                                    proceedings before the European
+                                    Court of Human Rights concerning the application lodged under Article 34
+                                    of
+                                    the
+                                    Convention.
+                                </p>
+                                <div class="form-group">
+                                    <div class="custom-file">
+                                        <label class="custom-file-label" for="orgAuthoritySignatureApplicant">Signature
+                                            of
+                                            organisation
+                                            official</label>
+                                        <input class="custom-file-input" type="file"
+                                            name="page3[orgAuthoritySignatureApplicant]"
+                                            id="orgAuthoritySignatureApplicant">
+
+                                        <label>Date <a href="javascript://" data-toggle="popover"
+                                                data-content="The date required is the date of signature by the individual applicant and his or her representative."
                                                 data-trigger="click" data-placement="bottom"><span><i
-                                                        class="fas fa-question-circle"></i></span></a>
-                                        </h4>
-                                        <p class="lead">Where the applicant is an organisation, it must be represented
+                                                        class="fas fa-question-circle"></i></span></a></label>
+                                        <input type="text" class="datepicker form-control"
+                                            id="orgAuthorityDateApplicant" data-date-format="dd/mm/yyyy"
+                                            placeholder="Date" name="page3[orgAuthorityDateApplicant]">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                        <div>
+                                            <p>I hereby agree to represent the organisation in the
+                                                proceedings
+                                                before
+                                                the
+                                                European
+                                                Court
+                                                of Human Rights concerning the application
+                                                lodged under Article 34 of the Convention.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-file">
+                                        <label class="custom-file-label" for="orgAuthoritySignatureLawyer">Signature
+                                            of
+                                            Lawyer</label>
+                                        <input class="custom-file-input" type="file"
+                                            name="page3[orgAuthoritySignatureLawyer]"
+                                            id="orgAuthoritySignatureRepresentative">
+                                        <p>I hereby agree to represent the organisation in the proceedings
                                             before
                                             the
+                                            European
                                             Court
-                                            by a
-                                            person entitled
-                                            to act on its behalf and in its
-                                            name (e.g. a duly authorised director or official).</p>
+                                            of
+                                            Human Rights concerning the application
+                                            lodged under Article 34 of the Convention.</p>
+                                        <label>Date</label>
+                                        <input type="text" class="datepicker form-control"
+                                            id="orgAuthorityDateRepresentative" data-date-format="dd/mm/yyyy"
+                                            placeholder="Date">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <div class="col-sm-10" id="orgNonLawyerRep">
-                                            <label class="lead">Organisation Official</label>
-                                            <div class="form-group">
-                                                <label>Capacity/relationship/function (please provide proof)</label>
-                                                <input class="form-control" type="text" name="page3[orgnlCapacity]"
-                                                    placeholder="Enter your relationship to the applicant"
-                                                    id="orgnlCapacity" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Surname</label>
-                                                <input class="form-control" type="text" name="page3[orgnlSurname]"
-                                                    placeholder="Enter your surname" id="orgnlSurname" required>
-
-                                            </div>
-                                            <div class="form-group">
-                                                <label>First Name(s)</label>
-                                                <input class="form-control" type="text" name="page3[orgnlFirstName]"
-                                                    placeholder="Enter your First Name(s)" id="orgnlFirstName" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Nationality</label>
-                                                <select class="form-control" name="page3[orgnlNationality]"
-                                                    id="orgnlNationality"></select>
-                                                <input type="hidden" id="orgPhonenlNationality">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <textarea class="form-control" rows=6 placeholder="Enter Address"
-                                                    name="page3[orgnlAddress]" id="orgnlAddress"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Telephone Number (select country code)</label> <br>
-                                                <input class="form-control phoneInput" type="tel" name="page3[orgnlTel]"
-                                                    id="orgnlTel">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Fax</label>
-                                                <input class="form-control" type="number" name="page3[orgnlFax]"
-                                                    placeholder="Enter your First Name(s)" id="orgnlFax">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Email</label>
-                                                <input class="form-control" type="email" name="page3[orgnlEmail]"
-                                                    placeholder="Email" id="orgnlEmail" required>
-                                            </div>
-                                            <div class="form-group alert alert-secondary">
-                                                <h4 class="alert-heading">Is the organisation going to be represented by
-                                                    a
-                                                    Lawyer?
-                                                </h4>
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" class="custom-control-input"
-                                                        id="orgLRepresentative" name="page3[orgRepresentativeType]"
-                                                        value="orgYesLawyer">
-                                                    <label class="custom-control-label"
-                                                        for="orgLRepresentative">Yes</label>
-                                                </div>
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" class="custom-control-input"
-                                                        id="orgNLRepresentative" name="page3[orgRepresentativeType]"
-                                                        value="orgNoLawyer" required data-parsley-group="page2">
-                                                    <label class="custom-control-label"
-                                                        for="orgNLRepresentative">No</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="is-hidden" id="orgLawyerRep">
-                                            <div class="form-group">
-                                                <label>Surname</label>
-                                                <input class="form-control" type="text" name="page3[orglSurname]"
-                                                    placeholder="Enter your surname" id="orglSurname" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>First Name(s)</label>
-                                                <input class="form-control" type="text" name="page3[orglFirstName]"
-                                                    placeholder="Enter your First Name(s)" id="orglFirstName" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Nationality</label>
-                                                <select class="form-control" name="page3[orglNationality]"
-                                                    id="orglNationality"></select>
-                                                <input type="hidden" id="orgPhonelNationality">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <textarea class="form-control" rows=6 placeholder="Enter Address"
-                                                    name="page3[orglAddress]" id="orglAddress"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Telephone Number (select country code)</label> <br>
-                                                <input class="form-control phoneInput" type="tel" name="page3[orglTel]"
-                                                    id="orglTel">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Fax</label>
-                                                <input class="form-control" type="number" name="page3[orglFax]"
-                                                    placeholder="Enter Fax" id="orglFax">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Email</label>
-                                                <input class="form-control" type="email" name="page3[orglEmail]"
-                                                    placeholder="Email" id="orglEmail" required>
-                                            </div>
-                                        </div>
-                                        <div class="orgAuthority is-hidden col-sm-10">
-                                            <div class="alert alert-success">
-                                                <h4 class="alert-heading">Authority </h4>
-
-                                                <p>The representative of the applicant organisation must authorise any
-                                                    lawyer to
-                                                    act
-                                                    on
-                                                    its
-                                                    behalf
-                                                    by
-                                                    signing the first box below; the
-                                                    lawyer must indicate his or her acceptance by signing the second box
-                                                    below.
-                                                </p>
-                                            </div>
-                                            <p>
-                                                I hereby authorise the person indicated in section D.2 above to
-                                                represent
-                                                the
-                                                organisation
-                                                in
-                                                the
-                                                proceedings before the European
-                                                Court of Human Rights concerning the application lodged under Article 34
-                                                of
-                                                the
-                                                Convention.
-                                            </p>
-                                            <div class="form-group">
-                                                <div class="custom-file">
-                                                    <label class="custom-file-label"
-                                                        for="orgAuthoritySignatureApplicant">Signature
-                                                        of
-                                                        organisation
-                                                        official</label>
-                                                    <input class="custom-file-input" type="file"
-                                                        name="page3[orgAuthoritySignatureApplicant]"
-                                                        id="orgAuthoritySignatureApplicant">
-
-                                                    <label>Date <a href="javascript://" data-toggle="popover"
-                                                            data-content="The date required is the date of signature by the individual applicant and his or her representative."
-                                                            data-trigger="click" data-placement="bottom"><span><i
-                                                                    class="fas fa-question-circle"></i></span></a></label>
-                                                    <input type="text" class="datepicker form-control"
-                                                        id="orgAuthorityDateApplicant" data-date-format="dd/mm/yyyy"
-                                                        placeholder="Date" name="page3[orgAuthorityDateApplicant]">
-                                                    <div class="input-group-addon">
-                                                        <span class="glyphicon glyphicon-th"></span>
-                                                    </div>
-                                                    <div>
-                                                        <p>I hereby agree to represent the organisation in the
-                                                            proceedings
-                                                            before
-                                                            the
-                                                            European
-                                                            Court
-                                                            of Human Rights concerning the application
-                                                            lodged under Article 34 of the Convention.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="custom-file">
-                                                    <label class="custom-file-label"
-                                                        for="orgAuthoritySignatureLawyer">Signature
-                                                        of
-                                                        Lawyer</label>
-                                                    <input class="custom-file-input" type="file"
-                                                        name="page3[orgAuthoritySignatureLawyer]"
-                                                        id="orgAuthoritySignatureRepresentative">
-                                                    <p>I hereby agree to represent the organisation in the proceedings
-                                                        before
-                                                        the
-                                                        European
-                                                        Court
-                                                        of
-                                                        Human Rights concerning the application
-                                                        lodged under Article 34 of the Convention.</p>
-                                                    <label>Date</label>
-                                                    <input type="text" class="datepicker form-control"
-                                                        id="orgAuthorityDateRepresentative"
-                                                        data-date-format="dd/mm/yyyy" placeholder="Date">
-                                                    <div class="input-group-addon">
-                                                        <span class="glyphicon glyphicon-th"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="orgIndeComms" class="lead">Electronic communication between
-                                                    the
-                                                    representative
-                                                    and
-                                                    the
-                                                    Court <a href="javascript://" data-toggle="popover" data-content="eComms is a service initiated by the Court for communicating electronically with an applicant’s representative. The service is only activated if and when the case reaches a stage of the proceedings where the Government concerned are requested to submit written observations. 
+                                </div>
+                                <div class="form-group">
+                                    <label for="orgIndeComms" class="lead">Electronic communication between
+                                        the
+                                        representative
+                                        and
+                                        the
+                                        Court <a href="javascript://" data-toggle="popover" data-content="eComms is a service initiated by the Court for communicating electronically with an applicant’s representative. The service is only activated if and when the case reaches a stage of the proceedings where the Government concerned are requested to submit written observations. 
                             The email address provided will be used to create an eComms account. It is recommended that representatives working in a law firm provide a generic email address so that the account can be used by multiple users within the firm. 
                            You should inform the Court of any change to your eComms account email address. 
                            For more information, please refer to the terms and conditions available on the eComms website (https://ecomms.echr.coe.int), as well as the Practice Direction on electronic filing by applicants (www.echr.coe.int/practicedirections) (available in English and French only). 
                            " data-trigger="click" data-placement="bottom"><span><i
-                                                                class="fas fa-question-circle"></i></span></a></label>
-                                                Email address for eComms account (if the representative already uses
-                                                eComms,
-                                                please
-                                                provide
-                                                the existing eComms account email
-                                                address)
-                                                <input class="form-control" type="email" name="page3[orgIndeComms]"
-                                                    id="orgIndeComms">
-                                            </div>
-                                        </div>
-                                        <div class="is-hidden" id="orgLawyerRep">
-                                            <p class="lead">No action needed. Please click on the Next button to proceed
-                                                to
-                                                next
-                                                step.
-                                            </p>
-                                        </div>
-                                        <div class="card-footer" align="center">
-                                            <button class="btn btn-primary"
-                                                onclick="stepperForm.previous()">Previous</button>
-                                            <button class="btn btn-primary btn-next-form"
-                                                onclick="stepperForm.next()">Next</button>
-                                        </div>
-                                    </div>
+                                                    class="fas fa-question-circle"></i></span></a></label>
+                                    Email address for eComms account (if the representative already uses
+                                    eComms,
+                                    please
+                                    provide
+                                    the existing eComms account email
+                                    address)
+                                    <input class="form-control" type="email" name="page3[orgIndeComms]"
+                                        id="orgIndeComms">
                                 </div>
+                            </div>
+                            <div class="is-hidden" id="orgLawyerRep">
+                                <p class="lead">No action needed. Please click on the Next button to proceed
+                                    to
+                                    next
+                                    step.
+                                </p>
+                            </div>
+                            <div class="card-footer" align="center">
+                                <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                                <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
                             </div>
                         </div>
                     </div>

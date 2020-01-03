@@ -197,44 +197,6 @@
                         <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
                     </div>
                 </div>
-                <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
-                    <div class="suggestion-form-5 stuck">
-                        <div class="card">
-                            <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
-                                {% csrf_token %}
-                                <div class="card-header">
-                                    <h5 align="center">Help us to
-                                        Improve</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for=""> Are you a legally trained person?</label>
-                                        <input type="text" class="is-hidden" name="sugPageNo" value="5">
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="legalTrainYesFifth"
-                                                name="legalTrained" value="Yes">
-                                            <label class="custom-control-label" for="legalTrainYesFifth">Yes</label>
-                                        </div>
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="legalTrainNoFifth"
-                                                name="legalTrained" value="No">
-                                            <label class="custom-control-label" for="legalTrainNoFifth">No</label>
-                                        </div>
-                                        <input type="text" class="is-hidden" name="legalTrainedInput">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="suggestionArea">How can we improve this page?</label>
-                                        <textarea class="form-control" name="suggestionArea" type="text"
-                                            rows="5"></textarea>
-                                    </div>
-                                </div>
-                                <div class="card-footer text-center">
-                                    <button type="submit" class="btn btn-primary feedback_submit-5">Submit Form</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
                 <div class="suggestion-form-1 stuck">
@@ -250,14 +212,14 @@
                                     <label for=""> Are you a legally trained person?</label>
                                     <input type="text" class="is-hidden" name="sugPageNo" value="1">
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="legalTrainYesFirst"
+                                        <input type="radio" class="custom-control-input" id="legalTrainYesFifth"
                                             name="legalTrained" value="Yes">
-                                        <label class="custom-control-label" for="legalTrainYesFirst">Yes</label>
+                                        <label class="custom-control-label" for="legalTrainYesFifth">Yes</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="legalTrainNoFirst"
+                                        <input type="radio" class="custom-control-input" id="legalTrainNoFifth"
                                             name="legalTrained" value="No">
-                                        <label class="custom-control-label" for="legalTrainNoFirst">No</label>
+                                        <label class="custom-control-label" for="legalTrainNoFifth">No</label>
                                     </div>
                                     <input type="text" class="is-hidden" name="legalTrainedInput">
                                 </div>
