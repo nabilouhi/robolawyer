@@ -1,18 +1,9 @@
-html {
-    zoom: 70%;
-    min-height: 100%;
-    position: relative;
-}
-
-
+/* html,
 body {
-    margin-left: 0;
-    margin-top: 0;
-    margin-right: 100px;
-    margin-bottom: 10vw;
-    /* bottom = footer height */
-    padding: 25px;
+    display: flex;
+    flex-direction: column;
 }
+
 
 footer {
     background-color: black;
@@ -26,7 +17,7 @@ footer {
 
 .Content {
     flex-grow: 1;
-}
+}*/
 
 /* Other Classes for Page Styling */
 
@@ -35,7 +26,7 @@ footer {
     background: linear-gradient(to right, #0062E6, #33AEFF);
 } */
 
-h1 {
+/* h1 {
     color: black;
 }
 
@@ -44,8 +35,17 @@ h1 {
     background-color: black;
 }
 
-.logo-images-home {
-    width: 40%;
+.contrib-logo {
+    margin: 0 60px;
+} */
+
+
+html {
+    zoom: 100%
+}
+
+.lead b {
+    font-weight: 800;
 }
 
 .modal-dialog {
@@ -60,10 +60,14 @@ h1 {
     width: 100% !important;
 }
 
+.home-jumbo {
+    border: 30px white solid;
+}
+
 .modal-footer {
     justify-content: center !important;
 }
 
-.space-divider {
+HEAD .space-divider {
     height: 10vw;
 }
