@@ -57,6 +57,7 @@ def feedback(request):
         pageNo = request.POST.get('pageNo')
         legalTrained = request.POST.get('legalExp')
         suggestion = request.POST.get('suggestion')
+        print(suggestion)
         subject = "suggestionEmail"
         message = "1. Page No. - " + str(pageNo) + "\n2. Legal Trained - " + \
             str(legalTrained) + "\n3. Suggestion - " + str(suggestion)
