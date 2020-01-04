@@ -146,9 +146,9 @@
                             <table class="table-bodered" id="courtTable" cellspacing="0">
                                 <thead style="border:none">
                                    <tr style="background-color:#2679c7;color:white">
-                                        <th style="border:none" scope="col">Country</th>
-                                        <th style="border:none" scope="col">Type of proceeding</th>
-                                        <th style="border:none" scope="col">National court(s)</th>
+                                        <th scope="col">Country</th>
+                                        <th scope="col">Type of proceeding</th>
+                                        <th scope="col">National court(s)</th>
                                     </tr>
                                 </thead>
                                 <tbody id="courtData">

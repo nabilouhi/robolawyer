@@ -74,9 +74,11 @@
                     <div class="card">
                         <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                             {% csrf_token %}
-                            <div class="card-body" style="padding-top: 10px;">
-                             <h5 align="center">Help us to
+                            <div class="card-header">
+                                <h5 align="center">Help us to
                                     Improve</h5>
+                            </div>
+                            <div class="card-body">
                                 <div class="form-group">
                                     <label for=""> Are you a legally trained person?</label>
                                     <input type="text" class="is-hidden" name="sugPageNo" value="7">

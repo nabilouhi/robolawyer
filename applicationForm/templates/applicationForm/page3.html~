@@ -16,7 +16,7 @@
                          <h4 align="center">
                                 Representative(s) of the Individual Applicant
                             </h4>
-                        <p class="lead">Note: An individual applicant does not have to be represented by a lawyer at this stage. If the applicantis not represented please select option "I represent myself at this stage".</p>
+                        <p class="lead">Note: An individual applicant does not have to be represented by a lawyer at thisstage.If the applicantis not represented please select option "I represent myself at this stage".</p>
                             <div class="form-group">
                                 <label>Representative Type</label>
                                 <div class="custom-control custom-radio custom-control-inline">

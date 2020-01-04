@@ -114,7 +114,7 @@
                                 </div>
                             </div>
                             <div class="card-footer text-center">
-                               <button type="submit" class="btn btn-dark feedback_submit-1">Send your message</button>
+                                <button type="submit" class="btn btn-primary feedback_submit-10">Submit Form</button>
                             </div>
                         </form>
                     </div>

@@ -47,7 +47,7 @@
                     <h3 style="color:black">Articles that seem the most related to your case</h3>
                     <h5 style="color:#447711"><b>Article 7</b> : 72% - Very related </h5>
                    <h5 style="color:#5EA418"><b>Article 12 :</b> 56% - Related</h5>
-                   <h5 style="color:rgba(255,101,80,0.7);"><b>Article 18</b> :48% - Could be related</h5>
+                   <h5 style="color:#66BC0F"><b>Article 18</b> :48% - Could be related</h5>
                    
                    <br>
                     <p style="background-color:white;border-radius: 5px; margin: 10px;"><b>Disclaimer:</b> This suggestion might not be 100% accurate; it is based on articles invoked by applications with a similar text, but this does not automatically mean that the same articles apply. We don’t hold any responsibility if you choose an erroneous article of the 

@@ -210,7 +210,6 @@
                 <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
                 <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
             </div>
-            
             <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
                 <div class="suggestion-form-2 stuck">
                     <div class="card">

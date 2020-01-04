@@ -123,9 +123,6 @@
                         </table>
                     </div>       
                     
-                    <hr>
-                    <br>
-                    <br>
                     <div class="form-group">
                       <h5>  Is or was there an appeal or remedy available to you which you have not used? </h5><br>
                         <div class="custom-control custom-radio custom-control-inline">
@@ -139,9 +136,7 @@
                             <label class="custom-control-label" for="appealAvailableNo">No</label>
                         </div>
                     </div>             
-                    <br>
-                    <br>
-                
+                    
                 
                     
                     <div class="card-footer" align="center">
