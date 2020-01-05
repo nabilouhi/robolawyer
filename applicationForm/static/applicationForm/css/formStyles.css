@@ -4,7 +4,9 @@ margin-left:0px !important
 .stuck {
   position: fixed;
   top:45%;
-
+}
+.btn-dark:visited {
+    background-color: green !important;
 }
 
 label {

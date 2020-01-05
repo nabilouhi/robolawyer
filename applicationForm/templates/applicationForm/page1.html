@@ -208,7 +208,6 @@
                     <div class="card">
                         <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                             {% csrf_token %}
-                            
                             <div class="card-body" style="padding-top: 10px;">
                              <h5 align="center">Help us to
                                     Improve</h5>
@@ -229,12 +228,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="suggestionArea">How can we improve this page?</label>
-                                    <textarea class="form-control sugArea1" name="suggestionArea" type="text"
+                                    <textarea class="form-control " name="suggestionArea" type="text"
                                         rows="5"></textarea>
                                 </div>
                             </div>
                             <div class="card-footer text-center">
-                                <button type="submit" class="btn btn-dark feedback_submit-1">Send your message</button>
+                                <button id ="1" type="submit" class="btn btn-dark feedback_submit-1">Send your message</button>
                             </div>
                         </form>
                     </div>

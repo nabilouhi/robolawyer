@@ -1,12 +1,19 @@
 function feedbackSubmit(e) {
   e.preventDefault();
-  console.log('started');
-  cardParentElement = e.target.parentElement.parentElement.children[2];
-  firstInput = cardParentElement.children[0].children[1].value;
+  
+  cardParentElement = e.target.parentElement.parentElement.parentElement;
+  
+  firstInput = e.target.id
+  console.log(firstInput)
   radioInput = $('input:radio[name="legalTrained"]:checked').val();
   $('input[name="legalTrainedInput"]').val(radioInput);
-  secondInput = cardParentElement.children[0].children[4].value;
-  thirdInput = cardParentElement.children[1].children[1].value;
+  	thirdInput =cardParentElement.getElementsByTagName("textarea")[0].value
+     secondInput =radioInput 
+  //secondInput = cardParentElement.getElementsByTagName("textarea")[0].value
+  //thirdInput = cardParentElement.children[1].children[1].value;
+  
+console.log(firstInput,secondInput,thirdInput )
+
 
   var csrftoken = getCookie('csrftoken');
   $.ajax({
@@ -20,6 +27,7 @@ function feedbackSubmit(e) {
     },
     success: function() {
       alert('Feedback Submitted');
+      
     }
   });
 }
