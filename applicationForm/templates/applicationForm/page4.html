@@ -12,19 +12,16 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <div class="form-text">
-                        <p>The facts of your case should be set out in the space provided in the application
-                            form so as to
-                            enable the Court to determine the nature and scope of the application. This
-                            information
-                            concerning your case is essential for the proper and prompt sifting of your
-                            application and it
-                            must be included on the pages provided in the application form, not on
-                            accompanying enclosures.
+                    <div class="form-text" >
+                        <p>The facts of your case enable the Court to determine the nature and scope of the case and  is essential for the proper and prompt examination for your
+                            application.
                         </p>
-                        <ol>
-                            <li>Be clear and concise.</li>
-                            <li>Give exact dates. </li>
+                        <div class="text-center">
+                        <button class="btn" data-toggle="collapse" data-target="#info-1" >More Info</button></div>
+
+						<div id="info-1" class="collapse" >
+                        <ol style="font-size:14px;">
+                            <li>Be clear and concise and give exact dates.</li>
                             <li>Be chronological and set out events in the order in which they occurred. If
                                 your complaints
                                 relate to a number of different matters (for example different sets of court
@@ -59,25 +56,27 @@
                                 be rejected.
                             </li>
                         </ol>
+                        </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="form-group">
                         <input disabled maxlength="3" size="3" value="1000" id="counter" class="alert alert-success">
                         <textarea class="form-control" name="page5[stOfFacts]" id="stofFacts"
                             oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
                             rows="10" onkeyup="textCounter(this,'counter', 1000);"></textarea>
                     </div>
-
+							<div class="text-right"><button class="btn "data-toggle="collapse" data-target="#info-2" align="right">Do you need more </button></div>
+						<br>
+						<div id="info-2" class="collapse">
                     <div class="form-group">
-                        <label for="stofFactsExtra" class="lead">You have reached the character limit
-                            imposed by the
-                            Court.
+                        <label for="stofFactsExtra" >You have reached the character limit
+                            imposed by the Court.
                             It is possible, but not required, for applicants to add an additional
                             statement expanding on
-                            the
-                            facts, complaints or remedies used. This extra statement should be not more
+                            thefacts, complaints or remedies used. This extra statement should be not more
                             than 20 pages.
-                            It
-                            should not add new complaints or violations but only develop what is set out
+                            It should not add new complaints or violations but only develop what is set out
                             on the
                             form.
                             If you want to add more statement of facts, then please use the area below
@@ -87,22 +86,23 @@
                             oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
                             rows="10" onkeyup="textCounter(this,'counter2', 5000);"></textarea>
                     </div>
+                    </div>
                     <div class="card-footer" align="center">
                         <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
                         <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
                     </div>
 
                 </div>
+</div>                
+                
                 <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
                     <div class="suggestion-form-4 stuck">
                         <div class="card">
                             <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                                 {% csrf_token %}
-                                <div class="card-header">
-                                    <h5 align="center">Help us to
-                                        Improve</h5>
-                                </div>
-                                <div class="card-body">
+                                <div class="card-body" style="padding-top: 10px;">
+                             <h5 align="center">Help us to
+                                    Improve</h5>
                                     <div class="form-group">
                                         <label for=""> Are you a legally trained person?</label>
                                         <input type="text" class="is-hidden" name="sugPageNo" value="4">
@@ -125,14 +125,14 @@
                                     </div>
                                 </div>
                                 <div class="card-footer text-center">
-                                    <button type="submit" class="btn btn-primary feedback_submit-4">Submit
-                                        Form</button>
+                                    <button type="submit" class="btn btn-dark feedback_submit-1">Send your message</button>
                                 </div>
                             </form>
                         </div>
                     </div>
+                    
                 </div>
-            </div>
+            
         </div>
     </div>
 </div>

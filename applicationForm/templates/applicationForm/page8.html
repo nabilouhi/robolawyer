@@ -7,8 +7,31 @@
                     <h4 class="card-header-title" align="center">
                         Documents
                     </h4>
+                    </div>
                     <div class="card-body">
-                        <p style="text-align:justify">Applicants have to support their complaints by documentary
+                       
+
+
+                        <div class="section" style="text-align: left;">
+                        <h4 align="center">
+                               List of Accompanying Documents </h4>
+                                            
+                            <p> You must enclose a numbered and chronological list of all judgments and decisions
+                                referred to in
+                                the
+                                Statement of Facts, Statement of Alleged Violations and Domestic and International
+                                Proceeding,
+                                as
+                                well as any other documents you wish the Court to take into consideration as evidence
+                                supporting
+                                your claims of a violation of the Convention (transcripts, witness statements, medical
+                                reports,
+                                etc.). 
+                                <div class="text-center">
+                        <button class="btn" data-toggle="collapse" data-target="#info-5" >More Info</button></div>
+
+						<div id="info-5" class="collapse" >
+ <p style="text-align:justify">Applicants have to support their complaints by documentary
                             evidence. This
                             means that if
                             there is a
@@ -40,26 +63,15 @@
                             practice direction; they must also be arranged and numbered in accordance with the list of
                             documents
                             on the application form.
-                        </p>
-
-
-                        <div class="section" style="text-align: left;">
-                            <h4>List of Accompanying Documents <a href="javascript://" data-toggle="popover"
-                                    data-content="REMINDER: It is the applicant’s responsibility to take steps in good time to obtain all the information and documents required for a complete application. If you do not provide one or more of the necessary documents your application will not be regarded as complete and it will not be examined by the Court, unless you have given an adequate explanation of why you were unable to provide the missing document(s). 
-                        Please note that for safety reasons, applications containing suspicious objects will be destroyed. 
-                        " data-trigger="click" data-placement="bottom"><span><i
-                                            class="fas fa-question-circle"></i></span></a></h4>
-                            <p> You must enclose a numbered and chronological list of all judgments and decisions
-                                referred to in
-                                the
-                                Statement of Facts, Statement of Alleged Violations and Domestic and International
-                                Proceeding,
-                                as
-                                well as any other documents you wish the Court to take into consideration as evidence
-                                supporting
-                                your claims of a violation of the Convention (transcripts, witness statements, medical
-                                reports,
-                                etc.). <br><br>
+                            <br>
+                            <br>
+                            <b>REMINDER:</b> It is the applicant’s responsibility to take steps in good time to obtain all the information and documents required for a complete application. If you do not provide one or more of the necessary documents your application will not be regarded as complete and it will not be examined by the Court, unless you have given an adequate explanation of why you were unable to provide the missing document(s). 
+                        Please note that for safety reasons, applications containing suspicious objects will be destroyed.
+                        <br>
+                        </p>  
+                        <hr style="border-top: 3px solid rgba(0, 0, 0, .4);"> 
+                        </div>                             
+                                
                                 No documents will be
                                 returned to you. It is thus in your interests to submit copies, not originals. You MUST:
                             </p>
@@ -136,11 +148,9 @@
                     <div class="card">
                         <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                             {% csrf_token %}
-                            <div class="card-header">
-                                <h5 align="center">Help us to
+                            <div class="card-body" style="padding-top: 10px;">
+                             <h5 align="center">Help us to
                                     Improve</h5>
-                            </div>
-                            <div class="card-body">
                                 <div class="form-group">
                                     <label for=""> Are you a legally trained person?</label>
                                     <input type="text" class="is-hidden" name="sugPageNo" value="8">
@@ -163,7 +173,7 @@
                                 </div>
                             </div>
                             <div class="card-footer text-center">
-                                <button type="submit" class="btn btn-primary feedback_submit-8">Submit Form</button>
+                                <button type="submit" class="btn btn-dark feedback_submit-1">Send your message</button>
                             </div>
                         </form>
                     </div>

@@ -1,5 +1,10 @@
+.form-section{
+margin-left:0px !important
+}
 .stuck {
   position: fixed;
+  top:45%;
+
 }
 
 label {
@@ -46,7 +51,7 @@ label {
   margin-bottom: -15px;
 }
 
-#appForm .card-master-header h4 {
+.card-master-header h4 {
   /* width: 350px; */
   margin-left: auto;
   margin-right: auto;

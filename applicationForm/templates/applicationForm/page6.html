@@ -12,7 +12,13 @@
                         first
                         given the competent national authorities, the courts in particular, the opportunity to put
                         the
-                        matter right. This means that an applicant must bring all the matters which she or he wants
+                        matter right. </p>
+                        <div class="text-center">
+                        <button class="btn" data-toggle="collapse" data-target="#info-4" >More Info</button></div>
+
+						<div id="info-4" class="collapse" >
+							<p>
+                        This means that an applicant must bring all the matters which she or he wants
                         to
                         complain about before the national courts and use all the available appeals up to the
                         highest level.
@@ -35,39 +41,11 @@
                         If an applicant thinks that there were no remedies to exhaust as they were non-existent or
                         ineffective or inaccessible in some way, the applicant should put down this reasoning
                         briefly.
+                        </p>
+                     </div>
+                    
 
-                    </p>
-
-                    <div class=" alert alert-success example-box">
-                        <h5 class="alert-heading">Examples</h5>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Complaint</th>
-                                    <th scope="col">Date of Final Decision by highest court</th>
-                                    <th scope="col">Remedies Used</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <tr>
-                                    <td>Art. 5 complaint about arrest by police</td>
-                                    <td>14/01/15</td>
-                                    <td>High Court rejected claim on 05/12/13; leave to appeal refused by Court of
-                                        Appeal on
-                                        14/01/15
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Art. 6 complaint about neighbour dispute</td>
-                                    <td>04/12/14</td>
-                                    <td>County Court rejected claim on 03/04/12; Court of Appeal dismissed appeal on
-                                        04/12/14
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+              
                     <div class="form-group">
                         <div class="complaints">
                             <div class="complaint">
@@ -98,19 +76,7 @@
                         <div class="btn btn-light add-more-complaints"><span>Add More <i class="fas fa-plus"></i></span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        Is or was there an appeal or remedy available to you which you have not used? <br>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="appealAvailableYes"
-                                name="page6[appealAvailable]" value="Yes" required data-parsley-group="">
-                            <label class="custom-control-label" for="appealAvailableYes">Yes</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="appealAvailableNo"
-                                name="page6[appealAvailable]" value="No" required data-parsley-group="">
-                            <label class="custom-control-label" for="appealAvailableNo">No</label>
-                        </div>
-                    </div>
+                    
                     <div class="form-group is-hidden appealDescribe">
                         <label for="appealDescribe">Please state which appeal or remedy you have not used and
                             explain why
@@ -123,6 +89,61 @@
                             oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
                             rows="10"></textarea>
                     </div>
+                    
+                    
+                        <hr>
+						<div class=" ">
+                        <h5 class="alert-heading">Examples</h5>
+                        <table class="table-bordered">
+                            <thead style="border:none">
+                                <tr style="background-color:#2679c7;color:white">
+                                    <th scope="col">Complaint</th>
+                                    <th scope="col">Date of Final Decision by highest court</th>
+                                    <th scope="col">Remedies Used</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>Art. 5 complaint about arrest by police</td>
+                                    <td>14/01/15</td>
+                                    <td>High Court rejected claim on 05/12/13; leave to appeal refused by Court of
+                                        Appeal on
+                                        14/01/15
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Art. 6 complaint about neighbour dispute</td>
+                                    <td>04/12/14</td>
+                                    <td>County Court rejected claim on 03/04/12; Court of Appeal dismissed appeal on
+                                        04/12/14
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>       
+                    
+                    <hr>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                      <h5>  Is or was there an appeal or remedy available to you which you have not used? </h5><br>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="appealAvailableYes"
+                                name="page6[appealAvailable]" value="Yes" required data-parsley-group="">
+                            <label class="custom-control-label" for="appealAvailableYes">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="appealAvailableNo"
+                                name="page6[appealAvailable]" value="No" required data-parsley-group="">
+                            <label class="custom-control-label" for="appealAvailableNo">No</label>
+                        </div>
+                    </div>             
+                    <br>
+                    <br>
+                
+                
+                    
                     <div class="card-footer" align="center">
                         <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
                         <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
@@ -135,11 +156,9 @@
                 <div class="card">
                     <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                         {% csrf_token %}
-                        <div class="card-header">
-                            <h5 align="center">Help us to
-                                Improve</h5>
-                        </div>
-                        <div class="card-body">
+                        <div class="card-body" style="padding-top: 10px;">
+                             <h5 align="center">Help us to
+                                    Improve</h5>
                             <div class="form-group">
                                 <label for=""> Are you a legally trained person?</label>
                                 <input type="text" class="is-hidden" name="sugPageNo" value="1">
@@ -161,7 +180,7 @@
                             </div>
                         </div>
                         <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-primary feedback_submit-6">Submit Form</button>
+                           <button type="submit" class="btn btn-dark feedback_submit-1">Send your message</button>
                         </div>
                     </form>
                 </div>

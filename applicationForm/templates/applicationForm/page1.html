@@ -10,14 +10,8 @@
                     <ol>
                         <li>
                             <h5>
-                                Which state is concerned by your application? <a href="javascript://"
-                                    data-toggle="popover" data-content="An applicant has to specify the Contracting State (a European country which has signed up to
-                            the European Convention on Human Rights) which is alleged to be responsible for the breach
-                            of his or her rights. The Court’s competence depends on this. It is not for the Court to “guess”
-                            from reading the application form and attached documents.
-                            You must tick the box of at least one of the Contracting States listed in the application form for
-                            it to be complete." data-trigger="click" data-placement="bottom"><span><i
-                                            class="fas fa-question-circle"></i></span></a>
+                                Which state is concerned by your application? <a href="javascript://" data-toggle="popover" data-content="The court is competent to assess allegation involving only the states that are signatory of the European Convention on Human Rights." data-trigger="click" data-placement="bottom">
+                                <span><i class="fas fa-question-circle"></i></span></a>
 
                             </h5>
                             <div id="map"></div>
@@ -83,16 +77,12 @@
                             </div>
                         </li>
                         <li>
-                            <h5>What is the subject of your application?</h5>
+                            <h5>The facts you are complaining about concern:</h5>
 
                             <ol type="a">
                                 <li>
                                     <div class="form-group">
-                                        <label class="lead">Does your application concern one of the rights guaranteed
-                                            by
-                                            the <a href="https://www.echr.coe.int/Documents/Convention_ENG.pdf"
-                                                target="_blank">
-                                                Convention?
+                                        <!-- <label class="lead">Does your application concern one of the rights guaranteed by the <a href="https://www.echr.coe.int/Documents/Convention_ENG.pdf"target="_blank"> Convention?
                                             </a></label>
                                         <div class="custom-control custom-radio custom-control-inline">
                                             <input type="radio" class="custom-control-input" id="concernRightsYes"
@@ -106,10 +96,10 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li> -->
                                     <div class="form-group">
-                                        <label class="lead">Do the facts concern:
-                                        </label>
+                                        <!-- <label class="lead">Do the facts concern:
+                                        </label> -->
                                         <div class="custom-control custom-radio custom-control-inline">
                                             <input type="radio" class="custom-control-input" id="concernYouYes"
                                                 name="page1[concernYou]" value="Yes">
@@ -135,7 +125,7 @@
                         <li>
                             <div class="form-group">
                                 <label class="lead">
-                                    <h5> When did the act, decision or omission of which you complain take place?</h5>
+                                    <h5> When did the fact you are complaing about take place?</h5>
                                 </label>
                                 <input type="text" class="date" name="page1[decisionDate]" id="decisionDate"
                                     data-template='DD MMM YYYY' required data-parsley-group="page1">
@@ -153,12 +143,12 @@
                                 with the subject matter of your dispute? The competent national courts in the selected
                                 state(s) are
                                 in principle:</h5>
-                            <table class="table" id="courtTable" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Country</th>
-                                        <th scope="col">Type of proceeding</th>
-                                        <th scope="col">National court(s)</th>
+                            <table class="table-bodered" id="courtTable" cellspacing="0">
+                                <thead style="border:none">
+                                   <tr style="background-color:#2679c7;color:white">
+                                        <th style="border:none" scope="col">Country</th>
+                                        <th style="border:none" scope="col">Type of proceeding</th>
+                                        <th style="border:none" scope="col">National court(s)</th>
                                     </tr>
                                 </thead>
                                 <tbody id="courtData">
@@ -218,11 +208,10 @@
                     <div class="card">
                         <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                             {% csrf_token %}
-                            <div class="card-header">
-                                <h5 align="center">Help us to
+                            
+                            <div class="card-body" style="padding-top: 10px;">
+                             <h5 align="center">Help us to
                                     Improve</h5>
-                            </div>
-                            <div class="card-body">
                                 <div class="form-group">
                                     <label for=""> Are you a legally trained person?</label>
                                     <input type="text" class="is-hidden" name="sugPageNo" value="1">
@@ -245,7 +234,7 @@
                                 </div>
                             </div>
                             <div class="card-footer text-center">
-                                <button type="submit" class="btn btn-primary feedback_submit-1">Submit Form </button>
+                                <button type="submit" class="btn btn-dark feedback_submit-1">Send your message</button>
                             </div>
                         </form>
                     </div>

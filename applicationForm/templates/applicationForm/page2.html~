@@ -109,23 +109,27 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            
+                            <label for="">Request anonymity for public documents</label>
+                            <p><small>If your application is declared admissible by the Court, your name will appear on
+                                    the
+                                    documents related to your case that are published by the court and are publicly
+                                    available.
+                                    You
+                                    can request not to disclose your identity to the public. The request has to be sent
+                                    as
+                                    an
+                                    attachment to the Court and has to present reasons why making your identity public
+                                    will
+                                    affect/cause harm to the applicant (or to others?). The court decides whether you
+                                    are
+                                    granted
+                                    anonymity or not. You should state in the request whether, in the event of anonymity
+                                    being
+                                    authorised by the President of the Chamber, you wish to be designated by your
+                                    initials
+                                    or by a single letter (e.g. “X”, “Y” or “Z”).</small></p>
                             <label for="">I want to keep my identity anonymous in public documents published by the
                                 court</label>
-                                
-                                 <div class="text-center"><button class="btn" data-toggle="collapse" data-target="#info-1" >More Info</button></div>
-										<div id="info-1" class="collapse" ><label for="">Request anonymity for public documents</label>
-                            <p><small>If your application is declared admissible by the Court, your name will appear on
-                                    the documents related to your case that are published by the court and are publicly
-                                    available. You can request not to disclose your identity to the public. The request has to be sent
-                                    as an attachment to the Court and has to present reasons why making your identity public
-                                    will affect/cause harm to the applicant (or to others?). The court decides whether you
-                                    are granted
-                                    anonymity or not. You should state in the request whether, in the event of anonymity
-                                    being authorised by the President of the Chamber, you wish to be designated by your
-                                    initials or by a single letter (e.g. “X”, “Y” or “Z”).</small></p>
-                                </div>
-                                
                             <div class="custom-control custom-radio custom-control">
                                 <input type="radio" class="custom-control-input" id="applicantAnonYes"
                                     name="page2[applicantAnon]" value="Yes">
