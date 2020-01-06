@@ -28,11 +28,21 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 TEMPLATE_DEBUG = DEBUG
 
 # Application definition
-#SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY = "111"
-ALLOWED_HOSTS =["127.0.0.1"]
+SECRET_KEY = config('SECRET_KEY')
 
+
+
+ALLOWED_HOSTS = ["just-bott.herokuapp.com"]
+#ALLOWED_HOSTS = ["127.0.0.1"]
 #ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+EMAIL_HOST=config('EMAIL_HOST')
+EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER=config('EMAIL_HOST_USER')
+EMAIL_PORT=config('EMAIL_PORT')
+EMAIL_USE_TLS=config('EMAIL_USE_TLS')
+
+
 
 
 # Application definition
@@ -48,8 +58,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'home',
     'applicationForm',
-    'about',
-    'extResources',
     'echrAPI',
     'courtAPI',
 
@@ -165,9 +173,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static")
-# ]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -183,30 +189,3 @@ REST_FRAMEWORK = {
 # ]
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
-
-
-# EMAIL_HOST = config('EMAIL_HOST')
-# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-# EMAIL_PORT = config('EMAIL_PORT')
-# EMAIL_USE_TLS = config('EMAIL_USE_TLS')
-
-
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'filename': 'debug.log',
-#         },
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['file'],
-#             'level': 'DEBUG',
-#             'propagate': True,
-#         },
-#     },
-# }
