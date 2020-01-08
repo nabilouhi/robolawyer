@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'home',
     'applicationForm',
+    'about',
+    'extResources',
     'echrAPI',
     'courtAPI',
 
