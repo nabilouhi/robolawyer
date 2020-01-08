@@ -197,3 +197,5 @@ dmypy.json
 *.html~
 
 home/static/home/\.DS_Store
+
+\.DS_Store
