@@ -4,18 +4,12 @@ function UrlExists(url) {
   http.withCredentials = true;
   http.setRequestHeader('Content-Type', 'application/json');
   http.send();
-  console.log('it reached here');
   try {
     baseUrl = url;
-    console.log('baseURL ' + baseUrl);
     echrRat(baseUrl);
     courtCountry(baseUrl);
   } catch (error) {
     console.error(error);
-    // baseUrl = 'http://localhost:8000/';
-    // console.log('url ' + url);
-    // echrRat(baseUrl);
-    // courtCountry(baseUrl);
   }
 }
 
@@ -23,9 +17,11 @@ var echrRat = function(baseUrl) {
   var echrUrl = baseUrl + 'api/echr/';
 
   var echrDiv = document.getElementById('echrDetails');
-  $('#involvedStates').on('change', function() {
+  $('#decisionDate').on('change', function() {
     currentSelected = $(this).val();
-    while (echrDiv.hasChildNodes()) {
+    if(moment(currentSelected, 'DD/MM/YYYY')._isValid){
+    console.log();
+        while (echrDiv.hasChildNodes()) {
       echrDiv.removeChild(echrDiv.lastChild);
     }
     axios({
@@ -59,13 +55,14 @@ var echrRat = function(baseUrl) {
         }
       });
     });
+  }
   });
 };
 
 var courtCountry = function(baseUrl) {
   var courtUrl = baseUrl + 'api/court/';
-  $('#involvedStates').on('change', function() {
-    currentSelected = $(this).val();
+  $('#decisionDate').on('change', function() {
+    currentSelected = $('#involvedStates').val();
     while (courtData.hasChildNodes()) {
       courtData.removeChild(courtData.lastChild);
     }

@@ -19,20 +19,21 @@
                         <label>I hereby declare that, to the best of my knowledge and belief, the information I have
                             given
                             in the present application form is correct.</label>
-                        <div class="form-group">
+                        <div class="form-group col-sm-6">
                             <label>Date</label>
-                            <input type="text" class="datepicker form-control" id="declarationDate"
-                                data-date-format="dd/mm/yyyy" placeholder="Date">
+                            <input type="text" class="date" name="page9[declarationDate]" id="declarationDate"
+                                data-template='DD MMM YYYY'>
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-th"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="lead">
-                                The applicant(s) or the applicant’s representative(s) must sign in the box below. It can
-                                be
-                                uploaded or signed in person in the downloaded form.
+                                The applicant(s) or the applicant’s representative(s) must sign in the corresponding field on
+the 13th page of the application document. Failing to do so can result in the application
+being declared inadmissible.
                             </label>
+                            <p>Who will correspond with the court?</p>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" class="custom-control-input" id="signatureDeclarationApplicant"
                                     name="page9[signatureDeclaration]" value="Applicant" required
@@ -57,17 +58,18 @@
                         <div class="form-group">
                             <div class="is-hidden" id="correspondentOptionApplicant">
                                 <label class="lead">Confirmation of correspondent</label>
-                                <p> If there is more than one applicant, please give the
-                                    name
-                                    and address of the one person with whom
-                                    the Court will correspond. Where the applicant is represented, the Court will
-                                    correspond
-                                    only with the representative (lawyer or nonlawyer).</p>
+                                <p align="justified"> If there is more than one applicant or more than one representative, please give
+                                    the name and address of the one person with whom the Court will correspond. Where the
+                                    applicant is represented, the Court will correspond only with the representative (lawyer or
+                                    nonlawyer).</p>
                                 <label for="confirmationApplicantName">Name of applicant</label>
                                 <input class="form-control" type="text" name="page9[confirmationApplicantName]"
                                     id="confirmationApplicantName">
 
-                                <label for="confirmationApplicantAddress">Address of applicant</label>
+                                <label for="confirmationApplicantAddress">Address of applicant <a href="javascript://" data-toggle="popover"
+                                    data-content="An applicant must provide a postal address separate from that of a lawyer or representative so that the Court can make contact if necessary. An applicant who is homeless or has no fixed residence may have to give a box number or friend’s details but should provide an explanation."
+                                    data-trigger="click" data-placement="bottom"><span><i
+                                            class="fas fa-question-circle"></i></span></a></label>
                                 <input class="form-control" type="text" name="page9[confirmationApplicantAddress]"
                                     id="confirmationApplicantAddress">
                             </div>
@@ -103,7 +105,12 @@
                             {% csrf_token %}
                             <div class="card-header">
                                 <div class="card-body" style="padding-top: 10px;">
+
                              <h5 align="center">Help us Improve</h5>
+
+                    
+                             </div>
+
                                 <div class="form-group">
                                     <label for=""> Are you a legally trained person?</label>
                                     <input type="text" class="is-hidden" name="sugPageNo" value="9">
@@ -133,6 +140,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>

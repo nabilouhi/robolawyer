@@ -15,10 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import home
-import applicationForm
-import about
-import extResources
+import home, applicationForm, about, extResources
 from django.conf.urls.static import static
 from django.conf import settings
 

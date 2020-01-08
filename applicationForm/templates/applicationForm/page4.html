@@ -17,45 +17,45 @@
                             application.
                         </p>
                         <div class="text-center">
-                        <button class="btn" data-toggle="collapse" data-target="#info-1" >More Info</button></div>
-
-						<div id="info-1" class="collapse" >
-                        <ol style="font-size:14px;">
-                            <li>Be clear and concise and give exact dates.</li>
-                            <li>Be chronological and set out events in the order in which they occurred. If
-                                your complaints
-                                relate to a number of different matters (for example different sets of court
-                                proceedings),
-                                please deal with each factual matter separately.</li>
-                            <li>Put down the essential information concerning your case: the key facts and
-                                decisions, and
-                                how your rights have been violated, without irrelevant background or side
-                                issues. Do not
-                                include lengthy quotations: you can always give a reference to an
-                                accompanying document.
-                            </li>
-                            <li>You must provide documents to support your case, in particular copies of
-                                relevant decisions
-                                or documentary records of any measures about which you complain, such as
-                                medical reports,
-                                witness statements, transcripts, documents of title to property, or records
-                                of periods spent
-                                in custody, a notice of eviction or a deportation order.
-                            </li>
-                            <li>All relevant documents you refer to should be listed in the document list
-                                (step 8 in this
-                                form) and you have to attach copies to the application form. If you cannot
-                                obtain copies of
-                                particular documents you should explain why not.
-                            </li>
-                            <li>Where the matter complained of does not cause an applicant any real harm or
-                                significant
-                                disadvantage, raises no new human rights issues that need to be addressed at
-                                international
-                                level and has already been looked at by a domestic court, the case may also
-                                be rejected.
-                            </li>
-                        </ol>
+                        <button class="btn" data-toggle="collapse" data-target="#info-1" >More Info</button>
+                        </div>
+                        <div id="info-1" class="collapse" >
+                            <ol style="font-size:14px;">
+                                <li>Be clear and concise and give exact dates.</li>
+                                <li>Be chronological and set out events in the order in which they occurred. If
+                                    your complaints
+                                    relate to a number of different matters (for example different sets of court
+                                    proceedings),
+                                    please deal with each factual matter separately.</li>
+                                <li>Put down the essential information concerning your case: the key facts and
+                                    decisions, and
+                                    how your rights have been violated, without irrelevant background or side
+                                    issues. Do not
+                                    include lengthy quotations: you can always give a reference to an
+                                    accompanying document.
+                                </li>
+                                <li>You must provide documents to support your case, in particular copies of
+                                    relevant decisions
+                                    or documentary records of any measures about which you complain, such as
+                                    medical reports,
+                                    witness statements, transcripts, documents of title to property, or records
+                                    of periods spent
+                                    in custody, a notice of eviction or a deportation order.
+                                </li>
+                                <li>All relevant documents you refer to should be listed in the document list
+                                    (step 8 in this
+                                    form) and you have to attach copies to the application form. If you cannot
+                                    obtain copies of
+                                    particular documents you should explain why not.
+                                </li>
+                                <li>Where the matter complained of does not cause an applicant any real harm or
+                                    significant
+                                    disadvantage, raises no new human rights issues that need to be addressed at
+                                    international
+                                    level and has already been looked at by a domestic court, the case may also
+                                    be rejected.
+                                </li>
+                            </ol>
                         </div>
                     </div>
                     <br>
@@ -66,34 +66,39 @@
                             oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
                             rows="10" onkeyup="textCounter(this,'counter', 1000);"></textarea>
                     </div>
-							<div class="text-right"><button class="btn "data-toggle="collapse" data-target="#info-2" align="right">Do you need more </button></div>
+                            <div class="text-right">
+                                <button class="btn "data-toggle="collapse" data-target="#info-2" align="right">
+                                    Do you need more?
+                                </button>
+                            </div>
 						<br>
 						<div id="info-2" class="collapse">
-                    <div class="form-group">
-                        <label for="stofFactsExtra" >You have reached the character limit
-                            imposed by the Court.
-                            It is possible, but not required, for applicants to add an additional
-                            statement expanding on
-                            thefacts, complaints or remedies used. This extra statement should be not more
-                            than 20 pages.
-                            It should not add new complaints or violations but only develop what is set out
-                            on the
-                            form.
-                            If you want to add more statement of facts, then please use the area below
-                            for this.</label>
-                        <input disabled maxlength="3" size="3" id="counter2" value="5000" class="alert alert-success">
-                        <textarea class="form-control" name="page5[stOfFactsExtra]" id="stofFactsExtra"
-                            oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
-                            rows="10" onkeyup="textCounter(this,'counter2', 5000);"></textarea>
-                    </div>
-                    </div>
-                    <div class="card-footer" align="center">
-                        <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-                        <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
-                    </div>
+                            <div class="form-group">
+                                <label for="stofFactsExtra" >You have reached the character limit
+                                    imposed by the Court.
+                                    It is possible, but not required, for applicants to add an additional
+                                    statement expanding on
+                                    thefacts, complaints or remedies used. This extra statement should be not more
+                                    than 20 pages.
+                                    It should not add new complaints or violations but only develop what is set out
+                                    on the
+                                    form.
+                                    If you want to add more statement of facts, then please use the area below
+                                    for this.</label>
+                                <input disabled maxlength="3" size="3" id="counter2" value="5000" class="alert alert-success">
+                                <textarea class="form-control" name="page5[stOfFactsExtra]" id="stofFactsExtra"
+                                    oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
+                                    rows="10" onkeyup="textCounter(this,'counter2', 5000);">
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="card-footer" align="center">
+                            <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
+                            <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                        </div>
 
-                </div>
-</div>                
+                    </div>
+                </div>                
                 
                 <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
                     <div class="suggestion-form-4 stuck">
@@ -102,6 +107,7 @@
                                 {% csrf_token %}
                                 <div class="card-body" style="padding-top: 10px;">
                              <h5 align="center">Help us Improve</h5>
+ 
                                     <div class="form-group">
                                         <label for=""> Are you a legally trained person?</label>
                                         <input type="text" class="is-hidden" name="sugPageNo" value="4">
@@ -120,18 +126,19 @@
                                     <div class="form-group">
                                         <label for="suggestionArea">How can we improve this page?</label>
                                         <textarea class="form-control" name="suggestionArea" type="text"
-                                            rows="5"></textarea>
+                                            rows="5">
+                                        </textarea>
                                     </div>
                                 </div>
                                 <div class="card-footer text-center">
-                                    <button id ="4" type="submit" class="btn btn-dark feedback_submit-1">Send your message</button>
+                                    <button id ="4" type="submit" class="btn btn-dark feedback_submit-1">
+                                        Send your message
+                                    </button>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    
-                </div>
-            
+                </div>    
         </div>
     </div>
 </div>

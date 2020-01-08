@@ -28,15 +28,12 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 TEMPLATE_DEBUG = DEBUG
 
 # Application definition
-# SECRET_KEY = config('SECRET_KEY')
-
-SECRET_KEY = "secretKEY"
+SECRET_KEY = config('SECRET_KEY')
 
 
 
-# ALLOWED_HOSTS = ["just-bott.herokuapp.com"]
-ALLOWED_HOSTS = ["127.0.0.1"]
-#ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # EMAIL_HOST=config('EMAIL_HOST')
 # EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')

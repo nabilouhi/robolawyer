@@ -1,3 +1,28 @@
+$('#finalDecisionDate').on('change', function(){
+    finalDecisionDate = $('#finalDecisionDate').combodate('getValue',format='YYYY-MM-DD');
+    currentDate = moment().format('YYYY-MM-DD');
+    diffDate = moment(currentDate).diff(moment(finalDecisionDate), 'months', true);
+    console.log(diffDate)
+    if (!isNaN(diffDate)){
+      if(diffDate < 6) {
+        sixFutureDate = moment(finalDecisionDate).add(6, 'months').format('YYYY-MM-DD');
+        swal('Attention, according to the information entered in the date field, you must send your application in good time before '+ sixFutureDate);
+      }
+      else if (diffDate > 6) {
+        swal('You have missed the 6 months limit deadline imposed by the court. It is possible, but not necessary that your application might be declared inadmissible.')  
+      }
+      else {
+        console.warn('check for problem')
+      }
+    }
+  });
+
+
+
+
+
+
+// Feedback form
 function feedbackSubmit(e) {
   e.preventDefault();
   
@@ -26,7 +51,7 @@ console.log(firstInput,secondInput,thirdInput )
       csrfmiddlewaretoken: csrftoken
     },
     success: function() {
-      alert('Feedback Submitted');
+      swal('Feedback Submitted');
       
     }
   });
@@ -60,10 +85,3 @@ $(document).ready(function() {
   $('.feedback_submit-9').click(feedbackSubmit);
   $('.feedback_submit-10').click(feedbackSubmit);
 });
-
-// data: {
-//   pageNo: $('input[name="sugPageNo"]').val(),
-//   suggestion: document.getElementsByName('suggestionArea')[0].value,
-//   legalExp: $('input:radio[name="legalTrained"]:checked').val(),
-//   csrfmiddlewaretoken: csrftoken
-// },

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (onValidate('page2a')) {
             console.log('page2a passed');
           } else {
-            alert('Please answer the mandatory fields first.');
+            swal('Please answer the mandatory fields first.');
             event.preventDefault();
             return;
           }
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (onValidate('page2b')) {
             console.log('page2b passed');
           } else {
-            alert('Please answer the mandatory fields first.');
+            swal('Please answer the mandatory fields first.');
             event.preventDefault();
             return;
           }
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
           console.log('check for bug');
         }
       } else {
-        alert('Please answer the mandatory fields first.');
+        swal('Please answer the mandatory fields first.');
         event.preventDefault();
       }
     } else if (event.detail.from === 1) {
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (onValidate('page4')) {
         console.log('page4 passed');
       } else {
-        alert('Please answer the mandatory fields first.');
+        swal('Please answer the mandatory fields first.');
         event.preventDefault();
       }
     }
@@ -287,7 +287,7 @@ $(document).ready(function() {
       }
     });
   } else {
-    alert("Your browser doesn't support to File API");
+    swal("Your browser doesn't support to File API");
   }
 });
 // File upload script end
@@ -346,8 +346,15 @@ $("input[name='page7[prevApplications]']").change(function() {
 
 function textCounter(field, field2, maxlimit) {
   var countfield = document.getElementById(field2);
-  if (field.value.length > maxlimit) {
+  if (field.value.length > maxlimit) {  
+    if(field.id==="stofFacts"){
+    swal("You have used up the allocated length for Statement of Facts. For more explanation, please use the extra provided area by clicking the button 'Do you need more?'");
+    }
+    if(field.id==="stofFactsExtra"){
+      swal("Unfortunately there is no more space available to add extra content in statement of facts according to the guidelines provided by ECtHR. Please try to modify the existing text.");
+    }
     field.value = field.value.substring(0, maxlimit);
+    
     return false;
   } else {
     countfield.value = maxlimit - field.value.length;
