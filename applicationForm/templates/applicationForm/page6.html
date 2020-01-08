@@ -51,18 +51,18 @@
                             <div class="complaint">
                                 <table width="100%">
                                     <tr>
-                                        <td width="30%">
+                                        <td width="25%">
                                             <label for="complainSelect"><b>Complaint</b></label>
                                             <input name="page6[complainSelect][]" class="form-control complainSelect">
                                         </td>
-                                        <td width="40%">
+                                        <td width="30%">
                                             <label><b>Date of Final Decision from the highest court</b> </label>
                                             <!-- <input class="form-control datepicker" type="text" color="Info"
                                             name="page6[complaintDate][]" placeholder="Select date of final Decision" /> -->
                                             <input type="text" class="date" name="page6[complaintDate][]"
                                                 data-template='DD MMM YYYY'>
                                         </td>
-                                        <td width="30%">
+                                        <td width="45%">
                                             <label><b> Remedies Used</b></label>
                                             <textarea class="form-control remedies" name="page6[remedies][]"
                                                 oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'
@@ -85,9 +85,7 @@
                         Further useful information about exhaustion of domestic remedies and compliance with the six-month time-limit may be found in the Practical Guide on admissibility criteria (www.echr.coe.int/applicants)"
                                 data-trigger="click" data-placement="bottom"><span><i
                                         class="fas fa-question-circle"></i></span></a></label>
-                        <textarea class="form-control" name="page6[appealDescribe]" id="appealDescribe"
-                            oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
-                            rows="10"></textarea>
+                       
                     </div>
                     
                     
@@ -97,9 +95,9 @@
                         <table class="table-bordered">
                             <thead style="border:none">
                                 <tr style="background-color:#2679c7;color:white">
-                                    <th scope="col">Complaint</th>
-                                    <th scope="col">Date of Final Decision by highest court</th>
-                                    <th scope="col">Remedies Used</th>
+                                    <th  width="25%" scope="col">Complaint</th>
+                                    <th width="30%" scope="col">Date of Final Decision by highest court</th>
+                                    <th width="45%" scope="col">Remedies Used</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -128,6 +126,7 @@
                     <br>
                     <div class="form-group">
                       <h5>  Is or was there an appeal or remedy available to you which you have not used? </h5><br>
+                      
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="appealAvailableYes"
                                 name="page6[appealAvailable]" value="Yes" required data-parsley-group="">
@@ -138,7 +137,12 @@
                                 name="page6[appealAvailable]" value="No" required data-parsley-group="">
                             <label class="custom-control-label" for="appealAvailableNo">No</label>
                         </div>
-                    </div>             
+                    </div>
+                    <div class="form-group is-hidden appealDescribe">
+                     <textarea class="form-control" name="page6[appealDescribe]" id="appealDescribe"
+                            oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
+                            rows="10"></textarea> 
+                            </div>            
                     <br>
                     <br>
                 
@@ -157,8 +161,7 @@
                     <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                         {% csrf_token %}
                         <div class="card-body" style="padding-top: 10px;">
-                             <h5 align="center">Help us to
-                                    Improve</h5>
+                             <h5 align="center">Help us Improve</h5>
                             <div class="form-group">
                                 <label for=""> Are you a legally trained person?</label>
                                 <input type="text" class="is-hidden" name="sugPageNo" value="1">

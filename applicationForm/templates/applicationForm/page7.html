@@ -8,13 +8,18 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label>Have you raised any of these complaints in another procedure of international
-                            investigation
-                            or
-                            settlement? <a href="javascript://" data-toggle="popover"
-                                data-content="You must indicate whether you have submitted the complaints in your application to any other procedure of international investigation or settlement, for example a United Nations body such as the ILO or the UN Human Rights Committee, or an international arbitration panel. If you have, you should give details, including the name of the body to which you submitted your complaints, the dates and details of any proceedings which took place and details of any decisions that were taken. You should also submit copies of relevant decisions and other documents. "
-                                data-trigger="click" data-placement="bottom"><span><i
-                                        class="fas fa-question-circle"></i></span></a></label>
+                        <label>Have you raised any of these complaints in another procedure of international  investigation or settlement? </label>
+                                        <div class="text-right"><button class="btn" data-toggle="collapse" data-target="#info-Q1" >More Info</button></div>
+										<div id="info-Q1" class="collapse" >
+                            <p><small> You must indicate whether you have submitted the complaints in your application to any other procedure 
+                            of international investigation or settlement, for example a United Nations body such as the ILO or the UN Human Rights Committee,
+                             or an international arbitration panel. If you have, you should give details, 
+                             including the name of the body to which you submitted your complaints, the dates and details of any proceedings
+                              which took place and details of any decisions that were taken. You should also submit copies of relevant decisions and 
+                              other documents.
+                            </small></p>
+                                </div>
+                                <br>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="intInvestigationYes"
                                 name="page7[intInvestigation]" value="Yes" required data-parsley-group="">
@@ -36,15 +41,24 @@
                             oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
                             rows="10"></textarea>
                     </div>
+                    <br>
+                    <hr>
+                    <hr>
                     <div class="form-group">
                         <label>Do you (the applicant) currently have, or have you previously had, any other
-                            applications
-                            before the
-                            Court? <a href="javascript://" data-toggle="popover"
-                                data-content="If you have, or have had, any other applications before the Court and, give the application number(s). This is vital to assist the Court in filing, retrieving and processing the different applications under your name. 
-                    If the applicant’s first application form was rejected as incomplete, no file is kept, neither the form nor any of the attached documents. So, merely sending the missing document or a letter with the missing information will not count: you must download a fresh application form, fill it in fully and append to that form copies of all the relevant documents, even if you have sent the documents in previous correspondence addressed to the Court."
-                                data-trigger="click" data-placement="bottom"><span><i
-                                        class="fas fa-question-circle"></i></span></a></label>
+                            applications before the Court? </label>
+                                        <div class="text-right"><button class="btn" data-toggle="collapse" data-target="#info-Q2" >More Info</button></div>
+										<div id="info-Q2" class="collapse" >
+                            <p><small> If you have, or have had, any other applications before the Court and, give the application number(s).
+                             This is vital to assist the Court in filing, retrieving and processing the different applications under your name. 
+                              If the applicant’s first application form was rejected as incomplete, no file is kept, 
+                              neither the form nor any of the attached documents. So, merely sending the missing document or a letter with the missing information
+                               will not count: you must download a fresh application form, fill it in fully and append to that form copies of all the relevant documents,
+                                even if you have sent the documents in previous correspondence addressed to the Court."
+                               
+                            </small></p>
+                                </div>
+                                <br>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="prevApplicationsYes"
                                 name="page7[prevApplications]" value="Yes" required data-parsley-group="">
@@ -75,8 +89,7 @@
                         <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                             {% csrf_token %}
                             <div class="card-body" style="padding-top: 10px;">
-                             <h5 align="center">Help us to
-                                    Improve</h5>
+                             <h5 align="center">Help us Improve</h5>
                                 <div class="form-group">
                                     <label for=""> Are you a legally trained person?</label>
                                     <input type="text" class="is-hidden" name="sugPageNo" value="7">

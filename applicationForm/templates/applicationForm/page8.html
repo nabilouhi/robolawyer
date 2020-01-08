@@ -92,20 +92,20 @@
                                         <div class="docList">
                                             <table width="100%">
                                                 <tr>
-                                                    <td width="40%">
+                                                    <td width="25%">
                                                         <label><b>Date</b></label>
                                                         <input type="text" class="date"
                                                             name="page8[finalDecisionDate][]"
                                                             data-template='DD MMM YYYY'>
                                                     </td>
-                                                    <td width="50%" style="padding-right:10px;">
+                                                    <td width="60%" style="padding-right:10px;">
                                                         <label for="docSelect"><b>Description</b></label>
                                                         <textarea class="form-control" name="page8[docSelect][]"
                                                             id="docSelect"
                                                             oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'
                                                             cols="30" rows="1"></textarea>
                                                     </td>
-                                                    <td width="10%">
+                                                    <td width="15%">
                                                         <label><b>Number of Pages</b> <a href="javascript://"
                                                                 data-toggle="popover"
                                                                 data-content="Indicate the total number of pages in each document"
@@ -149,8 +149,7 @@
                         <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                             {% csrf_token %}
                             <div class="card-body" style="padding-top: 10px;">
-                             <h5 align="center">Help us to
-                                    Improve</h5>
+                             <h5 align="center">Help us Improve</h5>
                                 <div class="form-group">
                                     <label for=""> Are you a legally trained person?</label>
                                     <input type="text" class="is-hidden" name="sugPageNo" value="8">

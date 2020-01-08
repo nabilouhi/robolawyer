@@ -40,11 +40,10 @@
                                 <div class="custom-control custom-radio custom-control-inline">
                                     <input class="custom-control-input" id="representativeNone" type="radio"
                                         name="page3[indRepresentativeType]" value="selfRepresented">
-                                    <label class="custom-control-label" for="representativeNone">I represent myself at
-                                        this
-                                        stage</label>
+                                    <label class="custom-control-label" for="representativeNone">I represent myself at this stage</label>
                                 </div>
                             </div>
+
 
                             <div class="is-hidden" id="nonLawyerRep">
                                 <div class="form-group">
@@ -52,16 +51,19 @@
                                     <input class="form-control" type="text" name="page3[nlCapacity]"
                                         placeholder="Enter your relationship to the applicant" id="nlCapacity" required>
                                 </div>
-                                <div class="form-group">
-                                    <label>Surname</label>
+                                
+                                <div class="row">
+                       			 	<div class="form-group col-sm-6">
+                            				<label>Surname</label>
                                     <input class="form-control" type="text" name="page3[nlSurname]"
                                         placeholder="Enter your surname" id="nlSurname" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>First Name(s)</label>
-                                    <input class="form-control" type="text" name="page3[nlFirstName]"
+                        				</div>
+                       				<div class="form-group col-sm-6">
+                           			 	<label>First Name(s)</label>
+                                   	 <input class="form-control" type="text" name="page3[nlFirstName]"
                                         placeholder="Enter your First Name(s)" id="nlFirstName" required>
-                                </div>
+                        				</div>
+                        			</div>
                                 <div class="form-group">
                                     <label>Nationality</label>
                                     <select class="form-group" name="page3[nlNationality]" id="nlNationality"></select>
@@ -73,32 +75,40 @@
                                         name="page3[nlAddress]" id="nlAddress"></textarea>`
                                 </div>
                                 <div class="form-group">
-                                    <label>Telephone Number (select country code)</label> <br>
-                                    <input class="form-control phoneInput" type="tel" style="width: 100%;"
-                                        name="page3[nlTel]" id="nlTel">
-                                </div>
-                                <div class="form-group">
-                                    <label>Fax</label>
-                                    <input class="form-control" type="number" name="page3[nlFax]"
-                                        placeholder="Enter Fax number" id="nlFax">
-                                </div>
-                                <div class="form-group">
-                                    <label>Email</label>
+                                <label>Email</label>
                                     <input class="form-control" type="email" name="page3[nlEmail]" placeholder="Email"
                                         id="nlEmail" required>
                                 </div>
+                                <div class="row">
+                       			 	<div class="form-group col-sm-6">
+                                        <label>Telephone Number (select country code)</label> 
+                                    <input class="form-control phoneInput" type="tel" style="width: 100%;"
+                                        name="page3[nlTel]" id="nlTel">
+                        				</div>
+                       				<div class="form-group col-sm-6">
+                       				<label>Fax</label> 
+                       				<input class="form-control" type="number" name="page3[nlFax]"
+                                        placeholder="Enter Fax number" id="nlFax">	
+                        				</div>
+                        			</div>           
                             </div>
+                            
+                            
+                            
+                            
                             <div class="is-hidden" id="lawyerRep">
-                                <div class="form-group">
-                                    <label>Surname</label>
+                            <div class="row">
+                       			 	<div class="form-group col-sm-6">
+                            				<label>Surname</label>
                                     <input class="form-control" type="text" name="page3[lSurname]"
                                         placeholder="Enter your surname" id="lSurname" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>First Name(s)</label>
-                                    <input class="form-control" type="text" name="page3[lFirstName]"
+                        				</div>
+                       				<div class="form-group col-sm-6">
+                           			 	<label>First Name(s)</label>
+                                   	 <input class="form-control" type="text" name="page3[lFirstName]"
                                         placeholder="Enter your First Name(s)" id="lFirstName" required>
-                                </div>
+                        				</div>
+                        			</div>
                                 <div class="form-group">
                                     <label>Nationality</label>
                                     <select class="form-group" name="page3[lNationality]" id="lNationality"></select>
@@ -109,16 +119,16 @@
                                     <textarea class="form-control" rows=6 placeholder="Enter Address"
                                         name="page3[lAddress]" id="lAddress"></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label>Telephone Number (select country code)</label> <br>
-                                    <input class="form-control phoneInput" type="tel" style="width: 100%;"
-                                        name="page3[lTel]" id="lTel">
-                                </div>
-                                <div class="form-group">
-                                    <label>Fax</label>
-                                    <input class="form-control" type="number" name="page3[lFax]"
-                                        placeholder="Enter Fax Number" id="lFax">
-                                </div>
+                                <div class="row">
+                       			 	<div class="form-group col-sm-6">
+                                   <label>Telephone Number (select country code)</label> 
+                                    <input class="form-control phoneInput" type="tel" style="width: 100%;"name="page3[lTel]" id="lTel">
+                        				</div>
+                       				<div class="form-group col-sm-6"> 
+                       				<label>Fax</label>
+                       				<input class="form-control" type="number" name="page3[lFax]" placeholder="Enter Fax number" id="lFax">	
+                        				</div>
+                        			</div> 
                                 <div class="form-group">
                                     <label>Email</label>
                                     <input class="form-control" type="email" name="page3[lEmail]" placeholder="Email"
@@ -126,103 +136,114 @@
                                 </div>
                             </div>
                             <div class="indAuthority is-hidden">
-                                <div class="alert alert-success" role="alert">
+                            
+                                <div class="card-header">
                                     <h4 class="alert-heading">Authority <a href="javascript://" data-toggle="popover"
-                                            data-content="If an applicant is represented by a lawyer or other person, both the applicant and the designated representative – whose identifying details must be indicated on the application form - must sign the authority section on the application form. The applicant’s signature provides the necessary proof that the representative has been authorised by the applicant to act on the latter’s behalf; the representative’s signature, which is a new requirement, provides confirmation that this person has in fact accepted to act for the applicant. Where the applicant is an organisation, it is the official or officer of that organisation and the lawyer who sign.  In the absence of such signature, the Registry may continue to correspond only with the applicant due to lack of proof that the representative is in fact involved in the case."
+                                            data-content=""
                                             data-trigger="click" data-placement="bottom"><span><i
                                                     class="fas fa-question-circle"></i></span></a></h4>
-                                    <p class="form-text">An applicant must sign the authority empowering the
-                                        representative
-                                        to
-                                        act
-                                        on his
-                                        or her behalf, unless, for example, the applicant is a child or lacks legal
-                                        capacity
-                                        and
-                                        is
-                                        unable to sign. If a representative who is not a lawyer has instructed a lawyer
-                                        on
-                                        behalf of
-                                        an applicant who is unable to sign, the representative should sign the authority
-                                        on
-                                        the
-                                        applicant’s behalf.
-                                        A separate authority form will not be accepted unless adequate explanations are
-                                        provided
-                                        as
-                                        to the existence of insurmountable practical obstacles in signing the authority
-                                        section
-                                        on
+                                    <p class="lead">An applicant must sign the authority empowering the
+                                        representative to act on his or her behalf, unless, for example, the applicant is a child or lacks legal
+                                        capacity and is unable to sign. If a representative who is not a lawyer has instructed a lawyer
+                                        on behalf of an applicant who is unable to sign, the representative should sign the authority on
+                                        the applicant’s behalf. A separate authority form will not be accepted unless adequate explanations are provided
+                                        as to the existence of insurmountable practical obstacles in signing the authority section on
                                         the form or it is used at a later stage to appoint a lawyer/representative after
-                                        the
-                                        application has been lodged with the Court.
+                                        the application has been lodged with the Court.
                                     </p>
-                                    <p class="alert alert-danger" role="alert">Please Note: This section must contain
-                                        original
-                                        signatures added
-                                        after the form
-                                        has been
-                                        printed out</p>
+                                    
+                                     <div class="text-center"><button class="btn" data-toggle="collapse" data-target="#info-authority" >More Info</button></div>
+										<div id="info-authority" class="collapse" ><label for=""></label>
+                            <p><small>If an applicant is represented by a lawyer or other person, both the applicant and the designated representative – whose identifying details must be indicated on the application form - must sign the authority section on the application form. The applicant’s signature provides the necessary proof 
+                            that the representative has been authorised by the applicant to act on the latter’s behalf; the representative’s signature, which is a new requirement, provides confirmation that this person has in fact accepted to act for the applicant. Where the applicant is an organisation, it is the official or officer of that organisation and the lawyer who sign. 
+                             In the absence of such signature, the Registry may continue to correspond only with the applicant due to lack of proof that the representative is in fact involved in the case.
+                             </small></p>
                                 </div>
+                                    <br>
+                                    <br>
+                                    <p class="alert alert-danger" role="alert">Please Note: This section must contain original signatures added after the form has been printed out</p>
+                                </div>
+                                <br><br>
+                                
                                 <p>The applicant must authorise any representative to act on his or her behalf by
                                     signing
                                     the
                                     first box below; the designated
                                     representative must indicate his or her acceptance by signing the second box below
                                 </p>
+                                <br>
                                 <div class="form-group">
+                                
                                     <div class="custom-file">
-                                        <label class="custom-file-label" for="indAuthoritySignatureApplicant">Signature
-                                            of
-                                            Applicant</label>
+                                    <div class="row">
+                                    <div class="col-sm-6">
+                                    		<label>Applicant  </label>
+                                        <label class="custom-file-label" for="indAuthoritySignatureApplicant">Signature of Applicant</label>
                                         <input class="custom-file-input" type="file"
                                             name="page3[indAuthoritySignatureApplicant]"
                                             id="indAuthoritySignatureApplicant">
-
-                                        <label>Date <a href="javascript://" data-toggle="popover"
+                                           </div>
+                                           <div class="col-sm-1" >
+                                            <label>Date <a href="javascript://" data-toggle="popover"
                                                 data-content="The date required is the date of signature by the individual applicant and his or her representative."
                                                 data-trigger="click" data-placement="bottom"><span><i
                                                         class="fas fa-question-circle"></i></span></a></label>
+                                                 </div>  
+                                                      
+                                            <div class="col-sm-5" >
                                         <input type="text" class="datepicker form-control"
                                             id="indAuthorityDateApplicant" name="page3[indAuthorityDateApplicant]"
-                                            data-date-format="dd/mm/yyyy" placeholder="Date">
+                                            data-date-format="dd/mm/yyyy" placeholder="Date DD/MM/YYYY">
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-th"></span>
                                         </div>
                                     </div>
+                                    </div>
                                 </div>
+                                </div>
+                                <br>
+                                
 
                                 <div class="form-group">
                                     <div class="custom-file">
+                                    		<div class="row">
+                                    <div class="col-sm-6">
+                                    		
                                         <label class="custom-file-label"
-                                            for="indAuthoritySignatureRepresentative">Signature
-                                            of
-                                            Representative</label>
+                                            for="indAuthoritySignatureRepresentative">Signature of Representative</label>
                                         <input class="custom-file-input" type="file"
                                             name="page3[indAuthoritySignatureRepresentative]"
                                             id="indAuthoritySignatureRepresentative">
-
-                                        <label>Date</label>
+                                           </div>
+                                            <div class="col-sm-1" >
+                                            <label>Date <a href="javascript://" data-toggle="popover"
+                                                data-content="The date required is the date of signature by the individual applicant and his or her representative."
+                                                data-trigger="click" data-placement="bottom"><span><i
+                                                        class="fas fa-question-circle"></i></span></a></label>
+                                                 </div>     
+                                            <div class="col-sm-5" >
                                         <input type="text" class="datepicker form-control"
                                             id="indAuthorityDateRepresentative"
                                             name="page3[indAuthorityDateRepresentative]" data-date-format="dd/mm/yyyy"
-                                            placeholder="Date">
+                                            placeholder="Date DD/MM/YYYY">
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-th"></span>
                                         </div>
+                                        </div>
                                     </div>
                                 </div>
+                                </div>
+                                <br>
+                                <br>
+                                <hr>
+                                
+                                
                                 <div class="form-group">
                                     <label for="indIndeComms" class="lead">Electronic communication between the
                                         representative
                                         and
                                         the
-                                        Court <a href="javascript://" data-toggle="popover" data-content="eComms is a service initiated by the Court for communicating electronically with an applicant’s representative. The service is only activated if and when the case reaches a stage of the proceedings where the Government concerned are requested to submit written observations. 
-                            The email address provided will be used to create an eComms account. It is recommended that representatives working in a law firm provide a generic email address so that the account can be used by multiple users within the firm. 
-                           You should inform the Court of any change to your eComms account email address. 
-                           For more information, please refer to the terms and conditions available on the eComms website (https://ecomms.echr.coe.int), as well as the Practice Direction on electronic filing by applicants (www.echr.coe.int/practicedirections) (available in English and French only). 
-                           " data-trigger="click" data-placement="bottom"><span><i
-                                                    class="fas fa-question-circle"></i></span></a></label>
+                                        Court </label>
                                     Email address for eComms account (if the representative already uses eComms, please
                                     provide
                                     the existing eComms account email
@@ -230,6 +251,18 @@
                                     <input class="form-control" type="email" name="page3[indIndeComms]"
                                         id="indIndeComms">
                                 </div>
+                                
+                                <div class="text-center">
+                                <button class="btn" data-toggle="collapse" data-target="#info-ecomm" >More Info</button></div>
+										<div id="info-ecomm" class="collapse" ><label for=""></label>
+                            <p><small>eComms is a service initiated by the Court for communicating electronically with an applicant’s representative.
+                             The service is only activated if and when the case reaches a stage of the proceedings where the Government concerned are requested to submit written observations. 
+                            The email address provided will be used to create an eComms account. It is recommended that representatives working in a law firm provide a generic email address so that the account can be used by multiple users within the firm.
+                             You should inform the Court of any change to your eComms account email address. For more information, please refer to the terms and conditions available on the eComms website (https://ecomms.echr.coe.int), as well as the Practice Direction on electronic filing by applicants
+                              (www.echr.coe.int/practicedirections) (available in English and French only). 
+                             </small></p>
+                                </div>                                
+                                
                             </div>
                             <div class="is-hidden" id="selfRep">
                                 <p class="lead">No action needed. Click on the Next button to proceed to next step.</p>
@@ -254,23 +287,27 @@
                 </div>
 
                 <div class="is-hidden" id="orgRepresentative">
-                    <div class="card">
-                        <div class="card-header">
+                    <div class="card-master">
+                       <div class="card-master-header">
                             <h4 class="card-header-title" align="center">
                                 Representative
-                                <a href="javascript://" data-toggle="popover"
-                                    data-content=" <h5>Representative(s) of the Applicant Organisation</h5>A legal person (which includes a company, non-governmental organisation or association) that applies to the Court must do so through a representative of that legal person and who provides contact details and explains his or her capacity or relationship with the legal person. This official representative might be the person specifically designated by the board, or council of administration for that purpose, or the person who is authorised generally under domestic law or the organisation’s articles to act on its behalf. It may be that a legal person’s representative is also a lawyer or legal officer and has the capacity to act additionally as legal representative. Both parts of the application form concerning representation must still be filled in, and requisite documentary proof provided of authority to represent the legal person must be attached."
-                                    data-trigger="click" data-placement="bottom"><span><i
-                                            class="fas fa-question-circle"></i></span></a>
                             </h4>
-                            <p class="lead">Where the applicant is an organisation, it must be represented before the
-                                Court
-                                by a
-                                person entitled
-                                to act on its behalf and in its
-                                name (e.g. a duly authorised director or official).</p>
+                            
                         </div>
+
+
                         <div class="card-body">
+                          <h4 >Representative(s) of the Applicant Organisation</h4>
+                            <p class="lead">Where the applicant is an organisation, it must be represented before the
+                                Court by a person entitled to act on its behalf and in its name (e.g. a duly authorised director or official).</p>
+                                <div class="text-center"><button class="btn" data-toggle="collapse" data-target="#info-ORG" >More Info</button></div>
+										<div id="info-ORG" class="collapse" >
+                            <p><small>This official representative might be the person specifically designated by the board,
+                             or council of administration for that purpose, or the person who is authorised generally under domestic law or the organisation’s articles to act on its behalf. 
+                             It may be that a legal person’s representative is also a lawyer or legal officer and has the capacity to act additionally as legal representative. 
+                             Both parts of the application form concerning representation must still be filled in, and requisite documentary proof provided of authority 
+                             to represent the legal person must be attached."</small></p>
+                                </div>
                             <div class="section" id="orgNonLawyerRep">
                                 <label class="lead">Organisation Official</label>
                                 <div class="form-group">
@@ -279,17 +316,18 @@
                                         placeholder="Enter your relationship to the applicant" id="orgnlCapacity"
                                         required>
                                 </div>
-                                <div class="form-group">
+                                <div class="row">
+                       			 	<div class="form-group col-sm-6">
                                     <label>Surname</label>
-                                    <input class="form-control" type="text" name="page3[orgnlSurname]"
-                                        placeholder="Enter your surname" id="orgnlSurname" required>
-
-                                </div>
-                                <div class="form-group">
-                                    <label>First Name(s)</label>
+                                    <input class="form-control" type="text" name="page3[orgnlSurname]" placeholder="Enter your surname" id="orgnlSurname" required>
+                        				</div>
+                       				<div class="form-group col-sm-6"> 
+                       				<label>First Name(s)</label>
                                     <input class="form-control" type="text" name="page3[orgnlFirstName]"
                                         placeholder="Enter your First Name(s)" id="orgnlFirstName" required>
-                                </div>
+                        				</div>
+                        			</div> 
+
                                 <div class="form-group">
                                     <label>Nationality</label>
                                     <select class="form-control" name="page3[orgnlNationality]"
@@ -301,16 +339,20 @@
                                     <textarea class="form-control" rows=6 placeholder="Enter Address"
                                         name="page3[orgnlAddress]" id="orgnlAddress"></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label>Telephone Number (select country code)</label> <br>
+                                
+                                 <div class="row">
+                       			 	<div class="form-group col-sm-6">
+												<label>Telephone Number (select country code)</label> 
                                     <input class="form-control phoneInput" type="tel" name="page3[orgnlTel]"
                                         id="orgnlTel">
-                                </div>
-                                <div class="form-group">
-                                    <label>Fax</label>
+                        				</div>
+                       				<div class="form-group col-sm-6"> 
+                       				<label>Fax</label>
                                     <input class="form-control" type="number" name="page3[orgnlFax]"
                                         placeholder="Enter your First Name(s)" id="orgnlFax">
-                                </div>
+                        				</div>
+                        			</div> 
+                                
                                 <div class="form-group">
                                     <label>Email</label>
                                     <input class="form-control" type="email" name="page3[orgnlEmail]"
@@ -336,16 +378,19 @@
 
 
                             <div class="is-hidden" id="orgLawyerRep">
-                                <div class="form-group">
-                                    <label>Surname</label>
+                            
+                            <div class="row">
+                       			 	<div class="form-group col-sm-6">
+												<label>Surname</label>
                                     <input class="form-control" type="text" name="page3[orglSurname]"
                                         placeholder="Enter your surname" id="orglSurname" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>First Name(s)</label>
+                        				</div>
+                       				<div class="form-group col-sm-6"> 
+                       				<label>First Name(s)</label>
                                     <input class="form-control" type="text" name="page3[orglFirstName]"
                                         placeholder="Enter your First Name(s)" id="orglFirstName" required>
-                                </div>
+                        				</div>
+                        			</div> 
                                 <div class="form-group">
                                     <label>Nationality</label>
                                     <select class="form-control" name="page3[orglNationality]"
@@ -357,24 +402,26 @@
                                     <textarea class="form-control" rows=6 placeholder="Enter Address"
                                         name="page3[orglAddress]" id="orglAddress"></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label>Telephone Number (select country code)</label> <br>
+                                <div class="row">
+                       			 	<div class="form-group col-sm-6">
+												<label>Telephone Number (select country code)</label> 
                                     <input class="form-control phoneInput" type="tel" name="page3[orglTel]"
                                         id="orglTel">
-                                </div>
-                                <div class="form-group">
-                                    <label>Fax</label>
+                        				</div>
+                       				<div class="form-group col-sm-6"> 
+                       				<label>Fax</label>
                                     <input class="form-control" type="number" name="page3[orglFax]"
                                         placeholder="Enter Fax" id="orglFax">
-                                </div>
+                        				</div>
+                        			</div> 
                                 <div class="form-group">
                                     <label>Email</label>
                                     <input class="form-control" type="email" name="page3[orglEmail]" placeholder="Email"
                                         id="orglEmail" required>
                                 </div>
-                            </div>
-                            <div class="orgAuthority is-hidden col-sm-10">
-                                <div class="alert alert-success">
+                            
+                            <div class="orgAuthority is-hidden col-sm-12">
+                                <div class="card-header">
                                     <h4 class="alert-heading">Authority </h4>
 
                                     <p>The representative of the applicant organisation must authorise any
@@ -411,28 +458,29 @@
                                         <input class="custom-file-input" type="file"
                                             name="page3[orgAuthoritySignatureApplicant]"
                                             id="orgAuthoritySignatureApplicant">
-
-                                        <label>Date <a href="javascript://" data-toggle="popover"
+                                             <p>I hereby agree to represent the organisation in the
+                                                proceedings before the
+                                                European Court
+                                                of Human Rights concerning the application
+                                                lodged under Article 34 of the Convention.</p>
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                            <label>Date <a href="javascript://" data-toggle="popover"
                                                 data-content="The date required is the date of signature by the individual applicant and his or her representative."
                                                 data-trigger="click" data-placement="bottom"><span><i
                                                         class="fas fa-question-circle"></i></span></a></label>
-                                        <input type="text" class="datepicker form-control"
-                                            id="orgAuthorityDateApplicant" data-date-format="dd/mm/yyyy"
-                                            placeholder="Date" name="page3[orgAuthorityDateApplicant]">
-                                        <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-th"></span>
+                                            </div>
+                                             <div class="col-sm-4">
+                                             	<input type="text" class="datepicker form-control"
+                                            			id="orgAuthorityDateApplicant" data-date-format="dd/mm/yyyy"
+                                            			placeholder="Date DD/MM/YYYY" name="page3[orgAuthorityDateApplicant]">
+                                        			<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span></div>
+                                          </div>
                                         </div>
-                                        <div>
-                                            <p>I hereby agree to represent the organisation in the
-                                                proceedings
-                                                before
-                                                the
-                                                European
-                                                Court
-                                                of Human Rights concerning the application
-                                                lodged under Article 34 of the Convention.</p>
-                                        </div>
+                                        
+
                                     </div>
+                                    <br>
                                 </div>
 
                                 <div class="form-group">
@@ -451,27 +499,32 @@
                                             of
                                             Human Rights concerning the application
                                             lodged under Article 34 of the Convention.</p>
-                                        <label>Date</label>
-                                        <input type="text" class="datepicker form-control"
+                                            
+                                            <div class="row">
+                                            <div class="col-sm-2">
+                                            <label>Date <a href="javascript://" data-toggle="popover"
+                                                data-content="The date required is the date of signature by the individual applicant and his or her representative."
+                                                data-trigger="click" data-placement="bottom"><span><i
+                                                        class="fas fa-question-circle"></i></span></a></label>
+                                            </div>
+                                             <div class="col-sm-4">
+                                             	<input type="text" class="datepicker form-control"
                                             id="orgAuthorityDateRepresentative" data-date-format="dd/mm/yyyy"
-                                            placeholder="Date">
+                                            placeholder="Date DD/MM/YYYY">
+                                        			<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span></div>
+                                          </div>
+                                        </div>
+                                       
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-th"></span>
                                         </div>
                                     </div>
                                 </div>
+                                <br>
+                                <br>
+                                <hr>
                                 <div class="form-group">
-                                    <label for="orgIndeComms" class="lead">Electronic communication between
-                                        the
-                                        representative
-                                        and
-                                        the
-                                        Court <a href="javascript://" data-toggle="popover" data-content="eComms is a service initiated by the Court for communicating electronically with an applicant’s representative. The service is only activated if and when the case reaches a stage of the proceedings where the Government concerned are requested to submit written observations. 
-                            The email address provided will be used to create an eComms account. It is recommended that representatives working in a law firm provide a generic email address so that the account can be used by multiple users within the firm. 
-                           You should inform the Court of any change to your eComms account email address. 
-                           For more information, please refer to the terms and conditions available on the eComms website (https://ecomms.echr.coe.int), as well as the Practice Direction on electronic filing by applicants (www.echr.coe.int/practicedirections) (available in English and French only). 
-                           " data-trigger="click" data-placement="bottom"><span><i
-                                                    class="fas fa-question-circle"></i></span></a></label>
+                                    <label for="orgIndeComms" class="lead">Electronic communication between the representative and the Court </label>
                                     Email address for eComms account (if the representative already uses
                                     eComms,
                                     please
@@ -481,7 +534,25 @@
                                     <input class="form-control" type="email" name="page3[orgIndeComms]"
                                         id="orgIndeComms">
                                 </div>
+                                
+                                <div class="text-center">
+                                <button class="btn" data-toggle="collapse" data-target="#info-ecomm" >More Info</button></div>
+										<div id="info-ecomm" class="collapse" ><label for=""></label>
+                            <p><small>eComms is a service initiated by the Court for communicating electronically with an applicant’s representative. 
+                            The service is only activated if and when the case reaches a stage of the proceedings where the Government concerned are requested to submit written observations.
+                            The email address provided will be used to create an eComms account. 
+                            It is recommended that representatives working in a law firm provide a generic email address so that the account can be used by multiple users within the firm. 
+                            You should inform the Court of any change to your eComms account email address. For more information, please refer to the terms and conditions available on the eComms website (https://ecomms.echr.coe.int), 
+                            as well as the Practice Direction on electronic filing by applicants (www.echr.coe.int/practicedirections) (available in English and French only).
+
+                             </small></p>
+                                </div>  
+			                                
+                                
                             </div>
+                            
+                            </div>
+                            
                             <div class="is-hidden" id="orgLawyerRep">
                                 <p class="lead">No action needed. Please click on the Next button to proceed
                                     to
@@ -496,6 +567,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
             <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
                 <div class="suggestion-form-3 stuck">
@@ -503,8 +575,7 @@
                         <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                             {% csrf_token %}
                             <div class="card-body" style="padding-top: 10px;">
-                             <h5 align="center">Help us to
-                                    Improve</h5>
+                             <h5 align="center">Help us Improve</h5>
                                 <div class="form-group">
                                     <label for=""> Are you a legally trained person?</label>
                                     <input type="text" class="is-hidden" name="sugPageNo" value="3">

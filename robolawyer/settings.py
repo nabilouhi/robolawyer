@@ -28,19 +28,21 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 TEMPLATE_DEBUG = DEBUG
 
 # Application definition
-SECRET_KEY = config('SECRET_KEY')
+# SECRET_KEY = config('SECRET_KEY')
+
+SECRET_KEY = "secretKEY"
 
 
 
-ALLOWED_HOSTS = ["just-bott.herokuapp.com"]
-#ALLOWED_HOSTS = ["127.0.0.1"]
+# ALLOWED_HOSTS = ["just-bott.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1"]
 #ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-EMAIL_HOST=config('EMAIL_HOST')
-EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
-EMAIL_HOST_USER=config('EMAIL_HOST_USER')
-EMAIL_PORT=config('EMAIL_PORT')
-EMAIL_USE_TLS=config('EMAIL_USE_TLS')
+# EMAIL_HOST=config('EMAIL_HOST')
+# EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
+# EMAIL_HOST_USER=config('EMAIL_HOST_USER')
+# EMAIL_PORT=config('EMAIL_PORT')
+# EMAIL_USE_TLS=config('EMAIL_USE_TLS')
 
 
 
@@ -58,6 +60,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'home',
     'applicationForm',
+    'about',
+    'extResources',
     'echrAPI',
     'courtAPI',
 
