@@ -19,7 +19,9 @@ var echrRat = function(baseUrl) {
   var echrDiv = document.getElementById('echrDetails');
   $('#decisionDate').on('change', function() {
     currentSelected = $(this).val();
-    while (echrDiv.hasChildNodes()) {
+    if(moment(currentSelected, 'DD/MM/YYYY')._isValid){
+    console.log();
+        while (echrDiv.hasChildNodes()) {
       echrDiv.removeChild(echrDiv.lastChild);
     }
     axios({
@@ -53,6 +55,7 @@ var echrRat = function(baseUrl) {
         }
       });
     });
+  }
   });
 };
 
