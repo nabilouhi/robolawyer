@@ -160,11 +160,22 @@
                                 placeholder="Enter the Organisation's Name" name="page2[orgName]" required
                                 data-parsley-group="page2b"></textarea>
                         </div>
-                        <div class="form-group">
-                            <label>Identification number (if any)</label>
+                        
+                        <div class="row">
+                        <div class="form-group col-sm-4">
+                            
+                                <label>Identification number (if any)</label>
                             <input class="form-control" type="text" placeholder="Enter Identification Number"
                                 name="page2[orgID]">
                         </div>
+                        <div class="form-group col-sm-8">
+                            <label>Activity</label>
+                            <input class="form-control" type="text" name="page2[orgActivity]" required
+                                data-parsley-group="page2b">
+                        </div>
+                        </div>
+ 
+                     
 
                         <div class="form-group">
                             <label>Date of registration or incorporation (if any)</label>
@@ -172,11 +183,7 @@
                         </div>
 
 
-                        <div class="form-group">
-                            <label>Activity</label>
-                            <input class="form-control" type="text" name="page2[orgActivity]" required
-                                data-parsley-group="page2b">
-                        </div>
+                      
 
 
                         <div class="form-group">
@@ -188,18 +195,20 @@
                             <textarea class="form-control" name="page2[orgAddress]" id="orgAddress" cols="30"
                                 rows="3"></textarea>
                         </div>
-
-                        <div class="form-group">
+                        
+                        <div class="row">
+                        <div class="form-group col-sm-4">
                             <label for="orgPhone">Telephone (select country code)</label>
                             <input class="form-control phoneInput" type="tel" id="orgPhone" name="page2[orgPhone]"
                                 required data-parsley-group="page2b">
                         </div>
-
-                        <div class="form-group">
+                        <div class="form-group col-sm-8">
                             <label>Email</label>
                             <input class="form-control" type="email" name="page2[orgEmail]" id="orgEmail"
                                 placeholder="Email" data-parsley-type="email" data-parsley-group="page2b">
                         </div>
+                        </div>
+ 
                     </div>
                 </div>
             </div>
@@ -215,8 +224,7 @@
                         <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
                             {% csrf_token %}
                              <div class="card-body" style="padding-top: 10px;">
-                             <h5 align="center">Help us to
-                                    Improve</h5>
+                             <h5 align="center">Help us Improve</h5>
                                 <div class="form-group">
                                     <label for=""> Are you a legally trained person?</label>
                                     <input type="text" class="is-hidden" name="sugPageNo" value="2">

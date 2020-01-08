@@ -64,8 +64,24 @@ body {
 
 footer {
     height: 8vw;
-    margin-top: 5vw;
 }
+.bubble{
+	z-index: 999;
+	position: fixed;
+		top: 95px;
+		left: 10px;
+		width: 240px;
+		height: 33px;
+		padding: 0px;
+		background: rgba(0255,255,255,0.1);
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		color:black;
+		font-size:10px;
+		font-family:Nunito;
+		text-align:left;
+		padding-left: 10px;
 
 
 .lead b {
