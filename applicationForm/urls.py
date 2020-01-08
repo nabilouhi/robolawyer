@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import FormPageView, submittedForm, formProcessing, feedback
+from .views import FormPageView, formProcessing, feedback
 
 urlpatterns = [
     path('', FormPageView.as_view(), name='form'),
