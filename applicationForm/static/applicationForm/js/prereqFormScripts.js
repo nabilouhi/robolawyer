@@ -85,3 +85,13 @@ $(document).ready(function() {
   $('.feedback_submit-9').click(feedbackSubmit);
   $('.feedback_submit-10').click(feedbackSubmit);
 });
+
+
+
+$("input[name='page1[complySix]']").change(function() {
+  result = this.value;
+
+  if (result === 'Yes') {
+    swal('If you have not exhausted the available legal remedies your application can be declared inadmissible.')
+  }
+});
