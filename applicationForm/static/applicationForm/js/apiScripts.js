@@ -38,7 +38,7 @@ var echrRat = function(baseUrl) {
             formattedCountryName = countryname[1].trim();
 
             var pTag = document.createElement('p');
-            var smallTag = document.createElement('small');
+            var p2Tag = document.createElement('p');
             finalText =
               '<b>' +
               formattedCountryName +
@@ -48,8 +48,8 @@ var echrRat = function(baseUrl) {
               '</b>. If the act, decision or omission take place after ' +
               formattedDate +
               ', but the effects of the act, decision or omission still continue to the present day (eg: the act of a disappearance, where the person has not been found, even if the person can be presumed dead), please continue to the next field.<br>';
-            smallTag.innerHTML += finalText;
-            textReady = pTag.appendChild(smallTag);
+            p2Tag.innerHTML += finalText;
+            textReady = pTag.appendChild(p2Tag);
             appendedP = echrDiv.appendChild(textReady);
           }
         }
@@ -87,11 +87,11 @@ var courtCountry = function(baseUrl) {
 
             proceedingRow1 = document.createElement('td');
             proceedingRow1.innerHTML =
-              '<em>' + data[i].proceedingType1 + '</em>';
+               data[i].proceedingType1 ;
             courtDetail1.appendChild(proceedingRow1);
 
             courtRow1 = document.createElement('td');
-            courtRow1.innerHTML = '<em>' + data[i].court1 + '</em>';
+            courtRow1.innerHTML = data[i].court1;
             courtDetail1.appendChild(courtRow1);
             courtData.appendChild(courtDetail1);
 
@@ -101,10 +101,10 @@ var courtCountry = function(baseUrl) {
               courtDetail2 = document.createElement('tr');
               proceedingRow2 = document.createElement('td');
               proceedingRow2.innerHTML =
-                '<em>' + data[i].proceedingType2 + '</em>';
+                data[i].proceedingType2;
               courtDetail2.appendChild(proceedingRow2);
               courtRow2 = document.createElement('td');
-              courtRow2.innerHTML = '<em>' + data[i].court2 + '</em>';
+              courtRow2.innerHTML = data[i].court2;
               courtDetail2.appendChild(courtRow2);
               courtData.appendChild(courtDetail2);
             }
@@ -128,7 +128,5 @@ var courtCountry = function(baseUrl) {
   });
 };
 
-// url = 'https://robo2lawyer.herokuapp.com/';
-// url = 'http://localhost:8000/';
 rootUrl = window.location.href.split('form/')[0];
 UrlExists(rootUrl);
