@@ -1,5 +1,5 @@
 <div id="form-page-2" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger2">
-    <div class="col-md-11 mx-auto form-section">
+    <div class="col-md-12 mx-auto form-section">
         {% load static  %}
         <div class="row">                     
            <div class="card-master col-sm-10">
@@ -11,20 +11,24 @@
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" class="custom-control-input" id="applicantTypeInd"
                             name="page2[applicantType]" value="Individual" required data-parsley-group="page2">
-                        <label class="custom-control-label" for="applicantTypeInd"><h4>Individual <a href="javascript://"
+                        <label class="custom-control-label" for="applicantTypeInd">
+                        <h1>Individual <a href="javascript://"
                             data-toggle="popover"
                             data-content="This section applies to an applicant who is an individual person, as opposed to a legal entity such as a company or association. If there is more than one individual applicant, this information must be provided for each additional applicant, on a separate application form."
                             data-trigger="click" data-placement="bottom"><span><i
-                                    class="fas fa-question-circle"></i></span></a> </h4></label>
+                                    class="fas fa-question-circle"></i></span></a> </h1></label>
+                                    
                     </div> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" class="custom-control-input" id="applicantTypeOrg"
                             name="page2[applicantType]" value="Organisation" required data-parsley-group="page2">
-                        <label class="custom-control-label" for="applicantTypeOrg"><h4>Organisation <a href="javascript://"
+                        <label class="custom-control-label" for="applicantTypeOrg">
+                        <h1>Organisation <a href="javascript://"
                             data-toggle="popover"
                             data-content="This section concerns applicants that are legal entities such as a company, non-governmental organisation or association, etc. The identity and contact details of the applicant organisation must be filled in. If there is more than one such applicant, this information must be provided for each additional applicant, on a separate application form."
                             data-trigger="click" data-placement="bottom"><span><i
-                                    class="fas fa-question-circle"></i></span></a></h4></label>
+                                    class="fas fa-question-circle"></i></span></a></h1>
+                                    </label>
                     </div>
                 </div>
             </div>
