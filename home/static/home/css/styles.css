@@ -53,6 +53,13 @@ footer {
 html {
     zoom: 75%;
     margin: 0;
+
+}
+@-moz-document url-prefix() {
+html {
+    margin: 0;
+    font-size: 3mm;
+}
 }
 
 body {
@@ -60,6 +67,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+
 }
 
 footer {
