@@ -1,5 +1,5 @@
 <div id="form-page-1" role="tabpanel" class="bs-stepper-pane fade" aria-labelledby="stepperFormTrigger1">
-    <div class="col-md-12 mx-auto form-section">
+    <div class="col-md-11 mx-auto form-section">
         {% load static  %}
         <div class="row">
             <div class="card-master col-sm-10">
@@ -23,7 +23,7 @@
                                     directed.</label>
                                 <select multiple class="countrySelect show-menu-arrow form-control dropup" size="15"
                                     name="page1[involvedStates]" id="involvedStates" data-parsley-mincheck="1"
-                                    data-parsley-group="page1" required>
+                                    data-parsley-group="page1" required >
                                     <option value="ALB - Albania">ALB - Albania</option>
                                     <option value="AND - Andorra">AND - Andorra</option>
                                     <option value="ARM - Armenia">ARM - Armenia</option>
@@ -43,7 +43,9 @@
                                     <option value="FIN - Finland">FIN - Finland</option>
                                     <option value="FRA - France">FRA - France</option>
                                     <option value="GBR - United Kingdom">GBR - United Kingdom</option>
-                                    <option value="GEO - Georgia">GEO - Georgia</option>
+                                    <
+                                        option value="GEO - Georgia">GEO - Georgia</
+                                        option>
                                     <option value="GRC - Greece">GRC - Greece</option>
                                     <option value="HRV - Croatia">HRV - Croatia</option>
                                     <option value="HUN - Hungary">HUN - Hungary</option>
@@ -73,40 +75,36 @@
                                     <option value="TUR - Turkey">TUR - Turkey</option>
                                     <option value="UKR - Ukraine">UKR - Ukraine</option>
                                 </select>
-                                <!-- <input class="form-control" name="tags" id="tags" /> -->
                             </div>
                         </li>
                         <li>
                             <h5>The facts you are complaining about concern:</h5>
-
-                            <ol type="a">
-                                <li>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="concernYouYes"
-                                                name="page1[concernYou]" value="Yes">
-                                            <label class="custom-control-label" for="concernYouYes">
-                                                You directly</label>
-                                        </div>
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="concernYouNo"
-                                                name="page1[concernYou]" value="No">
-                                            <label class="custom-control-label" for="concernYouNo">A close relative who
-                                                is
-                                                unable to lodge an application himself or herself <a
-                                                    href="javascript://" data-toggle="popover"
-                                                    data-content="Grounds for not being able to lodge the application: death, disappearance. In this case the next of kind becomes the “victim”. Show legitimate interest in pursuing the application before the court as heir/next of kin."
-                                                    data-trigger="click" data-placement="bottom"><span><i
-                                                            class="fas fa-question-circle"></i></span></a>
-                                            </label>
-                                        </div>
+                            <div class="form-group">
+                                <div id="error-container-concern">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="concernYouYes"
+                                            name="page1[concernYou]" value="Yes" data-parsley-errors-container="#error-container-concern" required data-parsley-group="page1">
+                                        <label class="custom-control-label" for="concernYouYes">
+                                            You directly</label>
                                     </div>
-                                </li>
-                            </ol>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="concernYouNo"
+                                            name="page1[concernYou]" value="No" data-parsley-errors-container="#error-container-concern" data-parsley-group="page1">
+                                        <label class="custom-control-label" for="concernYouNo">A close relative who
+                                            is
+                                            unable to lodge an application himself or herself <a
+                                                href="javascript://" data-toggle="popover"
+                                                data-content="Grounds for not being able to lodge the application: death, disappearance. In this case the next of kind becomes the “victim”. Show legitimate interest in pursuing the application before the court as heir/next of kin."
+                                                data-trigger="click" data-placement="bottom"><span><i
+                                                        class="fas fa-question-circle"></i></span></a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li>
                             <div class="form-group">
-                                <label class="lead">
+                                <label class="lead">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
                                     <h5> When did the fact you are complaing about take place?</h5>
                                 </label>
                                 <input type="text" class="date" name="page1[decisionDate]" id="decisionDate"
@@ -187,36 +185,7 @@
             <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
                 <div class="suggestion-form-1 stuck">
                     <div class="card">
-                        <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
-                            {% csrf_token %}
-                            <div class="card-body" style="padding-top: 10px;">
-                             <h5 align="center">Help us
-                                    Improve</h5>
-                                <div class="form-group">
-                                    <label for=""> Are you a legally trained person?</label>
-                                    <input type="text" class="is-hidden" name="sugPageNo" value="1">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="legalTrainYesFirst"
-                                            name="legalTrained" value="Yes">
-                                        <label class="custom-control-label" for="legalTrainYesFirst">Yes</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="legalTrainNoFirst"
-                                            name="legalTrained" value="No">
-                                        <label class="custom-control-label" for="legalTrainNoFirst">No</label>
-                                    </div>
-                                    <input type="text" class="is-hidden" name="legalTrainedInput">
-                                </div>
-                                <div class="form-group">
-                                    <label for="suggestionArea">How can we improve this page?</label>
-                                    <textarea class="form-control " name="suggestionArea" type="text"
-                                        rows="5"></textarea>
-                                </div>
-                            </div>
-                            <div class="card-footer text-center">
-                                <button id ="1" type="submit" class="btn btn-dark feedback_submit-1">Send your message</button>
-                            </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>

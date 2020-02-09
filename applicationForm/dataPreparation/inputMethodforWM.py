@@ -1,5 +1,6 @@
 def firstPageInputs(self, can, inputObj):
-    can.drawString(30, 420, inputObj["page2[indSurname]"])
+    print(inputObj)
+    # can.drawString(30, 420, inputObj["page2[indSurname]"])
     can.drawString(30, 380, inputObj["page2[indFirstName]"])
     baseX = 27
     birthdate = inputObj["page2[birthDate]"]

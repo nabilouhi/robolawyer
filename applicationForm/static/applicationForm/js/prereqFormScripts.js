@@ -2,7 +2,6 @@ $('#finalDecisionDate').on('change', function(){
     finalDecisionDate = $('#finalDecisionDate').combodate('getValue',format='YYYY-MM-DD');
     currentDate = moment().format('YYYY-MM-DD');
     diffDate = moment(currentDate).diff(moment(finalDecisionDate), 'months', true);
-    console.log(diffDate)
     if (!isNaN(diffDate)){
       if(diffDate < 6) {
         sixFutureDate = moment(finalDecisionDate).add(6, 'months').format('YYYY-MM-DD');
@@ -28,16 +27,11 @@ function feedbackSubmit(e) {
   
   cardParentElement = e.target.parentElement.parentElement.parentElement;
   
-  firstInput = e.target.id
-  console.log(firstInput)
+  firstInput = e.target.id;
   radioInput = $('input:radio[name="legalTrained"]:checked').val();
   $('input[name="legalTrainedInput"]').val(radioInput);
-  	thirdInput =cardParentElement.getElementsByTagName("textarea")[0].value
-     secondInput =radioInput 
-  //secondInput = cardParentElement.getElementsByTagName("textarea")[0].value
-  //thirdInput = cardParentElement.children[1].children[1].value;
-  
-console.log(firstInput,secondInput,thirdInput )
+  	thirdInput = cardParentElement.getElementsByTagName("textarea")[0].value
+     secondInput = radioInput;
 
 
   var csrftoken = getCookie('csrftoken');

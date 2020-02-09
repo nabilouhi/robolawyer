@@ -17,6 +17,7 @@ class FormPageView(TemplateView):
 def formProcessing(request):
     if request.method == 'POST':
         form_dict = request.POST
+        print(form_dict)
         pagesName = ['page1', 'page2', 'page3', 'page4', 'page5',
                      'page6', 'page7', 'page8', 'page9', 'page10']
         pages = []
@@ -25,8 +26,8 @@ def formProcessing(request):
                 key, value) in form_dict.items() if page in key.lower()))
         for page in pages:
             print(page)
-        prepareResult = PrepareResult(pages)
-        prepareResult.main()
+            prepareResult = PrepareResult(pages)
+            prepareResult.main()
     return HttpResponse("it's working")
 
 
