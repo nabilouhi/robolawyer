@@ -20,13 +20,14 @@ endobj
 /Resources <<
 /Font <<
 /F1 6 0 R
+/F2 7 0 R
 >>
 /XObject <<
-/Image1 7 0 R
-/Image2 8 0 R
-/Image3 9 0 R
+/Image1 8 0 R
+/Image2 9 0 R
+/Image3 10 0 R
 >>
-/ProcSet [ /ImageB /ImageC /Text /ImageI /PDF ]
+/ProcSet [ /Text /PDF /ImageI /ImageC /ImageB ]
 >>
 /Rotate 0
 /Type /Page
@@ -41,7 +42,7 @@ endobj
 endobj
 5 0 obj
 <<
-/Length 2137407
+/Length 2137720
 >>
 stream
 q
@@ -77457,13 +77458,41 @@ BT
 14.4 TL
 ET
 BT
-1 0 0 1 30 420 Tm
-(dsf) Tj
+1 0 0 1 30 380 Tm
+(Kumar) Tj
 T*
 ET
 BT
-1 0 0 1 30 380 Tm
-(sfsf) Tj
+1 0 0 1 30 300 Tm
+(Afghanistan\040\050) Tj
+/F2 12 Tf
+14.4 TL
+(nnnnnnnnnnnn) Tj
+/F1 12 Tf
+14.4 TL
+(\051) Tj
+T*
+ET
+BT
+1 0 0 1 30 260 Tm
+(Afghanistan\040\050) Tj
+/F2 12 Tf
+14.4 TL
+(nnnnnnnnnnnn) Tj
+/F1 12 Tf
+14.4 TL
+(\051) Tj
+T*
+ET
+BT
+1 0 0 1 30 260 Tm
+(Afghanistan\040\050) Tj
+/F2 12 Tf
+14.4 TL
+(nnnnnnnnnnnn) Tj
+/F1 12 Tf
+14.4 TL
+(\051) Tj
 T*
 ET
 Q
@@ -77480,6 +77509,14 @@ endobj
 >>
 endobj
 7 0 obj
+<<
+/BaseFont /ZapfDingbats
+/Name /F2
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+8 0 obj
 <<
 /BitsPerComponent 8
 /ColorSpace /DeviceRGB
@@ -77769,7 +77806,7 @@ x£ÃeeðÞ°×–èÇ7i`p;Ië’6¸ë^…E y%Ÿˆ¤¿ø•¥^ë6Ë¥Imna˜NÛ ;îù±´ã ç·&½n±üOáË/i¦Öèl
 (¢€?ÿÙ
 endstream
 endobj
-8 0 obj
+9 0 obj
 <<
 /BitsPerComponent 8
 /ColorSpace /DeviceRGB
@@ -77944,7 +77981,7 @@ yç$ý+âÝ®©â'Ã’ßGmn¯çÞ;ºª ÇqÎnìÇÎ¿‡cÿ 	ƒÿ A½;ÿ “ühÊüE7ü#?Þþ8¤Š2Np¹2#¨ó
 (¢€?ÿÙ
 endstream
 endobj
-9 0 obj
+10 0 obj
 <<
 /BitsPerComponent 8
 /ColorSpace /DeviceRGB
@@ -78162,23 +78199,24 @@ r§÷ÛÏ8…§iÖZ]ªÚØ[Goþ\dà“ÜàO&¼wÅÚïƒ|@šŽ—æAfÏºÚemÞ[c”9üpr¾¼×ªxcÄv^$ÓEÕ©Ù*`M
 endstream
 endobj
 xref
-0 10
+0 11
 0000000000 65535 f 
 0000000009 00000 n 
 0000000068 00000 n 
 0000000108 00000 n 
-0000000412 00000 n 
-0000000461 00000 n 
-0002137923 00000 n 
-0002138030 00000 n 
-0002182241 00000 n 
-0002221118 00000 n 
+0000000423 00000 n 
+0000000472 00000 n 
+0002138247 00000 n 
+0002138354 00000 n 
+0002138437 00000 n 
+0002182648 00000 n 
+0002221525 00000 n 
 trailer
 <<
-/Size 10
+/Size 11
 /Root 4 0 R
 /Info 2 0 R
 >>
 startxref
-2253385
+2253793
 %%EOF
