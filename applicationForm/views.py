@@ -41,7 +41,7 @@ def feedback(request):
         message = "1. Page No. - " + str(pageNo) + "\n2. Legal Trained - " + \
             str(legalTrained) + "\n3. Suggestion - " + str(suggestion)
         from_user = settings.EMAIL_HOST_USER
-        to = ["contact@justbot.org"]
+        to = ["wewily@getnada.com"]
         send_mail(subject, message, from_user, to, fail_silently=False)
 
     return HttpResponse('We have received your feedback.')

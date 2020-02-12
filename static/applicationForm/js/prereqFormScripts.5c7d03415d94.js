@@ -2,6 +2,7 @@ function feedbackSubmit(e) {
   e.preventDefault();
   console.log('started');
   cardParentElement = e.target.parentElement.parentElement.children[2];
+  console.log(cardParentElement);
   firstInput = cardParentElement.children[0].children[1].value;
   radioInput = $('input:radio[name="legalTrained"]:checked').val();
   $('input[name="legalTrainedInput"]').val(radioInput);

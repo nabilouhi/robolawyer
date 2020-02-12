@@ -22,12 +22,20 @@ $('#finalDecisionDate').on('change', function(){
 
 
 // Feedback form
+var curPageNum = function(pageNumValue) {
+  console.log(pageNumValue.value)
+    document.getElementById("sugPageNo").value = pageNumValue.value;
+}
+
+
+
 function feedbackSubmit(e) {
   e.preventDefault();
-  
+
+  console.log(e.target);
   cardParentElement = e.target.parentElement.parentElement.parentElement;
-  
-  firstInput = e.target.id;
+  console.log(cardParentElement);
+  firstInput = document.getElementById("sugPageNo").value;
   radioInput = $('input:radio[name="legalTrained"]:checked').val();
   $('input[name="legalTrainedInput"]').val(radioInput);
   	thirdInput = cardParentElement.getElementsByTagName("textarea")[0].value
@@ -68,20 +76,13 @@ function getCookie(name) {
 }
 
 $(document).ready(function() {
-  $('.feedback_submit-1').click(feedbackSubmit);
-  $('.feedback_submit-2').click(feedbackSubmit);
-  $('.feedback_submit-3').click(feedbackSubmit);
-  $('.feedback_submit-4').click(feedbackSubmit);
-  $('.feedback_submit-5').click(feedbackSubmit);
-  $('.feedback_submit-6').click(feedbackSubmit);
-  $('.feedback_submit-7').click(feedbackSubmit);
-  $('.feedback_submit-8').click(feedbackSubmit);
-  $('.feedback_submit-9').click(feedbackSubmit);
-  $('.feedback_submit-10').click(feedbackSubmit);
+  $('.feedback_submit').click(feedbackSubmit);
 });
 
 
 
+
+//////////////////////////////////////////////////////////////////
 $("input[name='page1[complySix]']").change(function() {
   result = this.value;
 

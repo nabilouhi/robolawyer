@@ -9,6 +9,63 @@
 <link rel="stylesheet" href="{% static 'applicationForm/countrySelect/countrySelect.min.css' %}">
 <link rel="stylesheet" href="{% static 'applicationForm/tagsinput/tagsinput.css' %}">
 <link rel="stylesheet" href="{% static 'applicationForm/bootstrap-select/bootstrap-select.min.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/animate.css/animate.css" type="text/css" />
+<link rel="stylesheet" href="https://unpkg.com/rmodal/dist/rmodal.css" type="text/css" />
+<style type="text/css">
+    .modal .modal-dialog {
+      width: 400px;
+    }
+  </style>
+
+  <script type="text/javascript">
+      window.onload = function() {
+          var modal = new RModal(document.getElementById('modal'), {
+              //content: 'Abracadabra'
+              beforeOpen: function(next) {
+                  console.log('beforeOpen');
+                  next();
+              }
+              , afterOpen: function() {
+                  console.log('opened');
+              }
+
+              , beforeClose: function(next) {
+                  console.log('beforeClose');
+                  next();
+              }
+              , afterClose: function() {
+                  console.log('closed');
+              }
+               , bodyClass: 'modal-open'
+               , dialogClass: 'modal-dialog'
+              , dialogOpenClass: 'animated fadeIn'
+               , dialogCloseClass: 'animated fadeOut'
+
+               , focus: true
+              , focusElements: ['input.form-control', 'textarea', 'button.btn-primary']
+
+               , escapeClose: true
+          });
+
+          document.addEventListener('keydown', function(ev) {
+              modal.keydown(ev);
+          }, false);
+
+          document.getElementById('showModal1').addEventListener("click", function(ev) {
+              ev.preventDefault();
+              modal.open();
+          }, false);
+          document.getElementById('showModal2').addEventListener("click", function(ev) {
+            ev.preventDefault();
+            modal.open();
+        }, false);
+        document.getElementById('showModal3').addEventListener("click", function(ev) {
+            ev.preventDefault();
+            modal.open();
+        }, false);
+          window.modal = modal;
+      }
+  </script>
 {% endblock headContent %}
 
 {% block content %}
@@ -100,7 +157,7 @@
                     </button>
                 </div>
             </div>
-            <div class="bs-stepper-content ">
+            <div class="bs-stepper-content">
                 <form id="appForm" class="needs-validation" onSubmit="return false" method="POST"
                     action="{% url 'formProcessing' %}" novalidate>
                     {% csrf_token %}
@@ -114,16 +171,51 @@
                     {% include 'applicationForm/page8.html' %}
                     {% include 'applicationForm/page9.html' %}
                     {% include 'applicationForm/page10.html' %}
-
-
                 </form>
+                    
+                <div id="modal" class="modal">
+                    <div class="modal-dialog animated">
+                        <div class="modal-content">
+                            <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
+                                {% csrf_token %}
+                                <div class="modal-header">
+                                    <strong><h5 align="center">Help us Improve</h5></strong>
+                                </div>
+                
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for=""> Are you a legally trained person?</label>
+                                        <input type="text" id="sugPageNo" class="is-hidden" name="sugPageNo" >
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="legalTrainYesFirst"
+                                                name="legalTrained" value="Yes">
+                                            <label class="custom-control-label" for="legalTrainYesFirst">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="legalTrainNoFirst"
+                                                name="legalTrained" value="No">
+                                            <label class="custom-control-label" for="legalTrainNoFirst">No</label>
+                                        </div>
+                                        <input type="text" class="is-hidden" name="legalTrainedInput">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="suggestionArea">How can we improve this page?</label>
+                                        <textarea class="form-control " name="suggestionArea" type="text"
+                                            rows="5"></textarea>
+                                    </div>
+                                </div>
+                
+                                <div class="modal-footer">
+                                    <button class="btn btn-default" type="button" onclick="modal.close();">Cancel</button>
+                                    <button type="submit" onclick="modal.close();" class="btn btn-dark feedback_submit">Send your message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>     
             </div>
         </div>
     </div>
-
-
-
-
 </div>
 {% endblock content %}
 
@@ -139,6 +231,7 @@
 <script src="{% static 'applicationForm/bootstrap-select/bootstrap-select.min.js' %}"></script>
 <script src="{% static 'applicationForm/bootstrap-select/bootstrap-select-custom.js' %}"></script>
 <script src="{% static 'applicationForm/js/formScripts.js' %}"></script>
+<script type="text/javascript" src="https://unpkg.com/rmodal/dist/rmodal.js"></script>
 <script src="{% static 'applicationForm/js/validationScripts.js' %}"></script>
 <script src="{% static 'applicationForm/stepper/bs-stepper.min.js' %}"></script>
 <script src="{% static 'applicationForm/intlTelInput/intlTelInput.min.js' %}"></script>
@@ -170,3 +263,36 @@
 </script>
 
 {% endblock scriptContent %}
+
+
+<!-- <div class="card">
+    <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
+        {% csrf_token %}
+        <div class="card-body" style="padding-top: 10px;">
+         <h5 align="center">Help us Improve</h5>
+            <div class="form-group">
+                <label for=""> Are you a legally trained perso-m n?</label>
+                <input type="text" class="is-hidden" name="sugPageNo" value="1">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="legalTrainYesFirst"
+                        name="legalTrained" value="Yes">
+                    <label class="custom-control-label" for="legalTrainYesFirst">Yes</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="legalTrainNoFirst"
+                        name="legalTrained" value="No">
+                    <label class="custom-control-label" for="legalTrainNoFirst">No</label>
+                </div>
+                <input type="text" class="is-hidden" name="legalTrainedInput">
+            </div>
+            <div class="form-group">
+                <label for="suggestionArea">How can we improve this page?</label>
+                <textarea class="form-control " name="suggestionArea" type="text"
+                    rows="5"></textarea>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <button id ="1" type="submit" class="btn btn-dark feedback_submit-1">Send your message</button>
+        </div>
+    </form>
+</div> -->

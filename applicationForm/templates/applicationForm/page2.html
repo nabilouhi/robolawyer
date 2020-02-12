@@ -220,38 +220,8 @@
             </div>
             
             <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
-                <div class="suggestion-form-2 stuck">
-                    <div class="card">
-                        <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
-                            {% csrf_token %}
-                             <div class="card-body" style="padding-top: 10px;">
-                             <h5 align="center">Help us Improve</h5>
-                                <div class="form-group">
-                                    <label for=""> Are you a legally trained person?</label>
-                                    <input type="text" class="is-hidden" name="sugPageNo" value="2">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="legalTrainYesSecond"
-                                            name="legalTrained" value="Yes">
-                                        <label class="custom-control-label" for="legalTrainYesSecond">Yes</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="legalTrainNoSecond"
-                                            name="legalTrained" value="No">
-                                        <label class="custom-control-label" for="legalTrainNoSecond">No</label>
-                                    </div>
-                                    <input type="text" class="is-hidden" name="legalTrainedInput">
-                                </div>
-                                <div class="form-group">
-                                    <label for="suggestionArea">How can we improve this page?</label>
-                                    <textarea class="form-control" name="suggestionArea" type="text"
-                                        rows="5"></textarea>
-                                </div>
-                            </div>
-                            <div class="card-footer text-center">
-                                <button id ="2" type="submit" class="btn btn-dark feedback_submit-1">Send your message</button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="col-lg-12">
+                    <button id="showModal2" class="showModal btn btn-info" class="btn btn-success" value='2' onclick="curPageNum(this)">Feedback</button> 
                 </div>
             </div>
         </div>
