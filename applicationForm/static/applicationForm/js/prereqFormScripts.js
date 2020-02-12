@@ -75,6 +75,7 @@ function getCookie(name) {
   return cookieValue;
 }
 
+
 $(document).ready(function() {
   $('.feedback_submit').click(feedbackSubmit);
 });
