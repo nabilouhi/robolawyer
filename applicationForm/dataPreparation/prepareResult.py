@@ -31,9 +31,9 @@ class PrepareResult:
 
     def createOrDeleteDirectory(self, directoryName):
         dirname = directoryName
-        try:
+        if not os.path.exists(dirname):
             os.makedirs(dirname)
-        except FileExistsError:
+        else:
             shutil.rmtree(dirname)
             os.makedirs(dirname)
 
@@ -44,13 +44,22 @@ class PrepareResult:
 
         paths = glob.glob(
             'applicationForm/dataPreparation/pages/App_form_page_*.pdf')
+        print("*****************************************")
+        print(self.inputObj)
+        print("*****************************************")
         output1 = self.create_watermark_pdf(self.inputObj[1], pos=1)
         output2 = self.create_watermark_pdf(self.inputObj[0], pos=2)
+        output3 = self.create_watermark_pdf(self.inputObj[2], pos=3)
+        output4 = self.create_watermark_pdf(self.inputObj[3], pos=4)
         self.createOrDeleteDirectory('applicationForm/dataPreparation/result')
         self.watermark('applicationForm/dataPreparation/pages/App_form_page_1.pdf',
                        'applicationForm/dataPreparation/result/App_form_page_1.pdf', output1)
         self.watermark('applicationForm/dataPreparation/pages/App_form_page_2.pdf',
-                       'applicationForm/dataPreparation/result/App_form_page_2.pdf', output2)
+                       'applicationForm/dataPreparation/result/App_form_page_2.pdf', output2),
+        self.watermark('applicationForm/dataPreparation/pages/App_form_page_3.pdf',
+                       'applicationForm/dataPreparation/result/App_form_page_3.pdf', output3),
+        self.watermark('applicationForm/dataPreparation/pages/App_form_page_4.pdf',
+                       'applicationForm/dataPreparation/result/App_form_page_4.pdf', output3),
     # ----
         paths.sort(key=self.natural_key)
         self.pdf_merger('pdf_merger2.pdf', paths)
@@ -98,6 +107,10 @@ class PrepareResult:
             can = firstPageInputs(self, can, inputObj)
         elif pos == 2:
             can = secondPageInputs(self, can, inputObj)
+        elif pos == 3:
+            can = thirdPageInputs(self, can, inputObj)
+        elif pos == 4:
+            can = fourthPageInputs(self, can, inputObj)
         else:
             print('bug reported')
         can.save()

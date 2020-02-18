@@ -27,7 +27,7 @@ endobj
 /Image2 9 0 R
 /Image3 10 0 R
 >>
-/ProcSet [ /Text /PDF /ImageI /ImageC /ImageB ]
+/ProcSet [ /Text /ImageB /PDF /ImageC /ImageI ]
 >>
 /Rotate 0
 /Type /Page
@@ -42,7 +42,7 @@ endobj
 endobj
 5 0 obj
 <<
-/Length 2137720
+/Length 2137731
 >>
 stream
 q
@@ -77458,12 +77458,15 @@ BT
 14.4 TL
 ET
 BT
+1 0 0 1 30 420 Tm
+T*
+ET
+BT
 1 0 0 1 30 380 Tm
-(Kumar) Tj
 T*
 ET
 BT
-1 0 0 1 30 300 Tm
+1 0 0 1 30 285 Tm
 (Afghanistan\040\050) Tj
 /F2 12 Tf
 14.4 TL
@@ -77474,7 +77477,7 @@ BT
 T*
 ET
 BT
-1 0 0 1 30 260 Tm
+1 0 0 1 30 245 Tm
 (Afghanistan\040\050) Tj
 /F2 12 Tf
 14.4 TL
@@ -77485,14 +77488,18 @@ BT
 T*
 ET
 BT
-1 0 0 1 30 260 Tm
-(Afghanistan\040\050) Tj
-/F2 12 Tf
-14.4 TL
-(nnnnnnnnnnnn) Tj
-/F1 12 Tf
-14.4 TL
-(\051) Tj
+1 0 0 1 0 0 Tm
+/F1 10 Tf
+12 TL
+1 0 0 1 30 205 Tm
+T*
+ET
+BT
+1 0 0 1 30 110 Tm
+T*
+ET
+BT
+1 0 0 1 30 70 Tm
 T*
 ET
 Q
@@ -78206,11 +78213,11 @@ xref
 0000000108 00000 n 
 0000000423 00000 n 
 0000000472 00000 n 
-0002138247 00000 n 
-0002138354 00000 n 
-0002138437 00000 n 
-0002182648 00000 n 
-0002221525 00000 n 
+0002138258 00000 n 
+0002138365 00000 n 
+0002138448 00000 n 
+0002182659 00000 n 
+0002221536 00000 n 
 trailer
 <<
 /Size 11
@@ -78218,5 +78225,5 @@ trailer
 /Info 2 0 R
 >>
 startxref
-2253793
+2253804
 %%EOF

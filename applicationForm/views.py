@@ -27,7 +27,7 @@ def formProcessing(request):
         for page in pages:
             print(page)
             prepareResult = PrepareResult(pages)
-            prepareResult.main()
+            prepareResult.main()    
     return HttpResponse("it's working")
 
 

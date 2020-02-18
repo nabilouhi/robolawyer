@@ -6,8 +6,8 @@ options = {
 
 $('#indPob').countrySelect(options);
 $('#indNationality').countrySelect(options);
-$('#lNationality').countrySelect(options);
-$('#nlNationality').countrySelect(options);
+$('#indLNationality').countrySelect(options);
+$('#indNLNationality').countrySelect(options);
 $('#orgnlNationality').countrySelect(options);
 $('#orglNationality').countrySelect(options);
 
