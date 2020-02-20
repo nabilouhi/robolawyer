@@ -16,8 +16,9 @@ from .inputMethodforWM import *
 
 class PrepareResult:
 
-    def __init__(self, inputObj):
+    def __init__(self, inputObj, sessionID):
         self.inputObj = inputObj
+        self.sessionID = sessionID
 
     basedirPDF = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     # userInputs = {
@@ -38,36 +39,85 @@ class PrepareResult:
             os.makedirs(dirname)
 
     def main(self):
-        filename = 'applicationForm/dataPreparation/App_form.pdf'
-        self.createOrDeleteDirectory('applicationForm/dataPreparation/pages')
-        self.pdf_splitter(filename)
+        """ next 3 lines to be executed when there is a change in application form file. Looks for the 
+         formatting changes if needed."""
+        # filename = 'applicationForm/dataPreparation/App_form.pdf'
+        # self.createOrDeleteDirectory('applicationForm/dataPreparation/pages')
+        # self.pdf_splitter(filename)
 
         paths = glob.glob(
             'applicationForm/dataPreparation/pages/App_form_page_*.pdf')
+        
         print("*****************************************")
-        print(self.inputObj)
+        print(self.inputObj['page1'])
         print("*****************************************")
-        output1 = self.create_watermark_pdf(self.inputObj[1], pos=1)
-        output2 = self.create_watermark_pdf(self.inputObj[0], pos=2)
-        output3 = self.create_watermark_pdf(self.inputObj[2], pos=3)
-        output4 = self.create_watermark_pdf(self.inputObj[3], pos=4)
-        self.createOrDeleteDirectory('applicationForm/dataPreparation/result')
+        print(self.inputObj['page2'])
+        print("*****************************************")
+        print(self.inputObj['page3'])
+        print("*****************************************")
+        print(self.inputObj['page5'])
+        print("*****************************************")
+
+        barCodeText = "ENG - 2018/1|"
+        for key, value in self.inputObj['page1'].items():
+            if key not in ["page2[applicantType]"]:
+                barCodeText+= value+"|"
+
+        for key, value in self.inputObj['page2'].items():
+            if key not in ["page3[indRepresentativeType]","page3[indNLCapacity]", "page3[orgnlCapacity]"]:
+                barCodeText+= value+"|"
+
+        print(barCodeText)
+        self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/')
+        self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/watermark/')
+        output1 = self.create_watermark_pdf(self.inputObj['page2'], pos=1)
+        output2 = self.create_watermark_pdf(self.inputObj['page1'], pos=2)
+        output3 = self.create_watermark_pdf(self.inputObj['page3'], pos=3, tempInput=self.inputObj['page2'])
+        output4 = self.create_watermark_pdf(self.inputObj['page3'], pos=4)
+        output5 = self.create_watermark_pdf(self.inputObj['page5'], pos=5)
+        output6 = self.create_watermark_pdf(self.inputObj['page5'], pos=6)
+        output7 = self.create_watermark_pdf(self.inputObj['page5'], pos=7)
+        output8 = self.create_watermark_pdf(self.inputObj['page6'], pos=8)
+        output9 = self.create_watermark_pdf(self.inputObj['page6'], pos=9)
+        output10 = self.create_watermark_pdf(self.inputObj['page6'], pos=10)
+        output11 = self.create_watermark_pdf(self.inputObj['page7'], pos=11)
+        output12 = self.create_watermark_pdf(self.inputObj['page8'], pos=12)
+        output13 = self.create_watermark_pdf(self.inputObj['page9'], pos=13, tempInput=barCodeText)
+       
+        
         self.watermark('applicationForm/dataPreparation/pages/App_form_page_1.pdf',
-                       'applicationForm/dataPreparation/result/App_form_page_1.pdf', output1)
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_1.pdf', output1)
         self.watermark('applicationForm/dataPreparation/pages/App_form_page_2.pdf',
-                       'applicationForm/dataPreparation/result/App_form_page_2.pdf', output2),
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_2.pdf', output2),
         self.watermark('applicationForm/dataPreparation/pages/App_form_page_3.pdf',
-                       'applicationForm/dataPreparation/result/App_form_page_3.pdf', output3),
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_3.pdf', output3),
         self.watermark('applicationForm/dataPreparation/pages/App_form_page_4.pdf',
-                       'applicationForm/dataPreparation/result/App_form_page_4.pdf', output3),
-    # ----
-        paths.sort(key=self.natural_key)
-        self.pdf_merger('pdf_merger2.pdf', paths)
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_4.pdf', output4),
+        self.watermark('applicationForm/dataPreparation/pages/App_form_page_5.pdf',
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_5.pdf', output5),
+        self.watermark('applicationForm/dataPreparation/pages/App_form_page_6.pdf',
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_6.pdf', output6),
+        self.watermark('applicationForm/dataPreparation/pages/App_form_page_7.pdf',
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_7.pdf', output7),
+        self.watermark('applicationForm/dataPreparation/pages/App_form_page_8.pdf',
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_8.pdf', output8),
+        self.watermark('applicationForm/dataPreparation/pages/App_form_page_9.pdf',
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_9.pdf', output9),
+        self.watermark('applicationForm/dataPreparation/pages/App_form_page_10.pdf',
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_10.pdf', output10),
+        self.watermark('applicationForm/dataPreparation/pages/App_form_page_11.pdf',
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_11.pdf', output11),
+        self.watermark('applicationForm/dataPreparation/pages/App_form_page_12.pdf',
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_12.pdf', output12),
+        self.watermark('applicationForm/dataPreparation/pages/App_form_page_13.pdf',
+                       'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_13.pdf', output13),
+
+        resultPath = glob.glob('applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_*.pdf')
+        resultPath.sort(key=self.natural_key)
+        self.pdf_merger('applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/finalForm.pdf', resultPath)
 
     def pdf_splitter(self, path):
         fname = os.path.splitext(os.path.basename(path))[0]
-        print("path", path)
-        print(Path.cwd())
         pdf = PdfFileReader(path)
         for page in range(pdf.getNumPages()):
             pdf_writer = PdfFileWriter()
@@ -88,7 +138,6 @@ class PrepareResult:
 
     def watermark(self, input_pdf, output_pdf, watermark_pdf):
         watermark = PdfFileReader(watermark_pdf)
-        print(watermark_pdf)
         watermark_page = watermark.getPage(0)
         pdf = PdfFileReader(input_pdf)
         pdf_writer = PdfFileWriter()
@@ -98,24 +147,49 @@ class PrepareResult:
             pdf_writer.addPage(pdf_page)
         with open(output_pdf, 'wb') as fh:
             pdf_writer.write(fh)
+        fh.close()
 
-    def create_watermark_pdf(self, inputObj, pos):
-        filename = 'applicationForm/dataPreparation/resultForm_' + \
+    def create_watermark_pdf(self, inputObj, pos, tempInput=None):
+        filename = 'applicationForm/dataPreparation/results/'+self.sessionID+'/watermark/resultForm_' + \
             str(pos) + '.pdf'
         can = canvas.Canvas(filename, pagesize=letter)
         if pos == 1:
             can = firstPageInputs(self, can, inputObj)
         elif pos == 2:
             can = secondPageInputs(self, can, inputObj)
-        elif pos == 3:
+        elif pos == 3 and tempInput != None and tempInput["page2[applicantType]"] == "Individual":
             can = thirdPageInputs(self, can, inputObj)
-        elif pos == 4:
+        elif pos == 4 and tempInput != None and tempInput["page2[applicantType]"] == "Organisation":
             can = fourthPageInputs(self, can, inputObj)
+        elif pos==3 and tempInput==None:
+            can = blankPageInputs(self, can, inputObj)
+        elif pos==4 and tempInput==None:
+            can=blankPageInputs(self, can, inputObj)
+        elif pos == 5:
+            can = fifthPageInputs(self, can, inputObj)
+        elif pos == 6:
+            can = sixthPageInputs(self, can, inputObj)
+        elif pos == 7:
+            can = seventhPageInputs(self, can, inputObj)
+        elif pos == 8:
+            can = eighthPageInputs(self, can, inputObj)
+        elif pos == 9:
+            can = ninthPageInputs(self, can, inputObj)
+        elif pos == 10:
+            can = tenthPageInputs(self, can, inputObj)
+        elif pos == 11:
+            can = eleventhPageInputs(self, can, inputObj)
+        elif pos == 12:
+            can = twelvthPageInputs(self, can, inputObj)
+        elif pos==13:
+            barcodeMaker(self, tempInput)
+            can = thirteenthPageInputs(self, can, inputObj)
         else:
             print('bug reported')
         can.save()
         return filename
 
+        
 
 # if __name__ == "__main__":
 

@@ -154,5 +154,72 @@ def fourthPageInputs(self, can, inputObj):
         can.drawString(30, 37, inputObj["page3[indIndeCommsSelf]"])
 
     can.showPage()
-
     return can
+
+
+def fifthPageInputs(self, can, inputObj):
+    print("*********************************")
+    print(inputObj)
+    print("*********************************")
+    t = can.beginText()
+    t.setFont('Helvetica', 10)
+    stOfFactsText = inputObj["page5[stOfFacts]"]
+    newStOfFactsText = "\n".join(wrap(stOfFactsText, 120))
+    t.setTextOrigin(30, 670)
+    t.textLines(newStOfFactsText)
+    can.drawText(t)
+    can.showPage()
+    return can
+
+def sixthPageInputs(self, can, inputObj):
+    can.showPage()
+    return can
+
+def seventhPageInputs(self, can, inputObj):
+    can.showPage()
+    return can
+
+def eighthPageInputs(self, can, inputObj):
+    can.showPage()
+    return can
+
+def ninthPageInputs(self, can, inputObj):
+    can.showPage()
+    return can
+
+def tenthPageInputs(self, can, inputObj):
+    can.showPage()
+    return can
+
+def eleventhPageInputs(self, can, inputObj):
+    can.showPage()
+    return can
+
+def twelvthPageInputs(self, can, inputObj):
+    can.showPage()
+    return can
+
+def thirteenthPageInputs(self, can, inputObj):
+    can.showPage()
+    return can
+
+def blankPageInputs(self, can, inputObj):
+    can.showPage()
+    return can
+
+
+def barcodeMaker(self, formInputs):
+    from pdf417 import encode, render_image, render_svg
+    text = formInputs
+
+    # Convert to code words
+    codes = encode(text)
+
+    # Generate barcode as image
+    image = render_image(codes)  # Pillow Image object
+    image.save('barcode.jpg')
+
+    # Generate barcode as SVG
+    svg = render_svg(codes)  # ElementTree object
+    svg.write("barcode.svg")
+    
