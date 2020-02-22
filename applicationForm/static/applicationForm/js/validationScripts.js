@@ -1,29 +1,97 @@
-var stepperFormEl = document.querySelector('#stepperForm');
-// var indSurname = document.getElementById();
-var inputPasswordForm = document.getElementById('inputPasswordForm');
-var form = stepperFormEl.querySelector('.bs-stepper-content form');
-var stepperPanList = [].slice.call(
-  stepperFormEl.querySelectorAll('.bs-stepper-pane')
-);
+document.addEventListener('DOMContentLoaded', function() {
+    var stepperFormEl = document.querySelector('#stepperForm');
+    stepperForm = new Stepper(stepperFormEl, {
+      animation: true,
+      linear: false,
+      excluded:
+        'input[type=button], input[type=submit], input[type=reset], input[type=hidden], :disabled'
+    });
+    var form = stepperFormEl.querySelector('.bs-stepper-content form')
+    stepperFormEl.addEventListener('show.bs-stepper', function(event) {
+      if (event.detail.from === 0) {
+        if (onValidate('page1')) {
+          console.log('page1 passed');
+        } else {
+          // alert('Please answer the mandatory fields first.');
+          // event.preventDefault();
+        }
+      } else if (event.detail.from === 1) {
+          if(onValidate('page2')){
+              console.log('page2 passed');
+              appVal = document.querySelector("input[name='applicantType']:checked").value;
+              console.log(appVal);
+              if (appVal === 'Individual') {
+                if (onValidate('page2a')) {
+                  console.log('page2a passed');
+                } else {
+                  alert('Please answer the mandatory fields first.');
+                  event.preventDefault();
+                  return;
+                }
+              } else if (appVal === 'Organisation') {
+                if (onValidate('page2b')) {
+                  console.log('page2b passed');
+                } else {
+                  alert('Please answer the mandatory fields first.');
+                  event.preventDefault();
+                  return;
+                }
+              } else {
+                console.log('check for bug');
+              }
+          }
+          else {
+              alert('Please answer 2 fields first');
+              event.preventDefault();
+          }     
+      } else if (event.detail.from === 2) {
+        if (onValidate('page3')) {
+          console.log('page3 passed');
+        } else {
+          alert('Please answer the mandatory fields first.');
+          event.preventDefault();
+        }
+      }
+    });
+    stepperFormEl.addEventListener('shown.bs-stepper', function(event) {
+      console.warn(event.detail);
+    });
+  
+    var btnNextList = [].slice.call(document.querySelectorAll('.btn-next-form'));
+    var stepperPanList = [].slice.call(
+      stepperFormEl.querySelectorAll('.bs-stepper-pane')
+    );
+  
+    btnNextList.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        stepperForm.next();
+      });
+    });
 
-stepperFormEl.addEventListener('show.bs-stepper', function(event) {
-  form.classList.remove('was-validated');
-  var nextStep = event.detail.indexStep;
-  var currentStep = nextStep;
+    submitBtn = document.getElementById('form-submit-btn');
+    submitBtn.addEventListener('click', function() {
+      form.submit();
+    });
+  });
+  
 
-  if (currentStep > 0) {
-    currentStep--;
+
+
+
+
+  function onValidate(groupname) {
+    if (
+      $('#appForm')
+        .parsley()
+        .validate({
+          group: groupname
+        })
+    ) {
+      console.log('valid');
+      return true;
+    } else {
+      console.log(this);
+      console.log('invalid');
+      return false;
+    }
   }
-
-  var stepperPan = stepperPanList[currentStep];
-
-  // if (
-  //   stepperPan.getAttribute('indSurname') === 'form-page-1' &&
-  //   !inputMailForm.value.length
-  //   // (stepperPan.getAttribute('id') === 'form-page-2' &&
-  //   //   !inputPasswordForm.value.length)
-  // ) {
-  //   event.preventDefault();
-  //   form.classList.add('was-validated');
-  // }
-});

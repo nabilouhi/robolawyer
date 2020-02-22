@@ -32,7 +32,7 @@ urlpatterns = [
     path('api/court/', include('courtAPI.urls', 'court_api')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
+# urlpatterns += static(settings.PDF_URL, document_root=settings.PDF_ROOT)
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns += [

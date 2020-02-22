@@ -174,8 +174,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), os.path.join(BASE_DIR, os.path.join("applicationForm/dataPreparation/results"))]
 
+
+# PDF_URL = '/media/'
+# PDF_ROOT = os.path.join(BASE_DIR, 'results')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

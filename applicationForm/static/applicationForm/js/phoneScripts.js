@@ -38,8 +38,8 @@ var phoneInputScript = function(phoneDiv) {
 
 phoneInputScript('#indPhone');
 phoneInputScript('#orgPhone');
-phoneInputScript('#nlTel');
-phoneInputScript('#lTel');
+phoneInputScript('#indNLTel');
+phoneInputScript('#indLTel');
 phoneInputScript('#orgnlTel');
 phoneInputScript('#orglTel');
 
