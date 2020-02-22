@@ -16,16 +16,12 @@ from .inputMethodforWM import *
 
 class PrepareResult:
 
-    def __init__(self, inputObj, sessionID):
+    def __init__(self, inputObj, sessionID, statesValues):
         self.inputObj = inputObj
         self.sessionID = sessionID
+        self.statesValues = statesValues
 
     basedirPDF = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    # userInputs = {
-    #     'surname': 'Aman',
-    #     'firstname': 'Kumar',
-    #     'dateOfBirth': '19011992'
-    # }
 
     def natural_key(self, string_):
         return [int(s) if s.isdigit() else s for s in re.split(r'(\d+)', string_)]
@@ -48,16 +44,6 @@ class PrepareResult:
         paths = glob.glob(
             'applicationForm/dataPreparation/pages/App_form_page_*.pdf')
         
-        print("*****************************************")
-        print(self.inputObj['page1'])
-        print("*****************************************")
-        print(self.inputObj['page2'])
-        print("*****************************************")
-        print(self.inputObj['page3'])
-        print("*****************************************")
-        print(self.inputObj['page5'])
-        print("*****************************************")
-
         barCodeText = "ENG - 2018/1|"
         for key, value in self.inputObj['page1'].items():
             if key not in ["page2[applicantType]"]:
@@ -67,11 +53,13 @@ class PrepareResult:
             if key not in ["page3[indRepresentativeType]","page3[indNLCapacity]", "page3[orgnlCapacity]"]:
                 barCodeText+= value+"|"
 
-        print(barCodeText)
+
+        # print(self.inputObj)
+        # print(barCodeText)
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/')
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/watermark/')
         output1 = self.create_watermark_pdf(self.inputObj['page2'], pos=1)
-        output2 = self.create_watermark_pdf(self.inputObj['page1'], pos=2)
+        output2 = self.create_watermark_pdf(self.statesValues, pos=2)
         output3 = self.create_watermark_pdf(self.inputObj['page3'], pos=3, tempInput=self.inputObj['page2'])
         output4 = self.create_watermark_pdf(self.inputObj['page3'], pos=4)
         output5 = self.create_watermark_pdf(self.inputObj['page5'], pos=5)

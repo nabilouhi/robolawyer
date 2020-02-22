@@ -20,14 +20,16 @@ def formProcessing(request):
     filepath = os.path.join(settings.BASE_DIR, 'applicationForm/dataPreparation/results/'+sessionID+'/finalPage/finalForm.pdf')
     if request.method == 'POST':
         form_dict = request.POST
-        # print(form_dict)
+        statesValues = request.POST.getlist('page1[involvedStates]')
+        # print(involvedStates)
         pagesName = ['page1', 'page2', 'page3', 'page4', 'page5',
                      'page6', 'page7', 'page8', 'page9', 'page10']
         pages = {}
         for page in pagesName:
-            pages[page] = dict((key, value) for (key, value) in form_dict.items() if page in key.lower())
+            pages[page] = dict((key, value) for key, value in form_dict.items() if page in key.lower())
 
-        prepareResult = PrepareResult(pages, sessionID)
+        # print(pages)
+        prepareResult = PrepareResult(pages, sessionID, statesValues)
         prepareResult.main()  
     return FileResponse(open(filepath, 'rb'), content_type='application/pdf')    
     # return render(request, 'applicationForm/finalPage.html', {'filepath': filepath})

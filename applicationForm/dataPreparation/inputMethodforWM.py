@@ -1,9 +1,9 @@
 from textwrap import wrap
 from reportlab.graphics import shapes
+from .countryCoordDict import coordinateDict
 
 
 def firstPageInputs(self, can, inputObj):
-    print(inputObj)
     t = can.beginText()
     t.setFont('Helvetica', 10)
 
@@ -76,7 +76,19 @@ def firstPageInputs(self, can, inputObj):
 
 
 def secondPageInputs(self, can, inputObj):
-    can.drawString(30, 420, "hahahahahhaa")
+    print("****************************")
+    # print(inputObj)
+    selectedStates = inputObj
+    print(selectedStates)
+    for selectedOne in selectedStates:
+        print(selectedOne)
+        if selectedOne in coordinateDict:
+            print(selectedOne)
+            print(coordinateDict[selectedOne]['x'])
+            print(coordinateDict[selectedOne]['y'])
+            can.drawString(coordinateDict[selectedOne]['x'], coordinateDict[selectedOne]['y'], 'X')
+    # # print(coordinateDict)
+    print("****************************")
     can.showPage()
     return can
 
@@ -158,9 +170,9 @@ def fourthPageInputs(self, can, inputObj):
 
 
 def fifthPageInputs(self, can, inputObj):
-    print("*********************************")
-    print(inputObj)
-    print("*********************************")
+    # print("*********************************")
+    # print(inputObj)
+    # print("*********************************")
     t = can.beginText()
     t.setFont('Helvetica', 10)
     stOfFactsText = inputObj["page5[stOfFacts]"]
