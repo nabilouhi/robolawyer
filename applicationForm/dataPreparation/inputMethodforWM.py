@@ -76,10 +76,8 @@ def firstPageInputs(self, can, inputObj):
 
 
 def secondPageInputs(self, can, inputObj):
-    print("****************************")
     # print(inputObj)
     selectedStates = inputObj
-    print(selectedStates)
     for selectedOne in selectedStates:
         print(selectedOne)
         if selectedOne in coordinateDict:
@@ -87,8 +85,6 @@ def secondPageInputs(self, can, inputObj):
             print(coordinateDict[selectedOne]['x'])
             print(coordinateDict[selectedOne]['y'])
             can.drawString(coordinateDict[selectedOne]['x'], coordinateDict[selectedOne]['y'], 'X')
-    # # print(coordinateDict)
-    print("****************************")
     can.showPage()
     return can
 
@@ -170,13 +166,10 @@ def fourthPageInputs(self, can, inputObj):
 
 
 def fifthPageInputs(self, can, inputObj):
-    # print("*********************************")
-    # print(inputObj)
-    # print("*********************************")
     t = can.beginText()
-    t.setFont('Helvetica', 10)
-    stOfFactsText = inputObj["page5[stOfFacts]"]
-    newStOfFactsText = "\n".join(wrap(stOfFactsText, 120))
+    t.setFont('Helvetica', 11)
+    stOfFactsText = inputObj
+    newStOfFactsText = "\n".join(wrap(stOfFactsText, 109))
     t.setTextOrigin(30, 670)
     t.textLines(newStOfFactsText)
     can.drawText(t)
@@ -184,10 +177,24 @@ def fifthPageInputs(self, can, inputObj):
     return can
 
 def sixthPageInputs(self, can, inputObj):
+    t = can.beginText()
+    t.setFont('Helvetica', 11)
+    stOfFactsText = inputObj
+    newStOfFactsText = "\n".join(wrap(stOfFactsText, 109))
+    t.setTextOrigin(30, 760)
+    t.textLines(newStOfFactsText)
+    can.drawText(t)
     can.showPage()
     return can
 
 def seventhPageInputs(self, can, inputObj):
+    t = can.beginText()
+    t.setFont('Helvetica', 11)
+    stOfFactsText = inputObj
+    newStOfFactsText = "\n".join(wrap(stOfFactsText, 109))
+    t.setTextOrigin(30, 760)
+    t.textLines(newStOfFactsText)
+    can.drawText(t)
     can.showPage()
     return can
 

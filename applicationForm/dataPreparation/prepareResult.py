@@ -54,17 +54,19 @@ class PrepareResult:
                 barCodeText+= value+"|"
 
 
-        # print(self.inputObj)
-        # print(barCodeText)
+        sof = self.inputObj['page5']['page5[stOfFacts]']
+        sof1 = sof[:5165]
+        sof2 = sof[5165:11060]
+        sof3 = sof[11060: 16965]
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/')
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/watermark/')
         output1 = self.create_watermark_pdf(self.inputObj['page2'], pos=1)
         output2 = self.create_watermark_pdf(self.statesValues, pos=2)
         output3 = self.create_watermark_pdf(self.inputObj['page3'], pos=3, tempInput=self.inputObj['page2'])
         output4 = self.create_watermark_pdf(self.inputObj['page3'], pos=4)
-        output5 = self.create_watermark_pdf(self.inputObj['page5'], pos=5)
-        output6 = self.create_watermark_pdf(self.inputObj['page5'], pos=6)
-        output7 = self.create_watermark_pdf(self.inputObj['page5'], pos=7)
+        output5 = self.create_watermark_pdf(sof1, pos=5)
+        output6 = self.create_watermark_pdf(sof2, pos=6)
+        output7 = self.create_watermark_pdf(sof3, pos=7)
         output8 = self.create_watermark_pdf(self.inputObj['page6'], pos=8)
         output9 = self.create_watermark_pdf(self.inputObj['page6'], pos=9)
         output10 = self.create_watermark_pdf(self.inputObj['page6'], pos=10)
