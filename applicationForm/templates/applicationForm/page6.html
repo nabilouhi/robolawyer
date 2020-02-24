@@ -2,10 +2,11 @@
   <div class="col-md-12 mx-auto form-section">
     {% load static %}
     <div class="row">
-      <div class="card-master col-sm-10">
+      <div class="card-master col-sm-11">
         <div class="card-master-header">
           <h4 class="card-header-title" align="center">Domestic Proceedings</h4>
         </div>
+        
         <div class="card-body alert-info">
           <p>
             The ECtHR, as an international court, cannot examine complaints by
@@ -49,7 +50,7 @@
           <div class="form-group">
             <div class="complaints">
               <div class="complaint">
-                <table width="100%">
+                <table width="100%" >
                   <tr>
                     <td width="25%">
                       <label for="complainSelect"><b>Complaint</b></label>
@@ -151,23 +152,19 @@
           <br />
           <br />
 
-          <div class="card-footer" align="center">
-            <button class="btn btn-primary" onclick="stepperForm.previous()">
-              Previous
-            </button>
-            <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">
-              Next
-            </button>
-          </div>
+          <div class="card-footer" >
+               	<div class="row">
+                    <div class="col-sm-6" align="left"><button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button></div>
+                    <div class="col-sm-6"align="right"><button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button></div>
+                  </div>
+                </div>
         </div>
       </div>
-      <div style="float:right; width: 100%; margin-top: 5vw;" class="col-sm-2">
-        <div class="col-lg-12">
-          <button class="showModal btn btn-info" value="6" onclick="curPageNum(this)">
-            Feedback
-          </button>
-        </div>
-      </div>
+     <div style="position:fixed;right:20px;bottom:20px; width: 100%; margin-top: 5vw;" class="col-sm-1">
+                	This is a Beta Testing version of Just Bot. 
+                    <button class="showModal btn btn-info" class="btn btn-success" value='1' onclick="curPageNum(this);">Feedback</button> 
+            
+            </div>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@
     <div class="col-md-12 mx-auto form-section">
         {% load static  %}
         <div class="row">
-            <div class="card-master col-sm-10">
+            <div class="card-master col-sm-11">
                 <div class="card-master-header">
                     <h4 class="card-header-title">Declaration and Signature</h4>
                 </div>
@@ -52,7 +52,7 @@
                             <div class="alert alert-danger">
                                <h5 class="lead"> Please Note: This section must contain original signatures of the applicant or his/her representative and
                                 the date must be added after the form has been printed out (page 13 of the printed application form). 
-                                <b>Failing to do so can result in the application being declared inadmissible.<b></h5>
+                                <b>Failing to do so can result in the application being declared inadmissible.</b></h5>
                             </div>
                             <img src="{% static 'applicationForm/img/Signature-Final.png' %}" width="70%" style="border: #ea0000 solid 4px;">
                         </div>
@@ -93,16 +93,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-                    <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
+                <div class="card-footer" >
+               	<div class="row">
+                    <div class="col-sm-6" align="left"><button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button></div>
+                    <div class="col-sm-6"align="right"><button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button></div>
+                  </div>
                 </div>
             </div>
             
-            <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
-                <div class="col-lg-12">
-                    <button class="showModal btn btn-info" value='9' onclick="curPageNum(this)">Feedback</button> 
-                </div>
+            <div style="position:fixed;right:20px;bottom:20px; width: 100%; margin-top: 5vw;" class="col-sm-1">
+                	This is a Beta Testing version of Just Bot. 
+                    <button class="showModal btn btn-info" class="btn btn-success" value='1' onclick="curPageNum(this);">Feedback</button> 
+            
             </div>
         </div>
     </div>

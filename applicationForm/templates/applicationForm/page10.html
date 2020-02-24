@@ -2,22 +2,22 @@
     <div class="col-md-12 mx-auto form-section">
         {% load static  %}
         <div class="row">
-            <div class="card-master col-sm-10">
+            <div class="card-master col-sm-11">
                 <div class="card-master-header">
                     <h4 class="card-header-title">Finish</h4>
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3>VERY IMPORTANT </h3>
+                <div class="card-body alert-info" >
+                    
+                        <h4>VERY IMPORTANT </h4>
                         <div style="text-align:justify">
-                            <p>The application form has to be printed out and sent by mail to the registrar of the
+                            <p class="lead" style="text-align:center">The application form has to be printed out and sent by mail to the registrar of the
                                 European
                                 Court of Human Rights.
                             </p>
-
-                            <span>Before mailing the form, please make sure to:
-                                <span>
-                                    <ol>
+									<div style="padding:5%">
+                            <p class="lead"><b><u>Before mailing the form, please make sure to:</u></b>
+                                
+                                    <ol class="lead" style="text-align:justify">
                                         <li>Add the original signatures of the applicant(s) and/or the authorised
                                             representative(s) in all the relevant fields (page 3 if you are an
                                             individual
@@ -27,8 +27,8 @@
                                             receipt of a faxed application is not counted as a complete application as
                                             the
                                             Court needs to receive the original signed application form.
-                                        </li>
-                                        <li>Sign the application in the required fields; </li>
+                                        </li><br>
+                                        <li>Sign the application in the required fields;</li><br>
                                         <li>Add full and legible copies of all documents mentioned in your application.
                                             No
                                             documents will be returned to you. It is thus in your interests to submit
@@ -45,28 +45,28 @@
                                                 annexed
                                                 may be found.
                                             </p>
-                                        </li>
+                                        </li><br>
                                         <li>Applicants must dispatch the signed original by post within the six-month
                                             time-limit from the date when the final decision from the highest national
                                             court
                                             was communicated.
-                                        </li>
+                                        </li><br>
                                         <li>
                                             <span> The completed and signed application form should be sent by post
                                                 to:</span> <br>
                                             <div style="margin-left:100px">
-                                                <span>The Registrar</span><br>
-                                                <span>European Court of Human Rights</span><br>
-                                                <span>Council of Europe</span><br>
-                                                <span>67075 STRASBOURG CEDEX</span><br>
-                                                <span>FRANCE</span>
+                                                <b>The Registrar</b><br>
+                                                <b>European Court of Human Rights</b><br>
+                                                <b>Council of Europe</b><br>
+                                                <b>67075 STRASBOURG CEDEX</b><br>
+                                                <b>FRANCE</b>
                                             </div>
                                         </li>
                                     </ol>
-                                </span>
                                 </p>
+                               
                         </div>
-                    </div>
+              
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
@@ -80,10 +80,10 @@
                         to e-Mail</button>
                 </div>
             </div>
-            <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
-                <div class="col-lg-12">
-                    <button class="showModal btn btn-info" value='10' onclick="curPageNum(this)">Feedback</button> 
-                </div> 
+            <div style="position:fixed;right:20px;bottom:20px; width: 100%; margin-top: 5vw;" class="col-sm-1">
+                	This is a Beta Testing version of Just Bot. 
+                    <button class="showModal btn btn-info" class="btn btn-success" value='1' onclick="curPageNum(this);">Feedback</button> 
+            
             </div>
         </div>
     </div>

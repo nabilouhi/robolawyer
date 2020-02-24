@@ -2,7 +2,7 @@
     <div class="col-md-12 mx-auto form-section">
         {% load static  %}
         <div class="row">
-            <div class="card-master col-sm-10">
+            <div class="card-master col-sm-11">
                 <div class="card-master-header">
                     <h4 class="card-header-title" align="center">
                         Article violation(s)
@@ -46,8 +46,10 @@
                         </p>
                     </div>
 
-                    <hr>
-                    <div style="background-color:#fbcd33;border-radius: 5px;" align="center">
+                    
+            <!--        MACHINE LEARNING PART
+            				<hr>
+            				 <div style="background-color:#fbcd33;border-radius: 5px;" align="center">
                         <br>
                         <h3 style="color:black">Articles that seem the most related to your case</h3>
                         <h5 style="color:#447711"><b>Article 7</b> : 72% - Very related </h5>
@@ -63,9 +65,10 @@
                                 Human Rights and/or its Protocols</a>. </p>
                         <br>
                     </div>
-
-
                     <hr>
+ -->
+
+                    
 
                     <div class="form-group add-field">
                         <h5>Articles</h5>
@@ -183,11 +186,11 @@
                                 </table>
                             </div>
                             <br>
-                            <div class="btn btn-light add-more"><span>Add More <i class="fas fa-plus"></i></span></div>
+                            
                         </div>
 
 
-
+<div class="btn btn-light add-more"><span>Add More <i class="fas fa-plus"></i></span></div>
                         <div class=" ">
                             <hr>
                             <h5 class="alert-heading">Examples</h5>
@@ -230,16 +233,18 @@
                         </div>
 
                     </div>
-                    <div class="card-footer" align="center">
-                        <button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button>
-                        <button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button>
-                    </div>
+                    <div class="card-footer" >
+               	<div class="row">
+                    <div class="col-sm-6" align="left"><button class="btn btn-primary" onclick="stepperForm.previous()">Previous</button></div>
+                    <div class="col-sm-6"align="right"><button class="btn btn-primary btn-next-form" onclick="stepperForm.next()">Next</button></div>
+                  </div>
+                </div>
                 </div>
             </div>
-            <div style='float:right; width: 100%; margin-top: 5vw;' class="col-sm-2">
-                <div class="col-lg-12">
-                    <button class="showModal btn btn-info" value='5' onclick="curPageNum(this)">Feedback</button>
-                </div>
+            <div style="position:fixed;right:20px;bottom:20px; width: 100%; margin-top: 5vw;" class="col-sm-1">
+                	This is a Beta Testing version of Just Bot. 
+                    <button class="showModal btn btn-info" class="btn btn-success" value='1' onclick="curPageNum(this);">Feedback</button> 
+            
             </div>
         </div>
     </div>
