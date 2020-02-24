@@ -16,10 +16,10 @@ from .inputMethodforWM import *
 
 class PrepareResult:
 
-    def __init__(self, inputObj, sessionID, statesValues):
+    def __init__(self, inputObj, sessionID, spclReplies):
         self.inputObj = inputObj
         self.sessionID = sessionID
-        self.statesValues = statesValues
+        self.spclReplies = spclReplies
 
     basedirPDF = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,6 +41,26 @@ class PrepareResult:
         # self.createOrDeleteDirectory('applicationForm/dataPreparation/pages')
         # self.pdf_splitter(filename)
 
+        # print(self.inputObj['page5'])
+        sof = self.inputObj['page4']['page4[stOfFacts]']
+        sof1 = sof[:5165]
+        sof2 = sof[5165:11060]
+        sof3 = sof[11060: 16965]
+
+        
+        article = []
+        article.append(self.spclReplies[1])
+        article.append(self.spclReplies[2])
+
+        complains = []
+        complains.append(self.spclReplies[3])
+        complains.append([m+' '+ str(n) for m,n in zip(self.spclReplies[5], self.spclReplies[4])])
+
+        docs = []
+        docs.append(self.spclReplies[6])
+        docs.append(self.spclReplies[7])
+        docs.append(self.spclReplies[8])
+
         paths = glob.glob(
             'applicationForm/dataPreparation/pages/App_form_page_*.pdf')
         
@@ -54,24 +74,22 @@ class PrepareResult:
                 barCodeText+= value+"|"
 
 
-        sof = self.inputObj['page5']['page5[stOfFacts]']
-        sof1 = sof[:5165]
-        sof2 = sof[5165:11060]
-        sof3 = sof[11060: 16965]
+        
+
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/')
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/watermark/')
         output1 = self.create_watermark_pdf(self.inputObj['page2'], pos=1)
-        output2 = self.create_watermark_pdf(self.statesValues, pos=2)
+        output2 = self.create_watermark_pdf(self.spclReplies[0], pos=2)
         output3 = self.create_watermark_pdf(self.inputObj['page3'], pos=3, tempInput=self.inputObj['page2'])
         output4 = self.create_watermark_pdf(self.inputObj['page3'], pos=4)
         output5 = self.create_watermark_pdf(sof1, pos=5)
         output6 = self.create_watermark_pdf(sof2, pos=6)
         output7 = self.create_watermark_pdf(sof3, pos=7)
-        output8 = self.create_watermark_pdf(self.inputObj['page6'], pos=8)
+        output8 = self.create_watermark_pdf(article, pos=8)
         output9 = self.create_watermark_pdf(self.inputObj['page6'], pos=9)
-        output10 = self.create_watermark_pdf(self.inputObj['page6'], pos=10)
-        output11 = self.create_watermark_pdf(self.inputObj['page7'], pos=11)
-        output12 = self.create_watermark_pdf(self.inputObj['page8'], pos=12)
+        output10 = self.create_watermark_pdf(complains, pos=10)
+        output11 = self.create_watermark_pdf(self.inputObj['page6'], pos=11, tempInput=self.inputObj['page7'])
+        output12 = self.create_watermark_pdf(docs, pos=12)
         output13 = self.create_watermark_pdf(self.inputObj['page9'], pos=13, tempInput=barCodeText)
        
         
@@ -168,7 +186,7 @@ class PrepareResult:
         elif pos == 10:
             can = tenthPageInputs(self, can, inputObj)
         elif pos == 11:
-            can = eleventhPageInputs(self, can, inputObj)
+            can = eleventhPageInputs(self, can, inputObj, tempInput)
         elif pos == 12:
             can = twelvthPageInputs(self, can, inputObj)
         elif pos==13:

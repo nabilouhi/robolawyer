@@ -92,12 +92,17 @@ jQuery(document).ready(function($) {
   alterClass();
 });
 
+$('.docDateSelector').change(function() {
+  $(".docDateSelector").val($("input[name='page8[finalDecisionDate]']").val())
+  console.log($(".docDateSelector").val())
+})
+
 // for add/remove input functionality
 var addRemElements = function(partners, partner, addmore) {
   $(document).ready(function() {
     var data_fo = $(partners).html();
     var sd = '<div class="btn btn-danger remove-add-more">Remove</div><hr>';
-    var max_fields = 5; //maximum input boxes allowed
+    var max_fields = 10; //maximum input boxes allowed
     var wrapper = $(partners); //Fields wrapper
     var add_button = $(addmore); //Add button ID
 
@@ -134,18 +139,6 @@ addRemElements('.docLists', '.docList', '.add-more-docs');
 
 // Add remove functionality end
 
-//  Custom file input name display
-$('.custom-file-input').on('change', function() {
-  var fileName = $(this)
-    .val()
-    .split('\\')
-    .pop();
-  $(this)
-    .siblings('.custom-file-label')
-    .addClass('selected')
-    .html(fileName);
-});
-//  custom file input end
 
 // Correspondent details
 
@@ -164,41 +157,6 @@ $("input[name='page9[signatureDeclaration]']").change(function() {
 
 // Correcpondant details end
 
-// File upload script
-$(document).ready(function() {
-  if (window.File && window.FileList && window.FileReader) {
-    $('.files').on('change', function(e) {
-      var files = e.target.files,
-        filesLength = files.length;
-      for (var i = 0; i < filesLength; i++) {
-        var f = files[i];
-        var fileReader = new FileReader();
-        fileReader.onload = function(e) {
-          var file = e.target;
-          $(
-            '<span class="pip">' +
-              '<img class="imageThumb" src="' +
-              e.target.result +
-              '" title="' +
-              file.name +
-              '"/>' +
-              '<br/><span class="remove">Remove image</span>' +
-              '</span>'
-          ).insertAfter('#files');
-          $('.remove').click(function() {
-            $(this)
-              .parent('.pip')
-              .remove();
-          });
-        };
-        fileReader.readAsDataURL(f);
-      }
-    });
-  } else {
-    swal("Your browser doesn't support to File API");
-  }
-});
-// File upload script end
 
 // Page 6 condition for text area
 $("input[name='page6[appealAvailable]']").change(function() {
@@ -210,29 +168,9 @@ $("input[name='page6[appealAvailable]']").change(function() {
 });
 
 // Page 6 condition for text area end
-// $("input[name='page7[intInvestigation']").change(function() {
-//   result = this.value;
-//   if (result === 'Yes') $('.intInvestigation').removeClass('is-hidden');
-//   else {
-//     $('.intInvestigation').addClass('is-hidden');
-//   }
-// });
 
 // page 7 conditions for text area
 
-// $("input[name='page3[orgRepresentativeType]']").change(function() {
-//   result = this.value;
-//   console.log(result);
-//   if (result === 'orgYesLawyer') {
-//     $('#orgLawyerRep').removeClass('is-hidden');
-//     $('.orgAuthority').removeClass('is-hidden');
-//   } else if (result === 'orgNoLawyer') {
-//     $('#orgLawyerRep').addClass('is-hidden');
-//     $('.orgAuthority').addClass('is-hidden');
-//   } else {
-//     console.log('check for bugs');
-//   }
-// });
 
 $("input[name='page7[intInvestigation]']").change(function() {
   result = this.value;

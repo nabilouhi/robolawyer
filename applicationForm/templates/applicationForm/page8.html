@@ -92,12 +92,13 @@
                       <tr>
                         <td width="25%">
                           <label><b>Date</b></label>
-                          <input type="text" class="date" name="page8[finalDecisionDate][]"
+                          <input type="text" class="date" name="page8[finalDecisionDate]"
                             data-template="DD MMM YYYY" />
+                            <input type="hidden" class="docDateSelector">
                         </td>
                         <td width="60%" style="padding-right:10px;">
                           <label for="docSelect"><b>Description</b></label>
-                          <textarea class="form-control" name="page8[docSelect][]" id="docSelect"
+                          <textarea class="form-control" name="page8[docDescription]" id="docSelect"
                             oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
                             rows="1"></textarea>
                         </td>

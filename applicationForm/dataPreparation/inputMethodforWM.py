@@ -76,14 +76,9 @@ def firstPageInputs(self, can, inputObj):
 
 
 def secondPageInputs(self, can, inputObj):
-    # print(inputObj)
     selectedStates = inputObj
     for selectedOne in selectedStates:
-        print(selectedOne)
         if selectedOne in coordinateDict:
-            print(selectedOne)
-            print(coordinateDict[selectedOne]['x'])
-            print(coordinateDict[selectedOne]['y'])
             can.drawString(coordinateDict[selectedOne]['x'], coordinateDict[selectedOne]['y'], 'X')
     can.showPage()
     return can
@@ -199,6 +194,32 @@ def seventhPageInputs(self, can, inputObj):
     return can
 
 def eighthPageInputs(self, can, inputObj):
+    yCoord = 750
+    for item in range(len(inputObj[0])):
+        t1 = can.beginText()
+        t1.setFont('Helvetica', 11)
+        if len(inputObj[0]) > 1:
+            article = inputObj[0][item]
+            articleExp = inputObj[1][item]
+        elif len(inputObj[0]) == 1:
+            article = inputObj[0][0]
+            articleExp = inputObj[1][0]
+        else:
+            print("error reported in EighthPageInputs")
+
+        newArticle = "\n".join(wrap(article, 10))
+        t1.setTextOrigin(30, yCoord)
+        t1.textLines(newArticle)
+        can.drawText(t1)
+
+        t2 = can.beginText()
+        t2.setFont('Helvetica', 11)
+        newArticleExp = "\n".join(wrap(articleExp, 70))
+        t2.setTextOrigin(200, yCoord)
+        t2.textLines(newArticleExp)
+        can.drawText(t2)
+        yCoord -= nextLineForPara(len(articleExp), 70, 11)
+
     can.showPage()
     return can
 
@@ -207,14 +228,95 @@ def ninthPageInputs(self, can, inputObj):
     return can
 
 def tenthPageInputs(self, can, inputObj):
+    yCoord = 705
+    for item in range(len(inputObj[0])):
+        t1 = can.beginText()
+        t1.setFont('Helvetica', 11)
+        if len(inputObj[0]) > 1:
+            complain = inputObj[0][item]
+            remedies = inputObj[1][item]
+        elif len(inputObj[0]) == 1:
+            complain = inputObj[0][0]
+            remedies = inputObj[1][0]
+        else:
+            print("error reported in TenthPageInputs")
+
+        newComplain = "\n".join(wrap(complain, 30))
+        t1.setTextOrigin(30, yCoord)
+        t1.textLines(newComplain)
+        can.drawText(t1)
+
+        # t2 = can.beginText()
+        # t2.setFont('Helvetica', 11)
+        # newComplainDate = "\n".join(wrap(complainDate, 15))
+        # t2.setTextOrigin(200, yCoord)
+        # t2.textLines(newComplainDate)
+        # can.drawText(t2)
+
+        t2 = can.beginText()
+        t2.setFont('Helvetica', 11)
+        newRemedy = "\n".join(wrap(remedies, 70))
+        t2.setTextOrigin(190, yCoord)
+        t2.textLines(newRemedy)
+        can.drawText(t2)
+        yCoord -= nextLineForPara(len(newRemedy), 70, 11)
+
     can.showPage()
     return can
 
-def eleventhPageInputs(self, can, inputObj):
+def eleventhPageInputs(self, can, inputObj, secondInput):
+    if "page6[appealAvailable]" in inputObj:
+            if  inputObj["page6[appealAvailable]"] == 'Yes':
+                can.circle(466,787, 4, fill=1)
+                t = can.beginText()
+                t.setFont('Helvetica', 11)
+                appealDescribe = inputObj['page6[appealDescribe]']
+                newAppealDescribe = "\n".join(wrap(appealDescribe, 109))
+                t.setTextOrigin(30, 732)
+                t.textLines(newAppealDescribe)
+                can.drawText(t)
+            elif inputObj["page6[appealAvailable]"] == 'No':
+                can.circle(466, 768, 4, fill=1)
+            else:
+                print("no value entered")
+
+    if "page7[intInvestigation]" in secondInput:
+            if secondInput["page7[intInvestigation]"] == 'Yes':
+                can.circle(466, 475, 4, fill=1)
+                t = can.beginText()
+                t.setFont('Helvetica', 11)
+                intInvestigationDesc = secondInput['page7[intInvestigationDesc]']
+                newIntInvestigationDesc = "\n".join(wrap(intInvestigationDesc, 109))
+                t.setTextOrigin(30, 390)
+                t.textLines(newIntInvestigationDesc)
+                can.drawText(t)
+            elif secondInput["page7[intInvestigation]"] == 'No':
+                can.circle(466.2, 456.5, 4, fill=1)
+            else:
+                print("no value entered")
+    
+    if "page7[prevApplications]" in secondInput:
+            if secondInput["page7[prevApplications]"] == 'Yes':
+                can.circle(466, 129, 4, fill=1)
+                t = can.beginText()
+                t.setFont('Helvetica', 11)
+                prevAppDesc = secondInput['page7[prevAppDesc]']
+                newPrevAppDesc = "\n".join(wrap(prevAppDesc, 109))
+                t.setTextOrigin(30, 75)
+                t.textLines(newPrevAppDesc)
+                can.drawText(t)
+            elif secondInput["page7[prevApplications]"] == 'No':
+                can.circle(466.2, 110, 4, fill=1)
+            else:
+                print("no value entered")
+    
     can.showPage()
     return can
 
 def twelvthPageInputs(self, can, inputObj):
+    print(inputObj)
+    # for dates in inputObj[0]:
+
     can.showPage()
     return can
 
@@ -226,6 +328,14 @@ def blankPageInputs(self, can, inputObj):
     can.showPage()
     return can
 
+
+def nextLineForPara(x, y, z):
+    import math
+    textLength = x;
+    writeLength = y;
+    spacing = z;
+    totalSpacing = math.ceil(x/y)*z + 3*z;
+    return totalSpacing
 
 def barcodeMaker(self, formInputs):
     from pdf417 import encode, render_image, render_svg

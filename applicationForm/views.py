@@ -17,19 +17,31 @@ def formProcessing(request):
     import uuid
     sessionID = uuid.uuid4().hex
     print(sessionID)
+    spclReplies = []
     filepath = os.path.join(settings.BASE_DIR, 'applicationForm/dataPreparation/results/'+sessionID+'/finalPage/finalForm.pdf')
     if request.method == 'POST':
         form_dict = request.POST
-        statesValues = request.POST.getlist('page1[involvedStates]')
-        # print(involvedStates)
+        spclReplies.append(request.POST.getlist('page1[involvedStates]'))
+
+        spclReplies.append(request.POST.getlist('page5[articleSelect]'))
+        spclReplies.append(request.POST.getlist('page5[articleExplanation]'))
+        
+        spclReplies.append(request.POST.getlist('page6[complainSelect]'))
+        spclReplies.append(request.POST.getlist('page6[complaintDate]'))
+        spclReplies.append(request.POST.getlist('page6[remediesUsed]'))
+
+        spclReplies.append(request.POST.getlist('page8[finalDecisionDate]'))
+        spclReplies.append(request.POST.getlist('page8[docDescription]'))
+        spclReplies.append(request.POST.getlist('page8[pageNumber]'))
+
+       
+        print(spclReplies)
         pagesName = ['page1', 'page2', 'page3', 'page4', 'page5',
                      'page6', 'page7', 'page8', 'page9', 'page10']
         pages = {}
         for page in pagesName:
             pages[page] = dict((key, value) for key, value in form_dict.items() if page in key.lower())
-
-        # print(pages)
-        prepareResult = PrepareResult(pages, sessionID, statesValues)
+        prepareResult = PrepareResult(pages, sessionID, spclReplies)
         prepareResult.main()  
     return FileResponse(open(filepath, 'rb'), content_type='application/pdf')    
     # return render(request, 'applicationForm/finalPage.html', {'filepath': filepath})
