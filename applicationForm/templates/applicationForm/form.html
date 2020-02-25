@@ -77,6 +77,45 @@
 {% endblock headContent %}
 
 {% block content %}
+<div id="modal" class="modal">
+                    <div class="modal-dialog animated">
+                        <div class="modal-content">
+                            <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
+                                {% csrf_token %}
+                                <div class="modal-header">
+                                    <strong><h5 align="center">Please send us your feedback </h5></strong>
+                                </div>
+                
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for=""> Are you a legally trained person?</label>
+                                        <input type="text" id="sugPageNo" class="is-hidden" name="sugPageNo" >
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="legalTrainYesFirst"
+                                                name="legalTrained" value="Yes">
+                                            <label class="custom-control-label" for="legalTrainYesFirst">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="legalTrainNoFirst"
+                                                name="legalTrained" value="No">
+                                            <label class="custom-control-label" for="legalTrainNoFirst">No</label>
+                                        </div>
+                                        <input type="text" class="is-hidden" name="legalTrainedInput">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="suggestionArea">How can we improve this page?</label>
+                                        <textarea class="form-control " name="suggestionArea" type="text"
+                                            rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default" type="button" onclick="modal.close();">Cancel</button>
+                                    <button type="submit" onclick="modal.close();" class="btn btn-dark feedback_submit">Send your message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>  
 <div class="jumbotron" style="margin-bottom: 0;background: linear-gradient(to bottom,  #1f549e 0%,#2989d8 100%)">
     <br>
     <h1 class="display-5" id="form-title">
@@ -181,45 +220,7 @@
                     {% include 'applicationForm/page10.html' %}
                 </form>
                     
-                <div id="modal" class="modal">
-                    <div class="modal-dialog animated">
-                        <div class="modal-content">
-                            <form action="{% url 'feedback' %}" method="POST" class="feedback_form">
-                                {% csrf_token %}
-                                <div class="modal-header">
-                                    <strong><h5 align="center">Help us Improve</h5></strong>
-                                </div>
-                
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label for=""> Are you a legally trained person?</label>
-                                        <input type="text" id="sugPageNo" class="is-hidden" name="sugPageNo" >
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="legalTrainYesFirst"
-                                                name="legalTrained" value="Yes">
-                                            <label class="custom-control-label" for="legalTrainYesFirst">Yes</label>
-                                        </div>
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="legalTrainNoFirst"
-                                                name="legalTrained" value="No">
-                                            <label class="custom-control-label" for="legalTrainNoFirst">No</label>
-                                        </div>
-                                        <input type="text" class="is-hidden" name="legalTrainedInput">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="suggestionArea">How can we improve this page?</label>
-                                        <textarea class="form-control " name="suggestionArea" type="text"
-                                            rows="5"></textarea>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-default" type="button" onclick="modal.close();">Cancel</button>
-                                    <button type="submit" onclick="modal.close();" class="btn btn-dark feedback_submit">Send your message</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>     
+                   
             </div>
         </div>
     </div>
