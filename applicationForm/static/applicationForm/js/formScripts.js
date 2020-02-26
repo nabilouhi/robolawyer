@@ -162,7 +162,7 @@ $('#page8Group').repeater({
               clearValues: true
           });
 
-          $('#page6Group').repeater({
+$('#page6Group').repeater({
             btnAddClass: 's-btnAdd',
             btnRemoveClass: 's-btnRemove',
             groupClass: 's-group',
@@ -178,7 +178,21 @@ $('#page8Group').repeater({
             clearValues: true
         });
 
-
+$('#example1').repeater({
+          btnAddClass: 'a-btnAdd',
+          btnRemoveClass: 'a-btnRemove',
+          groupClass: 'a-group',
+          minItems: 1,
+          maxItems: 0,
+          startingIndex: 0,
+          showMinItemsOnLoad: true,
+          reindexOnDelete: true,
+          repeatMode: 'append',
+          animation: 'fade',
+          animationSpeed: 400,
+          animationEasing: 'swing',
+          clearValues: true
+      });
 // Correspondent details
 
 $("input[name='page9[signatureDeclaration]']").change(function() {
