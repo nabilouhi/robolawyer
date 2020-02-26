@@ -315,10 +315,51 @@ def eleventhPageInputs(self, can, inputObj, secondInput):
 
 def twelvthPageInputs(self, can, inputObj):
     print(inputObj)
-    # for dates in inputObj[0]:
+    from datetime import datetime
+    indexList = []
+    dateList = inputObj[0]
+    descList = inputObj[1]
+    pageList = inputObj[2]
+    if(dateList!=['']):
+        list_of_dates= [datetime.strptime(date,"%Y-%m-%d") for date in dateList]
+        dateListNew = [x for _,x in sorted(zip(list_of_dates, dateList))]
+        descListNew = [x for _,x in sorted(zip(list_of_dates, descList))]
+        pageListTemp = [x for _,x in sorted(zip(list_of_dates, pageList))]
+        pageListNew = add_one_by_one(pageListTemp)
+        print(pageListNew)
+        # print(dateListNew)
+        # print(descListNew)
+        # print(pageListNew)
+
+        yCoord = 660
+        for item in range(len(inputObj[0])):
+            t1 = can.beginText()
+            t1.setFont('Helvetica', 11)
+            if len(inputObj[0]) > 1:
+                desc = descListNew[item]
+                page = pageListNew[item]
+            elif len(inputObj[0]) == 1:
+                desc = descListNew[0]
+                page = pageListNew[0]
+            else:
+                print("error reported in TwelvethPageInputs")
+
+            newDesc = "\n".join(wrap(desc, 10))
+            t1.setTextOrigin(40, yCoord)
+            t1.textLines(newDesc)
+            can.drawText(t1)
+
+            t2 = can.beginText()
+            t2.setFont('Helvetica', 11)
+            newPage = "\n".join(wrap(page, 5))
+            t2.setTextOrigin(560, yCoord)
+            t2.textLines(newPage)
+            can.drawText(t2)
+            yCoord -= nextLineForPage12(len(desc), 70, 9)
 
     can.showPage()
     return can
+
 
 def thirteenthPageInputs(self, can, inputObj):
     can.showPage()
@@ -336,6 +377,24 @@ def nextLineForPara(x, y, z):
     spacing = z;
     totalSpacing = math.ceil(x/y)*z + 3*z;
     return totalSpacing
+
+def nextLineForPage12(x,y,z):
+    import math
+    textLength = x;
+    writeLength = y;
+    spacing = z;
+    totalSpacing = math.ceil(x/y)*z + 2*z;
+    return totalSpacing
+
+def add_one_by_one(l):
+    l = [int(i) for i in l] 
+    new_l = []
+    cumsum = 0
+    for elt in l:
+        cumsum += elt
+        new_l.append(cumsum)
+    new_l = [str(i) for i in new_l] 
+    return new_l
 
 def barcodeMaker(self, formInputs):
     from pdf417 import encode, render_image, render_svg

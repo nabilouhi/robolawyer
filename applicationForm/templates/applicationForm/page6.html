@@ -48,7 +48,32 @@
           </div>
 
           <div class="form-group">
-            <div class="complaints">
+
+            <div id="page6Group">
+              <div class="s-group">
+                <table width="100%" >
+                  <tr>
+                    <td width="25%">
+                      <label for="complainSelect"><b>Complaint</b></label>
+                      <input name="page6[complainSelect]" class="form-control complainSelect" />
+                    </td>
+                    <td width="30%">
+                      <label><b>Date of Final Decision from the highest court</b>
+                      </label>
+                      <input type="date" class="page6Date" name="page6[complaintDate]" data-template="DD MMM YYYY" />
+                    </td>
+                    <td width="45%">
+                      <label><b> Remedies Used</b></label>
+                      <textarea class="form-control remedies" name="page6[remediesUsed]"
+                        oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
+                        rows="3"></textarea>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <button type="button" class="s-btnAdd btn btn-primary">Add +</button>
+          </div>
+            <!-- <div class="complaints">
               <div class="complaint">
                 <table width="100%" >
                   <tr>
@@ -74,7 +99,7 @@
             </div>
             <div class="btn btn-light add-more-complaints">
               <span>Add More <i class="fas fa-plus"></i></span>
-            </div>
+            </div> -->
           </div>
 
           <div class="form-group is-hidden appealDescribe">

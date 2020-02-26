@@ -92,10 +92,9 @@ jQuery(document).ready(function($) {
   alterClass();
 });
 
-$('.docDateSelector').change(function() {
-  $(".docDateSelector").val($("input[name='page8[finalDecisionDate]']").val())
-  console.log($(".docDateSelector").val())
-})
+// $(document).ready(function(){
+
+// })
 
 // for add/remove input functionality
 var addRemElements = function(partners, partner, addmore) {
@@ -113,9 +112,7 @@ var addRemElements = function(partners, partner, addmore) {
       if (x < max_fields) {
         //max input box allowed
         x++; //text box increment
-        var partnerClone = $(partner)
-          .first()
-          .clone();
+        var partnerClone = $(partner).first().clone();
         $(sd).appendTo(partnerClone);
         $(wrapper).append(partnerClone);
       }
@@ -133,11 +130,53 @@ var addRemElements = function(partners, partner, addmore) {
   });
 };
 
-addRemElements('.articles', '.article', '.add-more');
-addRemElements('.complaints', '.complaint', '.add-more-complaints');
-addRemElements('.docLists', '.docList', '.add-more-docs');
+// addRemElements('.articles', '.article', '.add-more');
+// addRemElements('.complaints', '.complaint', '.add-more-complaints');
+// addRemElements('.docLists', '.docList', '.add-more-docs');
 
 // Add remove functionality end
+// $(function () {
+//   $('.page8Date').combodate({
+//       minYear: 1900,
+//       maxYear: 2020,
+//       customClass: 'custom-control-inline form-control',
+//       smartDays: true,
+//       firstItem: 'name',
+//       format: "DD/MM/YYYY"
+//   });
+// });
+
+$('#page8Group').repeater({
+              btnAddClass: 'r-btnAdd',
+              btnRemoveClass: 'r-btnRemove',
+              groupClass: 'r-group',
+              minItems: 1,
+              maxItems: 0,
+              startingIndex: 0,
+              showMinItemsOnLoad: true,
+              reindexOnDelete: true,
+              repeatMode: 'append',
+              animation: 'fade',
+              animationSpeed: 400,
+              animationEasing: 'swing',
+              clearValues: true
+          });
+
+          $('#page6Group').repeater({
+            btnAddClass: 's-btnAdd',
+            btnRemoveClass: 's-btnRemove',
+            groupClass: 's-group',
+            minItems: 1,
+            maxItems: 0,
+            startingIndex: 0,
+            showMinItemsOnLoad: true,
+            reindexOnDelete: true,
+            repeatMode: 'append',
+            animation: 'fade',
+            animationSpeed: 400,
+            animationEasing: 'swing',
+            clearValues: true
+        });
 
 
 // Correspondent details
@@ -207,10 +246,10 @@ function textCounter(field, field2, maxlimit) {
   }
 }
 
-$(document).ready(function() {
-  var select = '';
-  for (i = 1; i <= 100; i++) {
-    select += '<option val=' + i + '>' + i + '</option>';
-  }
-  $('#noOfPage').html(select);
-});
+// $(document).ready(function() {
+//   var select = '';
+//   for (i = 1; i <= 100; i++) {
+//     select += '<option val=' + i + '>' + i + '</option>';
+//   }
+//   $('#noOfPage').html(select);
+// });

@@ -85,45 +85,33 @@
               description. Indicate the page number at which each document may
               be found:
 
-              <div class="form-group add-field">
-                <div class="docLists">
-                  <div class="docList">
-                  <hr>
-                    <table width="100%">
-                      <tr>
-                        <td width="25%">
-                          <label><b>Date</b></label>
-                          <input type="text" class="date" name="page8[finalDecisionDate]"
-                            data-template="DD MMM YYYY" />
-                            <input type="hidden" class="docDateSelector">
-                        </td>
-                        <td width="60%" style="padding-right:10px;">
-                          <label for="docSelect"><b>Description</b></label>
-                          <textarea class="form-control" name="page8[docDescription]" id="docSelect"
-                            oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
-                            rows="1"></textarea>
-                        </td>
-                        <td width="15%">
-                          <label><b>Number of Pages</b>
-                            <a href="javascript://" data-toggle="popover"
-                              data-content="Indicate the total number of pages in each document" data-trigger="click"
-                              data-placement="bottom"><span><i class="fas fa-question-circle"></i></span></a></label>
-                              <br>
-                          <select name="page8[pageNumber]" id="noOfPage" class="form-control"></select>
-                        </td>
-                      </tr>
-                      <br>
-                    </table>
-                    <br>
-                    
-                  </div>
-                  
+              <div id="page8Group">
+                <div class="r-group">
+                  <table width="100%">
+                    <tr>
+                      <td width="25%">
+                        <label><b>Date</b></label>
+                        <input type="date" class="page8Date" name="page8[finalDecisionDate]"
+                        data-date-format="DD MMMM YYYY" />
+                      </td>
+                      <td width="60%" style="padding-right:10px;">
+                        <label for="docSelect"><b>Description</b></label>
+                        <textarea class="form-control" name="page8[docDescription]" id="docSelect"
+                          oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
+                          rows="2"></textarea>
+                      </td>
+                      <td width="15%">
+                        <label><b>Number of Pages</b>
+                          <a href="javascript://" data-toggle="popover"
+                            data-content="Indicate the total number of pages in each document" data-trigger="click"
+                            data-placement="bottom"><span><i class="fas fa-question-circle"></i></span></a></label>
+                            <br>
+                        <input type="number" name="page8[pageNumber]" id="noOfPage" class="form-control" min="1"></input>
+                      </td>
+                    </tr>
+                  </table>
                 </div>
-                <br>
-                <div class="btn btn-light add-more-docs">
-                  <span>Add More <i class="fas fa-plus"></i></span>
-                </div>
-              </div>
+                <button type="button" class="r-btnAdd btn btn-primary">Add +</button>
             </div>
           </div>
         </div>
@@ -138,7 +126,8 @@
                 	This is a Beta Testing version of Just Bot. 
                     <button class="showModal btn btn-info" class="btn btn-success" value='1' onclick="curPageNum(this);">Feedback</button> 
             
-            </div>
+      </div>
     </div>
   </div>
+</div>
 </div>

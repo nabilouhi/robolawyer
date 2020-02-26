@@ -35,7 +35,6 @@ def formProcessing(request):
         spclReplies.append(request.POST.getlist('page8[pageNumber]'))
 
        
-        print(spclReplies)
         pagesName = ['page1', 'page2', 'page3', 'page4', 'page5',
                      'page6', 'page7', 'page8', 'page9', 'page10']
         pages = {}
