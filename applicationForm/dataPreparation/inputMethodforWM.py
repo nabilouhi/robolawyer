@@ -84,77 +84,86 @@ def secondPageInputs(self, can, inputObj):
     return can
 
 def thirdPageInputs(self, can, inputObj):
-    t = can.beginText()
-    t.setFont('Helvetica', 10)
-    if inputObj["page3[indRepresentativeType]"] == "non-lawyer":
-        can.drawString(30, 662, inputObj["page3[indNLCapacity]"])
-        can.drawString(30, 622, inputObj["page3[indNLSurname]"])
-        can.drawString(30, 581, inputObj["page3[indNLFirstName]"])
-        can.drawString(30, 544, inputObj["page3[indNLNationality]"])
-        addressThree = inputObj["page3[indNLAddress]"]
-        addressThreeLength = len(addressThree)
-        newAddress = "\n".join(wrap(addressThree, 55))
-        t.setTextOrigin(30, 503)
-        t.textLines(newAddress)
-        can.drawText(t)
-        can.drawString(30, 402, inputObj["page3[indNLEmail]"])
-        can.drawString(30, 362, inputObj["page3[indNLTel]"])
-        can.drawString(30, 322, inputObj["page3[indNLFax]"])
+    if inputObj == []:
+        blankPageInputs(self, can)
+    else: 
+        t = can.beginText()
+        t.setFont('Helvetica', 10)
+        if inputObj["page3[indRepresentativeType]"] == "non-lawyer":
+            can.drawString(30, 662, inputObj["page3[indNLCapacity]"])
+            can.drawString(30, 622, inputObj["page3[indNLSurname]"])
+            can.drawString(30, 581, inputObj["page3[indNLFirstName]"])
+            can.drawString(30, 544, inputObj["page3[indNLNationality]"])
+            addressThree = inputObj["page3[indNLAddress]"]
+            addressThreeLength = len(addressThree)
+            newAddress = "\n".join(wrap(addressThree, 55))
+            t.setTextOrigin(30, 503)
+            t.textLines(newAddress)
+            can.drawText(t)
+            can.drawString(30, 362, inputObj["page3[indNLTel]"])
+            can.drawString(30, 322, inputObj["page3[indNLFax]"])
+            can.drawString(30, 402, inputObj["page3[indNLEmail]"])
 
-    elif inputObj["page3[indRepresentativeType]"] == "lawyer":
-        can.drawString(310, 662, inputObj["page3[indLSurname]"])
-        can.drawString(310, 622, inputObj["page3[indLFirstName]"])
-        can.drawString(310, 581, inputObj["page3[indLNationality]"])
-        addressFour = inputObj["page3[indLAddress]"]
-        newAddressFour = "\n".join(wrap(addressFour, 55))
-        t.setTextOrigin(310, 543)
-        t.textLines(newAddressFour)
-        can.drawText(t)
-        can.drawString(310, 402, inputObj["page3[indLEmail]"])
-        can.drawString(310, 362, inputObj["page3[indLTel]"])
-        can.drawString(310, 322, inputObj["page3[indLFax]"])
-        can.drawString(30, 37, inputObj["page3[indIndeComms]"])
-    
-    else:
-        can.drawString(30, 37, inputObj["page3[indIndeCommsSelf]"])
+        elif inputObj["page3[indRepresentativeType]"] == "lawyer":
+            can.drawString(310, 662, inputObj["page3[indLSurname]"])
+            can.drawString(310, 622, inputObj["page3[indLFirstName]"])
+            can.drawString(310, 581, inputObj["page3[indLNationality]"])
+            addressFour = inputObj["page3[indLAddress]"]
+            newAddressFour = "\n".join(wrap(addressFour, 55))
+            t.setTextOrigin(310, 543)
+            t.textLines(newAddressFour)
+            can.drawText(t)
+            can.drawString(310, 362, inputObj["page3[indLTel]"])
+            can.drawString(310, 322, inputObj["page3[indLFax]"])
+            can.drawString(310, 402, inputObj["page3[indLEmail]"])
+            can.drawString(30, 37, inputObj["page3[indIndeComms]"])
+        
+        else:
+            can.drawString(30, 37, inputObj["page3[indIndeCommsSelf]"])
 
     can.showPage()
 
     return can
 
 def fourthPageInputs(self, can, inputObj):
-    t = can.beginText()
-    t.setFont('Helvetica', 10)
-    if inputObj["page3[orgRepresentativeType]"] == "non-lawyer":
-        can.drawString(30, 662, inputObj["page3[orgnlCapacity]"])
-        can.drawString(30, 622, inputObj["page3[orgnlSurname]"])
-        can.drawString(30, 581, inputObj["page3[orgnlFirstName]"])
-        can.drawString(30, 544, inputObj["page3[orgnlNationality]"])
-        addressFour = inputObj["page3[orgnlAddress]"]
-        newAddressFour = "\n".join(wrap(addressFour, 55))
-        t.setTextOrigin(30, 503)
-        t.textLines(newAddressFour)
-        can.drawText(t)
-        can.drawString(30, 402, inputObj["page3[orgnlEmail]"])
-        can.drawString(30, 362, inputObj["page3[orgnlTel]"])
-        can.drawString(30, 322, inputObj["page3[orgnlFax]"])
-
-    elif inputObj["page3[orgRepresentativeType]"] == "lawyer":
-        can.drawString(310, 662, inputObj["page3[orglSurname]"])
-        can.drawString(310, 622, inputObj["page3[orglFirstName]"])
-        can.drawString(310, 581, inputObj["page3[orglNationality]"])
-        addressFive = inputObj["page3[orglAddress]"]
-        newAddressFive = "\n".join(wrap(addressFive, 55))
-        t.setTextOrigin(310, 543)
-        t.textLines(newAddressFive)
-        can.drawText(t)
-        can.drawString(310, 402, inputObj["page3[orglEmail]"])
-        can.drawString(310, 362, inputObj["page3[orglTel]"])
-        can.drawString(310, 322, inputObj["page3[orglFax]"])
-        can.drawString(30, 37, inputObj["page3[orgIndeComms]"])
-    
+    if inputObj == []:
+        blankPageInputs(self, can)
     else:
-        can.drawString(30, 37, inputObj["page3[indIndeCommsSelf]"])
+        print(inputObj)
+        t = can.beginText()
+        t.setFont('Helvetica', 10)
+        if inputObj["page3[orgRepresentativeType]"] == "orgNoLawyer":
+            print("got here")
+            can.drawString(30, 666, inputObj["page3[orgnlCapacity]"])
+            can.drawString(30, 626, inputObj["page3[orgnlSurname]"])
+            can.drawString(30, 585, inputObj["page3[orgnlFirstName]"])
+            can.drawString(30, 548, inputObj["page3[orgnlNationality]"])
+            addressFour = inputObj["page3[orgnlAddress]"]
+            newAddressFour = "\n".join(wrap(addressFour, 55))
+            t.setTextOrigin(30, 508)
+            t.textLines(newAddressFour)
+            can.drawText(t)
+            
+            can.drawString(30, 367, inputObj["page3[orgnlTel]"])
+            can.drawString(30, 327, inputObj["page3[orgnlFax]"])
+            can.drawString(30, 407, inputObj["page3[orgnlEmail]"])
+
+        elif inputObj["page3[orgRepresentativeType]"] == "orgYesLawyer":
+            can.drawString(310, 666, inputObj["page3[orglSurname]"])
+            can.drawString(310, 626, inputObj["page3[orglFirstName]"])
+            can.drawString(310, 585, inputObj["page3[orglNationality]"])
+            addressFive = inputObj["page3[orglAddress]"]
+            newAddressFive = "\n".join(wrap(addressFive, 55))
+            t.setTextOrigin(310, 548)
+            t.textLines(newAddressFive)
+            can.drawText(t)
+            can.drawString(310, 367, inputObj["page3[orglTel]"])
+            can.drawString(310, 327, inputObj["page3[orglFax]"])
+            can.drawString(310, 407, inputObj["page3[orglEmail]"])
+            can.drawString(30, 37, inputObj["page3[orgIndeComms]"])
+    
+        else:
+            can.drawString(30, 37, inputObj["page3[indIndeCommsSelf]"])
 
     can.showPage()
     return can
@@ -314,7 +323,6 @@ def eleventhPageInputs(self, can, inputObj, secondInput):
     return can
 
 def twelvthPageInputs(self, can, inputObj):
-    print(inputObj)
     from datetime import datetime
     indexList = []
     dateList = inputObj[0]
@@ -326,7 +334,7 @@ def twelvthPageInputs(self, can, inputObj):
         descListNew = [x for _,x in sorted(zip(list_of_dates, descList))]
         pageListTemp = [x for _,x in sorted(zip(list_of_dates, pageList))]
         pageListNew = add_one_by_one(pageListTemp)
-        print(pageListNew)
+        # print(pageListNew)
         # print(dateListNew)
         # print(descListNew)
         # print(pageListNew)
@@ -365,7 +373,7 @@ def thirteenthPageInputs(self, can, inputObj):
     can.showPage()
     return can
 
-def blankPageInputs(self, can, inputObj):
+def blankPageInputs(self, can):
     can.showPage()
     return can
 

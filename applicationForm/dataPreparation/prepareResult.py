@@ -74,14 +74,18 @@ class PrepareResult:
                 barCodeText+= value+"|"
 
 
-        
-
+        # print(self.inputObj)
+        # print(self.inputObj['page2']["page2[applicantType]"])
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/')
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/watermark/')
         output1 = self.create_watermark_pdf(self.inputObj['page2'], pos=1)
         output2 = self.create_watermark_pdf(self.spclReplies[0], pos=2)
-        output3 = self.create_watermark_pdf(self.inputObj['page3'], pos=3, tempInput=self.inputObj['page2'])
-        output4 = self.create_watermark_pdf(self.inputObj['page3'], pos=4)
+        if self.inputObj['page2']["page2[applicantType]"] == "Individual":
+            output3 = self.create_watermark_pdf(self.inputObj['page3'], pos=3)
+            output4 = self.create_watermark_pdf([], pos=4)
+        else:
+            output3 = self.create_watermark_pdf([], pos=3)
+            output4 = self.create_watermark_pdf(self.inputObj['page3'], pos=4)
         output5 = self.create_watermark_pdf(sof1, pos=5)
         output6 = self.create_watermark_pdf(sof2, pos=6)
         output7 = self.create_watermark_pdf(sof3, pos=7)
@@ -165,14 +169,10 @@ class PrepareResult:
             can = firstPageInputs(self, can, inputObj)
         elif pos == 2:
             can = secondPageInputs(self, can, inputObj)
-        elif pos == 3 and tempInput != None and tempInput["page2[applicantType]"] == "Individual":
+        elif pos == 3:
             can = thirdPageInputs(self, can, inputObj)
-        elif pos == 4 and tempInput != None and tempInput["page2[applicantType]"] == "Organisation":
+        elif pos == 4:
             can = fourthPageInputs(self, can, inputObj)
-        elif pos==3 and tempInput==None:
-            can = blankPageInputs(self, can, inputObj)
-        elif pos==4 and tempInput==None:
-            can=blankPageInputs(self, can, inputObj)
         elif pos == 5:
             can = fifthPageInputs(self, can, inputObj)
         elif pos == 6:
