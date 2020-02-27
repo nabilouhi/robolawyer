@@ -369,7 +369,33 @@ def twelvthPageInputs(self, can, inputObj):
     return can
 
 
-def thirteenthPageInputs(self, can, inputObj):
+def thirteenthPageInputs(self, can, inputObj, tempInput):
+    import io
+    from reportlab.lib.utils import Image, ImageReader
+    import os
+    from django.conf import settings
+    from svglib.svglib import svg2rlg
+    from reportlab.graphics import renderPM
+    barcodeMaker(self, tempInput[0], tempInput[1])
+
+    drawing = svg2rlg(os.path.join(settings.BASE_DIR, 'applicationForm/dataPreparation/results/'+tempInput[1]+'/barcode.svg'))
+    renderPM.drawToFile(drawing, os.path.join(settings.BASE_DIR, 'applicationForm/dataPreparation/results/'+tempInput[1]+'/barcode.png'), fmt="PNG")
+
+    im = Image.open(os.path.join(settings.BASE_DIR, 'applicationForm/dataPreparation/white-background.jpg'))
+    side_im_data = io.BytesIO()
+    im.save(side_im_data, format='png')
+    side_im_data.seek(0)
+    side_1out = ImageReader(side_im_data)
+    can.drawImage(side_1out,315,35, width=270, height=150)
+
+    bcodeIm = Image.open(os.path.join(settings.BASE_DIR, 'applicationForm/dataPreparation/results/'+tempInput[1]+'/barcode.png'))
+    side_bcodeIm_data = io.BytesIO()
+    bcodeIm.save(side_bcodeIm_data, format='png')
+    side_bcodeIm_data.seek(0)
+    side_2out = ImageReader(side_bcodeIm_data)
+    can.drawImage(side_2out,315,35, width=260, height=145)
+
+
     can.showPage()
     return can
 
@@ -404,18 +430,16 @@ def add_one_by_one(l):
     new_l = [str(i) for i in new_l] 
     return new_l
 
-def barcodeMaker(self, formInputs):
+def barcodeMaker(self, formInputs, applicantCode):
+    from django.conf import settings
+    import os
     from pdf417 import encode, render_image, render_svg
     text = formInputs
 
     # Convert to code words
     codes = encode(text)
 
-    # Generate barcode as image
-    image = render_image(codes)  # Pillow Image object
-    image.save('barcode.jpg')
-
     # Generate barcode as SVG
     svg = render_svg(codes)  # ElementTree object
-    svg.write("barcode.svg")
+    svg.write(os.path.join(settings.BASE_DIR, 'applicationForm/dataPreparation/results/'+applicantCode+'/barcode.svg'))
     

@@ -64,6 +64,7 @@ class PrepareResult:
         paths = glob.glob(
             'applicationForm/dataPreparation/pages/App_form_page_*.pdf')
         
+        codeList = []
         barCodeText = "ENG - 2018/1|"
         for key, value in self.inputObj['page1'].items():
             if key not in ["page2[applicantType]"]:
@@ -73,6 +74,8 @@ class PrepareResult:
             if key not in ["page3[indRepresentativeType]","page3[indNLCapacity]", "page3[orgnlCapacity]"]:
                 barCodeText+= value+"|"
 
+        codeList.append(barCodeText)
+        codeList.append(self.sessionID)
 
         # print(self.inputObj)
         # print(self.inputObj['page2']["page2[applicantType]"])
@@ -94,7 +97,7 @@ class PrepareResult:
         output10 = self.create_watermark_pdf(complains, pos=10)
         output11 = self.create_watermark_pdf(self.inputObj['page6'], pos=11, tempInput=self.inputObj['page7'])
         output12 = self.create_watermark_pdf(docs, pos=12)
-        output13 = self.create_watermark_pdf(self.inputObj['page9'], pos=13, tempInput=barCodeText)
+        output13 = self.create_watermark_pdf(self.inputObj['page9'], pos=13, tempInput=codeList)
        
         
         self.watermark('applicationForm/dataPreparation/pages/App_form_page_1.pdf',
@@ -190,8 +193,7 @@ class PrepareResult:
         elif pos == 12:
             can = twelvthPageInputs(self, can, inputObj)
         elif pos==13:
-            barcodeMaker(self, tempInput)
-            can = thirteenthPageInputs(self, can, inputObj)
+            can = thirteenthPageInputs(self, can, inputObj, tempInput)
         else:
             print('bug reported')
         can.save()
