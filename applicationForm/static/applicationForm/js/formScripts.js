@@ -260,10 +260,13 @@ function textCounter(field, field2, maxlimit) {
   }
 }
 
-// $(document).ready(function() {
-//   var select = '';
-//   for (i = 1; i <= 100; i++) {
-//     select += '<option val=' + i + '>' + i + '</option>';
-//   }
-//   $('#noOfPage').html(select);
-// });
+function maxLength(el) {    
+  if (!('maxLength' in el)) {
+      var max = el.attributes.maxLength.value;
+      el.onkeypress = function () {
+          if (this.value.length >= max) return false;
+      };
+  }
+}
+
+maxLength(document.getElementsByClassName("limitedArea"));

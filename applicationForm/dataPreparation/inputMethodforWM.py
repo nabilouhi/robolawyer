@@ -376,6 +376,23 @@ def thirteenthPageInputs(self, can, inputObj, tempInput):
     from django.conf import settings
     from svglib.svglib import svg2rlg
     from reportlab.graphics import renderPM
+    print(inputObj)
+
+    t = can.beginText()
+    t.setFont('Helvetica', 10)
+    comments = inputObj['page9[formComments]']
+    newComments = "\n".join(wrap(comments, 120))
+    t.setTextOrigin(30, 730)
+    t.textLines(newComments)
+    can.drawText(t)
+
+    if inputObj["page9[signatureDeclaration]"] == 'Applicant':
+        can.circle(105, 508, 4, fill=1)
+    elif inputObj["page9[signatureDeclaration]"] == 'Representative':
+        can.circle(184.5, 508, 4, fill=1)
+    else:
+        print("no option selected in page9[signatureDeclaration]")
+
     barcodeMaker(self, tempInput[0], tempInput[1])
 
     drawing = svg2rlg(os.path.join(settings.BASE_DIR, 'applicationForm/dataPreparation/results/'+tempInput[1]+'/barcode.svg'))
