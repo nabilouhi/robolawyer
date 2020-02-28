@@ -105,9 +105,9 @@ def thirdPageInputs(self, can, inputObj):
             t.setTextOrigin(25, 503)
             t.textLines(newAddress)
             can.drawText(t)
-            can.drawString(25, 362, inputObj["page3[indNLTel]"])
+            can.drawString(25, 402, inputObj["page3[indNLTel]"])
             can.drawString(25, 322, inputObj["page3[indNLFax]"])
-            can.drawString(25, 402, inputObj["page3[indNLEmail]"])
+            can.drawString(25, 362, inputObj["page3[indNLEmail]"])
 
         elif inputObj["page3[indRepresentativeType]"] == "lawyer":
             can.drawString(310, 662, inputObj["page3[indLSurname]"])
@@ -120,9 +120,9 @@ def thirdPageInputs(self, can, inputObj):
             t.setTextOrigin(310, 543)
             t.textLines(newAddressFour)
             can.drawText(t)
-            can.drawString(310, 362, inputObj["page3[indLTel]"])
+            can.drawString(310, 402, inputObj["page3[indLTel]"])
             can.drawString(310, 322, inputObj["page3[indLFax]"])
-            can.drawString(310, 402, inputObj["page3[indLEmail]"])
+            can.drawString(310, 362, inputObj["page3[indLEmail]"])
             can.drawString(30, 37, inputObj["page3[indIndeComms]"])
         
         else:
