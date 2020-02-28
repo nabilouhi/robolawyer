@@ -292,7 +292,7 @@ def tenthPageInputs(self, can, inputObj):
         else:
             print("error reported in TenthPageInputs")
 
-        newComplain = "\n".join(wrap(complain, 25))
+        newComplain = "\n".join(wrap(complain, 22))
         t1.setTextOrigin(25, yCoord)
         t1.textLines(newComplain)
         can.drawText(t1)
@@ -300,11 +300,11 @@ def tenthPageInputs(self, can, inputObj):
 
         t2 = can.beginText()
         t2.setFont(customFont, customFontSize)
-        newRemedy = "\n".join(wrap(remedies, 60))
+        newRemedy = "\n".join(wrap(remedies, 58))
         t2.setTextOrigin(185, yCoord)
         t2.textLines(newRemedy)
         can.drawText(t2)
-        yCoord -= nextLineForPara(len(newRemedy), 60, 11)
+        yCoord -= nextLineForPara(len(newRemedy), 60, 14.5)
 
     can.showPage()
     return can
@@ -317,7 +317,7 @@ def eleventhPageInputs(self, can, inputObj, secondInput):
                 t.setFont(customFont, customFontSize)
                 appealDescribe = inputObj['page6[appealDescribe]']
                 newAppealDescribe = "\n".join(wrap(appealDescribe, 82))
-                t.setTextOrigin(25, 732)
+                t.setTextOrigin(25, 735)
                 t.textLines(newAppealDescribe)
                 can.drawText(t)
             elif inputObj["page6[appealAvailable]"] == 'No':
