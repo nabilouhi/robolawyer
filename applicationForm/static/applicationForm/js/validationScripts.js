@@ -102,3 +102,16 @@ document.addEventListener('DOMContentLoaded', function() {
       return false;
     }
   }
+
+
+
+window.Parsley.addValidator('dateEarlier', {
+  validateDate: function (value) {
+    var now = new Date();
+    var date = new Date(value);
+    return date < now;
+},
+messages: {
+  custom: 'Future Date not allowed'
+}
+})

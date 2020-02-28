@@ -32,7 +32,41 @@
                                 <label class="custom-control-label"
                                     for="signatureDeclarationRepresentative">Representative(s)</label>
                             </div>
-                  
+                            <div class="form-group">
+                                <div class="is-hidden" id="correspondentOptionApplicant">
+                                    <label class="lead">Confirmation of correspondent</label>
+                                    <p align="justified"> If there is more than one applicant or more than one representative, please give
+                                        the name and address of the one person with whom the Court will correspond. Where the
+                                        applicant is represented, the Court will correspond only with the representative (lawyer or
+                                        nonlawyer).</p>
+                                    <label for="confirmationApplicantName">Name of applicant</label>
+                                    <input class="form-control" type="text" name="page9[confirmationApplicantName]"
+                                        id="confirmationApplicantName" maxlength="80">
+    
+                                    <label for="confirmationApplicantAddress">Address of applicant <a href="javascript://" data-toggle="popover"
+                                        data-content="An applicant must provide a postal address separate from that of a lawyer or representative so that the Court can make contact if necessary. An applicant who is homeless or has no fixed residence may have to give a box number or friend’s details but should provide an explanation."
+                                        data-trigger="click" data-placement="bottom"><span><i
+                                                class="fas fa-question-circle"></i></span></a></label>
+                                    <input class="form-control" type="text" name="page9[confirmationApplicantAddress]"
+                                        id="confirmationApplicantAddress" maxlength="300">
+                                </div>
+                                <div class="is-hidden" id="correspondentOptionRepresentative">
+                                    <label class="lead">Confirmation of correspondent</label>
+                                    <p> If there is more than one representative, please give the
+                                        name
+                                        and address of the one person with whom
+                                        the Court will correspond. Where the applicant is represented, the Court will
+                                        correspond
+                                        only with the representative (lawyer or nonlawyer).</p>
+                                    <label for="confirmationRepresentativeName">Name of Representative</label>
+                                    <input class="form-control" type="text" name="page9[confirmationRepresentativeName]"
+                                        id="confirmationRepresentativeName" maxlength="80">
+    
+                                    <label for="confirmationRepresentativeAddress">Address of Representative</label>
+                                    <input class="form-control" type="text" name="page9[confirmationRepresentativeAddress]"
+                                        id="confirmationRepresentativeAddress" maxlength="300">
+                                </div>
+                            </div>
                             <div class="alert alert-danger">
                                <h5 class="lead"> Please Note: This section must contain original signatures of the applicant or his/her representative and
                                 the date must be added after the form has been printed out (page 13 of the printed application form). 

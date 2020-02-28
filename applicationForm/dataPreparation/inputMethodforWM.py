@@ -19,9 +19,10 @@ def firstPageInputs(self, can, inputObj):
             can.drawString(baseX, baseY, i)
             baseX = baseX+17
 
-        
-        can.drawString(25, 285, inputObj["page2[indPob]"])
-        can.drawString(25, 245, inputObj["page2[indNationality]"])
+        indPobNew = modifyCountryNames(inputObj["page2[indPob]"])
+        can.drawString(25, 285, indPobNew)
+        indNationalityNew = modifyCountryNames(inputObj["page2[indNationality]"])
+        can.drawString(25, 245, indNationalityNew)
 
         addressOne = inputObj["page2[indAddress]"]
         addressOneLength = len(addressOne)
@@ -95,7 +96,9 @@ def thirdPageInputs(self, can, inputObj):
             can.drawString(25, 662, inputObj["page3[indNLCapacity]"])
             can.drawString(25, 622, inputObj["page3[indNLSurname]"])
             can.drawString(25, 581, inputObj["page3[indNLFirstName]"])
-            can.drawString(25, 544, inputObj["page3[indNLNationality]"])
+
+            indNLNationalityNew = modifyCountryNames(inputObj["page3[indNLNationality]"])
+            can.drawString(25, 544, indNLNationalityNew)
             addressThree = inputObj["page3[indNLAddress]"]
             addressThreeLength = len(addressThree)
             newAddress = "\n".join(wrap(addressThree, 40))
@@ -109,7 +112,9 @@ def thirdPageInputs(self, can, inputObj):
         elif inputObj["page3[indRepresentativeType]"] == "lawyer":
             can.drawString(310, 662, inputObj["page3[indLSurname]"])
             can.drawString(310, 622, inputObj["page3[indLFirstName]"])
-            can.drawString(310, 581, inputObj["page3[indLNationality]"])
+
+            indLNationalityNew = modifyCountryNames(inputObj["page3[indLNationality]"])
+            can.drawString(310, 581, indLNationalityNew)
             addressFour = inputObj["page3[indLAddress]"]
             newAddressFour = "\n".join(wrap(addressFour, 40))
             t.setTextOrigin(310, 543)
@@ -138,7 +143,9 @@ def fourthPageInputs(self, can, inputObj):
             can.drawString(25, 666, inputObj["page3[orgnlCapacity]"])
             can.drawString(25, 626, inputObj["page3[orgnlSurname]"])
             can.drawString(25, 585, inputObj["page3[orgnlFirstName]"])
-            can.drawString(25, 548, inputObj["page3[orgnlNationality]"])
+
+            orgnlNationalityNew = modifyCountryNames(inputObj["page3[orgnlNationality]"])
+            can.drawString(25, 548, orgnlNationalityNew)
             addressFour = inputObj["page3[orgnlAddress]"]
             newAddressFour = "\n".join(wrap(addressFour, 40))
             t.setTextOrigin(25, 508)
@@ -152,7 +159,9 @@ def fourthPageInputs(self, can, inputObj):
         elif inputObj["page3[orgRepresentativeType]"] == "orgYesLawyer":
             can.drawString(310, 666, inputObj["page3[orglSurname]"])
             can.drawString(310, 626, inputObj["page3[orglFirstName]"])
-            can.drawString(310, 585, inputObj["page3[orglNationality]"])
+
+            orglNationalityNew = modifyCountryNames(inputObj["page3[orglNationality]"])
+            can.drawString(310, 585, orglNationalityNew)
             addressFive = inputObj["page3[orglAddress]"]
             newAddressFive = "\n".join(wrap(addressFive, 40))
             t.setTextOrigin(310, 548)
@@ -396,15 +405,33 @@ def thirteenthPageInputs(self, can, inputObj, tempInput):
     t = can.beginText()
     t.setFont(customFont, customFontSize)
     comments = inputObj['page9[formComments]']
-    newComments = "\n".join(wrap(comments, 120))
+    newComments = "\n".join(wrap(comments, 82))
     t.setTextOrigin(25, 730)
     t.textLines(newComments)
     can.drawText(t)
     if "page9[signatureDeclaration]" in inputObj:
         if inputObj["page9[signatureDeclaration]"] == 'Applicant':
             can.circle(105, 508, 4, fill=1)
+            s = can.beginText()
+            s.setFont(customFont, customFontSize)
+            name = inputObj['page9[confirmationApplicantName]']
+            can.drawString(25, 480, name)
+            address = inputObj['page9[confirmationApplicantAddress]']
+            newAddress = "\n".join(wrap(address, 82))
+            s.setTextOrigin(25, 450)
+            s.textLines(newAddress)
+            can.drawText(s)
         elif inputObj["page9[signatureDeclaration]"] == 'Representative':
             can.circle(184.5, 508, 4, fill=1)
+            s = can.beginText()
+            s.setFont(customFont, customFontSize)
+            name = inputObj['page9[confirmationRepresentativeName]']
+            can.drawString(25, 480, name)
+            address = inputObj['page9[confirmationRepresentativeAddress]']
+            newAddress = "\n".join(wrap(address, 82))
+            s.setTextOrigin(25, 450)
+            s.textLines(newAddress)
+            can.drawText(s)
         else:
             print("no option selected in page9[signatureDeclaration]")
 
@@ -514,3 +541,8 @@ def anonymityDoc(self, can, inputObj):
     can.drawText(t)
     can.showPage()
     return can
+
+
+def modifyCountryNames(initialName):
+    tempList = initialName.split("(")
+    return tempList[0]

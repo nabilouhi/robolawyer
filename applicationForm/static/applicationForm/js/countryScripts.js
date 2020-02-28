@@ -1,5 +1,5 @@
 options = {
-  defaultCountry: '',
+  defaultCountry: 'no',
   responsiveDropdown: true,
   preferredCountries: []
 };

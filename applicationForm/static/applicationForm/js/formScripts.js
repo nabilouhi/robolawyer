@@ -96,55 +96,6 @@ jQuery(document).ready(function($) {
 
 // })
 
-// for add/remove input functionality
-var addRemElements = function(partners, partner, addmore) {
-  $(document).ready(function() {
-    var data_fo = $(partners).html();
-    var sd = '<div class="btn btn-danger remove-add-more">Remove</div><hr>';
-    var max_fields = 10; //maximum input boxes allowed
-    var wrapper = $(partners); //Fields wrapper
-    var add_button = $(addmore); //Add button ID
-
-    var x = 1; //initlal text box count
-    $(add_button).click(function(e) {
-      //on add input button click
-      e.preventDefault();
-      if (x < max_fields) {
-        //max input box allowed
-        x++; //text box increment
-        var partnerClone = $(partner).first().clone();
-        $(sd).appendTo(partnerClone);
-        $(wrapper).append(partnerClone);
-      }
-    });
-
-    $(wrapper).on('click', '.remove-add-more', function(e) {
-      //user click on remove text
-      e.preventDefault();
-      $(this)
-        .parent(partner)
-        .remove();
-      $(this).remove();
-      x--;
-    });
-  });
-};
-
-// addRemElements('.articles', '.article', '.add-more');
-// addRemElements('.complaints', '.complaint', '.add-more-complaints');
-// addRemElements('.docLists', '.docList', '.add-more-docs');
-
-// Add remove functionality end
-// $(function () {
-//   $('.page8Date').combodate({
-//       minYear: 1900,
-//       maxYear: 2020,
-//       customClass: 'custom-control-inline form-control',
-//       smartDays: true,
-//       firstItem: 'name',
-//       format: "DD/MM/YYYY"
-//   });
-// });
 
 $('#page8Group').repeater({
               btnAddClass: 'r-btnAdd',
@@ -260,13 +211,3 @@ function textCounter(field, field2, maxlimit) {
   }
 }
 
-// function maxLength(el) {    
-//   if (!('maxLength' in el)) {
-//       var max = el.attributes.maxLength.value;
-//       el.onkeypress = function () {
-//           if (this.value.length >= max) return false;
-//       };
-//   }
-// }
-
-// maxLength(document.getElementsByClassName("limitedArea"));

@@ -1,3 +1,28 @@
+
+dateValidator = function(dateSelector) {
+  $(dateSelector).on('change', function(){
+    result =  $(dateSelector).combodate('getValue',format='YYYY-MM-DD');
+    currentDate = moment().format('YYYY-MM-DD');
+    diffDate = moment(currentDate).diff(moment(result), 'days', true);
+    if (!isNaN(diffDate)){
+      if (diffDate >0) {
+        console.log("date fine")
+      }
+      else{
+        swal("Future Date is not allowed. Please enter a valid date.");
+      }
+    }
+  })  
+}
+
+dateValidator('input[name="page1[decisionDate]"]');
+dateValidator('input[name="page1[finalDecisionDate]"]');
+dateValidator('input[name="page2[birthDate]"]');
+dateValidator('input[name="page2[orgDate]"]');
+// dateValidator('input[name="page1[finalDecisionDate]"]');
+// dateValidator('input[name="page1[finalDecisionDate]"]');
+
+
 $('#finalDecisionDate').on('change', function(){
     finalDecisionDate = $('#finalDecisionDate').combodate('getValue',format='YYYY-MM-DD');
     currentDate = moment().format('YYYY-MM-DD');
