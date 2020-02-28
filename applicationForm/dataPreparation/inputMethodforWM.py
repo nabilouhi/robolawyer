@@ -320,7 +320,6 @@ def eleventhPageInputs(self, can, inputObj, secondInput):
     return can
 
 def twelvthPageInputs(self, can, inputObj):
-    print(inputObj)
     if inputObj[0] == ['']:
         print("no value entered twelvth")
     else:
@@ -472,7 +471,7 @@ def bookmarkPageInputs(self, can, inputObj):
     return can
 
 def anonymityDoc(self, can, inputObj):
-    title = "Request for Anonymity"
+    title = "Request of Anonymity"
     can.setFont('Courier-Bold', 20)
     can.drawString(180, 700, title)
 
