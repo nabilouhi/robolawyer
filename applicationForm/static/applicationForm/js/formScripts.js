@@ -151,7 +151,7 @@ $('#page8Group').repeater({
               btnRemoveClass: 'r-btnRemove',
               groupClass: 'r-group',
               minItems: 1,
-              maxItems: 0,
+              maxItems: 24,
               startingIndex: 0,
               showMinItemsOnLoad: true,
               reindexOnDelete: true,
@@ -178,7 +178,7 @@ $('#page6Group').repeater({
             clearValues: true
         });
 
-$('#example1').repeater({
+$('#page5Group').repeater({
           btnAddClass: 'a-btnAdd',
           btnRemoveClass: 'a-btnRemove',
           groupClass: 'a-group',
@@ -247,7 +247,7 @@ function textCounter(field, field2, maxlimit) {
   var countfield = document.getElementById(field2);
   if (field.value.length > maxlimit) {  
     if(field.id==="stofFacts"){
-    swal("You have used up the allocated length for Statement of Facts. For more explanation, please use the extra provided area by clicking the button 'Do you need more?'");
+    swal("You have used up the allocated length for Statement of Facts. For more explanation, please use the extra provided area by clicking the button 'Do you need more writing space?'");
     }
     if(field.id==="stofFactsExtra"){
       swal("Unfortunately there is no more space available to add extra content in statement of facts according to the guidelines provided by ECtHR. Please try to modify the existing text.");

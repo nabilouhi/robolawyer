@@ -208,6 +208,8 @@ def seventhPageInputs(self, can, inputObj):
 def eighthPageInputs(self, can, inputObj):
     yCoord = 750
     for item in range(len(inputObj[0])):
+        if item>1:
+            break
         t1 = can.beginText()
         t1.setFont(customFont, customFontSize)
         if len(inputObj[0]) > 1:
@@ -219,23 +221,51 @@ def eighthPageInputs(self, can, inputObj):
         else:
             print("error reported in EighthPageInputs")
 
-        newArticle = "\n".join(wrap(article, 10))
-        t1.setTextOrigin(40, yCoord)
-        t1.textLines("Article "+ newArticle)
+        newArticle = "\n".join(wrap(article, 20))
+        t1.setTextOrigin(25, yCoord)
+        t1.textLines(newArticle)
         can.drawText(t1)
 
         t2 = can.beginText()
         t2.setFont(customFont, customFontSize)
-        newArticleExp = "\n".join(wrap(articleExp, 60))
+        newArticleExp = "\n".join(wrap(articleExp, 59))
         t2.setTextOrigin(180, yCoord)
         t2.textLines(newArticleExp)
         can.drawText(t2)
-        yCoord -= nextLineForPara(len(articleExp), 60, 11)
+        yCoord -= nextLineForPara(len(newArticleExp), 59, 13.7)
 
     can.showPage()
     return can
 
 def ninthPageInputs(self, can, inputObj):
+    yCoord = 750
+    for item in range(len(inputObj[0])):
+        if item>1:
+            t1 = can.beginText()
+            t1.setFont(customFont, customFontSize)
+            if len(inputObj[0]) > 1:
+                article = inputObj[0][item]
+                articleExp = inputObj[1][item]
+            elif len(inputObj[0]) == 1:
+                article = inputObj[0][0]
+                articleExp = inputObj[1][0]
+            else:
+                print("error reported in EighthPageInputs")
+
+            newArticle = "\n".join(wrap(article, 20))
+            t1.setTextOrigin(25, yCoord)
+            t1.textLines(newArticle)
+            can.drawText(t1)
+
+            t2 = can.beginText()
+            t2.setFont(customFont, customFontSize)
+            newArticleExp = "\n".join(wrap(articleExp, 59))
+            t2.setTextOrigin(180, yCoord)
+            t2.textLines(newArticleExp)
+            can.drawText(t2)
+            yCoord -= nextLineForPara(len(newArticleExp), 59, 13.7)
+
+
     can.showPage()
     return can
 
@@ -325,7 +355,7 @@ def twelvthPageInputs(self, can, inputObj):
     else:
         [dateListNew, descListNew, pageListNew, pageListTemp] = sortDocumentsDate(self, inputObj)
         pageListNew = add_one_by_one(pageListTemp)
-        yCoord = 660
+        yCoord = 655
         for item in range(len(inputObj[0])):
             t1 = can.beginText()
             t1.setFont(customFont, customFontSize)
@@ -346,10 +376,10 @@ def twelvthPageInputs(self, can, inputObj):
             t2 = can.beginText()
             t2.setFont(customFont, customFontSize)
             newPage = "\n".join(wrap(page, 5))
-            t2.setTextOrigin(560, yCoord)
+            t2.setTextOrigin(550, yCoord)
             t2.textLines(newPage)
             can.drawText(t2)
-            yCoord -= nextLineForPage12(len(desc), 70, 9)
+            yCoord -= nextLineForPage12(len(desc), 70, 8.5)
 
     can.showPage()
     return can
@@ -411,7 +441,7 @@ def nextLineForPara(x, y, z):
     textLength = x;
     writeLength = y;
     spacing = z;
-    totalSpacing = math.ceil(x/y)*z + 3*z;
+    totalSpacing = math.ceil(x/y)*z + z;
     return totalSpacing
 
 def nextLineForPage12(x,y,z):

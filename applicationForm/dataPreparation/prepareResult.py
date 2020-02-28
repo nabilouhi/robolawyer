@@ -90,11 +90,12 @@ class PrepareResult:
         output6 = self.create_watermark_pdf(sof2, pos=6)
         output7 = self.create_watermark_pdf(sof3, pos=7)
         output8 = self.create_watermark_pdf(article, pos=8)
-        output9 = self.create_watermark_pdf(self.inputObj['page6'], pos=9)
+        output9 = self.create_watermark_pdf(article, pos=9)
         output10 = self.create_watermark_pdf(complains, pos=10)
         output11 = self.create_watermark_pdf(self.inputObj['page6'], pos=11, tempInput=self.inputObj['page7'])
         output12 = self.create_watermark_pdf(docs, pos=12)
         output13 = self.create_watermark_pdf(self.inputObj['page9'], pos=13, tempInput=codeList)
+        
         self.createAnonymityDoc(self.inputObj['page2']['page2[applicantAnonExp]'])
         self.create_New_Pdf(docs)    
         
@@ -211,7 +212,7 @@ class PrepareResult:
                 can.save()
 
     def createAnonymityDoc(self, inputObj):
-        if inputObj == ['']:
+        if inputObj == '':
             print('no anonymity request')
         else:
             filename = 'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_' + \
