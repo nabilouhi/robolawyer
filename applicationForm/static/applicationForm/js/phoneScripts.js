@@ -3,8 +3,9 @@ var phoneInputScript = function(phoneDiv) {
   var iti = window.intlTelInput(inputPhone, {
     utilsScript: 'static/intlTelInput/utils.js',
     allowDropdown: true,
-    separateDialCode: true,
-    initialCountry: 'auto'
+    separateDialCode: false,
+    initialCountry: 'auto',
+    nationalMode: false
   });
 
   $(phoneDiv).change(function() {
