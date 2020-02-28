@@ -126,7 +126,7 @@ def thirdPageInputs(self, can, inputObj):
             can.drawString(30, 37, inputObj["page3[indIndeComms]"])
         
         else:
-            can.drawString(30, 37, inputObj["page3[indIndeCommsSelf]"])
+            print("nothing printed here for self representing individual")
 
     can.showPage()
 
