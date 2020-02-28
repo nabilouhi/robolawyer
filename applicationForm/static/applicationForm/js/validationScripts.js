@@ -12,19 +12,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (onValidate('page1')) {
           console.log('page1 passed');
         } else {
-          // alert('Please answer the mandatory fields first.');
+          // swal('Please answer the mandatory fields first.');
           // event.preventDefault();
         }
       } else if (event.detail.from === 1) {
           if(onValidate('page2')){
               console.log('page2 passed');
-              appVal = document.querySelector("input[name='applicantType']:checked").value;
+              appVal = document.querySelector("input[name='page2[applicantType]']:checked").value;
               console.log(appVal);
               if (appVal === 'Individual') {
                 if (onValidate('page2a')) {
                   console.log('page2a passed');
                 } else {
-                  alert('Please answer the mandatory fields first.');
+                  swal('Please answer the mandatory fields first.');
                   event.preventDefault();
                   return;
                 }
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (onValidate('page2b')) {
                   console.log('page2b passed');
                 } else {
-                  alert('Please answer the mandatory fields first.');
+                  swal('Please answer the mandatory fields first.');
                   event.preventDefault();
                   return;
                 }
@@ -41,14 +41,21 @@ document.addEventListener('DOMContentLoaded', function() {
               }
           }
           else {
-              alert('Please answer 2 fields first');
+              swal('Please answer mandatory fields first');
               event.preventDefault();
           }     
       } else if (event.detail.from === 2) {
         if (onValidate('page3')) {
           console.log('page3 passed');
         } else {
-          alert('Please answer the mandatory fields first.');
+          swal('Please answer the mandatory fields first.');
+          event.preventDefault();
+        }
+      } else if (event.detail.from === 3) {
+        if (onValidate('page4')) {
+          console.log('page4 passed');
+        } else {
+          swal('Please answer the mandatory fields first.');
           event.preventDefault();
         }
       }

@@ -41,11 +41,10 @@ class PrepareResult:
         # self.createOrDeleteDirectory('applicationForm/dataPreparation/pages')
         # self.pdf_splitter(filename)
 
-        # print(self.inputObj['page5'])
         sof = self.inputObj['page4']['page4[stOfFacts]']
-        sof1 = sof[:5165]
-        sof2 = sof[5165:11060]
-        sof3 = sof[11060: 16965]
+        sof1 = sof[:3890]
+        sof2 = sof[3790:8140]
+        sof3 = sof[8140: 12500]
 
         
         article = []
@@ -66,19 +65,17 @@ class PrepareResult:
         
         codeList = []
         barCodeText = "ENG - 2018/1|"
-        for key, value in self.inputObj['page1'].items():
-            if key not in ["page2[applicantType]"]:
+        for key, value in self.inputObj['page2'].items():
+            if key not in ["page2[applicantType]", "page2[applicantAnon]", "page2[applicantAnonExp]"]:
                 barCodeText+= value+"|"
 
-        for key, value in self.inputObj['page2'].items():
+        for key, value in self.inputObj['page3'].items():
             if key not in ["page3[indRepresentativeType]","page3[indNLCapacity]", "page3[orgnlCapacity]"]:
                 barCodeText+= value+"|"
-
         codeList.append(barCodeText)
         codeList.append(self.sessionID)
 
-        # print(self.inputObj)
-        # print(self.inputObj['page2']["page2[applicantType]"])
+
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/')
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/watermark/')
         output1 = self.create_watermark_pdf(self.inputObj['page2'], pos=1)
@@ -98,7 +95,8 @@ class PrepareResult:
         output11 = self.create_watermark_pdf(self.inputObj['page6'], pos=11, tempInput=self.inputObj['page7'])
         output12 = self.create_watermark_pdf(docs, pos=12)
         output13 = self.create_watermark_pdf(self.inputObj['page9'], pos=13, tempInput=codeList)
-       
+        self.createAnonymityDoc(self.inputObj['page2']['page2[applicantAnonExp]'])
+        self.create_New_Pdf(docs)    
         
         self.watermark('applicationForm/dataPreparation/pages/App_form_page_1.pdf',
                        'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_1.pdf', output1)
@@ -199,8 +197,25 @@ class PrepareResult:
         can.save()
         return filename
 
-        
+    def create_New_Pdf(self, inputObj):
+        totalBookmark = len(inputObj[1])
+        if inputObj[1] == ['']:
+            print("no doc entered")
+        else: 
+            docs4List = sortDocumentsDate(self, inputObj)
+            for single in range(totalBookmark):
+                filename = 'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_' + \
+                    str(15+single) + '.pdf'
+                can = canvas.Canvas(filename, pagesize=letter)
+                can = bookmarkPageInputs(self, can, [docs4List[1][single], docs4List[3][single]])
+                can.save()
 
-# if __name__ == "__main__":
-
-#     main()
+    def createAnonymityDoc(self, inputObj):
+        if inputObj == ['']:
+            print('no anonymity request')
+        else:
+            filename = 'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_' + \
+                    str(14) + '.pdf'
+            can = canvas.Canvas(filename, pagesize=letter)
+            can = anonymityDoc(self, can, inputObj)
+            can.save()
