@@ -60,13 +60,13 @@
                     <td width="30%">
                       <label><b>Date of Final Decision from the highest court</b>
                       </label>
-                      <input type="date" class="page6Date" name="page6[complaintDate]" data-template="DD MMM YYYY" />
+                      <input type="text" class="page6Date datepicker" name="page6[complaintDate]" data-date-end-date="0d" data-provide="datepicker" />
                     </td>
                     <td width="45%">
                       <label><b> Remedies Used</b></label>
                       <textarea class="form-control remedies" name="page6[remediesUsed]"
                         oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
-                        rows="3"></textarea>
+                        rows="3" maxlength="290"></textarea>
                     </td>
                   </tr>
                 </table>

@@ -91,14 +91,14 @@
                     <tr>
                       <td width="25%">
                         <label><b>Date</b></label>
-                        <input type="date" class="page8Date" name="page8[finalDecisionDate]"
-                        data-date-format="DD MMMM YYYY" />
+                        <input type="text" class="page8Date datepicker" name="page8[finalDecisionDate]"
+                        data-date-end-date="0d" data-provide="datepicker" />
                       </td>
                       <td width="60%" style="padding-right:10px;">
                         <label for="docSelect"><b>Description</b></label>
                         <textarea class="form-control" name="page8[docDescription]" id="docSelect"
                           oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
-                          rows="2"></textarea>
+                          rows="2" maxlength="130"></textarea>
                       </td>
                       <td width="15%">
                         <label><b>Number of Pages</b>

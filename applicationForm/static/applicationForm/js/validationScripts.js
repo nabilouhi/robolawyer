@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (onValidate('page1')) {
           console.log('page1 passed');
         } else {
-          swal('Please answer the mandatory fields first.');
-          event.preventDefault();
+          // swal('Please answer the mandatory fields first.');
+          // event.preventDefault();
         }
       } else if (event.detail.from === 1) {
           if(onValidate('page2')){

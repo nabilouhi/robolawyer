@@ -5,7 +5,8 @@ var phoneInputScript = function(phoneDiv) {
     allowDropdown: true,
     separateDialCode: false,
     initialCountry: 'auto',
-    nationalMode: false
+    nationalMode: false,
+    preferredCountries: []
   });
 
   $(phoneDiv).change(function() {

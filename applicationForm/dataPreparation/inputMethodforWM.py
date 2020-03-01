@@ -217,7 +217,7 @@ def seventhPageInputs(self, can, inputObj):
 def eighthPageInputs(self, can, inputObj):
     yCoord = 750
     for item in range(len(inputObj[0])):
-        if item>1:
+        if item>2:
             break
         t1 = can.beginText()
         t1.setFont(customFont, customFontSize)
@@ -249,7 +249,7 @@ def eighthPageInputs(self, can, inputObj):
 def ninthPageInputs(self, can, inputObj):
     yCoord = 750
     for item in range(len(inputObj[0])):
-        if item>1:
+        if item>2:
             t1 = can.beginText()
             t1.setFont(customFont, customFontSize)
             if len(inputObj[0]) > 1:
@@ -364,7 +364,7 @@ def twelvthPageInputs(self, can, inputObj):
     else:
         [dateListNew, descListNew, pageListNew, pageListTemp] = sortDocumentsDate(self, inputObj)
         pageListNew = add_one_by_one(pageListTemp)
-        yCoord = 655
+        yCoord = 665
         for item in range(len(inputObj[0])):
             t1 = can.beginText()
             t1.setFont(customFont, customFontSize)
@@ -377,7 +377,7 @@ def twelvthPageInputs(self, can, inputObj):
             else:
                 print("error reported in TwelvethPageInputs")
 
-            newDesc = "\n".join(wrap(desc, 10))
+            newDesc = "\n".join(wrap(desc, 73))
             t1.setTextOrigin(40, yCoord)
             t1.textLines(newDesc)
             can.drawText(t1)
@@ -496,7 +496,7 @@ def barcodeMaker(self, formInputs, applicantCode):
     text = formInputs
 
     # Convert to code words
-    codes = encode(text)
+    codes = encode(text, columns=12)
 
     # Generate barcode as SVG
     svg = render_svg(codes)  # ElementTree object
@@ -509,7 +509,7 @@ def sortDocumentsDate(self, inputObj):
     dateList = inputObj[0]
     descList = inputObj[1]
     pageList = inputObj[2]
-    list_of_dates= [datetime.strptime(date,"%Y-%m-%d") for date in dateList]
+    list_of_dates= [datetime.strptime(date,"%d/%m/%Y") for date in dateList]
     dateListNew = [x for _,x in sorted(zip(list_of_dates, dateList))]
     descListNew = [x for _,x in sorted(zip(list_of_dates, descList))]
     pageListTemp = [x for _,x in sorted(zip(list_of_dates, pageList))]
@@ -546,3 +546,40 @@ def anonymityDoc(self, can, inputObj):
 def modifyCountryNames(initialName):
     tempList = initialName.split("(")
     return tempList[0]
+
+
+# def extraStOfFactsPage(self, inputObj):
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.rl_config import defaultPageSize
+from reportlab.lib.units import inch
+PAGE_HEIGHT=defaultPageSize[1]
+PAGE_WIDTH=defaultPageSize[0]
+styles = getSampleStyleSheet()
+Title = "Hello world"
+pageinfo = "platypus example"
+
+def myFirstPage(canvas, doc):
+    canvas.saveState()
+    canvas.setFont('Times-Bold',16)
+    canvas.drawCentredString(PAGE_WIDTH/2.0, PAGE_HEIGHT-108, Title)
+    canvas.setFont('Times-Roman',9)
+    canvas.drawString(inch, 0.75 * inch,"First Page / %s" % pageinfo)
+    canvas.restoreState()
+
+def myLaterPages(canvas, doc):
+    canvas.saveState()
+    canvas.setFont('Times-Roman', 9)
+    canvas.drawString(inch, 0.75 * inch,"Page %d %s" % (doc.page, pageinfo))
+    canvas.restoreState()
+
+def go():
+    doc = SimpleDocTemplate("phello.pdf")
+    Story = [Spacer(1,2*inch)]
+    style = styles["Normal"]
+    for i in range(100):
+        bogustext = ("Paragraph number %s. " % i) *20
+        p = Paragraph(bogustext, style)
+        Story.append(p)
+        Story.append(Spacer(1,0.2*inch))
+    doc.build(Story, onFirstPage=myFirstPage, onLaterPages=myLaterPages)

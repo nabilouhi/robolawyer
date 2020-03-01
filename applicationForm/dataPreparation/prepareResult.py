@@ -98,6 +98,7 @@ class PrepareResult:
         
         self.createAnonymityDoc(self.inputObj['page2']['page2[applicantAnonExp]'])
         self.create_New_Pdf(docs)    
+        go()
         
         self.watermark('applicationForm/dataPreparation/pages/App_form_page_1.pdf',
                        'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_1.pdf', output1)
