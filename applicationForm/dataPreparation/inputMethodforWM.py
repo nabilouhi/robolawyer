@@ -332,7 +332,7 @@ def eleventhPageInputs(self, can, inputObj, secondInput):
                 t.setFont(customFont, customFontSize)
                 intInvestigationDesc = secondInput['page7[intInvestigationDesc]']
                 newIntInvestigationDesc = "\n".join(wrap(intInvestigationDesc, 82))
-                t.setTextOrigin(25, 390)
+                t.setTextOrigin(25, 400)
                 t.textLines(newIntInvestigationDesc)
                 can.drawText(t)
             elif secondInput["page7[intInvestigation]"] == 'No':
@@ -364,7 +364,7 @@ def twelvthPageInputs(self, can, inputObj):
     else:
         [dateListNew, descListNew, pageListNew, pageListTemp] = sortDocumentsDate(self, inputObj)
         pageListNew = add_one_by_one(pageListTemp)
-        yCoord = 665
+        yCoord = 668
         for item in range(len(inputObj[0])):
             t1 = can.beginText()
             t1.setFont(customFont, customFontSize)
@@ -385,7 +385,7 @@ def twelvthPageInputs(self, can, inputObj):
             t2 = can.beginText()
             t2.setFont(customFont, customFontSize)
             newPage = "\n".join(wrap(page, 5))
-            t2.setTextOrigin(550, yCoord)
+            t2.setTextOrigin(550, yCoord-10)
             t2.textLines(newPage)
             can.drawText(t2)
             yCoord -= nextLineForPage12(len(desc), 70, 8.5)
