@@ -12,6 +12,9 @@ import re
 import shutil
 from pathlib import Path
 from .inputMethodforWM import *
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class PrepareResult:
@@ -96,9 +99,23 @@ class PrepareResult:
         output12 = self.create_watermark_pdf(docs, pos=12)
         output13 = self.create_watermark_pdf(self.inputObj['page9'], pos=13, tempInput=codeList)
         
-        self.createAnonymityDoc(self.inputObj['page2']['page2[applicantAnonExp]'])
-        self.create_New_Pdf(docs)    
-        go()
+
+        self.create_New_Pdf(docs)
+        # print(self.inputObj)
+        anonValue = self.inputObj['page2']['page2[applicantAnonExp]']
+        anonValue = anonValue.replace(" ", "")
+        if anonValue != '':
+            filenameAnon = 'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_14.pdf'
+            go(filenameAnon, self.inputObj['page2']['page2[applicantAnonExp]'], anonymityPage)
+
+        sofValue = self.inputObj['page4']['page4[stOfFactsExtra]']
+        sofValue = sofValue.replace(" ", "")
+        if sofValue != '':
+            filenameStOfFacts = 'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_15.pdf'
+            go(filenameStOfFacts, self.inputObj['page4']['page4[stOfFactsExtra]'], extraStOfFactsFirstPage, extraStOfFactsLaterPage)
+
+        logger.warning("Your log message is here")
+
         
         self.watermark('applicationForm/dataPreparation/pages/App_form_page_1.pdf',
                        'applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/Result_form_page_1.pdf', output1)
@@ -221,3 +238,36 @@ class PrepareResult:
             can = canvas.Canvas(filename, pagesize=letter)
             can = anonymityDoc(self, can, inputObj)
             can.save()
+
+
+def anonymityPage(canvas, doc):
+    PAGE_HEIGHT=defaultPageSize[1]
+    PAGE_WIDTH=defaultPageSize[0]
+    pageinfo = "Request of Anonymity"
+    Title = "Request of Anonymity"
+    canvas.saveState()
+    canvas.setFont('Times-Bold',16)
+    canvas.drawCentredString(PAGE_WIDTH/2.0, PAGE_HEIGHT-108, Title)
+    canvas.setFont('Times-Roman',9)
+    canvas.drawString(inch, 0.75 * inch,"/ %s" % pageinfo)
+    canvas.restoreState()
+
+def extraStOfFactsFirstPage(canvas, doc):
+    PAGE_HEIGHT=defaultPageSize[1]
+    PAGE_WIDTH=defaultPageSize[0]
+    pageinfo = "Statement of Facts(Extra)"
+    Title = "Statement of Facts"
+    canvas.saveState()
+    canvas.setFont('Times-Bold',16)
+    canvas.drawCentredString(PAGE_WIDTH/2.0, PAGE_HEIGHT-108, Title)
+    canvas.setFont('Times-Roman',9)
+    canvas.drawString(inch, 0.75 * inch," %s" % pageinfo)
+    canvas.restoreState()
+
+def extraStOfFactsLaterPage(canvas, doc):
+    pageinfo = "Statement of Facts (Extra)"
+    canvas.saveState()
+    canvas.setFont('Times-Roman', 9)
+    canvas.drawString(inch, 0.75 * inch,"Page %d %s" % (doc.page, pageinfo))
+    canvas.restoreState()
+ 

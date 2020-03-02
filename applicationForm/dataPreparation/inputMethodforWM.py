@@ -1,7 +1,10 @@
 from textwrap import wrap
 from reportlab.graphics import shapes
 from .countryCoordDict import coordinateDict
-
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.rl_config import defaultPageSize
+from reportlab.lib.units import inch
 customFont = 'Courier'
 customFontSize = 11
 
@@ -170,7 +173,7 @@ def fourthPageInputs(self, can, inputObj):
             can.drawString(310, 367, inputObj["page3[orglTel]"])
             can.drawString(310, 327, inputObj["page3[orglFax]"])
             can.drawString(310, 407, inputObj["page3[orglEmail]"])
-            can.drawString(25, 37, inputObj["page3[orgIndeComms]"])
+            can.drawString(25, 30, inputObj["page3[orgIndeComms]"])
     
         else:
             can.drawString(25, 37, inputObj["page3[indIndeCommsSelf]"])
@@ -549,37 +552,20 @@ def modifyCountryNames(initialName):
 
 
 # def extraStOfFactsPage(self, inputObj):
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
-from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.rl_config import defaultPageSize
-from reportlab.lib.units import inch
-PAGE_HEIGHT=defaultPageSize[1]
-PAGE_WIDTH=defaultPageSize[0]
-styles = getSampleStyleSheet()
-Title = "Hello world"
-pageinfo = "platypus example"
 
-def myFirstPage(canvas, doc):
-    canvas.saveState()
-    canvas.setFont('Times-Bold',16)
-    canvas.drawCentredString(PAGE_WIDTH/2.0, PAGE_HEIGHT-108, Title)
-    canvas.setFont('Times-Roman',9)
-    canvas.drawString(inch, 0.75 * inch,"First Page / %s" % pageinfo)
-    canvas.restoreState()
 
-def myLaterPages(canvas, doc):
-    canvas.saveState()
-    canvas.setFont('Times-Roman', 9)
-    canvas.drawString(inch, 0.75 * inch,"Page %d %s" % (doc.page, pageinfo))
-    canvas.restoreState()
 
-def go():
-    doc = SimpleDocTemplate("phello.pdf")
+
+
+
+
+def go(filename, textString, firstPage, laterPage=None):
+    styles = getSampleStyleSheet()
+    doc = SimpleDocTemplate(filename)
     Story = [Spacer(1,2*inch)]
     style = styles["Normal"]
-    for i in range(100):
-        bogustext = ("Paragraph number %s. " % i) *20
-        p = Paragraph(bogustext, style)
-        Story.append(p)
-        Story.append(Spacer(1,0.2*inch))
-    doc.build(Story, onFirstPage=myFirstPage, onLaterPages=myLaterPages)
+    
+    p = Paragraph(textString, style)
+    Story.append(p)
+    Story.append(Spacer(1,0.2*inch))
+    doc.build(Story, onFirstPage=firstPage)

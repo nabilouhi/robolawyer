@@ -8,6 +8,8 @@ import json
 from django.conf import settings
 from django.core.mail import send_mail
 import os
+import logging
+logger = logging.getLogger(__name__)
 
 class FormPageView(TemplateView):
     template_name = "applicationForm/form.html"
@@ -16,7 +18,6 @@ class FormPageView(TemplateView):
 def formProcessing(request):
     import uuid
     sessionID = uuid.uuid4().hex
-    print(sessionID)
     spclReplies = []
     filepath = os.path.join(settings.BASE_DIR, 'applicationForm/dataPreparation/results/'+sessionID+'/finalPage/finalForm.pdf')
     if request.method == 'POST':
@@ -42,6 +43,8 @@ def formProcessing(request):
             pages[page] = dict((key, value) for key, value in form_dict.items() if page in key.lower())
         prepareResult = PrepareResult(pages, sessionID, spclReplies)
         prepareResult.main()  
+        logger.warning("Your log message is here")
+
     return FileResponse(open(filepath, 'rb'), content_type='application/pdf')    
     # return render(request, 'applicationForm/finalPage.html', {'filepath': filepath})
 

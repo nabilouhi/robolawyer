@@ -187,3 +187,44 @@ REST_FRAMEWORK = {
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+
+
+# try:
+#     from .logger_settings import *
+# except Exception as e:
+#     pass
+LOGGING = {
+    'version': 1,
+    # Version of logging
+    'disable_existing_loggers': False,
+    #disable logging ,
+    'formatters': {
+        'console': {
+            # exact format is not important, this is the minimum information
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+        },
+    },
+    # Handlers #############################################################
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'justbot-debug.log',
+            'formatter': 'console'
+        },
+########################################################################
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'console'
+        },
+    },
+    # Loggers ####################################################################
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'WARNING',
+            'propagate': True,
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG')
+        },
+    },
+}
