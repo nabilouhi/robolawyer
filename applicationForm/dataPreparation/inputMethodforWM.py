@@ -38,9 +38,9 @@ def firstPageInputs(self, can, inputObj):
         can.drawString(25, 70, inputObj["page2[indEmail]"])
 
         if "page2[applicantSex]" in inputObj:
-            if  inputObj["page2[applicantSex]"] == 'Male':
+            if  inputObj["page2[applicantSex]"] == 'M':
                 can.circle(78,46, 4, fill=1)
-            elif inputObj["page2[applicantSex]"] == 'Female':
+            elif inputObj["page2[applicantSex]"] == 'F':
                 can.circle(148, 46, 4, fill=1)
         else:
             print("no value entered")
@@ -499,7 +499,7 @@ def barcodeMaker(self, formInputs, applicantCode):
     text = formInputs
 
     # Convert to code words
-    codes = encode(text, columns=12)
+    codes = encode(text, columns=10, security_level=2)
 
     # Generate barcode as SVG
     svg = render_svg(codes)  # ElementTree object

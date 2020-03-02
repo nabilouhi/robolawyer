@@ -11,6 +11,14 @@ $('#indNLNationality').countrySelect(options);
 $('#orgnlNationality').countrySelect(options);
 $('#orglNationality').countrySelect(options);
 
+$('#indPob').onchange(function(){
+  tempArray = $('#indPob').split("(");
+  console.log(tempArray);
+  $('#indPob').val(tempArray[0]);
+})
+
+
+
 // var countrySelect = function(countryID, telID) {
 //   var countryData = window.intlTelInputGlobals.getCountryData(),
 //     countryInput = document.querySelector(telID),

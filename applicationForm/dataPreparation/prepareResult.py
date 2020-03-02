@@ -69,16 +69,16 @@ class PrepareResult:
         codeList = []
         barCodeText = "ENG - 2018/1|"
         for key, value in self.inputObj['page2'].items():
-            if key not in ["page2[applicantType]", "page2[applicantAnon]", "page2[applicantAnonExp]"]:
+            if key not in ["page2[applicantType]", "page2[applicantAnon]", "page2[applicantAnonExp]", "page2[indAddress]", "page2[orgAddress]"]:
                 barCodeText+= value+"|"
 
         for key, value in self.inputObj['page3'].items():
-            if key not in ["page3[indRepresentativeType]","page3[indNLCapacity]", "page3[orgnlCapacity]"]:
+            if key not in ["page3[indRepresentativeType]","page3[indNLCapacity]", "page3[orgnlCapacity]", "page3[orgnlAddress]", "page3[orglAddress]", "page3[indNLAddress]", "page3[indLAddress]"]:
                 barCodeText+= value+"|"
         codeList.append(barCodeText)
         codeList.append(self.sessionID)
 
-
+        print(barCodeText)
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/')
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/watermark/')
         output1 = self.create_watermark_pdf(self.inputObj['page2'], pos=1)
@@ -249,7 +249,14 @@ def anonymityPage(canvas, doc):
     canvas.setFont('Times-Bold',16)
     canvas.drawCentredString(PAGE_WIDTH/2.0, PAGE_HEIGHT-108, Title)
     canvas.setFont('Times-Roman',9)
-    canvas.drawString(inch, 0.75 * inch,"/ %s" % pageinfo)
+    canvas.drawString(inch, 0.75 * inch,"Page %s" % pageinfo)
+    canvas.restoreState()
+
+def anonymityLaterPages(canvas, doc):
+    pageinfo = "Request of Anonymity"
+    canvas.saveState()
+    canvas.setFont('Times-Roman', 9)
+    canvas.drawString(inch, 0.75 * inch,"Page %d %s" % (doc.page, pageinfo))
     canvas.restoreState()
 
 def extraStOfFactsFirstPage(canvas, doc):
