@@ -277,4 +277,3 @@ def extraStOfFactsLaterPage(canvas, doc):
     canvas.setFont('Times-Roman', 9)
     canvas.drawString(inch, 0.75 * inch,"Page %d %s" % (doc.page, pageinfo))
     canvas.restoreState()
- 

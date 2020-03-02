@@ -11,11 +11,6 @@ $('#indNLNationality').countrySelect(options);
 $('#orgnlNationality').countrySelect(options);
 $('#orglNationality').countrySelect(options);
 
-$('#indPob').onchange(function(){
-  tempArray = $('#indPob').split("(");
-  console.log(tempArray);
-  $('#indPob').val(tempArray[0]);
-})
 
 
 

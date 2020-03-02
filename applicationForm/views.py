@@ -85,6 +85,6 @@ def download(request, path):
         raise Http404()
 
 
-def finalView(request):
-    filerequest = download(request, filepath)
-    return render(request, )
+# def finalView(request):
+#     filerequest = download(request, filepath)
+#     return render(request, )
