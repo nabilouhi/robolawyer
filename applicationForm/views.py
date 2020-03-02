@@ -41,6 +41,7 @@ def formProcessing(request):
         pages = {}
         for page in pagesName:
             pages[page] = dict((key, value) for key, value in form_dict.items() if page in key.lower())
+
         prepareResult = PrepareResult(pages, sessionID, spclReplies)
         prepareResult.main()  
         logger.warning("Your log message is here")
