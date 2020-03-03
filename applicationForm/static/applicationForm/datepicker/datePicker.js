@@ -1,4 +1,4 @@
-$(document).ready(function() {
+function addDatepicker() {
   $('.datepicker').datepicker({
     weekStart: 1,
     assumeNearbyYear: true,
@@ -7,5 +7,13 @@ $(document).ready(function() {
     clearBtn: true,
     format: "dd/mm/yyyy",
     todayHighlight: true,
+    format: {
+      toDisplay: 'dd-mm-yyyy',
+      toValue: 'dd-mm-yyyy'
+        },
   });
-});
+}
+
+$('document').on('focus',".datepicker", function(){
+  $(this).addDatepicker();
+})
