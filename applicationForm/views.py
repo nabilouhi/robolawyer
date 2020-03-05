@@ -32,6 +32,7 @@ def formProcessing(request):
         spclReplies.append(request.POST.getlist('page6[remediesUsed]'))
 
         spclReplies.append(request.POST.getlist('page8[finalDecisionDate]'))
+        spclReplies.append(request.POST.getlist('page8[docTitle]'))
         spclReplies.append(request.POST.getlist('page8[docDescription]'))
         spclReplies.append(request.POST.getlist('page8[pageNumber]'))
 

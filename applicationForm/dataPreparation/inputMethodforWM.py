@@ -170,9 +170,9 @@ def fourthPageInputs(self, can, inputObj):
             t.setTextOrigin(310, 548)
             t.textLines(newAddressFive)
             can.drawText(t)
-            can.drawString(310, 367, inputObj["page3[orglTel]"])
-            can.drawString(310, 327, inputObj["page3[orglFax]"])
-            can.drawString(310, 407, inputObj["page3[orglEmail]"])
+            can.drawString(310, 407, inputObj["page3[orglTel]"])
+            can.drawString(310, 367, inputObj["page3[orglFax]"])
+            can.drawString(310, 327, inputObj["page3[orglEmail]"])
             can.drawString(25, 30, inputObj["page3[orgIndeComms]"])
     
         else:
@@ -365,33 +365,48 @@ def twelvthPageInputs(self, can, inputObj):
     if inputObj[0] == ['']:
         print("no value entered twelvth")
     else:
-        [dateListNew, descListNew, pageListNew, pageListTemp] = sortDocumentsDate(self, inputObj)
+        [dateListNew, titleListNew, descListNew, pageListNew, pageListTemp] = sortDocumentsDate(self, inputObj)
         pageListNew = add_one_by_one(pageListTemp)
-        yCoord = 668
+        yCoord = 666
         for item in range(len(inputObj[0])):
             t1 = can.beginText()
             t1.setFont(customFont, customFontSize)
             if len(inputObj[0]) > 1:
                 desc = descListNew[item]
+                title = titleListNew[item]
                 page = pageListNew[item]
             elif len(inputObj[0]) == 1:
                 desc = descListNew[0]
+                title = titleListNew[0]  
                 page = pageListNew[0]
             else:
                 print("error reported in TwelvethPageInputs")
+            can.setFont('Courier-Bold', 12)
+            can.drawString(40, yCoord, title)
+            can.setFont('Courier', 11)
+            can.drawString(40, yCoord-12, desc)
+            can.drawString(550, yCoord-12, page)
 
-            newDesc = "\n".join(wrap(desc, 73))
-            t1.setTextOrigin(40, yCoord)
-            t1.textLines(newDesc)
-            can.drawText(t1)
+            # newDesc = "\n".join(wrap(desc, 73))
+            # t1.setTextOrigin(40, yCoord)
+            # t1.textLines(newDesc)
+            # can.drawText(t1)
 
-            t2 = can.beginText()
-            t2.setFont(customFont, customFontSize)
-            newPage = "\n".join(wrap(page, 5))
-            t2.setTextOrigin(550, yCoord-10)
-            t2.textLines(newPage)
-            can.drawText(t2)
-            yCoord -= nextLineForPage12(len(desc), 70, 8.5)
+            # t1 = can.beginText()
+            # t1.setFont(customFont, customFontSize)
+            # newPage = "\n".join(wrap(page, 5))
+            # t1.setTextOrigin(550, yCoord-10)
+            # t1.textLines(newPage)
+            # can.drawText(t1)
+            # yCoord -= nextLineForPage12(len(desc), 70, 8.5)
+
+            # t3 = can.beginText()
+            # t3.setFont(customFont, customFontSize)
+            # newPage = "\n".join(wrap(page, 5))
+            # t3.setTextOrigin(550, yCoord-10)
+            # t3.textLines(newPage)
+            # can.drawText(t3)
+            yCoord -= 26
 
     can.showPage()
     return can
@@ -510,14 +525,16 @@ def sortDocumentsDate(self, inputObj):
     from datetime import datetime
     indexList = []
     dateList = inputObj[0]
-    descList = inputObj[1]
-    pageList = inputObj[2]
+    titleList = inputObj[1]
+    descList = inputObj[2]
+    pageList = inputObj[3]
     list_of_dates= [datetime.strptime(date,"%d/%m/%Y") for date in dateList]
     dateListNew = [x for _,x in sorted(zip(list_of_dates, dateList))]
+    titleListNew = [x for _,x in sorted(zip(list_of_dates, titleList))]
     descListNew = [x for _,x in sorted(zip(list_of_dates, descList))]
     pageListTemp = [x for _,x in sorted(zip(list_of_dates, pageList))]
     pageListNew = add_one_by_one(pageListTemp)
-    return [dateListNew, descListNew, pageListNew, pageListTemp]
+    return [dateListNew, titleListNew, descListNew, pageListNew, pageListTemp]
 
 def bookmarkPageInputs(self, can, inputObj):
     title = inputObj[0] + " (" + inputObj[1] + " pages) "

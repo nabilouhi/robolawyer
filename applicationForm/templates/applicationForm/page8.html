@@ -89,18 +89,23 @@
                 <div class="r-group">
                   <table width="100%">
                     <tr>
-                      <td width="25%">
+                      <td width="10%">
                         <label><b>Date</b></label>
                         <input type="text" class="page8Date datepicker" name="page8[finalDecisionDate]"
                         data-date-end-date="0d" data-provide="datepicker" />
                       </td>
-                      <td width="60%" style="padding-right:10px;">
-                        <label for="docSelect"><b>Description</b></label>
+                      <td width="30%" style="padding-right:10px;">
+                        <label for="docSelect"><b>Document Title</b></label>
+                        <input class="form-control" name="page8[docTitle]" id="docTitle"
+                           maxlength="60">
+                      </td>
+                      <td width="55%" style="padding-right:10px;">
+                        <label for="docSelect"><b>Short Description</b></label>
                         <textarea class="form-control" name="page8[docDescription]" id="docSelect"
                           oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
-                          rows="2" maxlength="130"></textarea>
+                          rows="2" maxlength="80"></textarea>
                       </td>
-                      <td width="15%">
+                      <td width="5%">
                         <label><b>Number of Pages</b>
                           <a href="javascript://" data-toggle="popover"
                             data-content="Indicate the total number of pages in each document" data-trigger="click"

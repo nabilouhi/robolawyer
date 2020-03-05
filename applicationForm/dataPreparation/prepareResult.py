@@ -43,7 +43,6 @@ class PrepareResult:
         # filename = 'applicationForm/dataPreparation/App_form.pdf'
         # self.createOrDeleteDirectory('applicationForm/dataPreparation/pages')
         # self.pdf_splitter(filename)
-
         sof = self.inputObj['page4']['page4[stOfFacts]']
         sof1 = sof[:3890]
         sof2 = sof[3790:8140]
@@ -62,6 +61,7 @@ class PrepareResult:
         docs.append(self.spclReplies[6])
         docs.append(self.spclReplies[7])
         docs.append(self.spclReplies[8])
+        docs.append(self.spclReplies[9])
 
         paths = glob.glob(
             'applicationForm/dataPreparation/pages/App_form_page_*.pdf')

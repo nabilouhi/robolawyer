@@ -44,7 +44,10 @@ phoneInputScript('#indNLTel');
 phoneInputScript('#indLTel');
 phoneInputScript('#orgnlTel');
 phoneInputScript('#orglTel');
-
+phoneInputScript('#indNLFax');
+phoneInputScript('#indLFax');
+phoneInputScript('#orgnlFax');
+phoneInputScript('#orglFax');
 // geoIpLookup: function(success, failure) {
 //   $.get('http://ipinfo.io', function() {}, 'jsonp').always(function(resp) {
 //     var countryCode = resp && resp.country ? resp.country : '';
