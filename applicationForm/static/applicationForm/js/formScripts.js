@@ -39,7 +39,6 @@ $("input[name='page2[applicantAnon]']").change(function() {
 
 $("input[name='page3[indRepresentativeType]']").change(function() {
   result = this.value;
-  console.log(result);
   if (result === 'lawyer') {
     $('#lawyerRep').removeClass('is-hidden');
     $('#nonLawyerRep').addClass('is-hidden');

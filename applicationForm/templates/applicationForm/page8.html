@@ -92,18 +92,18 @@
                       <td width="10%">
                         <label><b>Date</b></label>
                         <input type="text" class="page8Date datepicker" name="page8[finalDecisionDate]"
-                        data-date-end-date="0d" data-provide="datepicker" />
+                        data-date-end-date="0d" data-provide="datepicker" required data-parsley-group="page8"/>
                       </td>
                       <td width="30%" style="padding-right:10px;">
                         <label for="docSelect"><b>Document Title</b></label>
                         <input class="form-control" name="page8[docTitle]" id="docTitle"
-                           maxlength="60">
+                           maxlength="60" required data-parsley-group="page8">
                       </td>
                       <td width="55%" style="padding-right:10px;">
                         <label for="docSelect"><b>Short Description</b></label>
                         <textarea class="form-control" name="page8[docDescription]" id="docSelect"
                           oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
-                          rows="2" maxlength="80"></textarea>
+                          rows="2" maxlength="80" required data-parsley-group="page8"></textarea>
                       </td>
                       <td width="5%">
                         <label><b>Number of Pages</b>
@@ -111,7 +111,7 @@
                             data-content="Indicate the total number of pages in each document" data-trigger="click"
                             data-placement="bottom"><span><i class="fas fa-question-circle"></i></span></a></label>
                             <br>
-                        <input type="number" name="page8[pageNumber]" id="noOfPage" class="form-control" min="1"></input>
+                        <input type="number" name="page8[pageNumber]" id="noOfPage" class="form-control" min="1" required data-parsley-group="page8"></input>
                       </td>
                     </tr>
                   </table>

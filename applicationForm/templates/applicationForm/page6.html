@@ -55,18 +55,18 @@
                   <tr>
                     <td width="25%">
                       <label for="complainSelect"><b>Complaint</b></label>
-                      <input name="page6[complainSelect]" class="form-control complainSelect" maxlength="100" />
+                      <input name="page6[complainSelect]" class="form-control complainSelect" maxlength="100" required data-parsley-group="page6"/>
                     </td>
                     <td width="30%">
                       <label><b>Date of Final Decision from the highest court</b>
                       </label>
-                      <input type="text" class="page6Date datepicker" name="page6[complaintDate]" data-date-end-date="0d" data-provide="datepicker" />
+                      <input type="text" class="page6Date datepicker" name="page6[complaintDate]" data-date-end-date="0d" data-provide="datepicker" required data-parsley-group="page6"/>
                     </td>
                     <td width="45%">
                       <label><b> Remedies Used</b></label>
                       <textarea class="form-control remedies" name="page6[remediesUsed]"
                         oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
-                        rows="3" maxlength="290"></textarea>
+                        rows="3" maxlength="290" required data-parsley-group="page6"></textarea>
                     </td>
                   </tr>
                 </table>

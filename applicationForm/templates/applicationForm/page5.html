@@ -77,7 +77,7 @@
                                     <tr>
                                         <td width="25%" style="padding-right:10px;border:none">
                                             <label for="articleSelect">Article Name</label>
-                                            <select name="page5[articleSelect]" class="form-control articleSelect">
+                                            <select name="page5[articleSelect]" class="form-control articleSelect" required data-parsley-group="page5">
                                                 <option disabled selected value>Select relevant article</option>
                                                 <option value="(Art. 1) Obligation to respect human rights"> (Art. 1) Obligation to respect human rights </option>
                                                 <option value="(Art. 2) Right to life"> (Art. 2) Right to life </option>
@@ -183,7 +183,7 @@
                                             <textarea class="form-control articleExplanation"
                                                 name="page5[articleExplanation]"
                                                 oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'
-                                                cols="30" rows="2" maxlength="590"></textarea>
+                                                cols="30" rows="2" maxlength="590" required data-parsley-group="page5"></textarea>
                                         </td>
                                     </tr>
                                 </table>

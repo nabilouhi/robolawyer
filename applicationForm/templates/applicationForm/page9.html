@@ -22,13 +22,13 @@
                             <p>Who will correspond with the court?</p>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" class="custom-control-input" id="signatureDeclarationApplicant"
-                                    name="page9[signatureDeclaration]" value="Applicant" data-parsley-group="page9">
+                                    name="page9[signatureDeclaration]" value="Applicant" required data-parsley-group="page9a">
                                 <label class="custom-control-label"
                                     for="signatureDeclarationApplicant">Applicant(s)</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" class="custom-control-input" id="signatureDeclarationRepresentative"
-                                    name="page9[signatureDeclaration]" value="Representative" data-parsley-group="page9">
+                                    name="page9[signatureDeclaration]" value="Representative" required data-parsley-group="page9a">
                                 <label class="custom-control-label"
                                     for="signatureDeclarationRepresentative">Representative(s)</label>
                             </div>
@@ -41,14 +41,14 @@
                                         nonlawyer).</p>
                                     <label for="confirmationApplicantName">Name of applicant</label>
                                     <input class="form-control" type="text" name="page9[confirmationApplicantName]"
-                                        id="confirmationApplicantName" maxlength="80">
+                                        id="confirmationApplicantName" maxlength="80" required data-parsley-group="page9b">
     
                                     <label for="confirmationApplicantAddress">Address of applicant <a href="javascript://" data-toggle="popover"
                                         data-content="An applicant must provide a postal address separate from that of a lawyer or representative so that the Court can make contact if necessary. An applicant who is homeless or has no fixed residence may have to give a box number or friend’s details but should provide an explanation."
                                         data-trigger="click" data-placement="bottom"><span><i
                                                 class="fas fa-question-circle"></i></span></a></label>
                                     <input class="form-control" type="text" name="page9[confirmationApplicantAddress]"
-                                        id="confirmationApplicantAddress" maxlength="300">
+                                        id="confirmationApplicantAddress" maxlength="300" required data-parsley-group="page9b">
                                 </div>
                                 <div class="is-hidden" id="correspondentOptionRepresentative">
                                     <label class="lead">Confirmation of correspondent</label>
@@ -60,11 +60,11 @@
                                         only with the representative (lawyer or nonlawyer).</p>
                                     <label for="confirmationRepresentativeName">Name of Representative</label>
                                     <input class="form-control" type="text" name="page9[confirmationRepresentativeName]"
-                                        id="confirmationRepresentativeName" maxlength="80">
+                                        id="confirmationRepresentativeName" maxlength="80" required data-parsley-group="page9c">
     
                                     <label for="confirmationRepresentativeAddress">Address of Representative</label>
                                     <input class="form-control" type="text" name="page9[confirmationRepresentativeAddress]"
-                                        id="confirmationRepresentativeAddress" maxlength="300">
+                                        id="confirmationRepresentativeAddress" maxlength="300" required data-parsley-group="page9c">
                                 </div>
                             </div>
                             <div class="alert alert-danger">
