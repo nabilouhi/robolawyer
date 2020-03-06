@@ -143,7 +143,7 @@ def fourthPageInputs(self, can, inputObj):
         t = can.beginText()
         t.setFont(customFont, customFontSize)
         if inputObj["page3[orgRepresentativeType]"] == "orgNoLawyer":
-            can.drawString(25, 666, inputObj["page3[orgnlCapacity]"])
+            can.drawString(25, 666, inputObj["page3[orgCapacity]"])
             can.drawString(25, 626, inputObj["page3[orgnlSurname]"])
             can.drawString(25, 585, inputObj["page3[orgnlFirstName]"])
 
@@ -160,6 +160,7 @@ def fourthPageInputs(self, can, inputObj):
             can.drawString(25, 407, inputObj["page3[orgnlEmail]"])
 
         elif inputObj["page3[orgRepresentativeType]"] == "orgYesLawyer":
+            can.drawString(25, 666, inputObj["page3[orgCapacity]"])
             can.drawString(310, 666, inputObj["page3[orglSurname]"])
             can.drawString(310, 626, inputObj["page3[orglFirstName]"])
 
@@ -386,26 +387,6 @@ def twelvthPageInputs(self, can, inputObj):
             can.setFont('Courier', 11)
             can.drawString(40, yCoord-12, desc)
             can.drawString(550, yCoord-12, page)
-
-            # newDesc = "\n".join(wrap(desc, 73))
-            # t1.setTextOrigin(40, yCoord)
-            # t1.textLines(newDesc)
-            # can.drawText(t1)
-
-            # t1 = can.beginText()
-            # t1.setFont(customFont, customFontSize)
-            # newPage = "\n".join(wrap(page, 5))
-            # t1.setTextOrigin(550, yCoord-10)
-            # t1.textLines(newPage)
-            # can.drawText(t1)
-            # yCoord -= nextLineForPage12(len(desc), 70, 8.5)
-
-            # t3 = can.beginText()
-            # t3.setFont(customFont, customFontSize)
-            # newPage = "\n".join(wrap(page, 5))
-            # t3.setTextOrigin(550, yCoord-10)
-            # t3.textLines(newPage)
-            # can.drawText(t3)
             yCoord -= 26
 
     can.showPage()
