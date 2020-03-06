@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (onValidate('page1')) {
         console.log('page1 passed');
         return true;
-      // }
+      }
     } else if (cur === 1) {
         if(onValidate('page2')){
             console.log('page2 passed');
@@ -195,12 +195,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return true;
               }
             }
-            console.log('page 9 passed');
-            
-            
-            return true;
           } 
         }
         return false;
       }
-    }
+    
+  
