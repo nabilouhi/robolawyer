@@ -78,7 +78,6 @@ class PrepareResult:
         codeList.append(barCodeText)
         codeList.append(self.sessionID)
 
-        print(barCodeText)
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/finalPage/')
         self.createOrDeleteDirectory('applicationForm/dataPreparation/results/'+self.sessionID+'/watermark/')
         output1 = self.create_watermark_pdf(self.inputObj['page2'], pos=1)

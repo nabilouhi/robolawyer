@@ -161,6 +161,19 @@ def fourthPageInputs(self, can, inputObj):
 
         elif inputObj["page3[orgRepresentativeType]"] == "orgYesLawyer":
             can.drawString(25, 666, inputObj["page3[orgCapacity]"])
+            can.drawString(25, 626, inputObj["page3[orgnlSurname]"])
+            can.drawString(25, 585, inputObj["page3[orgnlFirstName]"])
+            orgnlNationalityNew = modifyCountryNames(inputObj["page3[orgnlNationality]"])
+            can.drawString(25, 548, orgnlNationalityNew)
+            addressFour = inputObj["page3[orgnlAddress]"]
+            newAddressFour = "\n".join(wrap(addressFour, 40))
+            t.setTextOrigin(25, 508)
+            t.textLines(newAddressFour)
+            can.drawText(t)
+            
+            can.drawString(25, 367, inputObj["page3[orgnlTel]"])
+            can.drawString(25, 327, inputObj["page3[orgnlFax]"])
+            can.drawString(25, 407, inputObj["page3[orgnlEmail]"])
             can.drawString(310, 666, inputObj["page3[orglSurname]"])
             can.drawString(310, 626, inputObj["page3[orglFirstName]"])
 
