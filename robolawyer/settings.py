@@ -37,6 +37,7 @@ EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
 EMAIL_HOST_USER=config('EMAIL_HOST_USER')
 EMAIL_PORT=config('EMAIL_PORT')
 EMAIL_USE_TLS=config('EMAIL_USE_TLS')
+ADMINS = [("Aman","aman54kumar@gmail.com")]
 
 
 
@@ -193,38 +194,105 @@ CORS_ALLOW_CREDENTIALS = True
 #     from .logger_settings import *
 # except Exception as e:
 #     pass
+# LOGGING = {
+#     'version': 1,
+#     # Version of logging
+#     'disable_existing_loggers': False,
+#     #disable logging ,
+#     'formatters': {
+#         'console': {
+#             # exact format is not important, this is the minimum information
+#             'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+#         },
+#     },
+#     # Handlers #############################################################
+#     'handlers': {
+#         'file': {
+#             'level': 'DEBUG',
+#             'class': 'logging.FileHandler',
+#             'filename': 'justbot-debug.log',
+#             'formatter': 'console'
+#         },
+# ########################################################################
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'console'
+#         },
+#     },
+#     # Loggers ####################################################################
+#     'loggers': {
+#         'django': {
+#             'handlers': ['file'],
+#             'level': 'WARNING',
+#             'propagate': True,
+#             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG')
+#         },
+#     },
+# }
+
+
+
 LOGGING = {
-    'version': 1,
-    # Version of logging
-    'disable_existing_loggers': False,
-    #disable logging ,
-    'formatters': {
+	'version': 1,
+	'disable_existing_loggers': False,
+	'filters': {
+		'require_debug_false': {
+			'()': 'django.utils.log.RequireDebugFalse',
+		},
+		'require_debug_true': {
+			'()': 'django.utils.log.RequireDebugTrue',
+		},
+	},
+	'formatters': {
+		'django.server': {
+			'()': 'django.utils.log.ServerFormatter',
+			'format': '[%(server_time)s] %(message)s',
+		},
         'console': {
             # exact format is not important, this is the minimum information
             'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
         },
-    },
-    # Handlers #############################################################
-    'handlers': {
+	},
+	'handlers': {
+		'console': {
+			'level': 'INFO',
+			'filters': ['require_debug_true'],
+			'class': 'logging.StreamHandler',
+		},
+		'console_debug_false': {
+			'level': 'ERROR',
+			'filters': ['require_debug_false'],
+			'class': 'logging.StreamHandler',
+		},
+		'django.server': {
+			'level': 'INFO',
+			'class': 'logging.StreamHandler',
+			'formatter': 'django.server',
+		},
+		'mail_admins': {
+        'level': 'ERROR',
+        'class': 'django.utils.log.AdminEmailHandler',
+        'include_html': True,
+        'filters': ['require_debug_false']
+        },
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'filename': 'justbot-debug.log',
             'formatter': 'console'
         },
-########################################################################
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'console'
-        },
-    },
-    # Loggers ####################################################################
-    'loggers': {
+	},
+	'loggers': {
         'django': {
-            'handlers': ['file'],
+            'handlers': ['console', 'console_debug_false', 'mail_admins'],
             'level': 'WARNING',
             'propagate': True,
             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG')
         },
-    },
+		'django.server': {
+			'handlers': ['django.server'],
+			'level': 'INFO',
+			'propagate': False,
+		}
+	}
 }
