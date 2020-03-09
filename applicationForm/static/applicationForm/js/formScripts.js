@@ -95,6 +95,9 @@ jQuery(document).ready(function($) {
 
 // })
 
+// if($("input'[page2[applicantAnon]']")).val === 'Yes'{
+//   getData = $(this).val();
+// }
 
 $('#page8Group').repeater({
               btnAddClass: 'r-btnAdd',

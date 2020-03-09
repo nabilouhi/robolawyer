@@ -6,7 +6,8 @@ dateValidator = function(dateSelector) {
     diffDate = moment(currentDate).diff(moment(result), 'days', true);
     if (!isNaN(diffDate)){
       if (diffDate >0) {
-        console.log("date fine")
+        console.log($(this).combodate('setValue', moment()));
+        $(this).combodate('setValue', moment())
       }
       else{
         swal("Future Date is not allowed. Please enter a valid date.");

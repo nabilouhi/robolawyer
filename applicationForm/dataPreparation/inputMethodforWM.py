@@ -388,13 +388,14 @@ def twelvthPageInputs(self, can, inputObj):
             if len(inputObj[0]) > 1:
                 desc = descListNew[item]
                 title = titleListNew[item]
-                page = pageListNew[item]
+                page = str(13+ int(pageListNew[item]))
             elif len(inputObj[0]) == 1:
                 desc = descListNew[0]
                 title = titleListNew[0]  
-                page = pageListNew[0]
+                page = str(13+ int(pageListNew[0]))
             else:
                 print("error reported in TwelvethPageInputs")
+                
             can.setFont('Courier-Bold', 12)
             can.drawString(40, yCoord, title)
             can.setFont('Courier', 11)
