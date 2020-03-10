@@ -1,3 +1,5 @@
+currentStep = 0
+
 document.addEventListener('DOMContentLoaded', function() {
     var stepperFormEl = document.querySelector('#stepperForm');
     stepperForm = new Stepper(stepperFormEl, {
@@ -6,55 +8,39 @@ document.addEventListener('DOMContentLoaded', function() {
       excluded:
         'input[type=button], input[type=submit], input[type=reset], input[type=hidden], :disabled'
     });
-    var form = stepperFormEl.querySelector('.bs-stepper-content form')
+    var form = stepperFormEl.querySelector('.bs-stepper-content form');
     stepperFormEl.addEventListener('show.bs-stepper', function(event) {
-      if (event.detail.from === 0) {
-        if (onValidate('page1')) {
-          console.log('page1 passed');
-        } else {
-          // alert('Please answer the mandatory fields first.');
-          // event.preventDefault();
-        }
-      } else if (event.detail.from === 1) {
-          if(onValidate('page2')){
-              console.log('page2 passed');
-              appVal = document.querySelector("input[name='applicantType']:checked").value;
-              console.log(appVal);
-              if (appVal === 'Individual') {
-                if (onValidate('page2a')) {
-                  console.log('page2a passed');
-                } else {
-                  alert('Please answer the mandatory fields first.');
-                  event.preventDefault();
-                  return;
-                }
-              } else if (appVal === 'Organisation') {
-                if (onValidate('page2b')) {
-                  console.log('page2b passed');
-                } else {
-                  alert('Please answer the mandatory fields first.');
-                  event.preventDefault();
-                  return;
-                }
-              } else {
-                console.log('check for bug');
-              }
-          }
-          else {
-              alert('Please answer 2 fields first');
-              event.preventDefault();
-          }     
-      } else if (event.detail.from === 2) {
-        if (onValidate('page3')) {
-          console.log('page3 passed');
-        } else {
-          alert('Please answer the mandatory fields first.');
+      stepDifference = event.detail.to - currentStep;
+      if (event.detail.to <= currentStep) {
+        if (event.detail.from != currentStep) {
+          if(!checkValidation(event.detail.from)){
+            currentStep = event.detail.from;
+            // stepperForm.to(event.detail.from+1);
+            swal('Please answer the mandatory fields first.');
           event.preventDefault();
+        } 
         }
       }
+      else if (stepDifference === 1){
+        // next from current page, validation required
+        if(!checkValidation(currentStep)){
+          swal('Please answer the mandatory fields first.');
+          event.preventDefault();
+        }
+        else{
+          currentStep = Math.max(currentStep, event.detail.to);
+        }
+      }
+      else {
+        stepperForm.to(currentStep+1);
+        swal('Please answer the mandatory fields first.');
+          event.preventDefault();
+      }
     });
+    
     stepperFormEl.addEventListener('shown.bs-stepper', function(event) {
-      console.warn(event.detail);
+
+      currentStep = Math.max(currentStep, event.detail.to);
     });
   
     var btnNextList = [].slice.call(document.querySelectorAll('.btn-next-form'));
@@ -87,11 +73,123 @@ document.addEventListener('DOMContentLoaded', function() {
           group: groupname
         })
     ) {
-      console.log('valid');
       return true;
     } else {
-      console.log(this);
-      console.log('invalid');
       return false;
     }
   }
+
+
+
+  function checkValidation(cur) {
+    if (cur===0) { 
+      if (onValidate('page1')) {
+        return true;
+      }
+    } else if (cur === 1) {
+        if(onValidate('page2')){
+            appVal = document.querySelector("input[name='page2[applicantType]']:checked").value;
+            if (appVal === 'Individual') {
+              if (onValidate('page2a')) {
+                return true;
+              } 
+            } else if (appVal === 'Organisation') {
+              if (onValidate('page2b')) {
+                return true;
+              } 
+            } else {
+            }
+        } 
+    } else if (cur === 2) {
+        appVal1 = document.querySelector("input[name='page2[applicantType]']:checked").value;
+            if (appVal1 === 'Individual'){
+              if (onValidate('page3a')){
+                appVal2 = document.querySelector("input[name='page3[indRepresentativeType]']:checked").value;                
+                  if (appVal2 === 'non-lawyer'){
+                  if(onValidate('page3b')) {
+                    return true;
+                  }
+                }
+                else if (appVal2 === 'lawyer'){
+                  if(onValidate('page3c')){
+                    return true;
+                  } 
+                } else if (appVal2 === 'selfRepresented') {
+                  return true;
+                }
+                else{
+                  console.log("problem in page 3 individual validation");
+                }
+              }
+            }
+            else{
+              if (onValidate('page3d')){
+                if (onValidate('page3e')){
+                    appVal = document.querySelector("input[name='page3[orgRepresentativeType]']:checked").value;
+                    if (appVal === 'orgYesLawyer'){
+                      if (onValidate('page3f')){
+                        return true;
+                        }
+                     }
+                    return true;
+                }
+               }
+            }
+    } else if (cur === 3) {
+      if (onValidate('page4')) {
+        return true;
+      } 
+    } else if (cur === 4) {
+      if (onValidate('page5')) {
+        return true;
+      } 
+    } else if (cur === 5) {
+      if (onValidate('page6')) {
+        return true;
+      } 
+    } else if (cur === 6) {
+      if (onValidate('page7a')) {
+        appVal = document.querySelector("input[name='page7[intInvestigation]']:checked").value;
+        if (appVal === 'Yes'){
+          if (onValidate('page7b')) {
+            return true;
+          }
+        }
+        else {
+          return true;
+        }
+      }
+      if (onValidate('page7c')) {
+        appVal = document.querySelector("input[name='page7[prevApplications]']:checked").value;
+        if (appVal === 'Yes'){
+          if (onValidate('page7d')) {
+            return true;
+          }
+        } 
+        else {
+          return true;
+        }
+      }
+    } else if (cur === 7) {
+        if (onValidate('page8')) {
+          return true;
+        } 
+      } else if (cur === 8) {
+          if (onValidate('page9a')) {
+            appVal = document.querySelector("input[name='page9[signatureDeclaration]']:checked").value;
+            if (appVal === 'Applicant') {
+              if (onValidate('page9b')) {
+                return true;
+              }
+            }
+            else{
+              if (onValidate('page9c')) {
+                return true;
+              }
+            }
+          } 
+        }
+        return false;
+      }
+    
+  

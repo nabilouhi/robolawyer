@@ -10,17 +10,13 @@
                     <ol>
                         <li>
                             <h5>
-                                Which state is concerned by your application? <a href="javascript://" data-toggle="popover" data-content="The court is competent to assess allegation involving only the states that are signatory of the European Convention on Human Rights." data-trigger="click" data-placement="bottom">
+                                Which state/s is/are concerned by your application? <a href="javascript://" data-toggle="popover" data-content="If the State you complain against is not amongst those enumerated below, your application is inadmissible. The Court is competent to assess only allegations involving one or several of the 47 member states of the Council of Europe." data-trigger="click" data-placement="bottom">
                                 <span><i class="fas fa-question-circle"></i></span></a>
 
                             </h5>
                             <div id="map"></div>
                             <div class="form-group">
-                                <label for="involvedStates" class="lead"> Select the name(s) of the State(s) against
-                                    which
-                                    the
-                                    application is
-                                    directed.</label>
+                                <label for="involvedStates" class="lead"> Select the name(s) of the State(s) against which the application is directed.</label>
                                 <select multiple class="countrySelect show-menu-arrow form-control dropup" size="15"
                                     name="page1[involvedStates]" id="involvedStates" data-parsley-mincheck="1"
                                     data-parsley-group="page1" required >
@@ -43,9 +39,7 @@
                                     <option value="FIN - Finland">FIN - Finland</option>
                                     <option value="FRA - France">FRA - France</option>
                                     <option value="GBR - United Kingdom">GBR - United Kingdom</option>
-                                    <
-                                        option value="GEO - Georgia">GEO - Georgia</
-                                        option>
+                                    <option value="GEO - Georgia">GEO - Georgia</option>
                                     <option value="GRC - Greece">GRC - Greece</option>
                                     <option value="HRV - Croatia">HRV - Croatia</option>
                                     <option value="HUN - Hungary">HUN - Hungary</option>
@@ -92,11 +86,17 @@
                                             name="page1[concernYou]" value="No" data-parsley-errors-container="#error-container-concern" data-parsley-group="page1">
                                         <label class="custom-control-label" for="concernYouNo">A close relative who
                                             is
-                                            unable to lodge an application himself or herself <a
-                                                href="javascript://" data-toggle="popover"
-                                                data-content="Grounds for not being able to lodge the application: death, disappearance. In this case the next of kind becomes the “victim”. Show legitimate interest in pursuing the application before the court as heir/next of kin."
-                                                data-trigger="click" data-placement="bottom"><span><i
-                                                        class="fas fa-question-circle"></i></span></a>
+                                            unable to lodge an application himself or herself 
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="concernYouOther"
+                                            name="page1[concernYou]" value="Other" data-parsley-errors-container="#error-container-concern" data-parsley-group="page1">
+                                        <label class="custom-control-label" for="concernYouOther">A person under your care or responsibility or a person with whom you share a sufficiently close link and who is unable to submit the application themselves <a href="javascript://"
+                                            data-toggle="popover"
+                                            data-content="The Convention institutions have held that special considerations may arise in the case of victims of alleged breaches of Articles 2 (right to life), 3 (prohibition of torture) and 8 (right to respect for private and family life) at the hands of the national authorities. In this case you need to show legitimate interest in pursuing the application before the Court."
+                                            data-trigger="click" data-placement="bottom"><span><i
+                                                    class="fas fa-question-circle"></i></span></a>
                                         </label>
                                     </div>
                                 </div>
@@ -118,9 +118,7 @@
                         <br>
                         <li>
                             <h5>
-                                Have you brought your case in the final instance before the highest court competent to
-                                deal
-                                with the subject matter of your dispute? The competent national courts in the selected
+                                Have you brought your case before the highest court competent to deal with the subject matter of your dispute?  The competent national courts in the selected
                                 state(s) are
                                 in principle:</h5>
                             <table class="table-bodered" id="courtTable" cellspacing="0">
@@ -132,7 +130,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="courtData">
-                                </tbody>
+                                </tbody> 
                             </table> <br><br>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" class="custom-control-input" id="courtCaseYes"
@@ -147,7 +145,11 @@
                             <br>
                         </li> <br><br>
                         <li>
-                            <h5>Were there available legal remedies that you have not used?</h5>
+                            <h5>Were there available legal or administrative remedies capable of remedying your situation that you have not used? <a href="javascript://"
+                                data-toggle="popover"
+                                data-content="Before you apply to the Court, you need to exhaust domestic remedies. The only remedies the Convention requires to be exhausted are those that relate to the breaches alleged and those that are available, effective and sufficient. Essential is that the competent national authorities analyzed the merits of your claim/claims."
+                                data-trigger="click" data-placement="bottom"><span><i
+                                        class="fas fa-question-circle"></i></span></a></h5>
 
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" class="custom-control-input" id="complySixYes"
@@ -161,7 +163,7 @@
                             </div>
                         </li> <br><br>
                         <li>
-                            <h5> When was the final decision from the highest domestic court communicated to you? <a
+                            <h5> When was the final decision in your case delivered or served on you? <a
                                     href="javascript://" data-toggle="popover" data-content="You are strongly advised to send your application form as soon as practicable after the last
                         remedy in the national system has been exhausted or where there are no remedies as soon as
                         possible after the events being complained about. If an applicant misses something out in the

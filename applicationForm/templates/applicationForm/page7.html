@@ -22,12 +22,12 @@
                                 <br>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="intInvestigationYes"
-                                name="page7[intInvestigation]" value="Yes" required data-parsley-group="">
+                                name="page7[intInvestigation]" value="Yes" required data-parsley-group="page7a">
                             <label class="custom-control-label" for="intInvestigationYes">Yes</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="intInvestigationNo"
-                                name="page7[intInvestigation]" value="No" required data-parsley-group="">
+                                name="page7[intInvestigation]" value="No" required data-parsley-group="page7a">
                             <label class="custom-control-label" for="intInvestigationNo">No</label>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                             and date and nature of any decisions given) </label>
                         <textarea class="form-control" name="page7[intInvestigationDesc]" id="intInvestigationDesc"
                             oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
-                            rows="10"></textarea>
+                            rows="10" maxlength="1470" required data-parsley-group="page7b"></textarea>
                     </div>
                     <br>
                     <hr>
@@ -61,12 +61,12 @@
                                 <br>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="prevApplicationsYes"
-                                name="page7[prevApplications]" value="Yes" required data-parsley-group="">
+                                name="page7[prevApplications]" value="Yes" required data-parsley-group="page7c">
                             <label class="custom-control-label" for="prevApplicationsYes">Yes</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="prevApplicationsNo"
-                                name="page7[prevApplications]" value="No" required data-parsley-group="">
+                                name="page7[prevApplications]" value="No" required data-parsley-group="page7c">
                             <label class="custom-control-label" for="prevApplicationsNo">No</label>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                             number(s) in the box below</label>
                         <textarea class="form-control" name="page7[prevAppDesc]" id="prevAppDesc"
                             oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
-                            rows="10"></textarea>
+                            rows="10" maxlength="320" required data-parsley-group="page7d"></textarea>
                     </div>
                     <div class="card-footer" >
                	<div class="row">

@@ -10,86 +10,69 @@
                     <label for="#formComments" class="lead">Any Other Comments</label>
                     <div class="form-group" style="text-align: left;">
                         <p>Do you have any other comments about your application?</p>
-                        <textarea class="form-control" name="formComments" id="formComments" cols="30"
-                            rows="5"></textarea>
+                        <textarea maxlength="400" class="limitedArea form-control" name="page9[formComments]" id="formComments" cols="30"
+                            rows="3"></textarea>
                     </div>
-
                     <label class="lead">Declaration and Signature</label>
                     <div style="text-align: left;">
                         <label>You must declare that, to the best of your knowledge and belief, 
                         the information you have given in the present application form is correct.</label>
-                        <!-- <div class="form-group col-sm-6">
-                           <label>Date</label>
-                            <input type="text" class="date" name="page9[declarationDate]" id="declarationDate"
-                                data-template='DD MMM YYYY'>
-                            <div class="input-group-addon">
-                                <span class="glyphicon glyphicon-th"></span>
-                            </div>
-                        </div>-->
                         <div class="form-group">
                             
                             <p>Who will correspond with the court?</p>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" class="custom-control-input" id="signatureDeclarationApplicant"
-                                    name="page9[signatureDeclaration]" value="Applicant" required
-                                    data-parsley-group="page9">
+                                    name="page9[signatureDeclaration]" value="Applicant" required data-parsley-group="page9a">
                                 <label class="custom-control-label"
                                     for="signatureDeclarationApplicant">Applicant(s)</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" class="custom-control-input" id="signatureDeclarationRepresentative"
-                                    name="page9[signatureDeclaration]" value="Representative" required
-                                    data-parsley-group="page9">
+                                    name="page9[signatureDeclaration]" value="Representative" required data-parsley-group="page9a">
                                 <label class="custom-control-label"
                                     for="signatureDeclarationRepresentative">Representative(s)</label>
                             </div>
-                            <!--<div class="custom-file">
-                                <label class="custom-file-label" for="declareSignature">Upload an image file of your
-                                    signature</label>
-                                <input disabled class="custom-file-input files" type="file" name="page9[declareSignature][]"
-                                    id="declareSignature">
-                            </div>-->
+                            <div class="form-group">
+                                <div class="is-hidden" id="correspondentOptionApplicant">
+                                    <label class="lead">Confirmation of correspondent</label>
+                                    <p align="justified"> If there is more than one applicant or more than one representative, please give
+                                        the name and address of the one person with whom the Court will correspond. Where the
+                                        applicant is represented, the Court will correspond only with the representative (lawyer or
+                                        nonlawyer).</p>
+                                    <label for="confirmationApplicantName">Name of applicant</label>
+                                    <input class="form-control" type="text" name="page9[confirmationApplicantName]"
+                                        id="confirmationApplicantName" maxlength="80" required data-parsley-group="page9b">
+    
+                                    <label for="confirmationApplicantAddress">Address of applicant <a href="javascript://" data-toggle="popover"
+                                        data-content="An applicant must provide a postal address separate from that of a lawyer or representative so that the Court can make contact if necessary. An applicant who is homeless or has no fixed residence may have to give a box number or friend’s details but should provide an explanation."
+                                        data-trigger="click" data-placement="bottom"><span><i
+                                                class="fas fa-question-circle"></i></span></a></label>
+                                    <input class="form-control" type="text" name="page9[confirmationApplicantAddress]"
+                                        id="confirmationApplicantAddress" maxlength="300" required data-parsley-group="page9b">
+                                </div>
+                                <div class="is-hidden" id="correspondentOptionRepresentative">
+                                    <label class="lead">Confirmation of correspondent</label>
+                                    <p> If there is more than one representative, please give the
+                                        name
+                                        and address of the one person with whom
+                                        the Court will correspond. Where the applicant is represented, the Court will
+                                        correspond
+                                        only with the representative (lawyer or nonlawyer).</p>
+                                    <label for="confirmationRepresentativeName">Name of Representative</label>
+                                    <input class="form-control" type="text" name="page9[confirmationRepresentativeName]"
+                                        id="confirmationRepresentativeName" maxlength="80" required data-parsley-group="page9c">
+    
+                                    <label for="confirmationRepresentativeAddress">Address of Representative</label>
+                                    <input class="form-control" type="text" name="page9[confirmationRepresentativeAddress]"
+                                        id="confirmationRepresentativeAddress" maxlength="300" required data-parsley-group="page9c">
+                                </div>
+                            </div>
                             <div class="alert alert-danger">
                                <h5 class="lead"> Please Note: This section must contain original signatures of the applicant or his/her representative and
                                 the date must be added after the form has been printed out (page 13 of the printed application form). 
                                 <b>Failing to do so can result in the application being declared inadmissible.</b></h5>
                             </div>
                             <img src="{% static 'applicationForm/img/Signature-Final.png' %}" width="70%" style="border: #ea0000 solid 4px;">
-                        </div>
-                        <div class="form-group">
-                            <div class="is-hidden" id="correspondentOptionApplicant">
-                                <label class="lead">Confirmation of correspondent</label>
-                                <p align="justified"> If there is more than one applicant or more than one representative, please give
-                                    the name and address of the one person with whom the Court will correspond. Where the
-                                    applicant is represented, the Court will correspond only with the representative (lawyer or
-                                    nonlawyer).</p>
-                                <label for="confirmationApplicantName">Name of applicant</label>
-                                <input class="form-control" type="text" name="page9[confirmationApplicantName]"
-                                    id="confirmationApplicantName">
-
-                                <label for="confirmationApplicantAddress">Address of applicant <a href="javascript://" data-toggle="popover"
-                                    data-content="An applicant must provide a postal address separate from that of a lawyer or representative so that the Court can make contact if necessary. An applicant who is homeless or has no fixed residence may have to give a box number or friend’s details but should provide an explanation."
-                                    data-trigger="click" data-placement="bottom"><span><i
-                                            class="fas fa-question-circle"></i></span></a></label>
-                                <input class="form-control" type="text" name="page9[confirmationApplicantAddress]"
-                                    id="confirmationApplicantAddress">
-                            </div>
-                            <div class="is-hidden" id="correspondentOptionRepresentative">
-                                <label class="lead">Confirmation of correspondent</label>
-                                <p> If there is more than one representative, please give the
-                                    name
-                                    and address of the one person with whom
-                                    the Court will correspond. Where the applicant is represented, the Court will
-                                    correspond
-                                    only with the representative (lawyer or nonlawyer).</p>
-                                <label for="confirmationRepresentativeName">Name of Representative</label>
-                                <input class="form-control" type="text" name="page9[confirmationRepresentativeName]"
-                                    id="confirmationRepresentativeName">
-
-                                <label for="confirmationRepresentativeAddress">Address of Representative</label>
-                                <input class="form-control" type="text" name="page9[confirmationRepresentativeAddress]"
-                                    id="confirmationRepresentativeAddress">
-                            </div>
                         </div>
                     </div>
                 </div>

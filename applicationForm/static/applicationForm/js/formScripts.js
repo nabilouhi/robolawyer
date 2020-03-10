@@ -39,7 +39,6 @@ $("input[name='page2[applicantAnon]']").change(function() {
 
 $("input[name='page3[indRepresentativeType]']").change(function() {
   result = this.value;
-  console.log(result);
   if (result === 'lawyer') {
     $('#lawyerRep').removeClass('is-hidden');
     $('#nonLawyerRep').addClass('is-hidden');
@@ -92,61 +91,61 @@ jQuery(document).ready(function($) {
   alterClass();
 });
 
-// for add/remove input functionality
-var addRemElements = function(partners, partner, addmore) {
-  $(document).ready(function() {
-    var data_fo = $(partners).html();
-    var sd = '<div class="btn btn-danger remove-add-more">Remove</div><hr>';
-    var max_fields = 5; //maximum input boxes allowed
-    var wrapper = $(partners); //Fields wrapper
-    var add_button = $(addmore); //Add button ID
+// $(document).ready(function(){
 
-    var x = 1; //initlal text box count
-    $(add_button).click(function(e) {
-      //on add input button click
-      e.preventDefault();
-      if (x < max_fields) {
-        //max input box allowed
-        x++; //text box increment
-        var partnerClone = $(partner)
-          .first()
-          .clone();
-        $(sd).appendTo(partnerClone);
-        $(wrapper).append(partnerClone);
-      }
-    });
+// })
 
-    $(wrapper).on('click', '.remove-add-more', function(e) {
-      //user click on remove text
-      e.preventDefault();
-      $(this)
-        .parent(partner)
-        .remove();
-      $(this).remove();
-      x--;
-    });
-  });
-};
+// if($("input'[page2[applicantAnon]']")).val === 'Yes'{
+//   getData = $(this).val();
+// }
 
-addRemElements('.articles', '.article', '.add-more');
-addRemElements('.complaints', '.complaint', '.add-more-complaints');
-addRemElements('.docLists', '.docList', '.add-more-docs');
+$('#page8Group').repeater({
+              btnAddClass: 'r-btnAdd',
+              btnRemoveClass: 'r-btnRemove',
+              groupClass: 'r-group',
+              minItems: 1,
+              maxItems: 24,
+              startingIndex: 0,
+              showMinItemsOnLoad: true,
+              reindexOnDelete: true,
+              repeatMode: 'append',
+              animation: 'fade',
+              animationSpeed: 400,
+              animationEasing: 'swing',
+              clearValues: true
+          });
 
-// Add remove functionality end
+$('#page6Group').repeater({
+            btnAddClass: 's-btnAdd',
+            btnRemoveClass: 's-btnRemove',
+            groupClass: 's-group',
+            minItems: 1,
+            maxItems: 0,
+            startingIndex: 0,
+            showMinItemsOnLoad: true,
+            reindexOnDelete: true,
+            repeatMode: 'append',
+            animation: 'fade',
+            animationSpeed: 400,
+            animationEasing: 'swing',
+            clearValues: true
+        });
 
-//  Custom file input name display
-$('.custom-file-input').on('change', function() {
-  var fileName = $(this)
-    .val()
-    .split('\\')
-    .pop();
-  $(this)
-    .siblings('.custom-file-label')
-    .addClass('selected')
-    .html(fileName);
-});
-//  custom file input end
-
+$('#page5Group').repeater({
+          btnAddClass: 'a-btnAdd',
+          btnRemoveClass: 'a-btnRemove',
+          groupClass: 'a-group',
+          minItems: 1,
+          maxItems: 0,
+          startingIndex: 0,
+          showMinItemsOnLoad: true,
+          reindexOnDelete: true,
+          repeatMode: 'append',
+          animation: 'fade',
+          animationSpeed: 400,
+          animationEasing: 'swing',
+          clearValues: true
+      });
 // Correspondent details
 
 $("input[name='page9[signatureDeclaration]']").change(function() {
@@ -164,41 +163,6 @@ $("input[name='page9[signatureDeclaration]']").change(function() {
 
 // Correcpondant details end
 
-// File upload script
-$(document).ready(function() {
-  if (window.File && window.FileList && window.FileReader) {
-    $('.files').on('change', function(e) {
-      var files = e.target.files,
-        filesLength = files.length;
-      for (var i = 0; i < filesLength; i++) {
-        var f = files[i];
-        var fileReader = new FileReader();
-        fileReader.onload = function(e) {
-          var file = e.target;
-          $(
-            '<span class="pip">' +
-              '<img class="imageThumb" src="' +
-              e.target.result +
-              '" title="' +
-              file.name +
-              '"/>' +
-              '<br/><span class="remove">Remove image</span>' +
-              '</span>'
-          ).insertAfter('#files');
-          $('.remove').click(function() {
-            $(this)
-              .parent('.pip')
-              .remove();
-          });
-        };
-        fileReader.readAsDataURL(f);
-      }
-    });
-  } else {
-    swal("Your browser doesn't support to File API");
-  }
-});
-// File upload script end
 
 // Page 6 condition for text area
 $("input[name='page6[appealAvailable]']").change(function() {
@@ -210,29 +174,9 @@ $("input[name='page6[appealAvailable]']").change(function() {
 });
 
 // Page 6 condition for text area end
-// $("input[name='page7[intInvestigation']").change(function() {
-//   result = this.value;
-//   if (result === 'Yes') $('.intInvestigation').removeClass('is-hidden');
-//   else {
-//     $('.intInvestigation').addClass('is-hidden');
-//   }
-// });
 
 // page 7 conditions for text area
 
-// $("input[name='page3[orgRepresentativeType]']").change(function() {
-//   result = this.value;
-//   console.log(result);
-//   if (result === 'orgYesLawyer') {
-//     $('#orgLawyerRep').removeClass('is-hidden');
-//     $('.orgAuthority').removeClass('is-hidden');
-//   } else if (result === 'orgNoLawyer') {
-//     $('#orgLawyerRep').addClass('is-hidden');
-//     $('.orgAuthority').addClass('is-hidden');
-//   } else {
-//     console.log('check for bugs');
-//   }
-// });
 
 $("input[name='page7[intInvestigation]']").change(function() {
   result = this.value;
@@ -256,7 +200,7 @@ function textCounter(field, field2, maxlimit) {
   var countfield = document.getElementById(field2);
   if (field.value.length > maxlimit) {  
     if(field.id==="stofFacts"){
-    swal("You have used up the allocated length for Statement of Facts. For more explanation, please use the extra provided area by clicking the button 'Do you need more?'");
+    swal("You have used up the allocated length for Statement of Facts. For more explanation, please use the extra provided area by clicking the button 'Do you need more writing space?'");
     }
     if(field.id==="stofFactsExtra"){
       swal("Unfortunately there is no more space available to add extra content in statement of facts according to the guidelines provided by ECtHR. Please try to modify the existing text.");
@@ -269,10 +213,3 @@ function textCounter(field, field2, maxlimit) {
   }
 }
 
-$(document).ready(function() {
-  var select = '';
-  for (i = 1; i <= 100; i++) {
-    select += '<option val=' + i + '>' + i + '</option>';
-  }
-  $('#noOfPage').html(select);
-});

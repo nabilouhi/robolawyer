@@ -48,11 +48,11 @@
                         <div class="form-group col-sm-6">
                             <label>Surname</label>
                             <input class="form-control" type="text" placeholder="Enter Surname" name="page2[indSurname]"
-                                data-parsley-maxlength="10" id="indSurname" required data-parsley-group="page2a">
+                                maxlength="40" id="indSurname" required data-parsley-group="page2a">
                         </div>
                         <div class="form-group col-sm-6">
                             <label>First Name(s)</label>
-                            <input class="form-control" type="text" placeholder="Enter First Name"
+                            <input class="form-control" type="text" placeholder="Enter First Name" maxlength="40"
                                 name="page2[indFirstName]" id="indFirstName" required data-parsley-group="page2a">
                         </div>
                         </div>
@@ -68,12 +68,12 @@
                         </div>
                         <div class="form-group col-sm-6">
                             <label>Place of Birth</label>
-                            <input class="form-control" name="page2[indPob]" id="indPob">
+                            <input class="form-control" name="page2[indPob]" id="indPob" maxlength="40">
                         </div>
                          </div>
                         <div class="form-group">
                             <label>Nationality</label>
-                            <input class="form-control" name="page2[indNationality]" id="indNationality">
+                            <input class="form-control" name="page2[indNationality]" id="indNationality" maxlength="40">
                         </div>
                         <div class="form-group">
                             <label >Address <a href="javascript://" data-toggle="popover"
@@ -82,33 +82,33 @@
                                             class="fas fa-question-circle"></i></span></a></label>
 
                             <textarea class="form-control" name="page2[indAddress]" id="indAddress" cols="30"
-                                rows="3"></textarea>
+                                rows="3" maxlength="220"></textarea>
                         </div>
                         
                         <div class="row">
 
-                        <div class="form-group col-sm-4">
-                            <label>Telephone Number (select country code)</label>
-                            <input type="tel" name="page2[indPhone]" id="indPhone" class="form-control phoneInput"
-                                required data-parsley-group="page2a">
-                        </div>
-                        <div class="form-group col-sm-8">
-                            <label>Email</label>
-                            <input class="form-control" type="email" name="page2[indEmail]" placeholder="Email"
-                                id="indEmail" data-parsley-type="email" data-parsley-group="page2a">
-                        </div>
+                            <div class="form-group col-sm-4">
+                                <label>Telephone Number (select country code)</label>
+                                <input type="tel" name="page2[indPhone]" id="indPhone" class="form-control"
+                                     data-parsley-group="page2a">
+                            </div>
+                            <div class="form-group col-sm-8">
+                                <label>Email</label>
+                                <input class="form-control" type="email" name="page2[indEmail]" placeholder="Email"
+                                    id="indEmail" data-parsley-type="email" data-parsley-group="page2a" maxlength="40">
+                            </div>
                         </div>
                         
                         <div class="form-group">
                             <label>Sex</label>
                             <div class="custom-control custom-radio custom-control">
                                 <input type="radio" class="custom-control-input" id="applicantSexMale"
-                                    name="page2[applicantSex]" value="Male">
+                                    name="page2[applicantSex]" value="M">
                                 <label class="custom-control-label" for="applicantSexMale">Male</label>
                             </div>
                             <div class="custom-control custom-radio custom-control">
                                 <input type="radio" class="custom-control-input" id="applicantSexFemale"
-                                    name="page2[applicantSex]" value="Female">
+                                    name="page2[applicantSex]" value="F">
                                 <label class="custom-control-label" for="applicantSexFemale">Female</label>
                             </div>
                         </div> <br><br>
@@ -142,9 +142,9 @@
                             </div>
                             <div class="form-group applicantAnonReq is-hidden">
                                 <label for="">Please provide reasons for your request</label>
-                                <textarea class="form-control" type="text" rows=2
+                                <textarea class="form-control" type="text" rows=8
                                     placeholder="Provide a detailed explanation"
-                                    name="page2[applicantAnonExp]"></textarea>
+                                    name="page2[applicantAnonExp]" maxlength="4000"></textarea>
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                             <label>Name</label>
                             <textarea class="form-control" type="text" rows=2
                                 placeholder="Enter the Organisation's Name" name="page2[orgName]" required
-                                data-parsley-group="page2b"></textarea>
+                                data-parsley-group="page2b" maxlength="120"></textarea>
                         </div>
                         
                         <div class="row">
@@ -171,12 +171,12 @@
                             
                                 <label>Identification number (if any)</label>
                             <input class="form-control" type="text" placeholder="Enter Identification Number"
-                                name="page2[orgID]">
+                                name="page2[orgID]" maxlength="40">
                         </div>
                         <div class="form-group col-sm-8">
                             <label>Activity</label>
                             <input class="form-control" type="text" name="page2[orgActivity]" required
-                                data-parsley-group="page2b">
+                                data-parsley-group="page2b" maxlength="40">
                         </div>
                         </div>
  
@@ -195,19 +195,19 @@
                             <label>Registered Address </label>
 
                             <textarea class="form-control" name="page2[orgAddress]" id="orgAddress" cols="30"
-                                rows="3"></textarea>
+                                rows="3" maxlength="200"></textarea>
                         </div>
                         
                         <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="orgPhone">Telephone (select country code)</label>
-                            <input class="form-control phoneInput" type="tel" id="orgPhone" name="page2[orgPhone]"
-                                required data-parsley-group="page2b">
+                            <input class="form-control" type="tel" id="orgPhone" name="page2[orgPhone]"
+                                 data-parsley-group="page2b">
                         </div>
                         <div class="form-group col-sm-8">
                             <label>Email</label>
                             <input class="form-control" type="email" name="page2[orgEmail]" id="orgEmail"
-                                placeholder="Email" data-parsley-type="email" data-parsley-group="page2b">
+                                placeholder="Email" data-parsley-type="email" data-parsley-group="page2b" maxlength="40">
                         </div>
                         </div>
  

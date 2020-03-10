@@ -3,8 +3,10 @@ var phoneInputScript = function(phoneDiv) {
   var iti = window.intlTelInput(inputPhone, {
     utilsScript: 'static/intlTelInput/utils.js',
     allowDropdown: true,
-    separateDialCode: true,
-    initialCountry: 'auto'
+    separateDialCode: false,
+    initialCountry: 'auto',
+    nationalMode: false,
+    preferredCountries: []
   });
 
   $(phoneDiv).change(function() {
@@ -42,7 +44,10 @@ phoneInputScript('#indNLTel');
 phoneInputScript('#indLTel');
 phoneInputScript('#orgnlTel');
 phoneInputScript('#orglTel');
-
+phoneInputScript('#indNLFax');
+phoneInputScript('#indLFax');
+phoneInputScript('#orgnlFax');
+phoneInputScript('#orglFax');
 // geoIpLookup: function(success, failure) {
 //   $.get('http://ipinfo.io', function() {}, 'jsonp').always(function(resp) {
 //     var countryCode = resp && resp.country ? resp.country : '';

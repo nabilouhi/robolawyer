@@ -1,5 +1,5 @@
 options = {
-  defaultCountry: '',
+  defaultCountry: 'no',
   responsiveDropdown: true,
   preferredCountries: []
 };
@@ -10,6 +10,9 @@ $('#indLNationality').countrySelect(options);
 $('#indNLNationality').countrySelect(options);
 $('#orgnlNationality').countrySelect(options);
 $('#orglNationality').countrySelect(options);
+
+
+
 
 // var countrySelect = function(countryID, telID) {
 //   var countryData = window.intlTelInputGlobals.getCountryData(),

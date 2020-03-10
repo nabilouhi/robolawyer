@@ -1,3 +1,29 @@
+
+dateValidator = function(dateSelector) {
+  $(dateSelector).on('change', function(){
+    result =  $(dateSelector).combodate('getValue',format='YYYY-MM-DD');
+    currentDate = moment().format('YYYY-MM-DD');
+    diffDate = moment(currentDate).diff(moment(result), 'days', true);
+    if (!isNaN(diffDate)){
+      if (diffDate >0) {
+        console.log($(this).combodate('setValue', moment()));
+        $(this).combodate('setValue', moment())
+      }
+      else{
+        swal("Future Date is not allowed. Please enter a valid date.");
+      }
+    }
+  })  
+}
+
+dateValidator('input[name="page1[decisionDate]"]');
+dateValidator('input[name="page1[finalDecisionDate]"]');
+dateValidator('input[name="page2[birthDate]"]');
+dateValidator('input[name="page2[orgDate]"]');
+// dateValidator('input[name="page1[finalDecisionDate]"]');
+// dateValidator('input[name="page1[finalDecisionDate]"]');
+
+
 $('#finalDecisionDate').on('change', function(){
     finalDecisionDate = $('#finalDecisionDate').combodate('getValue',format='YYYY-MM-DD');
     currentDate = moment().format('YYYY-MM-DD');
@@ -91,3 +117,12 @@ $("input[name='page1[complySix]']").change(function() {
     swal('If you have not exhausted the available legal remedies your application can be declared inadmissible.')
   }
 });
+
+
+$("input[name='page1[courtCase]']").change(function() {
+  result = this.value;
+
+if (result == 'No') {
+  swal('If you have not used all the available domestic legal remedies for your case. It is possible, but not necessary that your application might be declared inadmissible.')
+}
+})

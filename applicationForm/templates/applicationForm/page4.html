@@ -61,14 +61,14 @@
                     <br>
                     <br>
                     <div class="form-group">
-                        <input disabled maxlength="3" size="3" value="1000" id="counter" class="alert alert-success">
-                        <textarea class="form-control" name="page5[stOfFacts]" id="stofFacts"
+                        <input disabled maxlength="5" size="5" value="12500" id="counter" class="alert alert-success">
+                        <textarea class="form-control" name="page4[stOfFacts]" id="stofFacts"
                             oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
-                            rows="10" onkeyup="textCounter(this,'counter', 1000);"></textarea>
+                            rows="10" onkeyup="textCounter(this,'counter', 12500);" required data-parsley-group="page4"></textarea>
                     </div>
                             <div class="text-right">
                                 <button class="btn "data-toggle="collapse" data-target="#info-2" align="right">
-                                    Do you need more?
+                                    Do you need more writing space?
                                 </button>
                             </div>
 						<br>
@@ -85,10 +85,10 @@
                                     form.
                                     If you want to add more statement of facts, then please use the area below
                                     for this.</label>
-                                <input disabled maxlength="3" size="3" id="counter2" value="5000" class="alert alert-success">
-                                <textarea class="form-control" name="page5[stOfFactsExtra]" id="stofFactsExtra"
+                                <input disabled maxlength="5" size="5" id="counter2" value="100000" class="alert alert-success">
+                                <textarea class="form-control" name="page4[stOfFactsExtra]" id="stofFactsExtra"
                                     oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
-                                    rows="10" onkeyup="textCounter(this,'counter2', 5000);" required data-parsley-group="page4">
+                                    rows="10" onkeyup="textCounter(this,'counter2', 56500);">
                                 </textarea>
                             </div>
                         </div>

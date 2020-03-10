@@ -48,35 +48,34 @@
           </div>
 
           <div class="form-group">
-            <div class="complaints">
-              <div class="complaint">
+
+            <div id="page6Group">
+              <div class="s-group">
                 <table width="100%" >
                   <tr>
                     <td width="25%">
                       <label for="complainSelect"><b>Complaint</b></label>
-                      <input name="page6[complainSelect][]" class="form-control complainSelect" />
+                      <input name="page6[complainSelect]" class="form-control complainSelect" maxlength="100" required data-parsley-group="page6"/>
                     </td>
                     <td width="30%">
                       <label><b>Date of Final Decision from the highest court</b>
                       </label>
-                      <!-- <input class="form-control datepicker" type="text" color="Info"
-                                            name="page6[complaintDate][]" placeholder="Select date of final Decision" /> -->
-                      <input type="text" class="date" name="page6[complaintDate][]" data-template="DD MMM YYYY" />
+                      <input type="text" class="page6Date datepicker" name="page6[complaintDate]" data-date-end-date="0d" data-provide="datepicker" required data-parsley-group="page6"/>
                     </td>
                     <td width="45%">
                       <label><b> Remedies Used</b></label>
-                      <textarea class="form-control remedies" name="page6[remedies][]"
+                      <textarea class="form-control remedies" name="page6[remediesUsed]"
                         oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' cols="30"
-                        rows="3"></textarea>
+                        rows="3" maxlength="290" required data-parsley-group="page6"></textarea>
                     </td>
                   </tr>
                 </table>
+                <p>
+                  <button type="button" class="s-btnRemove btn btn-danger">Remove -</button>
+                  </p>
               </div>
-              <hr />
-            </div>
-            <div class="btn btn-light add-more-complaints">
-              <span>Add More <i class="fas fa-plus"></i></span>
-            </div>
+              <button type="button" class="s-btnAdd btn btn-primary">Add +</button>
+          </div>
           </div>
 
           <div class="form-group is-hidden appealDescribe">
@@ -147,7 +146,7 @@
           <div class="form-group is-hidden appealDescribe">
             <textarea class="form-control" name="page6[appealDescribe]" id="appealDescribe"
               oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' cols="30"
-              rows="10"></textarea>
+              rows="10" maxlength="1270"></textarea>
           </div>
           <br />
           <br />
